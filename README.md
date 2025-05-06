@@ -1,2 +1,16 @@
-# curso-front-upgl
-Cursos de Progrmación Front End de UPGL
+# Curso  de programación Front End de UPGL
+
+## Ejercicios del Cursos de progrmación Front End de UPGL
+
+Este repositorio contiene los ejercicios de los cursos de programación Front End de la Universidad Popular General Levalle. En cada directorio se encuentra la ejercictacion realizada en cada clase, sumando a la teoría de cada tema, cuando corresponda. A medida que el curso avanza, se agregaran carpetas con cada una de las clases y la tematica vista. También se irá agregando un listado de los temas, ya que cada uno de ellos puede tratrase en más de una clase.
+
+---
+## Temas:
+
+
+
+---
+## Clases:
+
+
+--- 
