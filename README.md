@@ -7,10 +7,14 @@ Este repositorio contiene los ejercicios de los cursos de programación Front En
 ---
 ## Temas:
 
+1. Primer Bloque: HTML y CSS
 
+2. Segundo Bloque: Bootstrap y JavaScript
 
 ---
 ## Clases:
 
+- Clase 1: [Introducción a la Web y HTML Básico](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-1.php)
+   - [Ejercicio Clase 1](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%201)
 
 --- 
