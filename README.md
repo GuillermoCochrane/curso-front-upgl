@@ -19,4 +19,7 @@ Este repositorio contiene los ejercicios de los cursos de programación Front En
 
 - Clase 2: [Estructura HTML, Enlaces y Formularios](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-2.php)
    - [Ejercicios Clase 2](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%202)
+  
+- Clase 3: [Tablas, Imágenes y Semántica HTML](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-3.php)
+   - [Ejercicios Clase 3](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%203)
 --- 
