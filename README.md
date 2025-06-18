@@ -23,6 +23,10 @@ Este repositorio contiene los ejercicios de los cursos de programación Front En
 - Clase 3: [Tablas, Imágenes y Semántica HTML](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-3.php)
    - [Ejercicios Clase 3](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%203)
 
-- Clase 4: [Estilos CSS](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-4.php)
+- Clase 4: [Semántica HTML y tipos de Input](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-4.php)
    - [Ejercicios Clase 4](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%204)
+
+- Clase 5: [Fundamentos CSS](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-5.php)
+   - [Ejercicios Clase 5](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%205)
+  
 --- 
