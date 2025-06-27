@@ -23,3 +23,38 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.info-superior {
+  color: #666;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: monospace;
+  margin-bottom: -3px;
+  line-height: 0.2;
+  letter-spacing: -0,2px;
+}
+/* Francoq quiere republica argentina  mas grande */
+.titulo-seccion {
+  font-size: 10px;
+  margin-bottom: -15px;
+  text-transform: capitalize;
+}
+
+.info-documento {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.info-horizontal {
+margin-bottom: 15px;
+margin-top: -15px;
+margin-left: -3px;
+}
+
+.info-horizontal p{
+  margin-right: 2px;
+}
+
+#pais {
+  font-size: 20px;
+  font-weight: bolder;
+}
