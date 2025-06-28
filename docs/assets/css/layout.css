@@ -65,10 +65,17 @@ footer nav ul li {
 
 main {
   display: flex;
+  flex-grow: 1;
+  height: 75vh;
+}
+
+.sidebar,
+.sections-container {
+  height: 100%;
+  overflow-y: auto;
 }
 
 .sidebar {
-  max-height: 72vh;
   width: 18%;
   background: #f4f4f4;
   padding: 0.5rem;
@@ -92,8 +99,6 @@ main {
 }
 
 .sections-container {
-  all: unset;
-  max-height: 72vh;
   padding: 1.5rem;
   flex: 1 1 auto;
   overflow-y: auto;

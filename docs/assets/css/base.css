@@ -6,6 +6,11 @@
 
 body {
   font-family: sans-serif;
+}
+
+html, body {
+  height: 100vh;
   margin: 0;
-  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
