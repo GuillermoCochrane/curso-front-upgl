@@ -1,0 +1,11 @@
+/* base.css: estilos generales y de reseteo */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  max-height: 100vh;
+}
