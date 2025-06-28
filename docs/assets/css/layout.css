@@ -55,7 +55,7 @@ footer nav {
 
 footer nav ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-block: 2px;
   margin-inline: auto;
   padding: 0;
@@ -64,6 +64,7 @@ footer nav ul {
 
 footer nav ul li {
   margin: auto;
+  padding-block: .5em;
 }
 
 .mobile-break {
