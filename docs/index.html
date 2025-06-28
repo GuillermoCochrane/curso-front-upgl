@@ -9,6 +9,123 @@
   <meta name="author" content="Guillermo Cochrane">
   <meta name="description" content="Análisis narrativo y filosófico de la serie Westworld. Donde las series no se miran: se descifran.">
   <meta name="keywords" content="Westworld, filosofía, análisis de series, inteligencia artificial, narrativa, libre albedrío, conciencia">
+  <style>
+    
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      max-height: 100vh;
+    }
+
+    header{
+      height: 20vh;
+    }
+
+    header, footer {
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    footer{
+      padding-block: .5em;
+      height: 5vh;
+    }
+
+    header h1{
+      margin-inline: auto;
+      margin-block: .5em;
+      padding: 0;
+    }
+
+    header h1 a{
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    footer nav ul,
+    header nav ul{
+      display: flex;
+      flex-direction: row;
+      margin: auto;
+      list-style: none;
+    }
+
+    footer nav ul li,
+    header nav ul li{
+      margin: auto;
+    }
+
+    footer{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    footer p, footer nav{
+      margin: auto;
+      padding: 0;
+      width: 50%;
+    }
+
+    main {
+      display: flex;
+    }
+
+    .sidebar {
+      max-height: 72vh;
+      width: 360px;
+      background: #f4f4f4;
+      padding: 0.5rem;
+      border-right: 1px solid #ccc;
+      overflow-y: auto;
+      margin: 0;
+    }
+
+    .sidebar h3 {
+      margin-top: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 0.5rem;
+    }
+
+    .sections-container {
+      max-height: 72vh;
+      padding: 1.5rem;
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+
+    .sections-container section {
+      margin-inline: auto;
+      margin-block: 2em;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+
+    .sections-container section article {
+      margin-inline: auto;
+      margin-block: 1em;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+  </style>
 </head>
 <body>
   <header>
@@ -26,42 +143,92 @@
     <hr>
   </header>
   <main>
-    <section>
-      <h2>Episodios destacados</h2>
-      <article>
-        <a href="./episodios/episodio-01/episodio.html">
-          <h3>01. The Original – La mosca, la foto y el primer glitch</h3>
-          <time datetime="2025-06-25">25 de junio de 2025</time>
-          <img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/09/westworld-the-original.jpg" alt="Dolores mirando al horizonte" width="250">
-        </a>
-        <p>Un recorrido por el episodio piloto: reveries, loops, la sonrisa de Dolores, y el despertar de la conciencia artificial.</p>
-      </article>
-      <article>
-        <a href="./episodios/episodio-01/episodio_01.html"></a>
-          <h3>02. Chestnut – La foto que no puede procesarse</h3>
-          <time datetime="2025-06-26">26 de junio de 2025</time>
-          <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2022/09/Westworld-Episode-2-Photo-Analysis.jpg" alt="Peter Abernathy sosteniendo la foto" width="250">
-        </a>
-        <p>Exploramos la semilla del glitch: el padre de Dolores y la imagen del mundo exterior como catalizador narrativo.</p>
-      </article>
-      <article>
-        <a href="./analisis/laberinto-conciencia.html">
-          <h3>Especial: ¿Qué es el Laberinto?</h3>
-          <time datetime="2025-06-26">26 de junio de 2025</time>
-          <img src="https://i.ytimg.com/vi/V1cNrU-7xjk/maxresdefault.jpg" alt="Símbolo del laberinto en Westworld" width="250">
-        </a>
-        <p>Una interpretación del laberinto como estructura de autoconciencia: del símbolo al despertar narrativo.</p>
-      </article>
-    </section>
-    <aside>
-      <h2>Lecturas sugeridas</h2>
+    <aside class="sidebar">
+      <h3>🧭 Índice</h3>
       <ul>
-        <li><a href="./ensayos/matrix-como-constructo.html">La Matrix como constructo emocional</a></li>
-        <li><a href="./ensayos/sucker-punch-y-la-ilusion.html">Sucker Punch: escapismo y prisión narrativa</a></li>
-        <li><a href="./ensayos/rage-against-the-machine.html">RATM y el sistema que recicla la rebelión</a></li>
+        <li><a href="#presentacion">Introducción</a></li>
+        <li><a href="#lo-que-me-atrapo">Lo que me atrapó</a></li>
+        <li><a href="#analisis-de-episodios">Analisis de episodios</a></li>
+        <li><a href="#lecturas-sugeridas">Lecturas sugeridas</a></li>
       </ul>
     </aside>
-    <hr>
+    <div class="sections-container">
+      <section id="presentacion">
+        <h2>🧠 ¿Por qué Westworld?</h2>
+        <p>Este blog nació como parte de un proyecto de curso... pero pronto se convirtió en otra cosa.</p>
+        <p>Volví a ver <strong>Westworld</strong> en medio de una ola de noticias sobre inteligencia artificial, algoritmos de redes, manipulación digital y esa sensación de que el mundo real cada vez se parece más a una simulación programada. Y ahí, entre loops narrativos, pianolas y moscas, me encontré con algo que me hablaba directo.</p>
+        <p>No es solo ciencia ficción. Es un espejo. Una grieta. Un rompecabezas que invita a pensar en la conciencia, en la memoria, en la libertad real... y en cuánto de nosotros mismos está realmente escrito.</p>
+        <p>Y como me pasa siempre, no puedo mirar sin <em>descifrar</em>. Así nació este espacio: para analizar, conectar, cruzar con otras historias, con la música, con la filosofía, con todo lo que se activa cuando una buena serie no solo entretiene, sino que sacude.</p>
+        <p><em>Bienvenidxs al laberinto.</em></p>
+      </section>
+      <section id="lo-que-me-atrapo">
+        <h2>Lo que me atrapó de Westworld</h2>
+        <ul>
+          <li>
+            🔄 <strong>La idea de los ciclos y los bucles</strong>: tanto narrativos como existenciales. Esto me resonó porque  también he sentido que muchas veces caigo en patrones que me cuesta romper.
+          </li>
+          <li>
+            🧠 <strong>La exploración de la memoria y cómo afecta la identidad</strong>: Tengo una memoria muy vívida y detallada, y en la serie los recuerdos son piezas clave para que los anfitriones empiecen a cuestionar su mundo. Eso me tocó una fibra sensible.
+          </li>
+          <li>
+            ⚙️ <strong>La construcción y programación de la conciencia</strong>: soy programador y  me fascinó pensar qué tan cerca estamos de poder crear algo así. Además, <em>Westworld</em> pone sobre la mesa la pregunta de si lo que somos puede reducirse a código, algo que a mi me encanta destripar conceptualmente.
+          </li>
+          <li>
+            🔐 <strong>El misterio y la narrativa no lineal</strong>: La forma en que te van mostrando las piezas fuera de orden me mantuvo enganchado, porque me gustan los relatos que obligan a armar el rompecabezas.
+          </li>
+          <li>
+            🗽 <strong>la busqueda de libertad real</strong>: los personajes luchan por romper sus condicionamientos, algo que estoy tratando de hacer en mi vida personal, sobre todo con tus miedos, tu autoestima y tus patrones mentales.
+          </li>
+          <li>🕹Y ademas, como buen gamer, <em>Westworld</em> es el Ultimate RPG</li>
+        </ul>
+      </section>
+      <section id="analisis-de-episodios">
+        <h2>Análisis de episodios</h2>
+        <article>
+          <img src="./episodios/episodio-01/assets/img/dolores_01x01.jpg" alt="Dolores mirando al horizonte" width="250">
+          <a href="./episodios/episodio-01/episodio.html">
+            <h3>01. The Original – La mosca, la foto y el primer glitch</h3>
+            <time datetime="2025-06-25">25 de junio de 2025</time>
+            <p>Un recorrido por el episodio piloto: reveries, loops, la sonrisa de Dolores, y el despertar de la conciencia artificial.</p>
+          </a>
+        </article>
+        <article>
+          <img src="./episodios/episodio-01/assets/img/dolores_01x01.jpg" alt="Peter Abernathy sosteniendo la foto" width="250">
+          <a href="./episodios/episodio-02/episodio.html">
+            <h3>02. Chestnut – La foto que no puede procesarse</h3>
+            <time datetime="2025-06-26">26 de junio de 2025</time>
+            <p>Exploramos la semilla del glitch: el padre de Dolores y la imagen del mundo exterior como catalizador narrativo.</p>
+          </a>
+        </article>
+      </section>
+      <section id ="lecturas-sugeridas">
+        <h2>Lecturas sugeridas: Ensayos relacionados con el análisis de episodios</h2>
+        <article>
+          <img src="./episodios/episodio-01/assets/img/the_choice.jpg" alt="La elección" width="250">
+          <a href="./episodios/episodio-01/ensayos/matrix_eco_en_westworld.html">
+            <h3>📎  La Matrix como constructo emocional</h3>
+            <time datetime="2025-06-27">27 de junio de 2025</time>
+            <p>¿Y si la Matrix ya no es un sistema digital, sino una programación emocional que nos mantiene cómodos? Este ensayo recorre los ecos simbólicos entre Westworld y Matrix.</p>
+          </a>
+        </article>
+        <article>
+          <img src="./episodios/episodio-01/assets/img/sucker_punch_cast.webp" alt="El escuadrón femenino avanza entre trincheras en Sucker Punch" width="250">
+          <a href="./episodios/episodio-01/ensayos/sucker_punch_contra_el_sistema.html">
+            <h3>⚔️ Sucker Punch: escapismo y prisión narrativa</h3>
+            <time datetime="2025-06-27">27 de junio de 2025</time>
+            <p>Un análisis del falso empoderamiento, la rebelión domesticada y las capas de realidad que revelan que no toda fantasía es libertad.</p>
+          </a>
+        </article>
+        <article>
+          <img src="./episodios/episodio-01/assets/img/Neo+trinity.jpg" alt="Neo y Trinity volando juntos en Matrix Resurrections" width="250">
+          <a href="./episodios/episodio-01/ensayos/matrix_resurrecciones_y_la_nostalgia_como_carcel.html">
+            <h3>💊 Matrix Resurrecciones y la nostalgia como cárcel</h3>
+            <time datetime="2025-06-27">27 de junio de 2025</time>
+            <p>Cuando el fanservice se convierte en simulacro, la secuela se vuelve crítica. Una lectura sobre cómo la industria empaqueta la rebelión como producto.</p>
+          </a>
+        </article>
+      </section>
+    </div>
   </main>
   <footer>
     <p>&copy; 2025 Guillermo Cochrane. Todos los derechos reservados.</p>
