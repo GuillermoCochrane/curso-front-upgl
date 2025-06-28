@@ -1,12 +1,12 @@
 /* layout.css: estructura de página (header, footer, main, sidebar) */
 
 header {
-  height: 20vh;
+  height: 15vh;
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   text-align: center;
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 
@@ -14,11 +14,11 @@ header h1 {
   margin-inline: auto;
   margin-block: .5em;
   padding: 0;
+  font-size: 1.5em;
 }
 
-header h1 a {
-  text-decoration: none;
-  cursor: pointer;
+header nav{
+  display: none;
 }
 
 header nav ul {
@@ -34,13 +34,13 @@ header nav ul li {
 
 footer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
   background-color: #fff;
   border-top: 1px solid #ccc;
   padding-block: .5em;
-  height: 5vh;
+  height: 10vh;
   margin: 0;
   text-align: center;
 }
@@ -49,13 +49,16 @@ footer p,
 footer nav {
   margin: auto;
   padding: 0;
-  width: 50%;
+  width: 100%;
+
 }
 
 footer nav ul {
   display: flex;
-  flex-direction: row;
-  margin: auto;
+  flex-direction: column;
+  margin-block: 2px;
+  margin-inline: auto;
+  padding: 0;
   list-style: none;
 }
 
@@ -63,24 +66,21 @@ footer nav ul li {
   margin: auto;
 }
 
+.mobile-break {
+  display: block;
+}
+
 main {
   display: flex;
   flex-grow: 1;
-  height: 75vh;
-}
-
-.sidebar,
-.sections-container {
-  height: 100%;
-  overflow-y: auto;
 }
 
 .sidebar {
-  width: 18%;
+  display: none;
+  width: 100%;
   background: #f4f4f4;
   padding: 0.5rem;
   border-right: 1px solid #ccc;
-  overflow-y: auto;
   margin: 0;
   flex-shrink: 0;
 }
@@ -100,13 +100,55 @@ main {
 
 .sections-container {
   padding: 1.5rem;
-  flex: 1 1 auto;
-  overflow-y: auto;
+  flex: 1;
   background-color: #ebebeb;
 }
 
-a {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+.sidebar,
+.sections-container {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.hidden{
+  display: block;
+}
+
+
+@media (min-width: 1200px) {
+
+  header {
+    height: 25vh;
+  }
+
+  header nav {
+    display: block;
+  }
+
+  .sidebar {
+    display: block;
+    width: 20%;
+  }
+
+  .sections-container {
+    height: 75vh;
+  }
+
+  footer{
+    height: 5vh;
+    flex-direction: row;
+  }
+
+  .mobile-break {
+    display: inline;
+  }
+
+  footer nav ul{
+    flex-direction: row;
+    margin: auto;
+  }
+
+  .hidden {
+    display: none;
+  }
 }

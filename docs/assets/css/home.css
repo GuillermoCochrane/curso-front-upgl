@@ -9,8 +9,38 @@
 
 .sections-container section article {
   margin-inline: auto;
-  margin-block: 1em;
+  margin-block: 2em;
+  padding: 1em;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  background-color: #ebebeb;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 5px rgba(120, 120, 120, 0.2 );
+}
+
+.sections-container section article img {
+  margin: auto;
+  width: 90%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (min-width: 1200px) {
+  .sections-container section article {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .sections-container section article img {
+    width: 30%;
+    max-height: 500px;
+    object-fit: contain;
+  }
+
+  .sections-container section article a {
+    margin: auto;
+    padding: 2em;
+  }
 }
