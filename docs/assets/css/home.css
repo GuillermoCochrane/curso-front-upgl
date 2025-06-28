@@ -1,0 +1,16 @@
+.sections-container section {
+  margin-inline: auto;
+  margin-block: 2em;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.sections-container section article {
+  margin-inline: auto;
+  margin-block: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
