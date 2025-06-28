@@ -1,0 +1,107 @@
+/* layout.css: estructura de página (header, footer, main, sidebar) */
+
+header {
+  height: 20vh;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+header h1 {
+  margin-inline: auto;
+  margin-block: .5em;
+  padding: 0;
+}
+
+header h1 a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  list-style: none;
+}
+
+header nav ul li {
+  margin: auto;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  padding-block: .5em;
+  height: 5vh;
+  margin: 0;
+  text-align: center;
+}
+
+footer p,
+footer nav {
+  margin: auto;
+  padding: 0;
+  width: 50%;
+}
+
+footer nav ul {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  list-style: none;
+}
+
+footer nav ul li {
+  margin: auto;
+}
+
+main {
+  display: flex;
+}
+
+.sidebar {
+  max-height: 72vh;
+  width: 18%;
+  background: #f4f4f4;
+  padding: 0.5rem;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sections-container {
+  all: unset;
+  max-height: 72vh;
+  padding: 1.5rem;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  background-color: #ebebeb;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
