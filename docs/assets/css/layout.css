@@ -6,26 +6,69 @@ header {
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   text-align: center;
-  margin: auto;
-  padding: 0;
-}
-
-header h1 {
   margin-inline: auto;
-  margin-block: .5em;
-  padding: 0;
-  font-size: 1.5em;
-}
-
-header nav{
-  display: none;
-}
-
-header nav ul {
+  margin-block: 0;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: auto;
+  padding-block:  .5em ;
+  border-bottom: 1px solid #ccc;
+}
+
+header figure {
+  margin: 0;
+  width: 10%;
+}
+
+header figure img {
+  width: 70px;
+  margin: 0;
+}
+
+header figure button {
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+header section {
+  text-align: center;
   margin: auto;
+  padding: 0;
+  width: 75%;
+}
+
+header section h1 {
+  margin-inline: auto;
+  margin-block: .2em;
+  padding: 0;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+header section p {
+  margin: 0.25em 0 1em 0;
+  font-size: .9em;
+  font-style: italic;
+}
+
+header section nav{
+  display: none;
+  font-size: .7em;
+}
+
+header section nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  gap: 1.5em;
   list-style: none;
+  padding: 0;
 }
 
 header nav ul li {
@@ -64,7 +107,6 @@ footer nav ul {
 
 footer nav ul li {
   margin: auto;
-  padding-block: .5em;
 }
 
 .mobile-break {
@@ -73,6 +115,7 @@ footer nav ul li {
 
 main {
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 
@@ -80,7 +123,7 @@ main {
   display: none;
   width: 100%;
   background: #f4f4f4;
-  padding: 0.5rem;
+  padding: 2em;
   border-right: 1px solid #ccc;
   margin: 0;
   flex-shrink: 0;
@@ -107,12 +150,16 @@ main {
 
 .sidebar,
 .sections-container {
-  height: 100%;
+  height: auto;
   overflow-y: auto;
 }
 
 .hidden{
   display: block;
+}
+
+.unseen {
+  display: none;
 }
 
 
@@ -122,13 +169,39 @@ main {
     height: 25vh;
   }
 
-  header nav {
+  header figure {
+    width: 20%;
+  }
+
+  header figure img {
+    width: 100px;
+  }
+
+  header figure button {
+    font-size: 35px;
+  }
+
+  header section nav {
     display: block;
+  }
+
+  header section {
+    width: 100%;
+  }
+
+  header section h1 {
+    font-size: 1.5em;
+    margin-block: .5em;
+  }
+
+  main{
+    flex-direction: row;
   }
 
   .sidebar {
     display: block;
     width: 20%;
+    padding: 0.5rem;
   }
 
   .sections-container {

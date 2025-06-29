@@ -14,20 +14,33 @@
 </head>
 <body>
   <header>
-    <div>
-      <h1>Despertar en el laberinto</h1>
+    <figure>
+      <img src="./assets/images/lab.webp" alt="Logo del Sitio">
+    </figure>
+    <section>
+      <h1><a href="../../index.html">Despertar en el laberinto</a></h1>
       <p><em>Donde las series no se miran: se decodifican</em></p>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./sobre-mi.html">Sobre el proyecto</a></li>
-        <li><a href="./contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
+      <nav>
+        <ul>
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="../../sobre-mi.html">Sobre el proyecto</a></li>
+          <li><a href="../../contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </section>
+    <figure>
+      <button id="menu-toggle">
+        <span id="menu-open-icon">
+          ☰
+        </span>
+        <span id="menu-close-icon" class="unseen">
+          ✖
+        </span>
+      </button>
+    </figure>
   </header>
   <main>
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <h3>🧭 Índice</h3>
       <ul>
         <li><a href="#presentacion">Introducción</a></li>
