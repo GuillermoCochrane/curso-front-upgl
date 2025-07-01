@@ -21,22 +21,17 @@
 
 .sections-container section article img {
   margin: auto;
-  width: 90%;
-  max-height: 150px;
+  width: 225px;
+  height: 150px;
   object-fit: cover;
   border-radius: 8px;
+  aspect-ratio: 16/9;
 }
 
 @media (min-width: 1200px) {
   .sections-container section article {
     flex-direction: row;
     justify-content: space-around;
-  }
-
-  .sections-container section article img {
-    width: 30%;
-    max-height: 500px;
-    object-fit: contain;
   }
 
   .sections-container section article a {
