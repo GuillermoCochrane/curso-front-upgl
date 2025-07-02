@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de registro</title>
+  <link rel="icon" type="image/png" href="../assets/img/icon.png">
+</head>
+<!-- 
+# Actividades Prácticas
+
+---
+
+## **Actividad 1**: Formulario de registro completo
+## Objetivo: Crear un formulario de registro que utilice diferentes tipos de inputs y sus atributos.
+
+Crear un archivo llamado formulario_registro.html
+
+Construir un formulario que incluya:
+### Información personal:
+- Nombre completo (text, required)
+- Email (email, required)
+- Teléfono (tel)
+- Fecha de nacimiento (date, required)
+
+### Información de cuenta:
+- Nombre de usuario (text, required, pattern para solo letras y números)
+- Contraseña (password, required, minlength=8)
+- Confirmar contraseña (password, required)
+
+### Preferencias:
+- Género (radio buttons)
+- Intereses (checkboxes múltiples)
+- País (input con datalist)
+- Sitio web personal (url)
+
+### Otros campos:
+- Foto de perfil (file, accept imágenes)
+- Color favorito (color)
+- Nivel de experiencia (range, 1-10)
+- Botones de enviar y limpiar formulario
+- Usar atributos como placeholder, required, pattern según corresponda
+
+### **Bonus**: 
+- Añadir un campo oculto con la fecha actual usando JavaScript.
+  (no hecho por tema aun no visto en clase)
+  solucion propuesta (IA):
+  <input type="hidden" id="fechaActual" name="fechaActual">
+  <script>
+    let fechaActual = document.queryselector("#fechaActual");
+    let valorFechaActual = new Date().toISOString().split('T')[0];
+    fechaActual.value = valorFechaActual;
+  </script>
+
+  -->
+<body>
+  <header>
+    <h1>Formulario de registro</h1>
+  </header>
+  <main>
+    <form action="#" method="post">
+      <section>
+        <h2>Información personal</h2>
+        <article>
+          <label for="nombre">Nombre completo</label><br>
+          <input type="text" id="nombre" name="nombre" required>
+        </article>
+
+        <article>
+          <label for="email">Email</label><br>
+          <input type="email" id="email" name="email" required>
+        </article>
+
+        <article>
+          <label for="telefono">Teléfono</label><br>
+          <input type="tel" id="telefono" name="telefono">
+        </article>
+
+        <article>
+          <label for="fecha">Fecha de nacimiento</label><br>
+          <input type="date" id="fecha" name="fecha" required>
+        </article>
+
+      </section>
+
+      <section>
+        <h2>Información de cuenta</h2>
+        <article>
+          <label for="usuario">Nombre de usuario</label><br>
+          <input type="text" id="usuario" name="usuario" required pattern="[a-zA-Z0-9]+">
+        </article>
+  
+        <article>
+          <label for="contraseña">Contraseña</label><br>
+          <input type="password" id="contraseña" name="contraseña" required minlength="8">
+        </article>
+  
+        <article>
+          <label for="confirmar">Confirmar contraseña</label><br>
+          <input type="password" id="confirmar" name="confirmar" required>
+        </article>
+      </section>
+      
+      <section>
+        <h2>Preferencias</h2>
+        <article>
+          <input type="radio" id="generoM" name="genero" value="Masculino">
+          <label for="generoM">Masculino</label>
+          <input type="radio" id="generoF" name="genero" value="Femenino">
+          <label for="generoF">Femenino</label>
+        </article>
+  
+        <article>
+          <br><label for="intereses">Intereses</label><br>
+          <input type="checkbox" id="musica" name="intereses" value="Música">
+          <label for="intereses">Música</label>
+          <input type="checkbox" id="fotografia" name="intereses" value="Fotografía">
+          <label for="intereses">Fotografía</label>
+          <input type="checkbox" id="arte" name="intereses" value="Arte">
+          <label for="intereses">Arte</label>
+        </article>
+  
+        <article>
+          <br><label for="pais">País</label><br>
+          <input type="text" id="pais" name="pais" list="paises">
+          <datalist id="paises">
+            <option value="Argentina">
+            <option value="Brasil">
+            <option value="Chile">
+            <option value="Colombia">
+            <option value="Ecuador">
+            <option value="México">
+          </datalist>
+        </article>
+  
+        <article>
+          <br><label for="sitio">Sitio web personal</label><br>
+          <input type="url" id="sitio" name="sitio" placeholder="https://ejemplo.com">
+        </article>
+      </section>
+
+      <section>
+        <h2>Otros campos</h2>
+        <article>
+          <label for="foto">Foto de perfil</label><br>
+          <input type="file" id="foto" name="foto" accept="image/*">
+        </article>
+  
+        <article>
+          <br><label for="color">Color favorito</label><br>
+          <input type="color" id="color" name="color">
+        </article>
+  
+        <article>
+          <br><label for="experiencia">Nivel de experiencia</label><br>
+          <input type="range" id="experiencia" name="experiencia" min="1" max="10">
+        </article>
+      </section>
+
+      <section>
+        <article>
+          <button type="submit">Enviar</button>
+          <button type="reset">Limpiar</button>
+        </article>
+      </section>
+
+    </form>
+  </main>
+
+</body>
+</html>
