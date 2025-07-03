@@ -71,7 +71,8 @@ Crear una carpeta llamada sistema-encuestas con estos archivos:
 - Recomendarías el servicio (radio sí/no)
 - Comentarios (textarea)
 - Email para seguimiento (email, opcional)
-- Cada formulario debe tener:
+  
+### Cada formulario debe tener:
 - Validación HTML apropiada
 - Placeholders informativos
 - Labels asociados correctamente
