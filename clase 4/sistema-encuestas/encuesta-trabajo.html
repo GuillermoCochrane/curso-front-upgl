@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encuesta de trabajo</title>
+  <link rel="icon" type="image/png" href="../assets/img/icon.png">
+</head>
+<!-- 
+  ## **Actividad 2**: Sistema de encuestas
+### encuesta-trabajo.html:
+- Empresa actual (text)
+- Salario esperado (number con min/max)
+- Años de experiencia (range slider)
+- Fecha disponible para empezar (date)
+- Horario preferido (time inputs para inicio y fin)
+- CV (file upload, solo PDF)
+- Sitio web profesional (url)
+
+### Cada formulario debe tener:
+- Validación HTML apropiada
+- Placeholders informativos
+- Labels asociados correctamente
+- Botones de envío y reset
+
+### Características avanzadas:
+- Usar fieldset y legend para agrupar campos relacionados
+- Implementar datalists para campos con sugerencias
+- Añadir campos con validación custom usando pattern
+- Usar autofocus en el primer campo de cada formulario
+
+-->
+<body>
+  <header>
+    <h1>Encuesta de trabajo</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="encuesta-personal.html">Encuesta personal</a>
+      <a href="encuesta-trabajo.html">Encuesta de trabajo</a>
+      <a href="encuesta-satisfaccion.html">Encuesta de satisfacción</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Encuesta de trabajo</h2>
+    <form action="#" method="POST">
+      <fieldset>
+        <legend>Información básica</legend>
+        <label for="Empresa">Empresa actual:</label><br>
+        <input type="text" id="Empresa" name="Empresa" required placeholder="Globant" list="Empresas" autofocus><br>
+        <datalist id="Empresas">
+          <option value="Globant">
+          <option value="Mercado Libre">
+          <option value="Google">
+          <option value="Facebook">
+          <option value="Amazon">
+        </datalist>
+        <label for="Salario">Salario esperado:</label><br>
+        <input type="number" id="Salario" name="Salario" required placeholder="700000" min="500000" max="1500000"><br>
+        <label for="Años">Años de experiencia: <span id="valorAños">5</span></label><br>
+        <!-- Bonus: cheat con IA  -->
+        <input type="range" id="Años" name="Años" required min="1" max="10" value="5" oninput="valorAños.innerText = this.value" ><br>
+        <label for="Fecha">Fecha disponible para empezar:</label><br>
+        <input type="date" id="Fecha" name="Fecha" required><br>
+        <label for="Horario">Horario preferido:</label><br>
+        <div>
+          <label for="Horario-inicio">Horario de inicio:</label><br>
+          <input type="time" id="Horario-inicio" name="Horario-inicio" required><br>
+          <label for="Horario-fin">Horario de fin:</label><br>
+          <input type="time" id="Horario-fin" name="Horario-fin" required><br>
+        </div>
+        <label for="CV">CV:</label><br>
+        <input type="file" id="CV" name="CV" accept="application/pdf" required><br>
+        <label for="Sitio">Sitio web profesional:</label><br>
+        <input type="url" id="Sitio" name="Sitio" required placeholder="https://www.globant.com"><br>
+      </fieldset>
+      <div style="margin-top: 1em;">
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
