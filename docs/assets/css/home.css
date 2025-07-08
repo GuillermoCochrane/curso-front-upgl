@@ -28,6 +28,10 @@
   aspect-ratio: 16/9;
 }
 
+.sections-container section h2.main {
+  text-align: center;
+}
+
 @media (min-width: 1200px) {
   .sections-container section article {
     flex-direction: row;
