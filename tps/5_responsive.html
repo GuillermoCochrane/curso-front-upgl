@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+</head>
+<body>
+  <!--  📱 Diseño Responsive + UI Pulida
+📐 Layout adaptable con media queries-->
+<style>
+    .responsive-box {
+    background: teal;
+    color: white;
+    padding: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    }
+
+    /* Teléfonos */
+    @media (max-width: 600px) {
+    .responsive-box {
+        background: orange;
+        font-size: 1rem;
+    }
+    }
+
+    /* Tablets */
+    @media (min-width: 601px) and (max-width: 1024px) {
+    .responsive-box {
+        background: royalblue;
+    }
+    }
+</style>
+
+<div class="responsive-box">
+  Soy un bloque responsive
+</div>
+</body>
+</html>
