@@ -64,15 +64,18 @@ header section nav{
 header section nav ul {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   margin: auto;
-  gap: 1.5em;
+  column-gap: 1.5em;
+  row-gap: .5em;
   list-style: none;
   padding: 0;
 }
 
 header nav ul li {
-  margin: auto;
+  flex-grow: .25;
+  min-width: 25%;
 }
 
 footer {
@@ -191,6 +194,11 @@ main {
   header section h1 {
     font-size: 1.5em;
     margin-block: .5em;
+  }
+
+  header nav ul li {
+    flex-grow: .15;
+    min-width: 15%;
   }
 
   main{
