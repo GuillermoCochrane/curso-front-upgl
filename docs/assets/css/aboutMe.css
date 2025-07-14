@@ -1,5 +1,6 @@
 
 .about-card {
+  min-width: 310px;
   width: 50%;
   margin: auto;
 }
@@ -7,15 +8,17 @@
 .about-card h2{
   text-align: center;
   font-size: 2em;
+  margin-block: 0.5em;
 }
 
 .about-card img {
   display: block;
-  width: 300px;
-  height: 300px;
+  width: 275px;
+  height: 275px;
   object-fit: cover;
   border-radius: 50%;
-  margin: auto;
+  margin-inline: auto;
+  margin-bottom: 3em;
   box-shadow:0 0 10px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -37,6 +40,6 @@
 
 .about-card ul li::marker {
     margin-right: 1px; 
-    color: red; 
+    color: darkblue; 
     font-size: 1.5em; 
 }
