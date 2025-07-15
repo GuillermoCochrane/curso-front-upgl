@@ -1,33 +1,37 @@
 /* layout.css: estructura de página (header, footer, main, sidebar) */
 
 header {
-  height: 15vh;
+  min-height: 95px;
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   text-align: center;
   margin-inline: auto;
   margin-block: 0;
+  position: fixed;
+  box-shadow: 0 0 5px 5px rgba(120, 120, 120, 0.2 );
+}
+
+header .top-header-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding-inline: auto;
   padding-block:  .5em ;
-  border-bottom: 1px solid #ccc;
 }
 
-header figure {
+header .top-header-container figure {
   margin: 0;
   width: 10%;
 }
 
-header figure img {
+header .top-header-container figure img {
   width: 70px;
   margin: 0;
 }
 
-header figure button {
+header .top-header-container figure button {
   background: none;
   border: none;
   font-weight: bold;
@@ -35,14 +39,14 @@ header figure button {
   font-size: 25px;
 }
 
-header section {
+header .top-header-container section {
   text-align: center;
   margin: auto;
   padding: 0;
   width: 75%;
 }
 
-header section h1 {
+header .top-header-container section h1 {
   margin-inline: auto;
   margin-block: .2em;
   padding: 0;
@@ -50,18 +54,20 @@ header section h1 {
   width: 100%;
 }
 
-header section p {
+header .top-header-container section p {
   margin: 0.25em 0 1em 0;
   font-size: .9em;
   font-style: italic;
 }
 
-header section nav{
+header nav{
   display: none;
   font-size: .7em;
+  margin-bottom: .5em;
+  background-color: #fff;
 }
 
-header section nav ul {
+header nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -78,13 +84,15 @@ header nav ul li {
   min-width: 25%;
 }
 
+header nav ul li:last-child {
+  text-align: right;
+}
+
 footer {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
   padding-block: .5em;
   height: 10vh;
   margin: 0;
@@ -119,6 +127,7 @@ footer nav ul li {
 main {
   display: flex;
   flex-direction: column;
+  margin-top: 95px;
 }
 
 .sidebar {
@@ -129,6 +138,7 @@ main {
   border-right: 1px solid #ccc;
   margin: 0;
   flex-shrink: 0;
+  margin-top: 1em;
 }
 
 .sidebar h3 {
@@ -167,33 +177,36 @@ main {
 @media (min-width: 1200px) {
 
   header {
+    min-height: unset;
     height: 23vh;
-    max-height: 120px;
+    max-height: 125px;
+    position: static;
   }
 
-  header figure {
-    width: 20%;
+  header .top-header-container figure {
+    width: 10%;
   }
 
-  header figure img {
-    width: 100px;
+  header .top-header-container figure img {
+    width: 80px;
   }
 
-  header figure button {
+  header .top-header-container figure button {
     font-size: 35px;
   }
 
-  header section nav {
-    display: block;
-  }
-
-  header section {
+  header .top-header-container section {
     width: 100%;
   }
 
-  header section h1 {
+  header .top-header-container section h1 {
     font-size: 1.5em;
     margin-block: .5em;
+  }
+
+  header nav {
+    display: block;
+    margin-bottom: 1em;
   }
 
   header nav ul li {
@@ -201,15 +214,21 @@ main {
     min-width: 15%;
   }
 
+  header nav ul li:last-child {
+  text-align: center;
+}
+
   main{
     flex-direction: row;
     min-height: 72vh;
+    margin-top: unset;
   }
 
   .sidebar {
     display: block;
     width: 20%;
     padding: 0.5rem;
+    margin-top: unset;
   }
 
   .sections-container {
