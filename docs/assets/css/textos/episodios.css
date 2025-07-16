@@ -57,6 +57,13 @@ details[open] {
   margin-top: 1em;
 }
 
+nav.episodio-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 @media (min-width: 1200px) {
   .sections-container img {
     height: 390px;
