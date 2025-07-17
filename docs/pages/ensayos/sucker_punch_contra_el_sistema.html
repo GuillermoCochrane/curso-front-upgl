@@ -14,16 +14,16 @@
   <meta name="keywords" content="Sucker Punch, Matrix, Westworld, crítica, rebelión, simulacro, opresión, Zack Snyder">
 
   <!-- Íconos y favicon (centralizados en la raíz del sitio) -->
-  <link rel="icon" href="../../assets/images/labiconBF.png" type="image/png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/labiconBF.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/labiconBF.png">
-  <link rel="shortcut icon" href="../../assets/images/labiconBF.png" type="image/png">
+  <link rel="icon" href="../../assets/images/labiconBF.webp" type="image/webp">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/labiconBF.webp">
+  <link rel="icon" type="image/webp" sizes="32x32" href="../../assets/images/labiconBF.webp">
+  <link rel="shortcut icon" href="../../assets/images/labiconBF.webp" type="image/webp">
 
   <!-- Open Graph para compartir en redes -->
   <meta property="og:type" content="article">
   <meta property="og:title" content="Sucker Punch y la rebelión simbólica – Ensayo">
   <meta property="og:description" content="Ensayo sobre la película Sucker Punch como crítica a la simulación de la rebelión y la opresión disfrazada de liberación.">
-  <meta property="og:image" content="../../assets/images/labiconBF.png">
+  <meta property="og:image" content="../../assets/images/labiconBF.webp">
   <meta property="og:image:alt" content="Logo de Despertar en el laberinto, un análisis filosófico de Westworld">
   <meta property="og:url" content="https://guillermocochrane.github.io/curso-front-upgl/episodios/episodio-01/ensayos/sucker_punch_contra_el_sistema.html">
   <meta property="og:site_name" content="Despertar en el laberinto">
@@ -32,7 +32,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sucker Punch y la rebelión simbólica – Ensayo">
   <meta name="twitter:description" content="Ensayo sobre la película Sucker Punch como crítica a la simulación de la rebelión y la opresión disfrazada de liberación.">
-  <meta name="twitter:image" content="../../assets/images/labiconBF.png"> 
+  <meta name="twitter:image" content="../../assets/images/labiconBF.webp"> 
 </head>
 <body>
   <header>
@@ -44,7 +44,12 @@
         <h1><a href="../../index.html">Despertar en el laberinto</a></h1>
         <p><em>Donde las series no se miran: se decodifican</em></p>
       </section>
-      <figure>
+      <figure class="button-container">
+        <aside class="theme-switcher">
+          <label for="theme-switcher" id="light-mode">🌞</label>
+          <label for="theme-switcher" id="dark-mode" class="unseen">🌙</label>
+          <input type="checkbox" id="theme-switcher" name="theme-switcher">
+        </aside>
         <button id="menu-toggle">
           <span id="menu-open-icon">
             ☰
@@ -64,6 +69,19 @@
         <li><a href="../sobre-mi.html">Sobre el equipo</a></li>
       </ul>
     </nav>
+    <aside class="sidebar" id="indexbar">
+      <h3>🧭 Índice del ensayo</h3>
+      <ul>
+        <li><a href="#intro">Introducción</a></li>
+        <li><a href="#capas">Capas de realidad</a></li>
+        <li><a href="#control">Control y rebelión como simulacro</a></li>
+        <li><a href="#estetica">El fan service como trampa</a></li>
+        <li><a href="#plottwist">¿Quien es realmente la protagonista?</a></li>
+        <li><a href="#silencio">El silencio como lenguaje</a></li>
+        <li><a href="#herencia">Cruces con Westworld y Matrix</a></li>
+        <li><a href="#comentario">Reflexión personal</a></li>
+      </ul>
+    </aside>
   </header>
   <main>
     <aside class="sidebar" id="sidebar">

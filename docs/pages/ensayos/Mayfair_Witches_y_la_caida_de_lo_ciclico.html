@@ -14,16 +14,16 @@
   <meta name="keywords" content="matriarcado, religión, poder, brujas, deseo, dogma, historia, cultura pop, The Witcher, El Código Da Vinci, Mayfair Witches">
 
   <!-- Íconos y favicon (centralizados en la raíz del sitio) -->
-  <link rel="icon" href="../../assets/images/labiconBF.png" type="image/png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/labiconBF.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/labiconBF.png">
-  <link rel="shortcut icon" href="../../assets/images/labiconBF.png" type="image/png">
+  <link rel="icon" href="../../assets/images/labiconBF.webp" type="image/webp">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/labiconBF.webp">
+  <link rel="icon" type="image/webp" sizes="32x32" href="../../assets/images/labiconBF.webp">
+  <link rel="shortcut icon" href="../../assets/images/labiconBF.webp" type="image/webp">
 
   <!-- Open Graph para compartir en redes -->
   <meta property="og:type" content="article">
   <meta property="og:title" content="Mayfair Witches: cómo el saber se vuelve un peligro, y la caída de lo cíclico: del deseo al dogma">
   <meta property="og:description" content="Ensayo sobre la transición del politeísmo al monoteísmo, la represión del matriarcado, y la religión como herramienta de poder. Referencias a Mayfair Witches, The Witch y El Código Da Vinci.">
-  <meta property="og:image" content="../../assets/images/labiconBF.png">
+  <meta property="og:image" content="../../assets/images/labiconBF.webp">
   <meta property="og:image:alt" content="Logo de Despertar en el laberinto, un análisis filosófico de Westworld">
   <meta property="og:url" content="https://guillermocochrane.github.io/curso-front-upgl/episodios/episodio-01/ensayos/ensayo_deseo_dogma.html">
   <meta property="og:site_name" content="Despertar en el laberinto">
@@ -32,7 +32,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Mayfair Witches: cómo el saber se vuelve un peligro, y la caída de lo cíclico: del deseo al dogma">
   <meta name="twitter:description" content="Ensayo sobre la transición del politeísmo al monoteísmo, la represión del matriarcado, y la religión como herramienta de poder. Referencias a Mayfair Witches, The Witch y El Código Da Vinci.">
-  <meta name="twitter:image" content="../../assets/images/labiconBF.png"> 
+  <meta name="twitter:image" content="../../assets/images/labiconBF.webp"> 
 </head>
 <body>
   <header>
@@ -44,7 +44,12 @@
         <h1><a href="../../index.html">Despertar en el laberinto</a></h1>
         <p><em>Donde las series no se miran: se decodifican</em></p>
       </section>
-      <figure>
+      <figure class="button-container">
+        <aside class="theme-switcher">
+          <label for="theme-switcher" id="light-mode">🌞</label>
+          <label for="theme-switcher" id="dark-mode" class="unseen">🌙</label>
+          <input type="checkbox" id="theme-switcher" name="theme-switcher">
+        </aside>
         <button id="menu-toggle">
           <span id="menu-open-icon">
             ☰
@@ -64,6 +69,16 @@
         <li><a href="../sobre-mi.html">Sobre el equipo</a></li>
       </ul>
     </nav>
+    <aside class="sidebar" id="indexbar">
+      <h3>🧭 Índice del ensayo</h3>
+      <ul>
+        <li><a href="#introduccion">Las brujas y el mito perdido</a></li>
+        <li><a href="#transicion">Del culto a lo cíclico al miedo a lo eterno</a></li>
+        <li><a href="#matriarcado">El matriarcado enterrado</a></li>
+        <li><a href="#saber">El conocimiento como amenaza</a></li>
+        <li><a href="#sintesis">Síntesis final</a></li>
+      </ul>
+    </aside>
   </header>
 
   <main>
@@ -241,7 +256,7 @@
         <blockquote>
           <p><em>No fuimos demonios. Fuimos memorias incómodas.<br>
           No fuimos locura. Fuimos voz sin permiso.<br>
-          No fuimos datos. Fuimos deseo.</em></p>
+          No fuimos lujuria. Fuimos deseo.</em></p>
         </blockquote>
       </section>
 
