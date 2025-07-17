@@ -43,3 +43,10 @@
     color: darkblue; 
     font-size: 1.5em; 
 }
+
+@media (min-width: 1200px)  {
+  .about-card {
+    width: 70%;
+    max-width: 600px;
+  }
+}
