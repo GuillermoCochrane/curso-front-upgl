@@ -141,6 +141,11 @@ main {
   margin-top: 1em;
 }
 
+.sidebar#indexbar {
+  padding-block: 0;
+  padding-top: .5em;
+}
+
 .sidebar h3 {
   margin-top: 0;
 }
@@ -229,6 +234,10 @@ main {
     width: 20%;
     padding: 0.5rem;
     margin-top: unset;
+  }
+
+  .sidebar#indexbar {
+    display: none;
   }
 
   .sections-container {
