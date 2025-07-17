@@ -6,7 +6,20 @@ window.addEventListener("load" , () => {
   const menu = document.querySelector("#menu");
   const menuOpenIcon = document.querySelector("#menu-open-icon");
   const menuCloseIcon = document.querySelector("#menu-close-icon");
+  const lightMode = document.querySelector("#light-mode");
+  const darkMode = document.querySelector("#dark-mode");
+  const themeSwitcher = document.querySelector("#theme-switcher");
 
+  themeSwitcher?.addEventListener("change", () => {
+    if (themeSwitcher.checked) {
+      lightMode.classList.add("unseen");
+      darkMode.classList.remove("unseen");
+    } else {
+      darkMode.classList.add("unseen");
+      lightMode.classList.remove("unseen");
+    }
+  });
+  
   toggleBtn?.addEventListener("click", () => {
 
     menuOpenIcon?.classList.toggle("unseen");
