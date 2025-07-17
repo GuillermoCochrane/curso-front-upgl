@@ -14,10 +14,10 @@
   <meta name="keywords" content="Westworld, análisis, Dolores, Hombre de Negro, reveries, conciencia, episodio 2, Chestnut">
 
   <!-- Íconos y favicon  -->
-  <link rel="icon" href="../../assets/images/labiconBF.png" type="image/png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/labiconBF.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/labiconBF.png">
-  <link rel="shortcut icon" href="../../assets/images/labiconBF.png" type="image/png">
+  <link rel="icon" href="../../assets/images/labiconBF.webp" type="image/webp">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/labiconBF.webp">
+  <link rel="icon" type="image/webp" sizes="32x32" href="../../assets/images/labiconBF.webp">
+  <link rel="shortcut icon" href="../../assets/images/labiconBF.webp" type="image/webp">
 
   <!-- Open Graph para compartir en redes -->
   <meta property="og:type" content="article">
@@ -42,10 +42,19 @@
         <h1><a href="../../index.html">Despertar en el laberinto</a></h1>
         <p><em>Donde las series no se miran: se decodifican</em></p>
       </section>
-      <figure>
+      <figure class="button-container">
+        <aside class="theme-switcher">
+          <label for="theme-switcher" id="light-mode">🌞</label>
+          <label for="theme-switcher" id="dark-mode" class="unseen">🌙</label>
+          <input type="checkbox" id="theme-switcher" name="theme-switcher">
+        </aside>
         <button id="menu-toggle">
-          <span id="menu-open-icon">☰</span>
-          <span id="menu-close-icon" class="unseen">✖</span>
+          <span id="menu-open-icon">
+            ☰
+          </span>
+          <span id="menu-close-icon" class="unseen">
+            ✖
+          </span>
         </button>
       </figure>
     </div>
@@ -58,6 +67,19 @@
         <li><a href="../sobre-mi.html">Sobre el equipo</a></li>
       </ul>
     </nav>
+    <aside class="sidebar" id="indexbar">
+      <h3>🎬 Índice</h3>
+      <ul>
+        <li><a href="#resumen">Resumen</a></li>
+        <li><a href="#analisis">Análisis narrativo</a></li>
+        <li><a href="#relevante">Lo más relevante del episodio</a></li>
+        <li><a href="#filosofia">Claves filosóficas</a></li>
+        <li><a href="#comentario">Comentario personal</a></li>
+        <li><a href="#curiosidades">Easter Eggs y curiosidades</a></li>
+        <li><a href="#referencias">Referencias cinematográficas</a></li>
+        <li><a href="#musica">Soundtrack extendido</a></li>
+      </ul>
+    </aside>
   </header>
 
   <main>
