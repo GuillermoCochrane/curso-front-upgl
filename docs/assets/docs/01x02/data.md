@@ -24,9 +24,9 @@
 
 2. Debido a que se llevará a cabo un debate presidencial el día del lanzamiento, HBO decidió que, independientemente de la transmisión regular del episodio, lo lanzarán 3 días antes por sorpresa, en sus servicios de transmisión.
 
-3. El cinturón de pistola de Clifton Collins Jr. es el mismo que usó su abuelo en la vida real, Pedro González González, como parte de su disfraz de Río Bravo (1959) .
+3. El cinturón de pistola de Clifton Collins Jr. es el mismo que usó su abuelo en la vida real, Pedro González González, como parte de su vestuario en la película Río Bravo (1959) .
 
-4. Al principio, cuando William se viste para su personaje, puede elegir entre un sombrero de vaquero blanco o negro. Este es un tema recurrente que representa el bien contra el mal. Por ejemplo, "El Hombre de Negro". El mismo tema se usó en la serie de ABC "Lost". En el episodio 1, mientras Teddy aparece "llegando" a Sweetwater, uno de los invitados sentado delante de él habla de "vestirse con un sombrero negro", es decir, de adoptar una personalidad malvada en el parque.
+4. Al principio, cuando William se viste para su personaje, puede elegir entre un sombrero de vaquero blanco o negro. Este es un tema recurrente que representa el bien contra el mal. Por ejemplo, "El Hombre de Negro". El mismo tema se usó en la serie de ABC "Lost". En el episodio 1, mientras Teddy aparece "llegando" a Sweetwater, uno de los invitados sentado delante de él habla de "vestirse con un sombrero negro", es decir, de asumir un rol malvado en el parque.
 
 5. Jimmi Simpson , Clifton Collins Jr. y Ben Barnes se unen al elenco.
 
@@ -37,7 +37,7 @@
 
 2. El único episodio de la primera temporada en el que Dolores y Maeve comparten una escena juntas, y no es hasta Reunion (T2 E2) que vuelven a compartir una escena.
 
-3. Anticipo de lo que ocurrirá más adelante en la temporada 1: cuando Theresa está hablando con Bernard en la cama, él dice que los anfitriones hablan entre sí para practicar, y ella le pregunta si eso es lo que está haciendo ahora.
+3. Anticipo de lo que ocurrirá más adelante en la temporada 1: cuando Theresa está hablando con Bernard en la cama, él dice que los anfitriones conversan entre ellos para practicar, y ella le pregunta si eso es lo que está haciendo ahora.
 
 ## References
 1. Westworld (1973)
