@@ -2,14 +2,16 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   padding: 40px;
-}
+} /* estilos del body */
+
 input, select, button {
   padding: 10px;
   margin: 5px;
   font-size: 16px;
-}
+} /* estilos de los inputs, selects y buttons */
+
 #resultado {
   margin-top: 20px;
   font-size: 20px;
   font-weight: bold;
-}
+} /* estilos del div que muestra el resultado */
