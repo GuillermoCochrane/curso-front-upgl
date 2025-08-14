@@ -3,38 +3,43 @@
   <head>
     <meta charset="UTF-8">
     <title>Calculadora Visual</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css"> <!-- estilos para el documento -->
     <link rel="icon" type="image/png" href="../../../assets/img/icon.png">
   </head>
   <body>
 
     <div class="calculadora">
-      <div class="display" id="display">0</div>
+      <div class="display" id="display">0</div> <!-- div para mostrar el resultado -->
       <div class="botones">
+        <!-- primer fila de botones: de 7 a 9 y operador "/" -->
         <button onclick="presionar('7')">7</button>
         <button onclick="presionar('8')">8</button>
         <button onclick="presionar('9')">9</button>
         <button class="operador" onclick="presionar('/')">/</button>
 
+        <!-- segunda fila de botones: de 4 a 6 y operador "*" -->
         <button onclick="presionar('4')">4</button>
         <button onclick="presionar('5')">5</button>
         <button onclick="presionar('6')">6</button>
-        <button class="operador" onclick="presionar('*')">*</button>
+        <button class="operador" onclick="presionar('*')">x</button>
 
+        <!-- tercera fila de botones: de 1 a 3 y operador "-" -->
         <button onclick="presionar('1')">1</button>
         <button onclick="presionar('2')">2</button>
         <button onclick="presionar('3')">3</button>
         <button class="operador" onclick="presionar('-')">-</button>
 
+        <!-- cuarta fila de botones: de 0 y "." y operador "=" y operador "+" -->
         <button onclick="presionar('0')">0</button>
         <button onclick="presionar('.')">.</button>
         <button class="igual" onclick="calcular()">=</button>
         <button class="operador" onclick="presionar('+')">+</button>
 
+        <!-- quinta fila de botones: limpiar -->
         <button class="limpiar" onclick="borrarTodo()" style="grid-column: span 4;">C</button>
       </div>
     </div>
 
   </body>
-  <script src="./script.js"></script>
+  <script src="./script.js"></script> <!-- script para ejecutar la función calcular -->
 </html>
