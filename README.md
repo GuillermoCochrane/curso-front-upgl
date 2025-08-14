@@ -31,4 +31,5 @@ Página review del 01 x 01 de WW del blog
    - [Ejercicios Clase 5](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%205)
   
 - Clase 6: [Repaso de CSS y Cheatsheet](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-6.php)
+    - [Ejercicios Clase 6](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%206)
 --- 
