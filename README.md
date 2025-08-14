@@ -32,4 +32,7 @@ Página review del 01 x 01 de WW del blog
   
 - Clase 6: [Repaso de CSS y Cheatsheet](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-6.php)
     - [Ejercicios Clase 6](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%206)
+
+- Clase 7: [Bootstrap y CSS Flexbox](https://qrsurcba.online/landing_cursos/pages/clases-front/bloque_2/clase-1.php)
+    - [Ejercicios Clase 7](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%209)
 --- 
