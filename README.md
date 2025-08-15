@@ -1,11 +1,13 @@
 # Curso  de programación Front End de UPGL
 
+---
+
 ## Ejercicios del Cursos de progrmación Front End de UPGL
 
 Este repositorio contiene los ejercicios de los cursos de programación Front End de la Universidad Popular General Levalle. En cada directorio se encuentra la ejercictacion realizada en cada clase, sumando a la teoría de cada tema, cuando corresponda. A medida que el curso avanza, se agregaran carpetas con cada una de las clases y la tematica vista. También se irá agregando un listado de los temas, ya que cada uno de ellos puede tratrase en más de una clase.
-git reset --mixed HEAD~1
-Página review del 01 x 01 de WW del blog
+
 ---
+
 ## Temas:
 
 1. Primer Bloque: HTML y CSS
@@ -15,27 +17,43 @@ Página review del 01 x 01 de WW del blog
 ---
 ## Clases:
 
-- Clase 1: [Introducción a la Web y HTML Básico](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-1.php)
+### **Clase 1**: 
+   - [Introducción a la Web y HTML Básico](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-1.php)
+   - [Teoría alternativa](https://upgl.vercel.app/courses/Frontend/class/1)
    - [Ejercicio Clase 1](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%201)
 
-- Clase 2: [Estructura HTML, Enlaces y Formularios](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-2.php)
+### **Clase 2**: 
+   - [Estructura HTML, Enlaces y Formularios](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-2.php)
+   - [Teoría alternativa](https://upgl.vercel.app/courses/Frontend/class/2)
    - [Ejercicios Clase 2](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%202)
   
-- Clase 3: [Tablas, Imágenes y Semántica HTML](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-3.php)
+### **Clase 3**: 
+   - [Tablas, Imágenes y Semántica HTML](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-3.php)
+   - [Teoría alternativa](https://upgl.vercel.app/courses/Frontend/class/3)
    - [Ejercicios Clase 3](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%203)
 
-- Clase 4: [Semántica HTML y tipos de Input](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-4.php)
+### **Clase 4**: 
+   - [Semántica HTML y tipos de Input](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-4.php)
+   - [Teoría alternativa](https://upgl.vercel.app/courses/Frontend/class/4)
    - [Ejercicios Clase 4](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%204)
 
-- Clase 5: [Fundamentos CSS](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-5.php)
+### **Clase 5**: 
+   - [Fundamentos CSS](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-5.php)
+   - [Teoría alternativa](https://upgl.vercel.app/courses/Frontend/class/5)
    - [Ejercicios Clase 5](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%205)
   
-- Clase 6: [Repaso de CSS y Cheatsheet](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-6.php)
-    - [Ejercicios Clase 6](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%206)
+### **Clase 6**: 
+   - [Repaso de CSS y Cheatsheet](https://qrsurcba.online/landing_cursos/pages/clases-front/clase-6.php)
+   - [Teoría alternativa](https://upgl.vercel.app/courses/Frontend/class/6)
+   - [Ejercicios Clase 6](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%206)
 
-- Clase 7: [Introducción a JavaScript para Desarrollo Web](https://qrsurcba.online/landing_cursos/pages/clases-front/bloque_2/clase-1.php)
-    - [Ejercicios Clase 7](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%209)
+### **Clase 7**: 
+   - [Introducción a JavaScript para Desarrollo Web](https://qrsurcba.online/landing_cursos/pages/clases-front/bloque_2/clase-1.php)
+   - [Teoría alternativa](https://upgl.vercel.app/courses/Frontend/class/7)
+   - [Ejercicios Clase 7](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%209)
   
-- Clase 8: [Tipos de Datos y Estructuras en JavaScript](https://qrsurcba.online/landing_cursos/pages/clases-front/bloque_2/clase-2.php)
-    - [Ejercicios Clase 8](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%2010)
+### **Clase 8**: 
+  - [Tipos de Datos y Estructuras en JavaScript](https://qrsurcba.online/landing_cursos/pages/clases-front/bloque_2/clase-2.php)
+  - [Teoría alternativa](https://upgl.vercel.app/courses/Frontend/class/8)
+  - [Ejercicios Clase 8](https://github.com/GuillermoCochrane/curso-front-upgl/tree/main/clase%2010)
 --- 
