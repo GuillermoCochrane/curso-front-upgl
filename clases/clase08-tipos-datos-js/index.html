@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clase Teórica 10</title>
+  <link rel="icon" type="image/png" href="../assets/img/icon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js"></script>
+</head>
+<body>
+  <h1>Hola, mi nombre es: <span>XXXXXXX</span></h1>
+</body>
+<script>
+  let saludo = prompt("Ingerese un saludo");
+  document.write("<h2>"+ saludo +"</h2>");
+  let nombre = prompt("¿Cual es tu nombre?");
+  let apellido = prompt("¿Cual es tu apellido?");
+  console.log("mi nombre es " + nombre );
+  console.log("mi apellido es " + apellido );
+  const $titulo = document.querySelector("h1");
+  console.log("antes de innertext: ");
+  $titulo.innerText = `${nombre} ${apellido}`;
+  $titulo.style.color = "red";
+  $titulo.style.backgroundColor = "yellow";
+
+  /* let nombre = prompt("¿Cual es tu nombre?");
+  let apellido = prompt("¿Cual es tu apellido?");
+  if(nombre || apellido) {
+    document.querySelector("span").innerText = `${nombre} ${apellido}`;
+  } */
+
+const a = {
+  nombre: "Guille",
+  apellido: "Gonzalez" 
+}
+</script>
+</html>

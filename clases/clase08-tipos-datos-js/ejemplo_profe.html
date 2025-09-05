@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso de JavaScript</title>
+</head>
+<body>
+    <input type="color" id="colorFondo"></input>
+    <button id="cambioColor">Hace Click para cambiar el color</button>
+
+<script>
+    //Esto sirve para mostrar un input por pantalla y guardar el valor ingresado
+    let saludo= prompt("¿Como queres saludar a tu usuario?");
+    //Esto sirve para mostrar el saludo
+    document.write("<h1>"+ saludo + "</h1>");
+    //Esto sirve para mostrar un input por pantalla y guardar el valor ingresado
+    let nombre = prompt("¿Como es tu nombre?");
+    //let apellido = prompt("¿Y tu Apellido?");
+    //Esto sirve para mostrar por consola el valor ingresado tanto de nombre como apellido
+    console.log("En nombre ingresado por el usuario es: " + nombre);
+    //console.log("y el apellido: " + apellido);
+    //Esto sirve para mostrar en el html el saludo concatenado al nombre.   
+    //document.querySelector("h1").innerText = saludo + nombre +" "+ apellido;
+    const titulo = document.querySelector("h1");
+    titulo.innerText = saludo + nombre;
+    //document.querySelector("h1").style.color = "red";
+    titulo.style.color = "red";
+    
+</script>
+</body>
+</html>

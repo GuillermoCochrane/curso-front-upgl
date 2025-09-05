@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 1 Clase 2</title>
+  <link rel="icon" type="image/png" href="../assets/img/icon.png">
+</head>
+<!-- 
+        Actividad 1: Formulario de contacto
+
+        Objetivo: Familiarizarse con la estructura y componentes de un formulario en HTML.
+
+        Crear un archivo llamado formulario_contacto.html
+        Dentro del body, crear un formulario con los siguientes campos:
+        Nombre (type="text")
+        Correo electrónico (type="email")
+        Mensaje (type="textarea")
+        Un botón para enviar
+        Agregar etiquetas <label> asociadas a cada campo.
+        Probar el formulario en el navegador.
+        Bonus: Usar el atributo required para validar que los campos no estén vacíos.
+  -->
+<body>
+  <h1 style="margin: auto; text-align: center;">Formulario de contacto</h1>
+  <br>
+  <form action="/" method="get" style="width: 200px; margin: auto;">
+    <hr>
+    <label for="nombre">Nombre:</label>
+    <br>
+    <input type="text" id="nombre" name="nombre" required>
+    <hr>
+    <label for="correo">Correo electrónico:</label>
+    <br>
+    <input type="email" id="correo" name="correo" required>
+    <hr>
+    <label for="mensaje">Mensaje:</label>
+    <br>
+    <textarea id="mensaje" name="mensaje" required></textarea>
+    <hr>
+    <button type="submit">Enviar</button>
+  </form>
+</body>
+</html>

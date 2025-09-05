@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase de Repaso 2 🚀</title>
+    <style>
+        div{
+            border: 2px solid red;
+            margin-bottom: 26px;
+            height: auto;
+        }
+        p{
+            background-color: rgb(178, 194, 240);
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <p >Texto magico de guille</p>
+        <p id="texto_header">Esto es el header </p>
+        <button onclick="cambiarNombre()">Cambiar Nombre Nuevamente</button>
+    </div>
+    <div id="sidebar">
+        <p>Esta es la sidebar</p>
+    </div>
+    <div id="articles">
+        <p>Aqui estaran los articulos</p>
+    </div>
+    <div id="footer">
+        <p>Este es el pie de pagina</p>
+    </div>
+    <script>
+        let titulo = prompt("Ingrese el titulo");
+        let variable = document.getElementById("texto_header");
+        console.log(variable);
+        variable.innerHTML = titulo;
+
+        function cambiarNombre (){
+        let titulo = prompt("Ingrese el titulo");
+         variable.innerHTML = titulo;
+        }
+    </script>
+</body>
+</html>
