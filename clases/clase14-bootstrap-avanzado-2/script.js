@@ -91,6 +91,5 @@ for (const zapatilla of $zapatillas) {
     modalColores.textContent = currentZapatilla.colores;
     modalImg.src = currentZapatilla.url;
     modalImg.alt = currentZapatilla.nombre;
-  }
-  );
+  });
 };
