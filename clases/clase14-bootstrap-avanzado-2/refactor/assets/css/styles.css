@@ -9,3 +9,10 @@
   overflow-y: clip;
   text-overflow: ellipsis;  /* ver como hacer para que queden puntos suspensivos */
 }
+
+.product-card-title{
+  height: 1em;
+  overflow-x: auto;
+  overflow-y: clip;
+  text-overflow: ellipsis;  /* ver como hacer para que queden puntos suspensivos */
+}
