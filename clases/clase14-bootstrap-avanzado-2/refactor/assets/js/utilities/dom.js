@@ -20,3 +20,18 @@ export function createElement(tagName, className = null, content = null, isHTML 
     }
     return element;
 }
+
+export function createImage(url = null , nombre = null, className = null, id = null) {
+    const image = createElement('img', className, null, false, id);
+    image.src = url;
+    image.alt = nombre;
+    return image;
+}
+
+export function createButton(text = null, className = null, id = null, toggle = null, target = null) {
+    const button = createElement('button', className, null, false, id);
+    button.textContent = text;
+    button.setAttribute('data-bs-toggle', toggle);
+    button.setAttribute('data-bs-target', target);
+    return button;
+}
