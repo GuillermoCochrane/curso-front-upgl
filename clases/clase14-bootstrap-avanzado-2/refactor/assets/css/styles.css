@@ -1,0 +1,11 @@
+.product-card {
+  width: 15rem;
+}
+
+.product-card-text{
+  min-height: 4em;
+  max-height: 6em;
+  overflow-x: auto;
+  overflow-y: clip;
+  text-overflow: ellipsis;  /* ver como hacer para que queden puntos suspensivos */
+}
