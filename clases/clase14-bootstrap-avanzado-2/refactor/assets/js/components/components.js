@@ -22,3 +22,21 @@ export function createProductCard(product) {
     $productCard.append($image, $cardInfo);
     return $productCard;
 }
+
+// Crea seccion de productos
+export function createProductSection(section, counter) {
+    const $section = $(`#${section}`);
+    let aux = section
+    if (section === 'new-balance') aux = 'New Balance';
+    const products = filterProduct("marca", aux);
+    /* text-end p-3 bg-danger text-light */
+    const style = counter % 2 !== 0 ? 'text-end p-3 bg-danger text-light' : 'text-start p-3 bg-dark text-light';
+    const $sectionTitle = createElement('h2', style);
+    $sectionTitle.textContent = `${section}`;
+    const $sectionProducts = createElement('div', 'row justify-content-evenly p-4');
+    for (const product of products) {
+        const $productCard = createProductCard(product);
+        $sectionProducts.append($productCard);
+    };
+    $section.append($sectionTitle, $sectionProducts);
+}
