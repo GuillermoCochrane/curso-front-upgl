@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Clase Teórica 15<</title>
+  <link rel="icon" type="image/png" href="../../assets/img/icon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+  <h1 class="text-center bg-dark text-danger p-5 mb-0">
+    Catalogo de zapatillas
+  </h1>
+  <nav class="navbar navbar-expand-lg  bg-danger sticky-top">
+    <div class="container-fluid">
+      <a href="#nike" class="navbar-brand bg-success p-3 rounded">Nike</a>
+      <a href="#adidas" class="navbar-brand bg-warning p-3 rounded">Adidas</a>
+      <a href="#puma" class="navbar-brand bg-success p-3 rounded">Puma</a>
+      <a href="#new-balance" class="navbar-brand bg-warning p-3 rounded">New Balance</a>
+      <a href="#topper" class="navbar-brand bg-success p-3 rounded">Topper</a>
+      <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+  <section id="nike">
+    <h2 class="text-end p-3 bg-success text-light">Nike</h2>
+    <div class="row justify-content-evenly p-4">
+      <article class="card" style="width: 15rem;">
+        <img src="https://nikearprod.vtexassets.com/arquivos/ids/378649-800-800?width=800&height=800&aspect=true" alt="Zapatilla Nike" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Nike Dunk Low</h5>
+          <p class="card-text">El icono del basquetbol de los 80, que se creó para la cancha pero conquistó las calles del mundo.</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="nike-dunk-low">Ver Detalles</button>
+        </div>
+      </article>
+      <article class="card" style="width: 15rem;">
+        <img src="https://nikearprod.vtexassets.com/arquivos/ids/981162-800-800?width=800&height=800&aspect=true" alt="Zapatilla Nike" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Air Jordan 1 Low</h5>
+          <p class="card-text">La unidad encapsulada Air-Sole proporciona amortiguación ligera y un diseño de alta calidad para mayor comodidad.</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="air-jordan-1-low">Ver Detalles</button>
+        </div>
+      </article>
+      <article class="card" style="width: 15rem;">
+        <img src="https://nikearprod.vtexassets.com/arquivos/ids/701565-800-800?width=800&height=800&aspect=true" alt="Zapatilla Nike" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Nike Pegasus 40</h5>
+          <p class="card-text">Con una pisada elástica para cada tipo de carrera, vuelve la sensación ideal para ayudarte a alcanzar tus objetivos</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="nike-pegasus-40">Ver Detalles</button>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="adidas">
+    <h2 class="text-start p-3 bg-warning text-light">Adidas</h2>
+    <div class="row justify-content-evenly p-4">
+      <article class="card" style="width: 15rem;">
+        <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/0f108327ea874f9b93fdaf20014a38e5_9366/Zapatillas_Rivalry_Low_Negro_FZ6327_01_00_standard.jpg" alt="Zapatilla Adidas" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Adidas Rivalry Low</h5>
+          <p class="card-text">Las Rivalry son una leyenda en las canchas, pero ademas representan un modelo versátil para cualquier estilo de vida.</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="adidas-rivalry-low">Ver Detalles</button>
+        </div>
+      </article>
+      <article class="card" style="width: 15rem;">
+        <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/0748ddb37db24595abf4a80b00ee643d_9366/Zapatillas_Gazelle_UNISEX_Negro_BB2507_01_standard.jpg" alt="Zapatilla Adidas" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Adidas Gazelle</h5>
+          <p class="card-text">Las Gazelle nacieron como zapatillas de training versátiles, pero se convertirsieron en un clásico de la moda urbana</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="adidas-gazelle">Ver Detalles</button>
+        </div>
+      </article>
+      <article class="card" style="width: 15rem;">
+        <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/d5c2891dd9c24b56b6d6cdb6bc438f8b_9366/Zapatillas_Forum_84_Low_ADV_Blanco_JP6094_01_00_standard.jpg" alt="Zapatilla Nike" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Adidas Forum 84 Low</h5>
+          <p class="card-text">Desde 1984 su diseño vanguardista fue icónico. Siguen evolucionando al ser reimaginadas para el skate</p>
+          
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="adidas-forum-84-low">Ver Detalles</button>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="puma">
+    <h2 class="text-end p-3 bg-success text-light">Puma</h2>
+    <div class="row justify-content-evenly p-4">
+      <article class="card" style="width: 15rem;">
+        <img src="https://images.puma.com/image/upload/f_auto,q_auto,w_2000,b_rgb:FAFAFA/global/312033/01/sv01/fnd/ARG/fmt/png" alt="Zapatilla Puma" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Puma Pounce Lite</h5>
+          <p class="card-text">Las Pounce Lite te ofrecen comodidad durante todo el día y en cualquier ocasión. Perfectas para tu vida activa, combinan confort y diseño moderno.</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="puma-pounce-lite">Ver Detalles</button>
+        </div>
+      </article>
+      <article class="card" style="width: 15rem;">
+        <img src="https://images.puma.com/image/upload/f_auto,q_auto,w_2000,b_rgb:FAFAFA/global/395205/02/sv01/fnd/ARG/fmt/png" alt="Zapatilla Puma" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Puma Suede XL</h5>
+          <p class="card-text">Esta nueva versión de las Suede se inspira en la herencia de PUMA en el mundo del breakdance y en su influencia en el streetwear moderno, conservando su ADN icónico</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="puma-suede-xl">Ver Detalles</button>
+        </div>
+      </article>
+      <article class="card" style="width: 15rem;">
+        <img src="https://images.puma.com/image/upload/f_auto,q_auto,w_2000,b_rgb:FAFAFA/global/401534/01/sv01/fnd/ARG/fmt/png" alt="Zapatilla Puma" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Puma Speedcat Cuero</h5>
+          <p class="card-text">Las Speedca destacan entre la multitud por su forma inspirada en las zapatillas de carreras y sus líneas elegantes, que le confieren un aspecto rápido y atrevido</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="puma-speedcat-cuero">Ver Detalles</button>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="new-balance">
+    <h2 class="text-start p-3 bg-warning text-light">New Balance</h2>
+    <div class="row justify-content-evenly p-4">
+      <article class="card" style="width: 15rem;">
+        <img src="https://nikearprod.vtexassets.com/arquivos/ids/378649-800-800?width=800&height=800&aspect=true" alt="Zapatilla Nike" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Nike Dunk Low</h5>
+          <p class="card-text">El icono del basquetbol de los 80, que se creó para la cancha pero conquistó las calles del mundo.</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="Nike-Dunk-Low">Ver Detalles</button>
+        </div>
+      </article>
+      <article class="card" style="width: 15rem;">
+        <img src="https://nikearprod.vtexassets.com/arquivos/ids/981162-800-800?width=800&height=800&aspect=true" alt="Zapatilla Nike" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Air Jordan 1 Low</h5>
+          <p class="card-text">La unidad encapsulada Air-Sole proporciona amortiguación ligera y un diseño de alta calidad para mayor comodidad.</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="Nike-Dunk-Low">Ver Detalles</button>
+        </div>
+      </article>
+      <article class="card" style="width: 15rem;">
+        <img src="https://nikearprod.vtexassets.com/arquivos/ids/701565-800-800?width=800&height=800&aspect=true" alt="Zapatilla Nike" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Nike Pegasus 40</h5>
+          <p class="card-text">Con una pisada elástica para cada tipo de carrera, vuelve la sensación ideal para ayudarte a alcanzar tus objetivos</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="Nike-Dunk-Low">Ver Detalles</button>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="topper">
+    <h2 class="text-end p-3 bg-success text-light">Topper</h2>
+    <div class="row justify-content-evenly p-4">
+      <article class="card" style="width: 15rem;">
+        <img src="https://nikearprod.vtexassets.com/arquivos/ids/378649-800-800?width=800&height=800&aspect=true" alt="Zapatilla Nike" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Nike Dunk Low</h5>
+          <p class="card-text">El icono del basquetbol de los 80, que se creó para la cancha pero conquistó las calles del mundo.</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="Nike-Dunk-Low">Ver Detalles</button>
+        </div>
+      </article>
+      <article class="card" style="width: 15rem;">
+        <img src="https://nikearprod.vtexassets.com/arquivos/ids/981162-800-800?width=800&height=800&aspect=true" alt="Zapatilla Nike" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Air Jordan 1 Low</h5>
+          <p class="card-text">La unidad encapsulada Air-Sole proporciona amortiguación ligera y un diseño de alta calidad para mayor comodidad.</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="Nike-Dunk-Low">Ver Detalles</button>
+        </div>
+      </article>
+      <article class="card" style="width: 15rem;">
+        <img src="https://nikearprod.vtexassets.com/arquivos/ids/701565-800-800?width=800&height=800&aspect=true" alt="Zapatilla Nike" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Nike Pegasus 40</h5>
+          <p class="card-text">Con una pisada elástica para cada tipo de carrera, vuelve la sensación ideal para ayudarte a alcanzar tus objetivos</p>
+          <button  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="Nike-Dunk-Low">Ver Detalles</button>
+        </div>
+      </article>
+    </div>
+  </section>
+  <div class="modal fade" id="detallesModal" tabindex="-1" aria-labelledby="detallesModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detallesModalLabel">Detalles de la zapatilla 👟</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar" data-bs-demiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="./default.png" alt="Zapatilla" class="w-50 img-fluid mx-auto d-block" id="modal-img">
+          <p>
+            <strong>Nombre: </strong>
+            <span id="modal-nombre"></span>
+          </p>
+          <p>
+            <strong>Precio: </strong>
+            <span id="modal-precio"></span>
+          </p>
+          <p>
+            <strong>Descripcion: </strong>
+            <span id="modal-descripcion"></span>
+          </p>
+          <p>
+            <strong>Talles Disponibles: </strong>
+            <span id="modal-talles"></span>
+          </p>
+          <p>
+            <strong>Colores: </strong>
+            <span id="modal-colores"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="script.js">
+
+  </script>
+</body>
+</html>
