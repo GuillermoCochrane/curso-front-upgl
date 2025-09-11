@@ -90,10 +90,10 @@ export const zapatillas = [
   {
     id: "puma-speedcat-cuero",
     marca: "Puma",
-    nombre: "Puma Speedcat Cuero",
+    nombre: "Puma Speedcat",
     precio: "$199",
     descripcion:
-      "Las Speedca destacan entre la multitud por su forma inspirada en las zapatillas de carreras y sus líneas elegantes, que le confieren un aspecto rápido y atrevido",
+      "Las Speedcat destacan entre la multitud por su forma inspirada en las zapatillas de carreras y sus líneas elegantes, que le confieren un aspecto rápido y atrevido",
     talles: "36, 37, 38, 43, 45",
     colores: "Blanco, Rojo, Negro",
     url: "https://images.puma.com/image/upload/f_auto,q_auto,w_2000,b_rgb:FAFAFA/global/401534/01/sv01/fnd/ARG/fmt/png",
