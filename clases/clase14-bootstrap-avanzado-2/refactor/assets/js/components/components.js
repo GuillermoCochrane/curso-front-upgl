@@ -1,5 +1,5 @@
-import { $, $$, createElement, createImage, createButton } from '../utilities/dom.js';
-import { filterProduct } from '../utilities/utilities.js';
+import { $, createElement, createImage, createButton } from '../utilities/dom.js';
+import { filterProduct, capitalizeWords } from '../utilities/utilities.js';
 
 // Crea componente de datos del producto
 export function createCardInfo(nombre, descripcion, id) {
@@ -31,8 +31,7 @@ export function createProductSection(section, counter) {
     const products = filterProduct("marca", aux);
     /* text-end p-3 bg-danger text-light */
     const style = counter % 2 !== 0 ? 'text-end p-3 bg-danger text-light' : 'text-start p-3 bg-dark text-light';
-    const $sectionTitle = createElement('h2', style);
-    $sectionTitle.textContent = `${section}`;
+    const $sectionTitle = createElement('h2', style, capitalizeWords(aux));
     const $sectionProducts = createElement('div', 'row justify-content-evenly p-4');
     for (const product of products) {
         const $productCard = createProductCard(product);
