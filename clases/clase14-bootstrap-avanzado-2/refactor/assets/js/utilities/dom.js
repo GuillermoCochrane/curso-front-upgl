@@ -36,3 +36,9 @@ export function createButton(text = null, className = null, id = null, toggle = 
     button.setAttribute('data-zapatilla', id);
     return button;
 }
+
+export function createNavbarLink(text = null, className = null, id = null) {
+    const link = createElement('a', className, text, false);
+    link.setAttribute('href', `#${id}`);
+    return link;
+}
