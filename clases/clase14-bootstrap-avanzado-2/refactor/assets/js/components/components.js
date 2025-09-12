@@ -4,12 +4,9 @@ import { filterProduct, capitalizeWords } from '../utilities/utilities.js';
 // Crea componente de datos del producto
 export function createCardInfo(nombre, descripcion, id) {
     const $cardInfo = createElement('div', 'card-body');
-    const $title = createElement('h5', 'card-title product-card-title');
-    const $text = createElement('p', 'card-text product-card-text');
-    const $button = createButton('Ver Detalles', 'btn btn-dark', 'btn-ver-detalles', 'modal', 'detallesModal');
-    $title.textContent = nombre ? nombre : 'Zapatilla Generica';
-    $text.textContent = descripcion ? descripcion : 'Descripción de la zapatilla';
-    $button.setAttribute('data-zapatilla', id ? id : 'zapatilla-generica');
+    const $title = createElement('h5', 'card-title product-card-title',  nombre ? nombre : 'Zapatilla Generica', false);
+    const $text = createElement('p', 'card-text product-card-text', descripcion ? descripcion : 'Descripción de la zapatilla', false);
+    const $button = createButton('Ver Detalles', 'btn btn-outline-dark', 'btn-ver-detalles', 'modal', 'detallesModal', id ? id : 'zapatilla-generica');
     $cardInfo.append($title, $text, $button);
     return $cardInfo;
 }
@@ -29,7 +26,6 @@ export function createProductSection(section, counter) {
     let aux = section
     if (section === 'new-balance') aux = 'New Balance';
     const products = filterProduct("marca", aux);
-    /* text-end p-3 bg-danger text-light */
     const style = counter % 2 !== 0 ? 'text-end p-3 bg-danger text-light' : 'text-start p-3 bg-dark text-light';
     const $sectionTitle = createElement('h2', style, capitalizeWords(aux));
     const $sectionProducts = createElement('div', 'row justify-content-evenly p-4');
