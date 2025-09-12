@@ -33,5 +33,6 @@ export function createButton(text = null, className = null, id = null, toggle = 
     button.textContent = text;
     button.setAttribute('data-bs-toggle', toggle);
     button.setAttribute('data-bs-target', target);
+    button.setAttribute('data-zapatilla', id);
     return button;
 }
