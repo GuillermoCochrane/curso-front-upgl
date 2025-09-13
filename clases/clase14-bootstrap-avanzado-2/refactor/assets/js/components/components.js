@@ -1,4 +1,4 @@
-import { $, createElement, createImage, createButton } from '../utilities/dom.js';
+import { $, createElement, createImage, createButton, createNavbarLink } from '../utilities/dom.js';
 import { filterProduct, capitalizeWords } from '../utilities/utilities.js';
 
 // Crea componente de datos del producto
@@ -34,4 +34,14 @@ export function createProductSection(section, counter) {
         $sectionProducts.append($productCard);
     };
     $section.append($sectionTitle, $sectionProducts);
+}
+
+// Crea componente de navegacion
+export function createNavbar(sections) {
+    const $navbar = $("#navbar");
+    for (const section of sections) {
+        const $navbarLink = createNavbarLink(capitalizeWords(section), "navbar-brand text-light p-3 rounded", section);
+        $navbar.append($navbarLink);
+    }
+    return $navbar;
 }
