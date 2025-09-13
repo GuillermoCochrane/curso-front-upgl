@@ -1,4 +1,5 @@
 import { createProductSection } from '../components/components.js';
+import { modalHandler } from './modalHandler.js';
 
 function createApp() {
     const sections = ['nike', 'adidas', 'new-balance', 'puma', 'topper'];
@@ -7,6 +8,7 @@ function createApp() {
         counter++;
         createProductSection(section, counter);
     }
+    modalHandler();
 }
 
 
