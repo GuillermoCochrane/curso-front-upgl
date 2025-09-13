@@ -1,4 +1,4 @@
-import { createProductSection } from '../components/components.js';
+import { createProductSection, createNavbar } from '../components/components.js';
 import { modalHandler } from './modalHandler.js';
 
 function createApp() {
@@ -8,8 +8,8 @@ function createApp() {
         counter++;
         createProductSection(section, counter);
     }
+    createNavbar(sections);
     modalHandler();
 }
-
 
 document.addEventListener('DOMContentLoaded', createApp);
