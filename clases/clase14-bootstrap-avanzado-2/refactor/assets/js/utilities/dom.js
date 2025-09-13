@@ -28,12 +28,11 @@ export function createImage(url = null , nombre = null, className = null, id = n
     return image;
 }
 
-export function createButton(text = null, className = null, id = null, toggle = null, target = null) {
-    const button = createElement('button', className, null, false, id);
-    button.textContent = text;
+export function createButton(text = null, className = null, id = null, toggle = null, target = null, dataZapatilla = null) {
+    const button = createElement('button', className, text, false, id);
     button.setAttribute('data-bs-toggle', toggle);
     button.setAttribute('data-bs-target', target);
-    button.setAttribute('data-zapatilla', id);
+    button.setAttribute('data-zapatilla', dataZapatilla);
     return button;
 }
 
