@@ -6,7 +6,7 @@ export function createCardInfo(nombre, descripcion, id) {
     const $cardInfo = createElement('div', 'card-body');
     const $title = createElement('h5', 'card-title product-card-title',  nombre ? nombre : 'Zapatilla Generica', false);
     const $text = createElement('p', 'card-text product-card-text', descripcion ? descripcion : 'Descripción de la zapatilla', false);
-    const $button = createButton('Ver Detalles', 'btn btn-outline-dark', 'btn-ver-detalles', 'modal', 'detallesModal', id ? id : 'zapatilla-generica');
+    const $button = createButton('Ver Detalles', 'btn btn-outline-dark', null, 'modal', '#detallesModal',  id ? id : 'zapatilla-generica');
     $cardInfo.append($title, $text, $button);
     return $cardInfo;
 }
