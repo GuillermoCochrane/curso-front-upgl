@@ -21,7 +21,7 @@
   --steel: rgb(76, 76, 76, 0.5);
   --unknown: rgb(104, 160, 144, 0.5);
 }
-
+/* 
 body::before {
   content: '';
   position: fixed;
@@ -32,7 +32,7 @@ body::before {
   background: rgba(0, 0, 0, 0.3); 
   z-index: -1;
 }
-
+ */
 body {
   background: url('../img/bg.png') center/cover fixed no-repeat;
   min-height: 100vh;
