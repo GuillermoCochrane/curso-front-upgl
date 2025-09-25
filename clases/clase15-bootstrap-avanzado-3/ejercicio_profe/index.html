@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso de Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h1 class="text-center bg-dark text-danger p-5 fs-1 mb-0">Catalogo de Zapatillas</h1>
+    <div class="navbar navbar-expand-lg bg-danger sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand bg-light p-3 rounded" href="#nike">Nike</a>
+            <a class="navbar-brand" href="#adidas">Adidas</a>
+            <a class="navbar-brand bg-light p-3 rounded" href="#topper">Topper</a>
+            <a class="navbar-brand" href="#newbalance">NewBalance</a>
+            <a class="navbar-brand bg-light p-3 rounded" href="#jaguar">Jaguar</a>
+            <button class="navbar-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+    <div id="nike">
+        <h2 class="text-end p-3 bg-success text-light">¡¡Nike!!</h2>
+        <div class="row justify-content-evenly">
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/378649-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">Nike Dunk Low</h5>
+                    <p class="card-text">El icono del basquetbol de los 80, que se creó para la cancha pero conquistó
+                        las calles...</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal" data-zapatilla="nike-dunk-low">Ver Detalles</button>
+                </div>
+            </div>
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/1460993-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">Air Jordan 1 Low SE</h5>
+                    <p class="card-text">Da tu máximo esfuerzo con estos AJ1 de edición especial. ...</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="air-jordan-1-low-se">Ver Detalles</button>
+                </div>
+            </div>
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/1381241-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">Nike Pegasus Trail 5</h5>
+                    <p class="card-text">Despliega tus alas y observa lo que te depara la naturaleza mientras recorres
+                        caminos de tierra con los Peg Trail 5....</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="nike-pegasus-trail-5">Ver Detalles</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="adidas">
+        <h2 class="text-center p-3 bg-success text-light">¡¡Adidas!!</h2>
+        <div class="row justify-content-evenly">
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/378649-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">Adidas Ultraboost</h5>
+                    <p class="card-text">Zapatillas de running con amortiguación superior para máxima comodidad en cada
+                        paso.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="adidas-ultraboost">Ver Detalles</button>
+                </div>
+            </div>
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/1460993-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">Adidas Stan Smith</h5>
+                    <p class="card-text">Clásicas zapatillas blancas con diseño atemporal, perfectas para el día a día.
+                    </p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="adidas-stan-smith">Ver Detalles</button>
+                </div>
+            </div>
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/1381241-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">Adidas NMD</h5>
+                    <p class="card-text">Zapatillas urbanas con tecnología Boost para un estilo moderno y cómodo.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="adidas-nmd">Ver Detalles</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="topper">
+        <h2 class="text-start p-3 bg-warning text-primary">¡¡Topper!!</h2>
+        <div class="row justify-content-evenly">
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/378649-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">Topper Runner</h5>
+                    <p class="card-text">Zapatillas ligeras ideales para corredores diarios con excelente ventilación.
+                    </p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="topper-runner">Ver Detalles</button>
+                </div>
+            </div>
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/1460993-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">Topper Classic</h5>
+                    <p class="card-text">Diseño clásico y versátil para uso cotidiano, con materiales duraderos.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="topper-classic">Ver Detalles</button>
+                </div>
+            </div>
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/1381241-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">Topper Sport</h5>
+                    <p class="card-text">Zapatillas deportivas multifuncionales para actividades al aire libre.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="topper-sport">Ver Detalles</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="newbalance">
+        <h2 class="text-center p-3 bg-primary text-light">¡¡NewBalance!!</h2>
+        <div class="row justify-content-evenly">
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/378649-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">NewBalance 574</h5>
+                    <p class="card-text">Zapatillas icónicas con estilo retro y comodidad para el uso diario.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="newbalance-574">Ver Detalles</button>
+                </div>
+            </div>
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/1460993-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">NewBalance 990</h5>
+                    <p class="card-text">Modelo premium con amortiguación avanzada y diseño elegante.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="newbalance-990">Ver Detalles</button>
+                </div>
+            </div>
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/1381241-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">NewBalance FuelCell</h5>
+                    <p class="card-text">Zapatillas de alto rendimiento para atletas con energía de retorno.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="newbalance-fuelcell">Ver Detalles</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="jaguar">
+        <h2 class="text-end p-3 bg-secondary text-info">¡¡Jaguar!!</h2>
+        <div class="row justify-content-evenly">
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/378649-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">Jaguar Speed</h5>
+                    <p class="card-text">Zapatillas rápidas y ligeras para competiciones de velocidad.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="jaguar-speed">Ver Detalles</button>
+                </div>
+            </div>
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/1460993-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">Jaguar Comfort</h5>
+                    <p class="card-text">Diseñadas para máxima comodidad durante todo el día.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="jaguar-comfort">Ver Detalles</button>
+                </div>
+            </div>
+            <div class="card" style="width: 15rem">
+                <img src="https://nikearprod.vtexassets.com/arquivos/ids/1381241-1200-1200?width=1200&height=1200&aspect=true"
+                    class="card-img-top" alt="Zapatilla Nike">
+                <div class="card-body">
+                    <h5 class="card-title">Jaguar Elite</h5>
+                    <p class="card-text">Zapatillas premium para atletas de élite con tecnología avanzada.</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detallesModal"
+                        data-zapatilla="jaguar-elite">Ver Detalles</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detallesModal" tabindex="-1" aria-labelledby="detallesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detallesModalLabel">Detalles de la Zapatilla👟</h5>
+                    <button class="btn-close" type="button" aria-label="Close" data-bs-demiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <strong>nombre:</strong>
+                        <span id="modal-nombre"></span>
+                    </p>
+                    <p>
+                        <strong>precio:</strong>
+                        <span id="modal-precio"></span>
+                    </p>
+                    <p>
+                        <strong>descripcion:</strong>
+                        <span id="modal-descripcion"></span>
+                    </p>
+                    <p>
+                        <strong>talles disponibles:</strong>
+                        <span id="modal-talles"></span>
+                    </p>
+                    <p>
+                        <strong>colores:</strong>
+                        <span id="modal-colores"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
