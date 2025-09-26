@@ -90,3 +90,21 @@ body {
     flex-shrink: 0;
     margin: 0.25rem;
 }
+
+article.card {
+    transition: all 0.3s ease-in-out;
+    
+    & img {
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:hover{
+        transform: translateY(-5px);
+        transform: scale(1.02);
+        box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.4);
+        
+        & img {
+            transform: scale(1.1) rotate(-5deg);
+        }
+    }
+}
