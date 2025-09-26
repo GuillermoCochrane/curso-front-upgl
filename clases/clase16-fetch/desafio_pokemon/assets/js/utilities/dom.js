@@ -11,19 +11,22 @@ export function $$(selector) {
 }
 
 // Crea elemento DOM con su clase
-export function createElement(tagName, className = null, content = null, isHTML = false, id = null, background = null) {
+export function createElement(tagName, className = null, content = null, isHTML = false, id = null, background = null, solid = false) {
     const element = document.createElement(tagName);
     className && (element.className = className);
     id && (element.id = id);
     if (content !== null) {
         isHTML ? (element.innerHTML = content) : (element.textContent = content);
     }
+    console.log(background);
+    
     if (background) {
         if (  background.length === 1) {
-            element.style.background = `var(--${background[0].type.name})`;
+            const color = solid ? `solid_${background[0].type.name}` : `transparent_${background[0].type.name}`;
+            element.style.background = `var(--${color})`;
         } else {
             // Gradiente lineal entre los colores de los tipos
-            const colores = background.map(colores => `var(--${colores.type.name})`).join(', ');
+            const colores = background.map(colores => `var(--${solid ? "solid":"transparent"}_${colores.type.name})`).join(', ');
             element.style.background = `linear-gradient(145deg, ${colores})`;
         }
     }
