@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Clase Teórica 16<</title>
+  <link rel="icon" type="image/png" href="../assets/img/icon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="m-2">
+  <h1>Clase Teórica 16: Ejemplo Pokemon API</h1>
+  <br>
+  <button 
+      class="btn btn-secondary mr-2" 
+      id="btn-pokemon" 
+      onclick="traerPokemons()"
+      >
+      🤯 Mostrar Pokemons
+  </button>
+  <br>
+  <br>
+  <h2>Listado de Pokemons</h2>
+  <br>
+  <ul class="list-group list-group-flush" id="pokemons">
+    <li class="list-group-item">Loading...</li>
+  </ul>
+</body>
+<script src="pokemon.js"></script>
+
+</html>
