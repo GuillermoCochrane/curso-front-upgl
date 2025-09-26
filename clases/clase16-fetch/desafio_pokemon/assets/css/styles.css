@@ -1,25 +1,44 @@
 :root {
   /* Colores oficiales basados en la paleta de Pokémon */
-  --normal: rgba(168, 168, 120, 0.5);
-  --fire: rgb(240, 128, 48, 0.5);
-  --water: rgb(104, 144, 240, 0.5);
-  --electric: rgb(248, 208, 48, 0.5);
-  --grass: rgb(120, 200, 80, 0.5);
-  --ice: rgb(152, 216, 216, 0.5);
-  --fighting: rgb(192, 48, 48, 0.5);
-  --poison: rgb(160, 64, 160, 0.5);
-  --ground: rgb(236, 192, 104, 0.5);
-  --flying: rgb(168, 144, 240, 0.5);
-  --psychic: rgb(248, 136, 136, 0.5);
-  --bug: rgb(168, 184, 32, 0.5);
-  --rock: rgb(184, 168, 84, 0.5);
-  --ghost: rgb(112, 88, 152, 0.5);
-  --dragon: rgb(112, 48, 248, 0.5);
-  --dark: rgb(112, 88, 72, 0.5);
-  --steel: rgb(184, 184, 208, 0.5);
-  --fairy: rgb(238, 153, 172, 0.5);
-  --steel: rgb(76, 76, 76, 0.5);
-  --unknown: rgb(104, 160, 144, 0.5);
+  --solid_normal: #a8a878;
+  --solid_fire: #f08030;
+  --solid_water: #6890f0;
+  --solid_electric: #f8d030;
+  --solid_grass: #78c850;
+  --solid_ice: #98d8d8;
+  --solid_fighting: #c03030;
+  --solid_poison: #a040a0;
+  --solid_ground: #ecc068;
+  --solid_flying: #a890f0;
+  --solid_psychic: #f88888;
+  --solid_bug: #a8b820;
+  --solid_rock: #b8a854;
+  --solid_ghost: #705898;
+  --solid_dragon: #7030f8;
+  --solid_dark: #705848;
+  --solid_steel: #b8b8d0;
+  --solid_fairy: #ee99ac;
+  /* Colores transparentes basados en la paleta de Pokémon */
+  --transparent_normal: rgba(168, 168, 120, 0.5);
+  --transparent_fire: rgb(240, 128, 48, 0.5);
+  --transparent_water: rgb(104, 144, 240, 0.5);
+  --transparent_electric: rgb(248, 208, 48, 0.5);
+  --transparent_grass: rgb(120, 200, 80, 0.5);
+  --transparent_ice: rgb(152, 216, 216, 0.5);
+  --transparent_fighting: rgb(192, 48, 48, 0.5);
+  --transparent_poison: rgb(160, 64, 160, 0.5);
+  --transparent_ground: rgb(236, 192, 104, 0.5);
+  --transparent_flying: rgb(168, 144, 240, 0.5);
+  --transparent_psychic: rgb(248, 136, 136, 0.5);
+  --transparent_bug: rgb(168, 184, 32, 0.5);
+  --transparent_rock: rgb(184, 168, 84, 0.5);
+  --transparent_ghost: rgb(112, 88, 152, 0.5);
+  --transparent_dragon: rgb(112, 48, 248, 0.5);
+  --transparent_dark: rgb(112, 88, 72, 0.5);
+  --transparent_steel: rgb(184, 184, 208, 0.5);
+  --transparent_fairy: rgb(238, 153, 172, 0.5);
+  --transparent_steel: rgb(76, 76, 76, 0.5);
+  --transparent_unknown: rgb(104, 160, 144, 0.5);
 }
 
 body {
@@ -54,4 +73,20 @@ body {
   overflow-x: auto;
   overflow-y: clip;
   text-overflow: ellipsis;  /* ver como hacer para que queden puntos suspensivos */
+}
+
+.badge {
+    border-radius: 12px;
+    font-size: 0.75rem;
+    text-transform: capitalize;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    min-width: 60px;
+    max-width: 120px;   
+    width: auto;
+    flex-shrink: 0;
+    margin: 0.25rem;
 }
