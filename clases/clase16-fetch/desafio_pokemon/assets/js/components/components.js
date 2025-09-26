@@ -1,5 +1,14 @@
 import { $, createElement, createImage, createButton  } from '../utilities/dom.js';
 
+// Crea componente del header de la tarjeta del Pokemon
+
+export function createCardHeader(id) {
+    const $cardHeader = createElement('header', 'card-header text-center');
+    const $span = createElement('h5', 'text-muted fw-semibold', `#${id}`);
+    $cardHeader.append($span);
+    return $cardHeader;
+}
+
 // Crea componente de datos del Pokemon
 export function createCardInfo(nombre,id) {
     const $cardInfo = createElement('div', 'card-body');
@@ -12,9 +21,10 @@ export function createCardInfo(nombre,id) {
 // Crea componente tarjeta de Pokemon
 export function createProductCard(pokemon) {
     const $productCard = createElement('article', 'card product-card m-3', null, false, null, pokemon.types);
+    const $header = createCardHeader(pokemon.id);
     const $image = createImage(pokemon.sprites ? pokemon.sprites.front_default : './assets/img/default.png', pokemon.name ? pokemon.name : 'Pokemon Génerico', 'card-img-top');
     const $cardInfo = createCardInfo(pokemon.name, pokemon.id);
-    $productCard.append($image, $cardInfo);
+    $productCard.append($header,$image, $cardInfo);
     return $productCard;
 }
 
