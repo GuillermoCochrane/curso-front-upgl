@@ -34,8 +34,8 @@ body::before {
 }
  */
 body {
-  background: url('../img/bg.png') center/cover fixed no-repeat;
-  min-height: 100dvh;
+  background: url('../img/bg.png') no-repeat fixed center/cover;
+  height: 100dvh;
   margin: 0;
   padding: 20px;
   position: relative;
