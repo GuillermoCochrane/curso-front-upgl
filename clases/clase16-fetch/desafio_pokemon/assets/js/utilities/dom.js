@@ -18,8 +18,6 @@ export function createElement(tagName, className = null, content = null, isHTML 
     if (content !== null) {
         isHTML ? (element.innerHTML = content) : (element.textContent = content);
     }
-    console.log(background);
-    
     if (background) {
         if (  background.length === 1) {
             const color = solid ? `solid_${background[0].type.name}` : `transparent_${background[0].type.name}`;

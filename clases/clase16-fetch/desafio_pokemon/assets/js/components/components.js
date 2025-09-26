@@ -23,7 +23,7 @@ export function createCardInfo(nombre, id, tipos) {
     const $cardInfo = createElement('div', 'card-body text-center');
     const $title = createElement('h5', 'card-title product-card-title fw-bold text-capitalize fs-4',  nombre ? nombre : ' Pokemon Generico', false);
     const $typeContainer = createCardTypesBadges(tipos);
-    const $button = createButton('Ver Detalles', 'btn btn-outline-dark', null, 'modal', '#detallesModal',  id ? id : 'pokemon-generico');
+    const $button = createButton('Ver Detalles', 'btn btn-outline-light', null, 'modal', '#detallesModal',  id ? id : 'pokemon-generico');
     $cardInfo.append($title,$typeContainer, $button);
     return $cardInfo;
 }
@@ -31,10 +31,9 @@ export function createCardInfo(nombre, id, tipos) {
 // Crea componente tarjeta de Pokemon
 export function createProductCard(pokemon) {
     const $productCard = createElement('article', 'card product-card m-3', null, false, null, pokemon.types);
-    const $header = createCardHeader(pokemon.id);
     const $image = createImage(pokemon.sprites ? pokemon.sprites.front_default : './assets/img/default.png', pokemon.name ? pokemon.name : 'Pokemon Génerico', 'card-img-top');
     const $cardInfo = createCardInfo(pokemon.name, pokemon.id, pokemon.types);
-    $productCard.append($header,$image, $cardInfo);
+    $productCard.append($image, $cardInfo);
     return $productCard;
 }
 
