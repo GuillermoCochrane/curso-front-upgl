@@ -22,10 +22,12 @@ export function createElement(tagName, className = null, content = null, isHTML 
         if (  background.length === 1) {
             const color = solid ? `solid_${background[0].type.name}` : `transparent_${background[0].type.name}`;
             element.style.background = `var(--${color})`;
+            element.style.setProperty('--card-color', `var(--solid_${background[0].type.name})`);
         } else {
             // Gradiente lineal entre los colores de los tipos
             const colores = background.map(colores => `var(--${solid ? "solid":"transparent"}_${colores.type.name})`).join(', ');
             element.style.background = `linear-gradient(145deg, ${colores})`;
+            element.style.setProperty('--card-color', `var(--solid_${background[0].type.name})`);
         }
     }
     return element;
