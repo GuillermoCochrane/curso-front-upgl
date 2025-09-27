@@ -1,24 +1,24 @@
-import {$} from '../utilities/dom.js';
+import {$, createElement, applyBackgroundColor} from '../utilities/dom.js';
+import { dataFetcher } from './dataFetcher.js';
 
-export function modalHandler(data) {
-  const $pokemonBTN = document.querySelectorAll('[data-pokemon]');
-  for (const $pokeBtn of $pokemonBTN) {
-    $pokeBtn.addEventListener('click', function(event) {
-      event.preventDefault();
-      const $modalName = $('#modal-nombre');
-      const $modalImg = $('#modal-img');
+// Función que maneja el modal de Pokemon
+export function modalHandler() {
+  const $container = $('#pokemons');
+  // Escuchamos todos los click en el contenedor de tarjetas
+  $container.addEventListener('click', async (e) => {
+    const $clickedElement = e.target.closest('[data-pokemon]'); //capturamos el botón con data-pokemon en el que se hizo click
+    if (!$clickedElement) return;
 
-      let id = this.getAttribute('data-pokemon');
-      let currentPokemon = "";
-      for (const pokemon of data) {
-        if (pokemon.id == id) {
-          currentPokemon = pokemon;
-          break;
-        }
-      }
-      $modalName.textContent = currentPokemon.name;
-      $modalImg.setAttribute('src', currentPokemon.sprites.front_default);
-      $modalImg.setAttribute('alt', currentPokemon.name);
-    });
-  };
+    // Fetch individual (datos siempre actualizados)
+    const id = $clickedElement.getAttribute('data-pokemon'); // Obtenemos el id del Pokemon
+    const {pokemons} = await dataFetcher(`https://pokeapi.co/api/v2/pokemon/${id}`, false); // Obtenemos los datos del Pokemon
+    
+    // Cargamos los datos del modal
+    loadModalData(pokemons);
+  });
+}
+
+// Función que carga los datos del modal
+function loadModalData(pokemon) {
+
 }
