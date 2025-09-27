@@ -1,4 +1,5 @@
-import {$, createElement, applyBackgroundColor} from '../utilities/dom.js';
+import {$,  applyBackgroundColor} from '../utilities/dom.js';
+import { createModalTypesBadges } from '../components/components.js';
 import { dataFetcher } from './dataFetcher.js';
 
 // Función que maneja el modal de Pokemon
@@ -20,5 +21,19 @@ export function modalHandler() {
 
 // Función que carga los datos del modal
 function loadModalData(pokemon) {
+    modalHeaderData(pokemon.id, pokemon.name, pokemon.types);
+}
 
+// Función que carga los datos del header del modal
+function modalHeaderData(id,name, types) {
+    // Header
+    const $modalHeader = $('#modal-header');
+    const $pokemonID = $('#modal-header span');
+    const $pokemonName = $('#modal-header h2');
+    applyBackgroundColor($modalHeader, types, 90);
+
+    $pokemonID.textContent = `#${id.toString().padStart(3, '0')}`;
+    $pokemonName.textContent = name;
+    
+    createModalTypesBadges(types);
 }
