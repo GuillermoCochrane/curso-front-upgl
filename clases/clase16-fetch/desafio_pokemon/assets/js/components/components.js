@@ -45,3 +45,13 @@ export function createCardSection(pokemones) {
         $section.append($productCard);
     };
 }
+
+// Crea seccion de badges de tipos en el modal
+export function createModalTypesBadges(types) {
+    const typesContainer = $('#modal-types');
+    typesContainer.innerHTML = '';
+    for (const type of types) {
+        const $badge = createElement('span', 'badge p-2 mx-1 text-center', type.type.name, false, null, [type], true);
+        typesContainer.appendChild($badge);
+    };
+};
