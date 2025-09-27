@@ -19,16 +19,7 @@ export function createElement(tagName, className = null, content = null, isHTML 
         isHTML ? (element.innerHTML = content) : (element.textContent = content);
     }
     if (background) {
-        if (  background.length === 1) {
-            const color = solid ? `solid_${background[0].type.name}` : `transparent_${background[0].type.name}`;
-            element.style.background = `var(--${color})`;
-            element.style.setProperty('--card-color', `var(--solid_${background[0].type.name})`);
-        } else {
-            // Gradiente lineal entre los colores de los tipos
-            const colores = background.map(colores => `var(--${solid ? "solid":"transparent"}_${colores.type.name})`).join(', ');
-            element.style.background = `linear-gradient(145deg, ${colores})`;
-            element.style.setProperty('--card-color', `var(--solid_${background[0].type.name})`);
-        }
+        applyBackgroundColor(element, background, solid);
     }
     return element;
 }
@@ -46,4 +37,17 @@ export function createButton(text = null, className = null, id = null, toggle = 
     button.setAttribute('data-bs-target', target);
     button.setAttribute('data-pokemon', dataPokemon);
     return button;
+}
+
+export function applyBackgroundColor(element, background, solid = false, gradientAngle = 145) {
+    if (background.length === 1) {
+        const color = solid ? `solid_${background[0].type.name}` : `transparent_${background[0].type.name}`;
+        element.style.background = `var(--${color})`;
+        element.style.setProperty('--card-color', `var(--solid_${background[0].type.name})`);
+    } else {
+        // Gradiente lineal entre los colores de los tipos
+        const colores = background.map(colores => `var(--${solid ? "solid":"transparent"}_${colores.type.name})`).join(', ');
+        element.style.background = `linear-gradient(${gradientAngle}deg, ${colores})`;
+        element.style.setProperty('--card-color', `var(--solid_${background[0].type.name})`);
+    }
 }
