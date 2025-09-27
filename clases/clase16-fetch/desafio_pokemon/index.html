@@ -33,24 +33,56 @@
     <p class="mb-0 text-warning">Made with ❤️ by 👑<a href="https://github.com/GuillermoCochrane"><em class="text-danger">The King in the South</em> </a></p>
   </footer>
   <div class="modal fade" id="detallesModal" tabindex="-1" aria-labelledby="detallesModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="detallesModalLabel">Detalles del Pokemon</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <img src="./assets/img/default.png" alt="Zapatilla" class="w-50 img-fluid mx-auto d-block" id="modal-img">
-          <p>
-            <strong>Nombre: </strong>
-            <span id="modal-nombre"></span>
-          </p>
-        </div>
+        <header class="modal-header" id="modal-header">
+          <section class="w-100 d-flex justify-content-between align-items-center">
+            <span class="text-muted fw-bold fs-4" aria-describedby="pokemon-number">#013</span>
+            <h2 class="modal-title text-capitalize mb-2">Weedle</h2>
+            <nav class="d-flex gap-2" id="modal-types" aria-label="Tipos de Pokémon">
+              <!-- Badges de tipos dinámicos -->
+            </nav>
+          </section>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar modal"></button>
+        </header>
+        
+        <main class="modal-body">
+          <article class="row">
+            <!-- Columna izquierda - Imagen y stats básicos -->
+            <section class="col-md-6" aria-labelledby="stats-title">
+              <h3 id="stats-title" class="h5">Características</h3>
+              <!-- Carrusel de imágenes -->
+              <!-- Stats con barras -->
+              <!-- Altura/Peso -->
+            </section>
+            
+            <!-- Columna derecha - Habilidades -->
+            <section class="col-md-6" aria-labelledby="abilities-title">
+              <h3 id="abilities-title" class="h5">Habilidades</h3>
+              <!-- Habilidades -->
+            </section>
+          </article>
+          
+          <!-- Tabs inferiores -->
+          <nav class="nav nav-tabs mt-3" id="modalTabs" role="tablist">
+            <button class="nav-link active" id="movimientos-tab" data-bs-toggle="tab" data-bs-target="#movimientos" type="button" role="tab" aria-controls="movimientos" aria-selected="true">Movimientos</button>
+            <button class="nav-link" id="ubicaciones-tab" data-bs-toggle="tab" data-bs-target="#ubicaciones" type="button" role="tab" aria-controls="ubicaciones" aria-selected="false">Ubicaciones</button>
+          </nav>
+          
+          <!-- Contenido de tabs -->
+          <article class="tab-content mt-2">
+            <section class="tab-pane fade show active" id="movimientos" role="tabpanel" aria-labelledby="movimientos-tab" tabindex="0">
+              <!-- Lista de movimientos -->
+            </section>
+            <section class="tab-pane fade" id="ubicaciones" role="tabpanel" aria-labelledby="ubicaciones-tab" tabindex="0">
+              <!-- Lista de ubicaciones -->
+            </section>
+          </article>
+        </main>
       </div>
     </div>
   </div>
 
-  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script type="module" src="./assets/js/core/app.js"></script>
 </body>
