@@ -1,9 +1,10 @@
-export async function dataFetcher(url = "https://pokeapi.co/api/v2/pokemon", nextUrl) {
+export async function dataFetcher(url = "https://pokeapi.co/api/v2/pokemon", multipleData = true) {
   try {
     const response =  await fetch(url)
-    const list = await response.json();
-    const allData = await allDataFetcher(list.results);
-    return {pokemons: allData, nextPage: list.next};
+    const info = await response.json();
+    const data = multipleData ? await allDataFetcher(info.results) : info;
+    const nextPage = multipleData ? info.next : null;
+    return {pokemons: data, nextPage: nextPage};
   } catch (error) {
     console.log(error);
     throw error;
