@@ -1,8 +1,6 @@
-import { loadMorePokemons } from './dataFetcher.js';
-
-export function infiniteScrollHandler() {
+export function infiniteScrollHandler(loadMorePokemons) {
   let isLoading = false;
-  
+  console.log(loadMorePokemons);
   window.addEventListener('scroll', () => {
     if (isLoading) return;
     

@@ -1,13 +1,9 @@
-import { createCardSection } from '../components/components.js';
-let nextUrl = null;
-
-export async function dataFetcher(url = "https://pokeapi.co/api/v2/pokemon") {
+export async function dataFetcher(url = "https://pokeapi.co/api/v2/pokemon", nextUrl) {
   try {
     const response =  await fetch(url)
     const list = await response.json();
     const allData = await allDataFetcher(list.results);
-    nextUrl = list.next;
-    return allData
+    return {pokemons: allData, nextPage: list.next};
   } catch (error) {
     console.log(error);
     throw error;
@@ -19,10 +15,4 @@ export async function allDataFetcher(pokemonList) {
     fetch(pokemon.url).then(res => res.json())
   );
   return await Promise.all(promises);
-}
-
-export async function loadMorePokemons() {
-  if (!nextUrl) return; // Si no hay más pókemons, salimos
-  const morePokemons = await dataFetcher(nextUrl);
-  createCardSection(morePokemons);
 }
