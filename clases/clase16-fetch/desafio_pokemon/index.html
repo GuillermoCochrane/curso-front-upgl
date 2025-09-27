@@ -51,7 +51,29 @@
             <!-- Columna izquierda - Imagen y stats básicos -->
             <section class="col-md-6" aria-labelledby="stats-title">
               <h3 id="stats-title" class="h5">Características</h3>
-              <!-- Carrusel de imágenes -->
+              
+              <!-- Carrusel Bootstrap -->
+              <div id="pokemonCarousel" class="carousel slide w-50 mx-auto" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <Figure class="carousel-item">
+                    <img src="" class="d-block w-100" alt="Vista frontal" id="carousel-front">
+                  </Figure>
+                  <figure class="carousel-item">
+                    <img src="" class="d-block w-100" alt="Vista trasera" id="carousel-back">
+                  </figure>
+                  <figure class="carousel-item active">
+                    <img src="" class="d-block w-100" alt="Arte oficial" id="carousel-official">
+                  </figure>
+                </div>
+                <button class="carousel-control-prev font" type="button" data-bs-target="#pokemonCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon bg-dark bg-opacity-50 rounded-circle p-2" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#pokemonCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon bg-dark bg-opacity-50 rounded-circle p-2" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
               <!-- Stats con barras -->
               <!-- Altura/Peso -->
             </section>
