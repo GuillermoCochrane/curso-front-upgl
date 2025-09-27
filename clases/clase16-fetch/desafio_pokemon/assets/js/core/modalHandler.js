@@ -22,6 +22,7 @@ export function modalHandler() {
 // Función que carga los datos del modal
 function loadModalData(pokemon) {
     modalHeaderData(pokemon.id, pokemon.name, pokemon.types);
+    modalCarouselData(pokemon.sprites, pokemon.name);
 }
 
 // Función que carga los datos del header del modal
@@ -30,10 +31,34 @@ function modalHeaderData(id,name, types) {
     const $modalHeader = $('#modal-header');
     const $pokemonID = $('#modal-header span');
     const $pokemonName = $('#modal-header h2');
-    applyBackgroundColor($modalHeader, types, 90);
+    applyBackgroundColor($modalHeader, types, true, 90);
 
     $pokemonID.textContent = `#${id.toString().padStart(3, '0')}`;
     $pokemonName.textContent = name;
     
     createModalTypesBadges(types);
+}
+
+// Función que carga los datos del carrusel del modal
+function modalCarouselData(sprites, name) {
+  const $front = $('#carousel-front');
+  const $back = $('#carousel-back');
+  const $official = $('#carousel-official');
+  const textData = {
+      front: 'Vista frontal de ',
+      back: 'Vista trasera de',
+      official: 'Arte oficial de'
+  }
+
+  $front.src = sprites.front_default;
+  $front.alt = textData.front + name;
+  $front.title =  textData.front + name;
+
+  $back.src = sprites.back_default;
+  $back.alt = textData.back + name;
+  $back.title = textData.back + name;
+
+  $official.src = sprites.other['official-artwork'].front_default;
+  $official.alt = textData.official + name;
+  $official.title = textData.official + name;
 }
