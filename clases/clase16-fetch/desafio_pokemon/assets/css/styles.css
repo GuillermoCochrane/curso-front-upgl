@@ -110,18 +110,18 @@ article.card {
 }
 
 /* Para móviles pequeños */
-
 #modal-header section {
   margin: auto;
 
   @media (max-width: 576px) {
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-around !important;
       gap: 0.5rem;
 
-      & span:first-child,
+      & span.text-muted,
       & h2 {
         flex-shrink: 0;
+        font-size: 1.25rem !important;
       }
       
       & #modal-types {
@@ -135,4 +135,11 @@ article.card {
         position: static;
       }
   }
+}
+
+#pokemonCarousel img {
+  width: 230px !important; 
+  height: 230px; 
+  object-fit: contain;
+  margin: auto;
 }
