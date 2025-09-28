@@ -108,3 +108,31 @@ article.card {
         }
     }
 }
+
+/* Para móviles pequeños */
+
+#modal-header section {
+  margin: auto;
+
+  @media (max-width: 576px) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+
+      & span:first-child,
+      & h2 {
+        flex-shrink: 0;
+      }
+      
+      & #modal-types {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.25rem;
+      }
+
+      & .btn-close {
+        position: static;
+      }
+  }
+}
