@@ -22,7 +22,7 @@ export function modalHandler() {
 // Función que carga los datos del modal
 function loadModalData(pokemon) {
     modalHeaderData(pokemon.id, pokemon.name, pokemon.types);
-    modalCarouselData(pokemon.sprites, pokemon.name);
+    modalCarouselData(pokemon.sprites, pokemon.name, pokemon.id);
     modalStatsData(pokemon.stats, pokemon.height, pokemon.weight);
 }
 
@@ -41,7 +41,7 @@ function modalHeaderData(id,name, types) {
 }
 
 // Función que carga los datos del carrusel del modal
-function modalCarouselData(sprites, name) {
+function modalCarouselData(sprites, name, id) {
   const $front = $('#carousel-front');
   const $back = $('#carousel-back');
   const $official = $('#carousel-official');
@@ -54,6 +54,7 @@ function modalCarouselData(sprites, name) {
   $front.src = sprites.front_default;
   $front.alt = textData.front + name;
   $front.title =  textData.front + name;
+  $front.style.viewTransitionName = `pokemon-image-${id}`;
 
   $back.src = sprites.back_default;
   $back.alt = textData.back + name;
