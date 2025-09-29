@@ -57,7 +57,7 @@ export function createModalTypesBadges(types) {
     };
 };
 
-// Crea seccion listado de habilidades en el modal
+// Crea listado de habilidades en el modal
 export function createModalAbilitiesList(abilities) {
     const abilitiesContainer = $('#abilities-list');
     abilitiesContainer.innerHTML = '';
@@ -70,3 +70,12 @@ export function createModalAbilitiesList(abilities) {
         abilitiesContainer.appendChild($li);
     };
 };
+
+// Crea encabezado de habilidades en el modal
+function createAbiltyHeader(name, is_hidden) {
+    const $abilityHeader = createElement('aside', 'd-flex justify-content-between align-items-center mb-1');
+    const $abilityName = createElement('strong', 'text-capitalize', name);
+    const $badge = createElement('span', `badge ${is_hidden ? 'bg-warning text-dark' : 'bg-primary'}`, is_hidden ? 'Oculta' : 'Normal');
+    $abilityHeader.append($abilityName, $badge);
+    return $abilityHeader;
+}
