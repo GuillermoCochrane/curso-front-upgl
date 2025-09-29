@@ -22,3 +22,49 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Habilita transiciones automáticas para navegación entre páginas */
+@view-transition {
+  navigation: auto;
+}
+
+/* Pseudoelemento que representa el GRUPO completo de la transición */
+::view-transition-group(root) {
+  /* root es el nombre de la transición */
+  animation-duration: 800ms;
+  animation-timing-function: ease-in-out;
+}
+
+/* Representa la  página VIEJA que la que está desapareciendo*/
+::view-transition-old(root) {
+  animation: slide-out-left 800ms both ease-in-out
+}
+
+/* Representa la página NUEVA que la que está apareciendo */
+::view-transition-new(root) {
+  animation: slide-in-right 800ms both ease-in-out
+}
+
+/* Animación de desaparición de la página VIEJA */
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0.8;
+  }
+}
+
+/* Animación de aparición de la página NUEVA */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
