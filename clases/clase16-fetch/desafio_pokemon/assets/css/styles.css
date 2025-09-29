@@ -159,3 +159,28 @@ article.card {
     }
   }
 }
+
+/* Habilidades */
+#habilidades {
+  margin: auto;
+
+  & ul {
+    list-style: none;
+    padding: 0;
+
+    & li {
+        border-left: 4px solid var(--card-color);
+        transition: all 0.2s ease;
+
+        &:hover {
+          transform: translateX(5px);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        & aside {
+          border-bottom: 1px solid rgba(0,0,0,0.1);
+          padding-bottom: 0.5rem;
+        }
+    }
+  }
+}
