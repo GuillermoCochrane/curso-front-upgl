@@ -81,19 +81,29 @@ export function createAbiltyHeader(name, is_hidden) {
 }
 
 export function generateGenerationButtons(generations, loadGenerationMoves) {
-    const container = $('#generation-buttons');
-    container.innerHTML = '';
+    const $container = $('#generation-buttons');
+    $container.innerHTML = '';
     
     for (const generation of generations) {
-        const button = createElement('button', 'btn btn-outline-primary btn-sm', generation.name);
-        button.setAttribute('data-generation', generation.id);
-        button.addEventListener('click', () => loadGenerationMoves(generation));
+        const $button = createElement('button', 'btn btn-outline-primary btn-sm', generation.name);
+        $button.setAttribute('data-generation', generation.id);
+        $button.addEventListener('click', () => loadGenerationMoves(generation));
 
         // Primer botón activo por defecto
         if (generation.id === 'generation-i') {
-        button.classList.add('active');
+        $button.classList.add('active');
         }
 
-        container.appendChild(button);
+        $container.appendChild($button);
     };
+}
+
+export function generateMoveTable(filteredMoves) {
+    const $tableBody = document.getElementById('moves-table-body');
+    $tableBody.innerHTML = '';
+
+    for (const move of filteredMoves) {
+        const $row = createMoveRow(move.name, move.level, move.method, move.version);
+        $tableBody.appendChild($row);
+    }
 }
