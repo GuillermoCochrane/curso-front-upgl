@@ -72,10 +72,28 @@ export async function createModalAbilitiesList(abilities, fetchAbilityDetails) {
 };
 
 // Crea encabezado de habilidades en el modal
-function createAbiltyHeader(name, is_hidden) {
+export function createAbiltyHeader(name, is_hidden) {
     const $abilityHeader = createElement('aside', 'd-flex justify-content-between align-items-center mb-1');
     const $abilityName = createElement('strong', 'text-capitalize', name);
     const $badge = createElement('span', `badge ${is_hidden ? 'bg-warning text-dark' : 'bg-primary'}`, is_hidden ? 'Oculta' : 'Normal');
     $abilityHeader.append($abilityName, $badge);
     return $abilityHeader;
+}
+
+export function generateGenerationButtons(generations, loadGenerationMoves) {
+    const container = $('#generation-buttons');
+    container.innerHTML = '';
+    
+    for (const generation of generations) {
+        const button = createElement('button', 'btn btn-outline-primary btn-sm', generation.name);
+        button.setAttribute('data-generation', generation.id);
+        button.addEventListener('click', () => loadGenerationMoves(generation));
+
+        // Primer botón activo por defecto
+        if (generation.id === 'generation-i') {
+        button.classList.add('active');
+        }
+
+        container.appendChild(button);
+    };
 }
