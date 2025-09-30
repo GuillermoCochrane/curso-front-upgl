@@ -1,5 +1,5 @@
 import {$,  applyBackgroundColor} from '../utilities/dom.js';
-import { createModalTypesBadges, createModalAbilitiesList } from '../components/components.js';
+import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGenerationButtons } from '../components/components.js';
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
 
 // Función que maneja el modal de Pokemon
@@ -104,6 +104,7 @@ function modalAbilitiesData(abilities) {
   createModalAbilitiesList(abilities, fetchAbilityDetails);
 }
 
+// Función que filtra los movimientos por generación
 function filterMovesByGeneration(moves, generation) {
   const filteredMoves = [];
 
@@ -123,4 +124,20 @@ function filterMovesByGeneration(moves, generation) {
     }
   };
   return filteredMoves;
+}
+
+// Función que maneja la carga de datos de la tabla de movimientos
+export function loadGenerationMoves(generation, moves) {
+  // 1. Filtrar movimientos
+  const filteredMoves = filterMovesByGeneration(moves, generation.versions);
+  
+  // 2. Actualizar header de la tabla
+  const header = $('#generation-header');
+  header.textContent = `${generation.name} - ${generation.versions.join('/')}`;
+  
+  // 3. Generar filas
+  generateMoveTable(filteredMoves);
+  
+  // 4. Actualizar botón activo
+  updateActiveGenerationButton(generation.id);
 }
