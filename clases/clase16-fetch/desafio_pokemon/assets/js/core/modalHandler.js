@@ -1,6 +1,7 @@
 import {$,  applyBackgroundColor} from '../utilities/dom.js';
 import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGenerationButtons } from '../components/components.js';
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
+import { generations } from '../data/generationsData.js';
 
 // Función que maneja el modal de Pokemon
 export function modalHandler() {
@@ -25,6 +26,8 @@ function loadModalData(pokemon) {
     modalCarouselData(pokemon.sprites, pokemon.name, pokemon.id);
     modalStatsData(pokemon.stats, pokemon.height, pokemon.weight);
     modalAbilitiesData(pokemon.abilities);
+    generateGenerationButtons(generations, (gen) => loadGenerationMoves(gen, pokemon.moves)); //ver como simplificar esto
+    loadGenerationMoves(generations[0], pokemon.moves); // Gen I por defecto
 }
 
 // Función que carga los datos del header del modal
@@ -132,12 +135,25 @@ export function loadGenerationMoves(generation, moves) {
   const filteredMoves = filterMovesByGeneration(moves, generation.versions);
   
   // 2. Actualizar header de la tabla
-  const header = $('#generation-header');
-  header.textContent = `${generation.name} - ${generation.versions.join('/')}`;
+  const $header = $('#generation-header');
+  $header.textContent = `${generation.name} - ${generation.versions.join(' / ')}`;
+  // formatear los datos del header (pendiente)
   
   // 3. Generar filas
   generateMoveTable(filteredMoves);
   
   // 4. Actualizar botón activo
   updateActiveGenerationButton(generation.id);
+}
+
+function updateActiveGenerationButton(activeId) {
+  // Remover active de todos los botones
+  const $buttons = $$('#generation-buttons button');
+  for (const $button of $buttons) {
+    $button.classList.remove('active');
+  }
+  
+  // Agregar active al botón clickeado
+  const $activeBtn = $(`[data-generation="${activeId}"]`);
+  if ($activeBtn) $activeBtn.classList.add('active');
 }
