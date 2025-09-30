@@ -39,6 +39,12 @@ export function createButton(text = null, className = null, id = null, toggle = 
     return button;
 }
 
+export function createCell(text, className = null) {
+    const $cell = createElement('td', className, text);
+    className && ($cell.className = className);
+    return $cell;
+}
+
 export function applyBackgroundColor(element, background, solid = false, gradientAngle = 145) {
     if (background.length === 1) {
         const color = solid ? `solid_${background[0].type.name}` : `transparent_${background[0].type.name}`;
