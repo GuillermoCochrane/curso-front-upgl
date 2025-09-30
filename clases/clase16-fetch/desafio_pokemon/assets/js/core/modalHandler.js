@@ -103,3 +103,24 @@ function modalStatsData(stats, height, weight) {
 function modalAbilitiesData(abilities) {
   createModalAbilitiesList(abilities, fetchAbilityDetails);
 }
+
+function filterMovesByGeneration(moves, generation) {
+  const filteredMoves = [];
+
+  // Recoremos los movimientos
+  for (const move of moves) {
+    // recorrremos las versiones de cada movimiento
+    for (const detail of move.version_group_details) {
+      // Si la version del movimiento es una de las versiones de la generacion, lo agregamos
+      if (generation.includes(detail.version_group.name)) {
+        filteredMoves.push({
+          name: move.move.name,
+          level: detail.level_learned_at,
+          method: detail.move_learn_method.name,
+          version: detail.version_group.name
+        });
+      }
+    }
+  };
+  return filteredMoves;
+}
