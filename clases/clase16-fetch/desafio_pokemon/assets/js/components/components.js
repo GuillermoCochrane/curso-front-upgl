@@ -58,13 +58,13 @@ export function createModalTypesBadges(types) {
 };
 
 // Crea listado de habilidades en el modal
-export function createModalAbilitiesList(abilities) {
+export async function createModalAbilitiesList(abilities, fetchAbilityDetails) {
     const abilitiesContainer = $('#abilities-list');
     abilitiesContainer.innerHTML = '';
     for (const ability of abilities) {
-        const description = fetchAbilityDetails(ability.ability.url);
+        const description = await fetchAbilityDetails(ability.ability.url);
         const $li = createElement('li', 'mb-2 p-2 rounded bg-light');
-        const $abilityHeader = createAbiltyHeader(abilities.ability.name, ability.is_hidden);
+        const $abilityHeader = createAbiltyHeader(ability.ability.name, ability.is_hidden);
         const $abilityDescription = createElement('p', 'small text-muted mb-0', description );
         $li.append($abilityHeader, $abilityDescription);
         abilitiesContainer.appendChild($li);

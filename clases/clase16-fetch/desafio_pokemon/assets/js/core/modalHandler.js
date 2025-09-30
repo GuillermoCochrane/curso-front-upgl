@@ -1,6 +1,6 @@
 import {$,  applyBackgroundColor} from '../utilities/dom.js';
-import { createModalTypesBadges } from '../components/components.js';
-import { dataFetcher } from './dataFetcher.js';
+import { createModalTypesBadges, createModalAbilitiesList } from '../components/components.js';
+import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
 
 // Función que maneja el modal de Pokemon
 export function modalHandler() {
@@ -24,6 +24,7 @@ function loadModalData(pokemon) {
     modalHeaderData(pokemon.id, pokemon.name, pokemon.types);
     modalCarouselData(pokemon.sprites, pokemon.name, pokemon.id);
     modalStatsData(pokemon.stats, pokemon.height, pokemon.weight);
+    modalAbilitiesData(pokemon.abilities);
 }
 
 // Función que carga los datos del header del modal
@@ -96,4 +97,9 @@ function modalStatsData(stats, height, weight) {
   $sdefValue.textContent = stats[4].base_stat;
   $height.textContent = `${height / 10} m`;
   $weight.textContent = `${weight / 10} kg`;
+}
+
+// Función que carga las habilidades del modal
+function modalAbilitiesData(abilities) {
+  createModalAbilitiesList(abilities, fetchAbilityDetails);
 }
