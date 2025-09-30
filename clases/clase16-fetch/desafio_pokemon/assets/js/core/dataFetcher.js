@@ -17,3 +17,17 @@ export async function allDataFetcher(pokemonList) {
   );
   return await Promise.all(promises);
 }
+
+// Helper para fetch de detalles de habilidad
+export async function fetchAbilityDetails(url) {
+  try {
+    const response = await dataFetcher(url, false);
+    const data = response.pokemons
+
+    // Buscamos la descripción en inglés
+    const englishEntry = data.effect_entries.find(entry => entry.language.name === 'en');
+    return englishEntry ? englishEntry.short_effect : 'No description available';
+  } catch (error) {
+    return 'Description not available';
+  }
+}
