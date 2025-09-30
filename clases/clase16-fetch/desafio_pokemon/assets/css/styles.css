@@ -109,21 +109,21 @@ article.card {
     }
 }
 
-#detallesModal main article section {
+/* #detallesModal main article section {
   min-height: 50vh;
 
-  /* Para notebook  */
+  /* Para notebook  * /
   @media (max-height: 800px) {
     min-height: 70vh;
   }
 
-  /* Para móviles pequeños */
+  /* Para móviles pequeños * /
   @media (max-width: 576px) {
     min-height: 40vh !important;
     max-height: 50vh !important; 
   }
 }
-
+ */
 /* Para móviles pequeños */
 #modal-header section {
   margin: auto;
