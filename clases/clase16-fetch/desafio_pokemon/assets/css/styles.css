@@ -109,6 +109,14 @@ article.card {
     }
 }
 
+#detallesModal main article section {
+  min-height: 50vh;
+
+  @media (max-height: 800px) {
+    min-height: 70vh;
+  }
+}
+
 /* Para móviles pequeños */
 #modal-header section {
   margin: auto;
@@ -173,8 +181,9 @@ article.card {
         transition: all 0.2s ease;
 
         &:hover {
-          transform: translateX(5px);
-          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          transform: translatey(-5px);
+          scale: 1.01;
+          box-shadow: 0 0 10px 5px rgba(155, 155, 155, 0.3);
         }
 
         & aside {
