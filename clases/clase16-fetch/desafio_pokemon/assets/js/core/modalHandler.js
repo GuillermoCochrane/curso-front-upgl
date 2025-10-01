@@ -1,7 +1,8 @@
-import {$,  applyBackgroundColor} from '../utilities/dom.js';
+import {$, $$, applyBackgroundColor} from '../utilities/dom.js';
 import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGenerationButtons } from '../components/components.js';
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
 import { generations } from '../data/generationsData.js';
+import { formatText } from '../utilities/formatData.js';
 
 // Función que maneja el modal de Pokemon
 export function modalHandler() {
@@ -136,7 +137,8 @@ export function loadGenerationMoves(generation, moves) {
   
   // 2. Actualizar header de la tabla
   const $header = $('#generation-header');
-  $header.textContent = `${generation.name} - ${generation.versions.join(' / ')}`;
+  const versions = generation.versions.join('-');
+  $header.textContent = `${generation.name} - ${formatText(versions, ' / ')}`;
   // formatear los datos del header (pendiente)
   
   // 3. Generar filas
