@@ -1,5 +1,5 @@
 import { $, createElement, createImage, createButton, createCell  } from '../utilities/dom.js';
-import { formatMoveName, formatMoveLevel } from '../utilities/formatData.js';
+import { formatText, formatMoveLevel } from '../utilities/formatData.js';
 
 // Crea componente del header de la tarjeta del Pokemon
 export function createCardHeader(id) {
@@ -111,10 +111,10 @@ export function generateMoveTable(filteredMoves) {
 
 export function createMoveRow(name, level, method, version) {
     const $row = createElement('tr');
-    const $name = createCell(formatMoveName(name), 'text-capitalize');
+    const $name = createCell(formatText(name), 'text-capitalize');
     const $level = createCell(formatMoveLevel(level), 'text-center');
-    const $method = createCell(formatMoveName(method), 'text-capitalize');
-    const $version = createCell(formatMoveName(version), 'text-capitalize');
+    const $method = createCell(formatText(method), 'text-capitalize');
+    const $version = createCell(formatText(version), 'text-capitalize');
     $row.append($name, $level, $method, $version);
     return $row;
 }

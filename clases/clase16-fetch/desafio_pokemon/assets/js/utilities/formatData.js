@@ -1,7 +1,7 @@
-export function formatMoveName(name) {
+export function formatText(name, separator = ' ') {
   return name.split('-').map(word => 
     word.charAt(0).toUpperCase() + word.slice(1)
-  ).join(' ');
+  ).join(separator);
 }
 
 export function formatMoveLevel(level) {
