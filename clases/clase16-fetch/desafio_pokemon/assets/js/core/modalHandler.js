@@ -27,8 +27,8 @@ function loadModalData(pokemon) {
     modalCarouselData(pokemon.sprites, pokemon.name, pokemon.id);
     modalStatsData(pokemon.stats, pokemon.height, pokemon.weight);
     modalAbilitiesData(pokemon.abilities);
-    generateGenerationButtons(generations, (gen) => loadGenerationMoves(gen, pokemon.moves)); //ver como simplificar esto
-    loadGenerationMoves(generations[0], pokemon.moves); // Gen I por defecto
+    generateGenerationButtons(generations, (gen) => loadGenerationMoves(gen, pokemon.moves));
+    loadGenerationMoves(generations[0], pokemon.moves, pokemon.types); // Gen I por defecto
 }
 
 // Función que carga los datos del header del modal
@@ -131,15 +131,16 @@ function filterMovesByGeneration(moves, generation) {
 }
 
 // Función que maneja la carga de datos de la tabla de movimientos
-export function loadGenerationMoves(generation, moves) {
+export function loadGenerationMoves(generation, moves, types = null) {
   // 1. Filtrar movimientos
   const filteredMoves = filterMovesByGeneration(moves, generation.versions);
   
   // 2. Actualizar header de la tabla
   const $header = $('#generation-header');
+  types && applyBackgroundColor($header, types, true, 90);
+  console.log(generation.versions);  
   const versions = generation.versions.join('-');
   $header.textContent = `${generation.name} - ${formatText(versions, ' / ')}`;
-  // formatear los datos del header (pendiente)
   
   // 3. Generar filas
   generateMoveTable(filteredMoves);
