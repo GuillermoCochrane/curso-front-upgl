@@ -111,19 +111,49 @@ function modalAbilitiesData(abilities) {
 // Función que filtra los movimientos por generación
 function filterMovesByGeneration(moves, generation) {
   const filteredMoves = [];
-
   // Recoremos los movimientos
   for (const move of moves) {
     // recorrremos las versiones de cada movimiento
     for (const detail of move.version_group_details) {
       // Si la version del movimiento es una de las versiones de la generacion, lo agregamos
       if (generation.includes(detail.version_group.name)) {
-        filteredMoves.push({
-          name: move.move.name,
-          level: detail.level_learned_at,
-          method: detail.move_learn_method.name,
-          version: detail.version_group.name
-        });
+
+        const arrayLength = filteredMoves.length;
+        const lastPosition = arrayLength - 1;
+        
+        // Si existe algun movimiento con el mismo nombre
+        if (lastPosition >= 0) {
+          const lastMove = filteredMoves[lastPosition];
+          
+          if (lastMove.name === move.move.name) {
+            // Si el metodo es el mismo
+            
+            if (lastMove.method == detail.move_learn_method.name) {
+              //le agregamos la version
+              lastMove.version += `-${detail.version_group.name}`;
+            } else {
+              // sino agregamos el metodo y version
+              lastMove.method += `, ${detail.move_learn_method.name}`;
+              lastMove.version += `-${detail.version_group.name}`;
+            }
+          } else {
+            // Si el nombre es distinto, agregamos el nuevo movimiento
+            filteredMoves.push({
+              name: move.move.name,
+              level: detail.level_learned_at,
+              method: detail.move_learn_method.name,
+              version: detail.version_group.name
+            });
+          }
+        } else {
+          // Si es el primer movimiento
+          filteredMoves.push({
+            name: move.move.name,
+            level: detail.level_learned_at,
+            method: detail.move_learn_method.name,
+            version: detail.version_group.name
+          });
+        }
       }
     }
   };
