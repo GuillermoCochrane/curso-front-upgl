@@ -108,36 +108,38 @@ function modalAbilitiesData(abilities) {
   createModalAbilitiesList(abilities, fetchAbilityDetails);
 }
 
-// Función que filtra los movimientos por generación
 function filterMovesByGeneration(moves, generation) {
   const filteredMoves = [];
-  // Recoremos los movimientos
+  let counter = 0;
   for (const move of moves) {
-    // recorrremos las versiones de cada movimiento
     for (const detail of move.version_group_details) {
-      // Si la version del movimiento es una de las versiones de la generacion, lo agregamos
       if (generation.includes(detail.version_group.name)) {
-
         const arrayLength = filteredMoves.length;
         const lastPosition = arrayLength - 1;
-        
-        // Si existe algun movimiento con el mismo nombre
+        counter++
         if (lastPosition >= 0) {
           const lastMove = filteredMoves[lastPosition];
           
           if (lastMove.name === move.move.name) {
-            // Si el metodo es el mismo
+            // Verificar si el método YA EXISTE
+            const methods = lastMove.method.split(', ');
+            const newMethod = detail.move_learn_method.name;
             
-            if (lastMove.method == detail.move_learn_method.name) {
-              //le agregamos la version
-              lastMove.version += `-${detail.version_group.name}`;
-            } else {
-              // sino agregamos el metodo y version
-              lastMove.method += `, ${detail.move_learn_method.name}`;
-              lastMove.version += `-${detail.version_group.name}`;
+            if (!methods.includes(newMethod)) {
+              // Si el método es NUEVO, agregarlo
+              lastMove.method += `, ${newMethod}`;
+            }
+            
+            // Verificar si la versión YA EXISTE
+            const versions = lastMove.version.split('-');
+            const newVersion = detail.version_group.name;
+            
+            if (!versions.includes(newVersion)) {
+              // Si la versión es NUEVA, agregarla
+              lastMove.version += `-${newVersion}`;
             }
           } else {
-            // Si el nombre es distinto, agregamos el nuevo movimiento
+            // Agregar nuevo movimiento
             filteredMoves.push({
               name: move.move.name,
               level: detail.level_learned_at,
@@ -146,7 +148,7 @@ function filterMovesByGeneration(moves, generation) {
             });
           }
         } else {
-          // Si es el primer movimiento
+          // Primer movimiento
           filteredMoves.push({
             name: move.move.name,
             level: detail.level_learned_at,
@@ -157,6 +159,7 @@ function filterMovesByGeneration(moves, generation) {
       }
     }
   };
+  
   return filteredMoves;
 }
 
