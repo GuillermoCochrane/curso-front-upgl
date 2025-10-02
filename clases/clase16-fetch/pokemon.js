@@ -13,7 +13,7 @@ function traerPokemons() {
 
 function generarListado(pokemons) {
   const listado = document.getElementById('pokemons');
-  const counter = 0
+  let counter = 0
   for (const pokemon of pokemons) {
     counter++;
     const li = `<li class="list-group-item">#${counter} - ${pokemon.name}</li>`;
