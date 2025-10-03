@@ -214,3 +214,20 @@ function filterMovesByGame(moves, gameId) {
   
   return movesList;
 }
+
+export function loadGameMoves(game, moves, types = null) {
+  // 1. Filtrar movimientos para el juego específico
+  const filteredMoves = filterMovesByGame(moves, game.id);
+  
+  // 2. Actualizar header
+  const $header = $('#generation-header');
+  types && applyBackgroundColor($header, types, true, 90);
+  $header.textContent = game.name;
+  $header.style.backgroundColor = game.color; // Color del juego
+  
+  // 3. Generar tabla (SIN agrupación compleja)
+  generateMoveTable(filteredMoves);
+  
+  // 4. Actualizar botón activo
+  updateActiveGameButton(game.id);
+}
