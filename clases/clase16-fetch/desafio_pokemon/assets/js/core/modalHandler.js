@@ -194,3 +194,23 @@ function updateActiveGenerationButton(activeId) {
   const $activeBtn = $(`[data-generation="${activeId}"]`);
   if ($activeBtn) $activeBtn.classList.add('active');
 }
+
+function filterMovesByGame(moves, gameId) {
+  const movesList = [];
+  
+  for (const move of moves) {
+    for (const detail of move.version_group_details) {
+      // ✅ FILTRADO DIRECTO: Si coincide con el juego específico
+      if (detail.version_group.name === gameId) {
+        movesList.push({
+          name: move.move.name,
+          level: detail.level_learned_at,
+          method: detail.move_learn_method.name,
+          version: detail.version_group.name // ← Solo UNA versión
+        });
+      }
+    }
+  }
+  
+  return movesList;
+}
