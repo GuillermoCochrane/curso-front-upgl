@@ -1,7 +1,7 @@
 import {$, $$, applyBackgroundColor} from '../utilities/dom.js';
-import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGenerationButtons } from '../components/components.js';
+import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGenerationButtons, generateGameButtons } from '../components/components.js';
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
-import { generations } from '../data/generationsData.js';
+import { generations, games } from '../data/generationsData.js';
 import { formatVersionName } from '../utilities/formatData.js';
 
 // Función que maneja el modal de Pokemon
@@ -27,8 +27,12 @@ function loadModalData(pokemon) {
     modalCarouselData(pokemon.sprites, pokemon.name, pokemon.id);
     modalStatsData(pokemon.stats, pokemon.height, pokemon.weight);
     modalAbilitiesData(pokemon.abilities);
-    generateGenerationButtons(generations, (gen) => loadGenerationMoves(gen, pokemon.moves));
-    loadGenerationMoves(generations[0], pokemon.moves, pokemon.types); // Gen I por defecto
+    
+    // generateGenerationButtons(generations, (gen) => loadGenerationMoves(gen, pokemon.moves));
+    // loadGenerationMoves(generations[0], pokemon.moves, pokemon.types);
+    
+    generateGameButtons(games, (game) => loadGameMoves(game, pokemon.moves, pokemon.types));
+    loadGameMoves(games[0], pokemon.moves, pokemon.types); // Primer juego por defecto
 }
 
 // Función que carga los datos del header del modal
@@ -200,7 +204,7 @@ function filterMovesByGame(moves, gameId) {
   
   for (const move of moves) {
     for (const detail of move.version_group_details) {
-      //FILTRADO DIRECTO: Si coincide con el juego específico
+      // ✅ FILTRADO DIRECTO: Si coincide con el juego específico
       if (detail.version_group.name === gameId) {
         movesList.push({
           name: move.move.name,
