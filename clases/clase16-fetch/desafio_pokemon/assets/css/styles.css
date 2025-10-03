@@ -110,17 +110,9 @@ article.card {
 }
 
 #detallesModal main article section {
-  min-height: 50vh;
-
-  /* Para notebook  */
-  @media (max-height: 800px) {
-    min-height: 70vh;
-  }
-
-  /* Para móviles pequeños */
-  @media (max-width: 768px) {
-    min-height: 60vh !important; 
-  }
+  height: 410px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Para móviles pequeños */
