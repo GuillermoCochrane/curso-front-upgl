@@ -122,13 +122,14 @@ export function createMoveRow(name, level, method, version) {
 
 // En components.js - NUEVA función para botones de juegos
 export function generateGameButtons(games, loadGameMoves) {
-    const $container = $('#generation-buttons');
+    const $container = $('#games-buttons');
     $container.innerHTML = '';
 
         for (const game of games) {
             const $button = createElement('button', 'btn btn-outline-primary btn-sm', game.name);
             $button.setAttribute('data-game', game.id);
-            $button.style.borderColor = game.color; 
+            $button.style.borderColor = game.color;
+            $button.style.setProperty('--games-button', `${game.color}`);
             
             $button.addEventListener('click', () => loadGameMoves(game));
             $container.appendChild($button);

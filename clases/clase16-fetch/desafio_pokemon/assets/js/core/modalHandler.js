@@ -225,7 +225,6 @@ export function loadGameMoves(game, moves, types = null) {
   
   // 2. Actualizar header
   const $header = $('#generation-header');
-  types && applyBackgroundColor($header, types, true, 90);
   $header.textContent = game.name;
   $header.style.backgroundColor = game.color; // Color del juego
   
@@ -237,7 +236,7 @@ export function loadGameMoves(game, moves, types = null) {
 }
 
 function updateActiveGameButton(activeId) {
-  const $buttons = $$('#generation-buttons button');
+  const $buttons = $$('#games-buttons button');
   for (const $button of $buttons) {
     $button.classList.remove('active');
   }
