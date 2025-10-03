@@ -199,3 +199,21 @@ article.card {
     }
   }
 }
+
+/* Mejorar visualización de botones de juegos */
+#games-buttons .btn {
+    transition: all 0.2s ease;
+    min-width: clamp(100px, 17%, 200px);
+
+    &:hover {
+        background-color: var(--games-button);
+        color: black;
+        box-shadow: 0 2px 5px var(--games-button);
+    }
+
+    &.active {
+        background-color: var(--games-button);
+        color: black;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+}
