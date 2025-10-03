@@ -200,7 +200,7 @@ function filterMovesByGame(moves, gameId) {
   
   for (const move of moves) {
     for (const detail of move.version_group_details) {
-      // ✅ FILTRADO DIRECTO: Si coincide con el juego específico
+      //FILTRADO DIRECTO: Si coincide con el juego específico
       if (detail.version_group.name === gameId) {
         movesList.push({
           name: move.move.name,
@@ -230,4 +230,14 @@ export function loadGameMoves(game, moves, types = null) {
   
   // 4. Actualizar botón activo
   updateActiveGameButton(game.id);
+}
+
+function updateActiveGameButton(activeId) {
+  const $buttons = $$('#generation-buttons button');
+  for (const $button of $buttons) {
+    $button.classList.remove('active');
+  }
+  
+  const $activeBtn = $(`[data-game="${activeId}"]`);
+  if ($activeBtn) $activeBtn.classList.add('active');
 }
