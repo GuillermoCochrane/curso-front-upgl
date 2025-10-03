@@ -1,5 +1,5 @@
 import { $, createElement, createImage, createButton, createCell  } from '../utilities/dom.js';
-import { formatText, formatMoveLevel } from '../utilities/formatData.js';
+import { formatText, formatMoveLevel, formatVersionName } from '../utilities/formatData.js';
 
 // Crea componente del header de la tarjeta del Pokemon
 export function createCardHeader(id) {
@@ -114,7 +114,23 @@ export function createMoveRow(name, level, method, version) {
     const $name = createCell(formatText(name), 'text-capitalize');
     const $level = createCell(formatMoveLevel(level), 'text-center');
     const $method = createCell(formatText(method), 'text-capitalize');
-    const $version = createCell(formatText(version), 'text-capitalize');
+    const $version = createCell(formatVersionName(version), 'text-capitalize');
+    
     $row.append($name, $level, $method, $version);
     return $row;
 }
+
+// En components.js - NUEVA función para botones de juegos
+export function generateGameButtons(games, loadGameMoves) {
+    const $container = $('#generation-buttons');
+    $container.innerHTML = '';
+
+        for (const game of games) {
+            const $button = createElement('button', 'btn btn-outline-primary btn-sm', game.name);
+            $button.setAttribute('data-game', game.id);
+            $button.style.borderColor = game.color; 
+            
+            $button.addEventListener('click', () => loadGameMoves(game));
+            $container.appendChild($button);
+        }
+} 
