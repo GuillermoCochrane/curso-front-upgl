@@ -130,6 +130,7 @@ export function generateGameButtons(games, loadGameMoves) {
             $button.setAttribute('data-game', game.id);
             $button.style.borderColor = game.color;
             $button.style.setProperty('--games-button', `${game.color}`);
+            $button.style.setProperty('--font-color', `var(${game.font})`);
             
             $button.addEventListener('click', () => loadGameMoves(game));
             $container.appendChild($button);
