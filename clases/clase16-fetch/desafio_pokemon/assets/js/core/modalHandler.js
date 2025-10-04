@@ -41,7 +41,9 @@ function modalHeaderData(id,name, types) {
     const $modalHeader = $('#modal-header');
     const $pokemonID = $('#modal-header span');
     const $pokemonName = $('#modal-header h2');
+    const $accordionSummary = $('.games-filter summary');
     applyBackgroundColor($modalHeader, types, true, 90);
+    applyBackgroundColor($accordionSummary, types, true, 270);
 
     $pokemonID.textContent = `#${id.toString().padStart(3, '0')}`;
     $pokemonName.textContent = name;
@@ -219,7 +221,7 @@ function filterMovesByGame(moves, gameId) {
   return movesList;
 }
 
-export function loadGameMoves(game, moves, types = null) {
+export function loadGameMoves(game, moves) {
   // 1. Filtrar movimientos para el juego específico
   const filteredMoves = filterMovesByGame(moves, game.id);
   
