@@ -114,61 +114,6 @@ function modalAbilitiesData(abilities) {
   createModalAbilitiesList(abilities, fetchAbilityDetails);
 }
 
-function filterMovesByGeneration(moves, generation) {
-  const filteredMoves = [];
-  let counter = 0;
-  for (const move of moves) {
-    for (const detail of move.version_group_details) {
-      if (generation.includes(detail.version_group.name)) {
-        const arrayLength = filteredMoves.length;
-        const lastPosition = arrayLength - 1;
-        counter++
-        if (lastPosition >= 0) {
-          const lastMove = filteredMoves[lastPosition];
-          
-          if (lastMove.name === move.move.name) {
-            // Verificar si el método YA EXISTE
-            const methods = lastMove.method.split(', ');
-            const newMethod = detail.move_learn_method.name;
-            
-            if (!methods.includes(newMethod)) {
-              // Si el método es NUEVO, agregarlo
-              lastMove.method += `, ${newMethod}`;
-            }
-            
-            // Verificar si la versión YA EXISTE
-            const versions = lastMove.version.split('-');
-            const newVersion = detail.version_group.name;
-            
-            if (!versions.includes(newVersion)) {
-              // Si la versión es NUEVA, agregarla
-              lastMove.version += `-${newVersion}`;
-            }
-          } else {
-            // Agregar nuevo movimiento
-            filteredMoves.push({
-              name: move.move.name,
-              level: detail.level_learned_at,
-              method: detail.move_learn_method.name,
-              version: detail.version_group.name
-            });
-          }
-        } else {
-          // Primer movimiento
-          filteredMoves.push({
-            name: move.move.name,
-            level: detail.level_learned_at,
-            method: detail.move_learn_method.name,
-            version: detail.version_group.name
-          });
-        }
-      }
-    }
-  };
-  
-  return filteredMoves;
-}
-
 // Función que maneja la carga de datos de la tabla de movimientos
 export function loadGenerationMoves(generation, moves, types = null) {
   // 1. Filtrar movimientos
