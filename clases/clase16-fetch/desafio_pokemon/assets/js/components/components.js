@@ -81,24 +81,6 @@ export function createAbiltyHeader(name, is_hidden) {
     return $abilityHeader;
 }
 
-export function generateGenerationButtons(generations, loadGenerationMoves) {
-    const $container = $('#generation-buttons');
-    $container.innerHTML = '';
-    
-    for (const generation of generations) {
-        const $button = createElement('button', 'btn btn-outline-primary btn-sm', generation.name);
-        $button.setAttribute('data-generation', generation.id);
-        $button.addEventListener('click', () => loadGenerationMoves(generation));
-
-        // Primer botón activo por defecto
-        if (generation.id === 'generation-i') {
-        $button.classList.add('active');
-        }
-
-        $container.appendChild($button);
-    };
-}
-
 export function generateMoveTable(filteredMoves) {
     const $tableBody = $('#moves-table-body');
     $tableBody.innerHTML = '';
