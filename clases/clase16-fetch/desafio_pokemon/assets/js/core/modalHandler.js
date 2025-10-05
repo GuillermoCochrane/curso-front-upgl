@@ -114,18 +114,6 @@ function modalAbilitiesData(abilities) {
   createModalAbilitiesList(abilities, fetchAbilityDetails);
 }
 
-function updateActiveGenerationButton(activeId) {
-  // Remover active de todos los botones
-  const $buttons = $$('#generation-buttons button');
-  for (const $button of $buttons) {
-    $button.classList.remove('active');
-  }
-  
-  // Agregar active al botón clickeado
-  const $activeBtn = $(`[data-generation="${activeId}"]`);
-  if ($activeBtn) $activeBtn.classList.add('active');
-}
-
 function filterMovesByGame(moves, gameId) {
   const movesList = [];
   
