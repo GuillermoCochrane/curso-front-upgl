@@ -327,3 +327,7 @@ article.card {
       margin-bottom: 0.75rem;
     }
 }
+
+#generation-header{
+  color: var(--font-color) !important;
+}
