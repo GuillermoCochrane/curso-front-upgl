@@ -229,6 +229,7 @@ export function loadGameMoves(game, moves) {
   const $header = $('#generation-header');
   $header.textContent = game.name;
   $header.style.backgroundColor = game.color; // Color del juego
+  $header.style.setProperty('--font-color', `var(${game.font})`);
   
   // 3. Generar tabla (SIN agrupación compleja)
   generateMoveTable(filteredMoves);
