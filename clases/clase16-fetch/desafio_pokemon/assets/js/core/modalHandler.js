@@ -1,8 +1,7 @@
 import {$, $$, applyBackgroundColor} from '../utilities/dom.js';
-import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGenerationButtons, generateGameButtons } from '../components/components.js';
+import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGameButtons } from '../components/components.js';
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
-import { generations, games } from '../data/generationsData.js';
-import { formatVersionName } from '../utilities/formatData.js';
+import { games } from '../data/generationsData.js';
 
 // Función que maneja el modal de Pokemon
 export function modalHandler() {
@@ -27,9 +26,6 @@ function loadModalData(pokemon) {
     modalCarouselData(pokemon.sprites, pokemon.name, pokemon.id);
     modalStatsData(pokemon.stats, pokemon.height, pokemon.weight);
     modalAbilitiesData(pokemon.abilities);
-    
-    // generateGenerationButtons(generations, (gen) => loadGenerationMoves(gen, pokemon.moves));
-    // loadGenerationMoves(generations[0], pokemon.moves, pokemon.types);
     
     generateGameButtons(games, (game) => loadGameMoves(game, pokemon.moves, pokemon.types));
     loadGameMoves(games[0], pokemon.moves, pokemon.types); // Primer juego por defecto
