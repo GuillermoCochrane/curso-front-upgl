@@ -114,26 +114,6 @@ function modalAbilitiesData(abilities) {
   createModalAbilitiesList(abilities, fetchAbilityDetails);
 }
 
-// Función que maneja la carga de datos de la tabla de movimientos
-export function loadGenerationMoves(generation, moves, types = null) {
-  // 1. Filtrar movimientos
-  const filteredMoves = filterMovesByGeneration(moves, generation.versions);
-  
-  // 2. Actualizar header de la tabla
-  const $header = $('#generation-header');
-  types && applyBackgroundColor($header, types, true, 90);
-
-  const formattedVersions = generation.versions.map(formatVersionName).join(' / ');
-  
-  $header.textContent = `${generation.name} - ${formattedVersions}`;
-  
-  // 3. Generar filas
-  generateMoveTable(filteredMoves);
-  
-  // 4. Actualizar botón activo
-  updateActiveGenerationButton(generation.id);
-}
-
 function updateActiveGenerationButton(activeId) {
   // Remover active de todos los botones
   const $buttons = $$('#generation-buttons button');
