@@ -1,4 +1,4 @@
-import { $, createElement, createImage, createButton, createCell  } from '../utilities/dom.js';
+import { $, createElement, createImage, createButton, createCell, createBadge  } from '../utilities/dom.js';
 import { formatText, formatMoveLevel, formatVersionName } from '../utilities/formatData.js';
 
 // Crea componente del header de la tarjeta del Pokemon
@@ -13,7 +13,7 @@ export function createCardHeader(id) {
 export function createCardTypesBadges(types) {
     const $cardTypes = createElement('section', 'd-flex justify-content-center flex-wrap gap-2 mb-3');
     for (const type of types) {
-        const $badge = createElement('span', 'badge p-2 mx-1 text-center', type.type.name, false, null, [type], true);
+        const $badge = createBadge('', type.type.name, [type], true);
         $cardTypes.append($badge);
     }
     return $cardTypes;
@@ -53,7 +53,7 @@ export function createModalTypesBadges(types) {
     const typesContainer = $('#modal-types');
     typesContainer.innerHTML = '';
     for (const type of types) {
-        const $badge = createElement('span', 'badge p-2 mx-1 text-center', type.type.name, false, null, [type], true);
+        const $badge = createBadge('', type.type.name, [type], true);
         typesContainer.appendChild($badge);
     };
 };
@@ -76,7 +76,9 @@ export async function createModalAbilitiesList(abilities, fetchAbilityDetails) {
 export function createAbiltyHeader(name, is_hidden) {
     const $abilityHeader = createElement('aside', 'd-flex justify-content-between align-items-center mb-1');
     const $abilityName = createElement('strong', 'text-capitalize', name);
-    const $badge = createElement('span', `badge ${is_hidden ? 'bg-warning text-dark' : 'bg-primary'}`, is_hidden ? 'Oculta' : 'Normal');
+    const badgeStyle = is_hidden ? 'bg-warning text-dark' : 'bg-primary';
+    const badgeText = is_hidden ? 'Oculta' : 'Normal';
+    const $badge = createBadge(badgeStyle, badgeText);
     $abilityHeader.append($abilityName, $badge);
     return $abilityHeader;
 }
