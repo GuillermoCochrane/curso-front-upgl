@@ -111,23 +111,37 @@ function modalAbilitiesData(abilities) {
 }
 
 function filterMovesByGame(moves, gameId) {
-  const movesList = [];
+  //Instanciamos un Map (objeto literal con métodos especiales como has, set, get) para almacenar los movimientos, ya que no permite duplicados
+  const movesMap = new Map();
   
+  //Recorremos todos los movimientos del pokemon
   for (const move of moves) {
+    //Recorremos todas las versiones del juego dentro de cada movimiento
     for (const detail of move.version_group_details) {
-      // ✅ FILTRADO DIRECTO: Si coincide con el juego específico
+      // Filtramos por el juego específico 
       if (detail.version_group.name === gameId) {
-        movesList.push({
-          name: move.move.name,
-          level: detail.level_learned_at,
+        const moveName = move.move.name;
+        
+        //Si es la primera vez que se encuentra el movimiento...
+        if (!movesMap.has(moveName)) {
+          // Creamos entrada en el mapa con array de métodos vacío
+          movesMap.set(moveName, {
+            name: moveName,
+            methods: [] // ← Aquí acumularemos todos los métodos de aprendizaje
+          });
+        }
+
+        // Agregamos este método específico al movimiento
+        movesMap.get(moveName).methods.push({
           method: detail.move_learn_method.name,
-          version: detail.version_group.name // ← Solo UNA versión
+          level: detail.level_learned_at
         });
       }
     }
   }
-  
-  return movesList;
+
+  // Convertimos el Map a Array para facilitar su uso
+  return Array.from(movesMap.values());
 }
 
 export function loadGameMoves(game, moves) {
