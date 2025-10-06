@@ -45,6 +45,12 @@ export function createCell(text, className = null) {
     return $cell;
 }
 
+export function createBadge(customStyle = null, content = null, background = null, solid = false) {
+    const style = `badge p-2 mx-1 text-center ${customStyle}`
+    const $badge = createElement('span', style, content, false, null, background, solid);
+    return $badge;
+}
+
 export function applyBackgroundColor(element, background, solid = false, gradientAngle = 145) {
     if (background.length === 1) {
         const color = solid ? `solid_${background[0].type.name}` : `transparent_${background[0].type.name}`;
