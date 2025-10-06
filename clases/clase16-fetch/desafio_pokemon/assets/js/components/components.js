@@ -88,19 +88,47 @@ export function generateMoveTable(filteredMoves) {
     $tableBody.innerHTML = '';
 
     for (const move of filteredMoves) {
-        const $row = createMoveRow(move.name, move.level, move.method, move.version);
+        const $row = createMoveRow(move.name, move.methods);
         $tableBody.appendChild($row);
     }
 }
 
-export function createMoveRow(name, level, method, version) {
+export function createMoveRow(name, methods) {
     const $row = createElement('tr');
     const $name = createCell(formatText(name), 'text-capitalize');
-    const $level = createCell(formatMoveLevel(level), 'text-center');
-    const $method = createCell(formatText(method), 'text-capitalize');
-    const $version = createCell(formatVersionName(version), 'text-capitalize');
-    
-    $row.append($name, $level, $method, $version);
+    const $method = createCell("", 'd-flex flex-wrap');
+
+    const methodReference = {
+        'level-up': { 
+            text: 'Level Up',
+            style: 'bg-primary'
+        },
+        'machine': {
+            text: 'Machine',
+            style: 'bg-dark text-white'
+        },
+        'egg': {
+            text: 'Egg',
+            style: 'bg-warning text-dark'
+        },
+        'tutor': {
+            text: 'Tutor',
+            style: 'bg-info text-dark'
+        },
+        'stadium-surfing': {
+            text: 'Stadium',
+            style: 'bg-success text-white'
+        }
+    }
+
+    for (const method of methods) {
+        const dataReference = methodReference[method.method];
+        const text = `${dataReference.text}${method.level > 0 ? ` [LVL${method.level}]` : ''}`;
+        const $badge = createBadge(dataReference.style, text);
+        $method.append($badge);
+    }
+
+    $row.append($name, $method);
     return $row;
 }
 
