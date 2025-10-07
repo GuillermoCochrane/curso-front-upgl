@@ -2,6 +2,7 @@ import {$, $$, applyBackgroundColor} from '../utilities/dom.js';
 import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGameButtons } from '../components/components.js';
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
 import { games } from '../data/generationsData.js';
+import { arraySorter } from '../utilities/formatData.js';
 
 // Función que maneja el modal de Pokemon
 export function modalHandler() {
@@ -147,6 +148,7 @@ function filterMovesByGame(moves, gameId) {
 export function loadGameMoves(game, moves) {
   // 1. Filtrar movimientos para el juego específico
   const filteredMoves = filterMovesByGame(moves, game.id);
+  const orderedMoves = arraySorter(filteredMoves, 'level', true);
   
   // 2. Actualizar header
   const $header = $('#generation-header');
@@ -155,7 +157,7 @@ export function loadGameMoves(game, moves) {
   $header.style.setProperty('--font-color', `var(${game.font})`);
   
   // 3. Generar tabla (SIN agrupación compleja)
-  generateMoveTable(filteredMoves);
+  generateMoveTable(orderedMoves);
   
   // 4. Actualizar botón activo
   updateActiveGameButton(game.id);

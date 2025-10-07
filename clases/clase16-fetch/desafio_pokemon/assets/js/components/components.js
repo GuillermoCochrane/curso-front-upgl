@@ -136,7 +136,7 @@ export function createMoveRow(name, methods) {
 
     for (const method of methods) {
         const dataReference = methodReference[method.method];
-        const text = `${dataReference.text}${method.level > 0 ? ` [LVL${method.level}]` : ''}`;
+        const text = `${dataReference.text}${method.level > 0 ? ` [LVL ${method.level}]` : ''}`;
         const $badge = createBadge(dataReference.style, text);
         $method.append($badge);
     }
