@@ -1,5 +1,5 @@
 import { $, createElement, createImage, createButton, createCell, createBadge  } from '../utilities/dom.js';
-import { formatText, formatMoveLevel, formatVersionName } from '../utilities/formatData.js';
+import { formatText } from '../utilities/formatData.js';
 
 // Crea componente del header de la tarjeta del Pokemon
 export function createCardHeader(id) {
@@ -83,16 +83,30 @@ export function createAbiltyHeader(name, is_hidden) {
     return $abilityHeader;
 }
 
+// Crea la tabla de movimientos
 export function generateMoveTable(filteredMoves) {
     const $tableBody = $('#moves-table-body');
     $tableBody.innerHTML = '';
 
+    let counter = 0;
+    let $currentRow = createElement('tr');
     for (const move of filteredMoves) {
+        counter++;
         const $row = createMoveRow(move.name, move.methods);
-        $tableBody.appendChild($row);
+        $currentRow.append($row.name, $row.method);
+        if (counter % 2 === 0 || counter === filteredMoves.length) {
+            // Solo agregar celdas vacías si es la ÚLTIMA fila y es IMPAR
+            if (counter === filteredMoves.length && counter % 2 !== 0) {
+                $currentRow.append(createCell(''), createCell(''));
+            }
+
+            $tableBody.appendChild($currentRow);
+            $currentRow = createElement('tr');
+        }
     }
 }
 
+// Crea los elementos de una movimiento de la fila de movimientos
 export function createMoveRow(name, methods) {
     const $name = createCell(formatText(name), 'text-capitalize');
     const $method = createCell("", 'd-flex flex-wrap justify-content-center');
@@ -133,7 +147,7 @@ export function createMoveRow(name, methods) {
     };
 }
 
-// En components.js - NUEVA función para botones de juegos
+//Crea los botones de filtrado por juego
 export function generateGameButtons(games, loadGameMoves) {
     const $container = $('#games-buttons');
     $container.innerHTML = '';
