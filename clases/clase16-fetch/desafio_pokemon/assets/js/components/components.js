@@ -94,9 +94,8 @@ export function generateMoveTable(filteredMoves) {
 }
 
 export function createMoveRow(name, methods) {
-    const $row = createElement('tr');
     const $name = createCell(formatText(name), 'text-capitalize');
-    const $method = createCell("", 'd-flex flex-wrap');
+    const $method = createCell("", 'd-flex flex-wrap justify-content-center');
 
     const methodReference = {
         'level-up': { 
@@ -128,8 +127,10 @@ export function createMoveRow(name, methods) {
         $method.append($badge);
     }
 
-    $row.append($name, $method);
-    return $row;
+    return {
+        name: $name,
+        method: $method
+    };
 }
 
 // En components.js - NUEVA función para botones de juegos
