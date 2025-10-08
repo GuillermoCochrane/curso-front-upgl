@@ -172,3 +172,28 @@ function updateActiveGameButton(activeId) {
   const $activeBtn = $(`[data-game="${activeId}"]`);
   if ($activeBtn) $activeBtn.classList.add('active');
 }
+
+// Función que maneja el orden de las columnas de la tabla de movimientos
+export function sortingHandler() {
+  const $movesHeader = $('#moves-table-header'); // capturamos el header de la tabla de movimientos
+  
+  // delegamos el evento click al header
+  $movesHeader.addEventListener('click', (e) => {
+    // capturamos la columna que se ha pulsado
+    const $clickedHeader = e.target.closest('th[data-sort-target]');
+    // Si no se ha pulsado sobre ninguna columna, no hacemos nada
+    if (!$clickedHeader) return;
+    
+    const sortBy = $clickedHeader.getAttribute('data-sort-target'); // Obtenemos por que columna queremos ordenar
+    const isAscending = $clickedHeader.getAttribute('data-ascending') === 'true'; // Obtenemos si está ordenado ascendente o descendente
+    const newAscending = !isAscending;
+    
+    // Actualizar UI del header
+    updateSortHeaders(sortBy, newAscending);
+    
+    // Re-ordenar y refrescar
+    const $activeGame = $('#games-buttons .active'); // capturamos el botón activo
+    const game = games.find(g => g.id === $activeGame.getAttribute('data-game')); // obtenemos los datos del juego activo
+    loadGameMoves(game, currentPokemon.moves, sortBy, newAscending); // actualizamos la tabla de movimientos
+  });
+}
