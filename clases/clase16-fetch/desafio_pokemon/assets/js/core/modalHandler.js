@@ -3,6 +3,7 @@ import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, ge
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
 import { games } from '../data/generationsData.js';
 import { arraySorter } from '../utilities/formatData.js';
+let currentPokemon;
 
 // Función que maneja el modal de Pokemon
 export function modalHandler() {
@@ -22,18 +23,19 @@ export function modalHandler() {
 }
 
 // Función que carga los datos del modal
-function loadModalData(pokemon) {
+export function loadModalData(pokemon) {
+    currentPokemon = pokemon;
     modalHeaderData(pokemon.id, pokemon.name, pokemon.types);
     modalCarouselData(pokemon.sprites, pokemon.name, pokemon.id);
     modalStatsData(pokemon.stats, pokemon.height, pokemon.weight);
     modalAbilitiesData(pokemon.abilities);
-    
+    sortingHandler();
     generateGameButtons(games, (game) => loadGameMoves(game, pokemon.moves, pokemon.types));
     loadGameMoves(games[0], pokemon.moves, pokemon.types); // Primer juego por defecto
 }
 
 // Función que carga los datos del header del modal
-function modalHeaderData(id,name, types) {
+export function modalHeaderData(id,name, types) {
     // Header
     const $modalHeader = $('#modal-header');
     const $pokemonID = $('#modal-header span');
@@ -49,7 +51,7 @@ function modalHeaderData(id,name, types) {
 }
 
 // Función que carga los datos del carrusel del modal
-function modalCarouselData(sprites, name, id) {
+export function modalCarouselData(sprites, name, id) {
   const $front = $('#carousel-front');
   const $back = $('#carousel-back');
   const $official = $('#carousel-official');
@@ -74,7 +76,7 @@ function modalCarouselData(sprites, name, id) {
 }
 
 // Función que carga las stats del modal
-function modalStatsData(stats, height, weight) {
+export function modalStatsData(stats, height, weight) {
   const $hp = $('#stat-hp');
   const $hpValue = $('#stat-hp-value');
   const $atk = $('#stat-attack');
@@ -107,11 +109,12 @@ function modalStatsData(stats, height, weight) {
 }
 
 // Función que carga las habilidades del modal
-function modalAbilitiesData(abilities) {
+export function modalAbilitiesData(abilities) {
   createModalAbilitiesList(abilities, fetchAbilityDetails);
 }
 
-function filterMovesByGame(moves, gameId) {
+// Función que filtra los movimientos por juego
+export function filterMovesByGame(moves, gameId) {
   //Instanciamos un Map (objeto literal con métodos especiales como has, set, get) para almacenar los movimientos, ya que no permite duplicados
   const movesMap = new Map();
   
@@ -145,6 +148,7 @@ function filterMovesByGame(moves, gameId) {
   return Array.from(movesMap.values());
 }
 
+// Función que actualiza los movimientos de un juego
 export function loadGameMoves(game, moves, sortBy='level', ascending=true) {
   // 1. Filtrar movimientos para el juego específico
   const filteredMoves = filterMovesByGame(moves, game.id);
@@ -163,7 +167,8 @@ export function loadGameMoves(game, moves, sortBy='level', ascending=true) {
   updateActiveGameButton(game.id);
 }
 
-function updateActiveGameButton(activeId) {
+// Función que actualiza el botón activo en la tabla de movimientos
+export function updateActiveGameButton(activeId) {
   const $buttons = $$('#games-buttons button');
   for (const $button of $buttons) {
     $button.classList.remove('active');
@@ -173,7 +178,7 @@ function updateActiveGameButton(activeId) {
   if ($activeBtn) $activeBtn.classList.add('active');
 }
 
-// Función que maneja el orden de las columnas de la tabla de movimientos
+// Función que maneja el ordenamiento de las columnas de la tabla de movimientos
 export function sortingHandler() {
   const $movesHeader = $('#moves-table-header'); // capturamos el header de la tabla de movimientos
   
