@@ -336,3 +336,37 @@ article.card {
 #generation-header{
   color: var(--font-color) !important;
 }
+
+/* Estilos para headers ordenables */
+#moves-table-header th[data-sort-target] {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+#moves-table-header th[data-sort-target]:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Header activo */
+#moves-table-header th.active-sort {
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  color: var(--solid_fighting)
+}
+
+/* Flechas con pseudo-elementos */
+#moves-table-header th.active-sort[data-ascending="true"]::after {
+  position: absolute;
+  right: 1.5rem;
+  content: " ▼ ";
+  font-weight: bold;
+}
+
+#moves-table-header th.active-sort[data-ascending="false"]::after {
+  position: absolute;
+  right: 1rem;
+  content: " ▲ "; 
+  font-weight: bold;
+}
