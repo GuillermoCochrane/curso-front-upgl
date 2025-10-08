@@ -145,10 +145,10 @@ function filterMovesByGame(moves, gameId) {
   return Array.from(movesMap.values());
 }
 
-export function loadGameMoves(game, moves) {
+export function loadGameMoves(game, moves, sortBy='level', ascending=true) {
   // 1. Filtrar movimientos para el juego específico
   const filteredMoves = filterMovesByGame(moves, game.id);
-  const orderedMoves = arraySorter(filteredMoves, 'level', true);
+  const orderedMoves = arraySorter(filteredMoves, sortBy, ascending);
   
   // 2. Actualizar header
   const $header = $('#generation-header');
