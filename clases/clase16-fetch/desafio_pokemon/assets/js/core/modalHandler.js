@@ -197,3 +197,16 @@ export function sortingHandler() {
     loadGameMoves(game, currentPokemon.moves, sortBy, newAscending); // actualizamos la tabla de movimientos
   });
 }
+
+//Función que actualiza los headers de la tabla de movimientos
+export function updateSortHeaders(activeSort, newAscending) {
+  const $allHeaders = $$('#moves-table-header th[data-sort-target]');// capturamos todos los headers de  las columnas de la tabla para reccorrrerlos
+
+  for (const $header of $allHeaders) {
+    const isActive = $header.getAttribute('data-sort-target') === activeSort; // buscamos el header que coincide
+    if (isActive) {
+      // Si es el header activo, actualizamos sus atributos
+      $header.setAttribute('data-ascending', newAscending.toString());
+    }
+  };
+}
