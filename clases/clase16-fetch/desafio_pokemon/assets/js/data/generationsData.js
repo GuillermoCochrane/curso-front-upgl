@@ -1,3 +1,4 @@
+// Juegos agrupados por generación
 export const generations = [
   {
     id: "generation-i",
@@ -50,7 +51,7 @@ export const generations = [
   },
 ];
 
-//nombres problematicos de versiones
+//Nombres problematicos de versiones
 export const versionDisplayNames = {
   "black-2-white-2": "Black 2 / White 2",
   "ultra-sun-ultra-moon": "Ultra Sun / Ultra Moon",
@@ -194,4 +195,42 @@ export const games = [
     color: "#ff2400",
     font: "--light-font"
   },
+];
+
+//Datos estructurados por juegos individuales
+export const individualGames = [
+  { id: "red", name: "Red", color: "#ff0000", font: "--light-font" },
+  { id: "blue", name: "Blue", color: "#0000ff", font: "--light-font" },
+  { id: "yellow", name: "Yellow", color: "#ffcc00", font: "--dark-font" },
+  { id: "gold", name: "Gold", color: "#d4af37", font: "--dark-font" },
+  { id: "silver", name: "Silver", color: "#c0c0c0", font: "--dark-font" },
+  { id: "crystal", name: "Crystal", color: "#4fd9ff", font: "--dark-font" },
+  { id: "ruby", name: "Ruby", color: "#e0115f", font: "--light-font" },
+  { id: "sapphire", name: "Sapphire", color: "#0f52ba", font: "--light-font" },
+  { id: "emerald", name: "Emerald", color: "#50c878", font: "--dark-font" },
+  { id: "firered", name: "FireRed", color: "#ff4500", font: "--light-font" },
+  { id: "leafgreen", name: "LeafGreen", color: "#32cd32", font: "--dark-font" },
+  { id: "diamond", name: "Diamond", color: "#b9f2ff", font: "--dark-font" },
+  { id: "pearl", name: "Pearl", color: "#f0f0f0", font: "--dark-font" },
+  { id: "platinum", name: "Platinum", color: "#e5e4e2", font: "--dark-font" },
+  { id: "heartgold", name: "HeartGold", color: "#ffd700", font: "--dark-font" },
+  { id: "soulsilver", name: "SoulSilver", color: "#c0c0c0", font: "--dark-font" },
+  { id: "black", name: "Black", color: "#000000", font: "--light-font" },
+  { id: "white", name: "White", color: "#ffffff", font: "--dark-font" },
+  { id: "black-2", name: "Black 2", color: "#2f2f2f", font: "--light-font" },
+  { id: "white-2", name: "White 2", color: "#f8f8f8", font: "--dark-font" },
+  { id: "x", name: "X", color: "#0077be", font: "--light-font" },
+  { id: "y", name: "Y", color: "#ff69b4", font: "--light-font" },
+  { id: "omega-ruby", name: "Omega Ruby", color: "#e0115f", font: "--light-font" },
+  { id: "alpha-sapphire", name: "Alpha Sapphire", color: "#0f52ba", font: "--light-font" },
+  { id: "sun", name: "Sun", color: "#ff8c00", font: "--light-font" },
+  { id: "moon", name: "Moon", color: "#8a2be2", font: "--light-font" },
+  { id: "ultra-sun", name: "Ultra Sun", color: "#ff4500", font: "--light-font" },
+  { id: "ultra-moon", name: "Ultra Moon", color: "#4b0082", font: "--light-font" },
+  { id: "lets-go-pikachu", name: "Let's Go Pikachu", color: "#ffcc00", font: "--dark-font" },
+  { id: "lets-go-eevee", name: "Let's Go Eevee", color: "#8b4513", font: "--light-font" },
+  { id: "sword", name: "Sword", color: "#1e90ff", font: "--light-font" },
+  { id: "shield", name: "Shield", color: "#dc143c", font: "--light-font" },
+  { id: "scarlet", name: "Scarlet", color: "#ff2400", font: "--light-font" },
+  { id: "violet", name: "Violet", color: "#8a2be2", font: "--light-font" }
 ];
