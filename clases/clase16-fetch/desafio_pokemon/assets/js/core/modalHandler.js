@@ -2,7 +2,7 @@ import {$, $$, applyBackgroundColor} from '../utilities/dom.js';
 import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGameButtons } from '../components/components.js';
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
 import { games, individualGames } from '../data/generationsData.js';
-import { arraySorter } from '../utilities/formatData.js';
+import { arraySorter, formatText } from '../utilities/formatData.js';
 let currentPokemon;
 
 // Función que maneja el modal de Pokemon
@@ -227,4 +227,48 @@ async function loadPokemonLocations(pokemonId) {
     );
     const processedLocations = processLocationData(encounters, individualGames);
     displayLocations(processedLocations);
+}
+
+// Función que procesa los datos de las ubicaciones y los agrupa por lugar
+function processLocationData(encounters, individualGames) {
+  const locationsMap = new Map();
+  
+  for (const encounter of encounters) {
+    const locationName = formatText(encounter.location_area.name);
+    
+    for (const versionDetail of encounter.version_details) {
+      // Obtener el juego de la versión
+      const gameId = versionDetail.version.name;
+      const gameData = individualGames.find(g => g.id === gameId);
+      
+      // Si el juego no está en nuestra DB, lo saltamos
+      if (!gameData) continue;
+      
+      for (const encounterDetail of versionDetail.encounter_details) {
+        const locationKey = locationName;
+        
+        // Si es la primera vez que vemos esta ubicación, crear entrada
+        if (!locationsMap.has(locationKey)) {
+          locationsMap.set(locationKey, {
+            location: locationName,
+            games: []
+          });
+        }
+        
+        const locationData = locationsMap.get(locationKey);
+        
+        // Agregar este juego y método a la ubicación
+        locationData.games.push({
+          game: gameData,  // Objeto completo del juego
+          method: encounterDetail.method,
+          chance: encounterDetail.chance,
+          minLevel: encounterDetail.min_level,
+          maxLevel: encounterDetail.max_level
+        });
+      }
+    }
+  }
+  
+  // Convertir Map a Array para fácil uso
+  return Array.from(locationsMap.values());
 }
