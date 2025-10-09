@@ -220,55 +220,21 @@ export function updateSortHeaders(activeSort, newAscending) {
 }
 
 // Función que carga las ubicaciones donde se encuentra el Pokemon
-async function loadPokemonLocations(pokemonId) {
+async function loadPokemonLocations(pokemonId, currentGame, currentMethod) {
     const { pokemons: encounters } = await dataFetcher(
         `https://pokeapi.co/api/v2/pokemon/${pokemonId}/encounters`, 
         false
     );
-    const processedLocations = processLocationData(encounters, individualGames);
+    const processedLocations = processLocationData(encounters, currentGame, currentMethod);
     displayLocations(processedLocations);
 }
 
-// Función que procesa los datos de las ubicaciones y los agrupa por lugar
-function processLocationData(encounters, individualGames) {
-  const locationsMap = new Map();
-  
-  for (const encounter of encounters) {
-    const locationName = formatText(encounter.location_area.name);
-    
-    for (const versionDetail of encounter.version_details) {
-      // Obtener el juego de la versión
-      const gameId = versionDetail.version.name;
-      const gameData = individualGames.find(g => g.id === gameId);
-      
-      // Si el juego no está en nuestra DB, lo saltamos
-      if (!gameData) continue;
-      
-      for (const encounterDetail of versionDetail.encounter_details) {
-        const locationKey = locationName;
-        
-        // Si es la primera vez que vemos esta ubicación, crear entrada
-        if (!locationsMap.has(locationKey)) {
-          locationsMap.set(locationKey, {
-            location: locationName,
-            games: []
-          });
-        }
-        
-        const locationData = locationsMap.get(locationKey);
-        
-        // Agregar este juego y método a la ubicación
-        locationData.games.push({
-          game: gameData,  // Objeto completo del juego
-          method: encounterDetail.method,
-          chance: encounterDetail.chance,
-          minLevel: encounterDetail.min_level,
-          maxLevel: encounterDetail.max_level
-        });
-      }
-    }
-  }
-  
-  // Convertir Map a Array para fácil uso
-  return Array.from(locationsMap.values());
+// Función que procesa los datos de las ubicaciones, filtrandola por juego y método
+function processLocationData(data, selectedVersion, selectedMethod) {
+  return data.filter(area =>
+    area.versions.some(version =>
+      (!selectedVersion || version.name === selectedVersion) &&
+      (!selectedMethod || version.methods.includes(selectedMethod))
+    )
+  );
 }
