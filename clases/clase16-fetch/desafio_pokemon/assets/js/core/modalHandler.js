@@ -1,5 +1,5 @@
 import {$, $$, applyBackgroundColor} from '../utilities/dom.js';
-import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGameButtons } from '../components/components.js';
+import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGameButtons, generateVersionButtons } from '../components/components.js';
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
 import { games, individualGames } from '../data/generationsData.js';
 import { arraySorter, formatText } from '../utilities/formatData.js';
@@ -31,8 +31,10 @@ export function loadModalData(pokemon) {
     modalAbilitiesData(pokemon.abilities);
     sortingHandler();
     generateGameButtons(games, (game) => loadGameMoves(game, pokemon.moves, pokemon.types));
+    generateVersionButtons(individualGames, (version) => loadPokemonLocations(pokemon.id, version.id, null));
     loadGameMoves(games[0], pokemon.moves, pokemon.types); // Primer juego por defecto
-    loadPokemonLocations(pokemon.id);
+
+
 }
 
 // Función que carga los datos del header del modal
@@ -226,7 +228,7 @@ async function loadPokemonLocations(pokemonId, currentGame, currentMethod) {
         false
     );
     const processedLocations = processLocationData(encounters, currentGame, currentMethod);
-    displayLocations(processedLocations);
+    //displayLocations(processedLocations);
 }
 
 // Función que procesa los datos de las ubicaciones, filtrandola por juego y método

@@ -162,4 +162,22 @@ export function generateGameButtons(games, loadGameMoves) {
             $button.addEventListener('click', () => loadGameMoves(game));
             $container.appendChild($button);
         }
-} 
+}
+
+// Crea botones de filtrado por versiones
+export function generateVersionButtons(versions, filterVersions) {
+    const container = $("#version-buttons")
+    container.innerHTML = "";
+
+    for (const version of versions) {
+        const $button = createElement("button", "btn btn-sm mb-2 text-center", version.name);
+        $button.setAttribute("data-game", version.id);
+        $button.style.borderColor = version.color;
+        $button.style.setProperty("--game-button", `${version.color}`);
+        $button.style.setProperty("--font-color", `var(${version.font})`);
+
+        // Al hacer clic, aplica el filtro
+        $button.addEventListener("click", () => filterVersions(version));
+        container.appendChild($button);
+    }
+}
