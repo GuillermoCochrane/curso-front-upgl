@@ -359,7 +359,7 @@ article.card {
 /* Flechas con pseudo-elementos */
 #moves-table-header th.active-sort[data-ascending="true"]::after {
   position: absolute;
-  right: 1.5rem;
+  right: 1rem;
   content: " ▼ ";
   font-weight: bold;
 }
