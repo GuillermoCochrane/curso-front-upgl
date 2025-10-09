@@ -1,7 +1,7 @@
 import {$, $$, applyBackgroundColor} from '../utilities/dom.js';
 import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGameButtons } from '../components/components.js';
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
-import { games } from '../data/generationsData.js';
+import { games, individualGames } from '../data/generationsData.js';
 import { arraySorter } from '../utilities/formatData.js';
 let currentPokemon;
 
@@ -32,6 +32,7 @@ export function loadModalData(pokemon) {
     sortingHandler();
     generateGameButtons(games, (game) => loadGameMoves(game, pokemon.moves, pokemon.types));
     loadGameMoves(games[0], pokemon.moves, pokemon.types); // Primer juego por defecto
+    loadPokemonLocations(pokemon.id);
 }
 
 // Función que carga los datos del header del modal
@@ -207,7 +208,6 @@ export function sortingHandler() {
 export function updateSortHeaders(activeSort, newAscending) {
   const $allHeaders = $$('#moves-table-header th[data-sort-target]');// capturamos todos los headers de  las columnas de la tabla para reccorrrerlos
 
-  
   for (const $header of $allHeaders) {
     const isActive = $header.getAttribute('data-sort-target') === activeSort; // buscamos el header que coincide
     $header.classList.remove('active-sort');
@@ -217,4 +217,14 @@ export function updateSortHeaders(activeSort, newAscending) {
       $header.classList.add('active-sort');
     }
   };
+}
+
+// Función que carga las ubicaciones donde se encuentra el Pokemon
+async function loadPokemonLocations(pokemonId) {
+    const { pokemons: encounters } = await dataFetcher(
+        `https://pokeapi.co/api/v2/pokemon/${pokemonId}/encounters`, 
+        false
+    );
+    const processedLocations = processLocationData(encounters, individualGames);
+    displayLocations(processedLocations);
 }
