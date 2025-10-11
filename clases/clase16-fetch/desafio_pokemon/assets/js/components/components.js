@@ -181,3 +181,17 @@ export function generateVersionButtons(versions, filterVersions) {
         container.appendChild($button);
     }
 }
+
+// Crea el selector de métodos de encuentro del sistema de filtrado de ubicaciones
+export function generateMethodSelect(methods, handleMethodChange) {
+    const $select = $('#encounter-method');
+    $select.innerHTML = '<option value="">Todos los métodos</option>';
+
+    for (const method of methods) {
+        const $option = createElement("option", null, formatText(method));
+        $option.value = method;
+        $select.appendChild($option);
+    }
+
+    $select.addEventListener('change', e => handleMethodChange(e.target.value));
+}
