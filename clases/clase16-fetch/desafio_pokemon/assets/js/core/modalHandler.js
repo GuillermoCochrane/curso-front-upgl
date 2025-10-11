@@ -1,9 +1,11 @@
 import {$, $$, applyBackgroundColor} from '../utilities/dom.js';
-import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGameButtons, generateVersionButtons } from '../components/components.js';
+import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGameButtons, generateVersionButtons, generateMethodSelect } from '../components/components.js';
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
 import { games, individualGames } from '../data/generationsData.js';
-import { arraySorter, formatText } from '../utilities/formatData.js';
-let currentPokemon;
+import { arraySorter } from '../utilities/formatData.js';
+let currentPokemon = null;
+let currentVersion = null;
+let currentMethod = null;
 
 // Función que maneja el modal de Pokemon
 export function modalHandler() {
@@ -33,8 +35,6 @@ export function loadModalData(pokemon) {
     generateGameButtons(games, (game) => loadGameMoves(game, pokemon.moves, pokemon.types));
     generateVersionButtons(individualGames, (version) => loadPokemonLocations(pokemon.id, version.id, null));
     loadGameMoves(games[0], pokemon.moves, pokemon.types); // Primer juego por defecto
-
-
 }
 
 // Función que carga los datos del header del modal
@@ -224,12 +224,12 @@ export function updateSortHeaders(activeSort, newAscending) {
 }
 
 // Función que carga las ubicaciones donde se encuentra el Pokemon
-async function loadPokemonLocations(pokemonId, currentGame, currentMethod) {
+async function loadPokemonLocations(pokemonId) {
     const { pokemons: encounters } = await dataFetcher(
         `https://pokeapi.co/api/v2/pokemon/${pokemonId}/encounters`, 
         false
     );
-    const processedLocations = processLocationData(encounters, currentGame, currentMethod);
+    const processedLocations = processLocationData(encounters, currentVersion, currentMethod);
     //displayLocations(processedLocations);
 }
 
@@ -241,4 +241,10 @@ function processLocationData(data, selectedVersion, selectedMethod) {
       (!selectedMethod || version.methods.includes(selectedMethod))
     )
   );
+}
+
+// Función que actualiza el método de encuentro del sistema de filtrado de ubicaciones
+export function handleMethodChange(selectedValue) {
+  currentMethod = selectedValue || null;
+  loadPokemonLocations(currentPokemon.id);
 }
