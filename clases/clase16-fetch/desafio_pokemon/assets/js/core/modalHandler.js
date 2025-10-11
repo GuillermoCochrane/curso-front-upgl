@@ -43,9 +43,11 @@ export function modalHeaderData(id,name, types) {
     const $modalHeader = $('#modal-header');
     const $pokemonID = $('#modal-header span');
     const $pokemonName = $('#modal-header h2');
-    const $accordionSummary = $('.games-filter summary');
+    const $accordionsSummary = $$('.games-filter summary');
     applyBackgroundColor($modalHeader, types, true, 90);
-    applyBackgroundColor($accordionSummary, types, true, 270);
+    for (const $accordionSummary of $accordionsSummary) {
+      applyBackgroundColor($accordionSummary, types, true, 270); 
+    }
 
     $pokemonID.textContent = `#${id.toString().padStart(3, '0')}`;
     $pokemonName.textContent = name;
