@@ -244,6 +244,16 @@ function processLocationData(data) {
     }))
 }
 
+// Función que flitra los datos de las ubicaciones, por juego y método
+const filterLocationsData = (data, selectedVersion, selectedMethod) => {
+  return data.filter(area =>
+      area.versions.some(version =>
+        (!selectedVersion || version.name === selectedVersion) &&
+        (!selectedMethod || version.methods.includes(selectedMethod))
+      )
+    );
+}
+
 // Función que actualiza el método de encuentro del sistema de filtrado de ubicaciones
 export function handleMethodChange(selectedValue) {
   currentMethod = selectedValue || null;
