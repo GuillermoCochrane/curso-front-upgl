@@ -260,8 +260,21 @@ export function handleMethodChange(selectedValue) {
   loadPokemonLocations(currentPokemon.id);
 }
 
-// Función que actualiza versión del juego del sistema de filtrado de ubicaciones
+// Función que actualiza versión del juego, del sistema de filtrado de ubicaciones
 export function handleVersionChange(version) {
   currentVersion = version?.id || null;
   displayLocations(processLocationData(cachedEncounters, currentVersion, currentMethod));
+}
+
+// Función que devuelve un array con los métodos de encuentro únicos (para el <select>)
+function getUniqueMethods(data) {
+  return [
+    ...new Set( // usamos un Set porque solo almacena valores únicos, eliminando duplicados automáticamente
+      data.flatMap(area => // recorremos cada área; flatMap aplana el resultado, evitando arrays anidados
+        area.version_details.flatMap(version => // recorremos cada versión dentro de la misma área
+          version.encounter_details.map(encounter => encounter.method.name) // extraemos el nombre del método de encuentro
+        )
+      )
+    )
+  ];
 }
