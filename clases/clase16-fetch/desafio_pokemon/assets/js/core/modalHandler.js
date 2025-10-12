@@ -233,14 +233,15 @@ async function loadPokemonLocations(pokemonId) {
     //displayLocations(processedLocations);
 }
 
-// Función que procesa los datos de las ubicaciones, filtrandola por juego y método
-function processLocationData(data, selectedVersion, selectedMethod) {
-  return data.filter(area =>
-    area.versions.some(version =>
-      (!selectedVersion || version.name === selectedVersion) &&
-      (!selectedMethod || version.methods.includes(selectedMethod))
-    )
-  );
+// Función que procesa los datos de las ubicaciones
+function processLocationData(data) {
+  return data.map(area => ({ // recorremos cada area de la entrada
+      name: area.location_area.name, // nombre de la area
+      versions: area.version_details.map(version => ({ // recorremos cada version de la area
+        name: version.version.name, // nombre de la version del juego
+        methods: version.encounter_details.map(encounter => encounter.method.name) // recorremos cada encuentro de la version
+      }))
+    }))
 }
 
 // Función que actualiza el método de encuentro del sistema de filtrado de ubicaciones
