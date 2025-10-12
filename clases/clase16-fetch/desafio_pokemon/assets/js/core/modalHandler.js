@@ -225,12 +225,27 @@ export function updateSortHeaders(activeSort, newAscending) {
 
 // Función que carga las ubicaciones donde se encuentra el Pokemon
 async function loadPokemonLocations(pokemonId) {
+  // 1. traemos los datos de las ubicaciones
     const { pokemons: encounters } = await dataFetcher(
         `https://pokeapi.co/api/v2/pokemon/${pokemonId}/encounters`, 
         false
     );
-    const processedLocations = processLocationData(encounters, currentVersion, currentMethod);
-    //displayLocations(processedLocations);
+
+    // 2. procesamos los datos de las ubicaciones
+    const processedLocations = processLocationData(encounters);
+
+    // 3. filtramos los datos de las ubicaciones según el método y la versión
+    const filteredLocations = filterLocationsData(processedLocations, currentVersion, currentMethod);
+
+    // 4. extraemos los métodos de encuentro únicos para el select
+    const methods = getUniqueMethods(processedLocations);
+
+    // 5. generamos el control de filtrado
+    generateMethodSelect(methods, handleMethodChange);
+    generateVersionButtons(individualGames, handleVersionChange);
+
+    // 6. renderizamos los resultados
+    //displayLocations(filteredLocations);
 }
 
 // Función que procesa los datos de las ubicaciones
