@@ -3,6 +3,8 @@ import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, ge
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
 import { games, individualGames } from '../data/generationsData.js';
 import { arraySorter } from '../utilities/formatData.js';
+
+let cachedEncounters = [];
 let currentPokemon = null;
 let currentVersion = null;
 let currentMethod = null;
@@ -24,17 +26,20 @@ export function modalHandler() {
   });
 }
 
-// Función que carga los datos del modal
+// Carga completa del modal
 export function loadModalData(pokemon) {
-    currentPokemon = pokemon;
-    modalHeaderData(pokemon.id, pokemon.name, pokemon.types);
-    modalCarouselData(pokemon.sprites, pokemon.name, pokemon.id);
-    modalStatsData(pokemon.stats, pokemon.height, pokemon.weight);
-    modalAbilitiesData(pokemon.abilities);
-    sortingHandler();
-    generateGameButtons(games, (game) => loadGameMoves(game, pokemon.moves, pokemon.types));
-    generateVersionButtons(individualGames, (version) => loadPokemonLocations(pokemon.id, version.id, null));
-    loadGameMoves(games[0], pokemon.moves, pokemon.types); // Primer juego por defecto
+  currentPokemon = pokemon;
+  cachedEncounters = []; // Limpia cache para nuevo Pokémon
+
+  modalHeaderData(pokemon.id, pokemon.name, pokemon.types);
+  modalCarouselData(pokemon.sprites, pokemon.name, pokemon.id);
+  modalStatsData(pokemon.stats, pokemon.height, pokemon.weight);
+  modalAbilitiesData(pokemon.abilities);
+  sortingHandler();
+
+  generateGameButtons(games, game => loadGameMoves(game, pokemon.moves, pokemon.types));
+  loadPokemonLocations(pokemon.id);
+  loadGameMoves(games[0], pokemon.moves, pokemon.types); // Primer juego por defecto
 }
 
 // Función que carga los datos del header del modal
@@ -225,14 +230,16 @@ export function updateSortHeaders(activeSort, newAscending) {
 
 // Función que carga las ubicaciones donde se encuentra el Pokemon
 async function loadPokemonLocations(pokemonId) {
-  // 1. traemos los datos de las ubicaciones
+  // 1. Fetch (solo cuando no hay cache o cambió el Pokémon)
+  if (!cachedEncounters.length || currentPokemon.id !== pokemonId) {
     const { pokemons: encounters } = await dataFetcher(
-        `https://pokeapi.co/api/v2/pokemon/${pokemonId}/encounters`, 
-        false
+      `https://pokeapi.co/api/v2/pokemon/${pokemonId}/encounters`,
+      false
     );
-
+    cachedEncounters = encounters;
+  }
     // 2. procesamos los datos de las ubicaciones
-    const processedLocations = processLocationData(encounters);
+    const processedLocations = processLocationData(cachedEncounters);
 
     // 3. filtramos los datos de las ubicaciones según el método y la versión
     const filteredLocations = filterLocationsData(processedLocations, currentVersion, currentMethod);
