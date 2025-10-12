@@ -259,3 +259,9 @@ export function handleMethodChange(selectedValue) {
   currentMethod = selectedValue || null;
   loadPokemonLocations(currentPokemon.id);
 }
+
+// Función que actualiza versión del juego del sistema de filtrado de ubicaciones
+export function handleVersionChange(version) {
+  currentVersion = version?.id || null;
+  displayLocations(processLocationData(cachedEncounters, currentVersion, currentMethod));
+}
