@@ -196,3 +196,54 @@ export function generateMethodSelect(methods, handleMethodChange, currentMethod)
 
     $select.addEventListener('change', e => handleMethodChange(e.target.value));
 }
+
+// Función que renderiza la lista de ubicaciones en el modal
+export function displayLocations(locations, individualGames) {
+    const container = $("#pokemon-locations");
+    container.innerHTML = "";
+
+    if (!locations.length) {
+        container.appendChild(
+        createElement("p", "text-center text-muted", "No hay ubicaciones disponibles con los filtros seleccionados.")
+        );
+        return;
+    }
+
+    // Crear cada ubicación
+    for (const area of locations) {
+        const $details = createElement("details", "location-card");
+        $details.setAttribute("name", "location-group"); // agrupamos para que solo se abra uno a la vez
+
+        // Summary (título del área)
+        const $summary = createElement("summary", "location-summary d-flex justify-content-between align-items-center");
+        $summary.textContent = formatText(area.name); // Ej: cerulean-city-area → Cerulean City Area
+
+        const $content = createElement("div", "location-content mt-2");
+
+        // Crear listado de versiones y métodos
+        for (const version of area.versions) {
+        const gameData = individualGames.find(g => g.id === version.name);
+
+        const $versionBlock = createElement("div", "d-flex flex-wrap align-items-center gap-2 mb-2");
+
+        // Badge de versión (color dinámico según el juego)
+        const $versionBadge = createElement("span", "badge px-2 py-1 text-uppercase fw-bold", version.name);
+        $versionBadge.style.backgroundColor = gameData?.color || "var(--border-color)";
+        $versionBadge.style.color = `var(${gameData?.font || "--light-font"})`;
+
+        $versionBlock.appendChild($versionBadge);
+
+        // Badges de métodos
+        for (const method of version.methods) {
+            const $methodBadge = createElement("span", "badge bg-info text-dark", formatText(method));
+            $versionBlock.appendChild($methodBadge);
+        }
+
+        $content.appendChild($versionBlock);
+        }
+
+        $details.appendChild($summary);
+        $details.appendChild($content);
+        container.appendChild($details);
+    }
+}
