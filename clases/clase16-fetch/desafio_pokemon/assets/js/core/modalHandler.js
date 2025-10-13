@@ -253,6 +253,9 @@ async function loadPokemonLocations(pokemonId) {
 
     // 6. renderizamos los resultados
     displayLocations(filteredLocations, individualGames);
+
+    // 7. actualizamos el botón activo
+    updateActiveVersionButton(currentVersion);
 }
 
 // Función que procesa los datos de las ubicaciones
@@ -299,4 +302,15 @@ function getUniqueMethods(data) {
       )
     )
   ];
+}
+
+// Función que actualiza el botón activo en la tabla de ubicaciones (aplicar DRY con la de movimientos)
+export function updateActiveVersionButton(activeId) {
+  const $buttons = $$('#version-buttons button');
+  for (const $button of $buttons) {
+    $button.classList.remove('active');
+  }
+  
+  const $activeBtn = $(`[data-game="${activeId}"]`);
+  if ($activeBtn) $activeBtn.classList.add('active');
 }
