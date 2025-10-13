@@ -290,11 +290,12 @@ export function handleVersionChange(version) {
 
 // Función que devuelve un array con los métodos de encuentro únicos (para el <select>)
 function getUniqueMethods(data) {
+  console.log(data);
   return [
     ...new Set( // usamos un Set porque solo almacena valores únicos, eliminando duplicados automáticamente
       data.flatMap(area => // recorremos cada área; flatMap aplana el resultado, evitando arrays anidados
-        area.version_details.flatMap(version => // recorremos cada versión dentro de la misma área
-          version.encounter_details.map(encounter => encounter.method.name) // extraemos el nombre del método de encuentro
+        area.versions.flatMap(version => // recorremos cada versión dentro de la misma área
+          version.methods.map(encounter => encounter) // extraemos el nombre del método de encuentro
         )
       )
     )
