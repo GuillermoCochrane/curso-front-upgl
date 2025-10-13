@@ -1,5 +1,5 @@
 import {$, $$, applyBackgroundColor} from '../utilities/dom.js';
-import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGameButtons, generateVersionButtons, generateMethodSelect } from '../components/components.js';
+import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGameButtons, generateVersionButtons, generateMethodSelect, displayLocations } from '../components/components.js';
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
 import { games, individualGames } from '../data/generationsData.js';
 import { arraySorter } from '../utilities/formatData.js';
@@ -252,7 +252,7 @@ async function loadPokemonLocations(pokemonId) {
     generateVersionButtons(individualGames, handleVersionChange);
 
     // 6. renderizamos los resultados
-    //displayLocations(filteredLocations);
+    displayLocations(filteredLocations, individualGames);
 }
 
 // Función que procesa los datos de las ubicaciones
@@ -290,7 +290,6 @@ export function handleVersionChange(version) {
 
 // Función que devuelve un array con los métodos de encuentro únicos (para el <select>)
 function getUniqueMethods(data) {
-  console.log(data);
   return [
     ...new Set( // usamos un Set porque solo almacena valores únicos, eliminando duplicados automáticamente
       data.flatMap(area => // recorremos cada área; flatMap aplana el resultado, evitando arrays anidados
