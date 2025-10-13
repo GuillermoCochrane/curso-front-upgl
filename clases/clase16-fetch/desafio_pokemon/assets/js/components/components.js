@@ -173,7 +173,7 @@ export function generateVersionButtons(versions, filterVersions) {
         const $button = createElement("button", "btn btn-sm mb-2 text-center", version.name);
         $button.setAttribute("data-game", version.id);
         $button.style.borderColor = version.color;
-        $button.style.setProperty("--game-button", `${version.color}`);
+        $button.style.setProperty("--games-button", `${version.color}`);
         $button.style.setProperty("--font-color", `var(${version.font})`);
 
         // Al hacer clic, aplica el filtro
@@ -183,7 +183,7 @@ export function generateVersionButtons(versions, filterVersions) {
 }
 
 // Crea el selector de métodos de encuentro del sistema de filtrado de ubicaciones
-export function generateMethodSelect(methods, handleMethodChange) {
+export function generateMethodSelect(methods, handleMethodChange, currentMethod) {
     const $select = $('#encounter-method');
     $select.innerHTML = '<option value="">Todos los métodos</option>';
 
@@ -192,6 +192,7 @@ export function generateMethodSelect(methods, handleMethodChange) {
         $option.value = method;
         $select.appendChild($option);
     }
+    $select.value = currentMethod || '';
 
     $select.addEventListener('change', e => handleMethodChange(e.target.value));
 }

@@ -248,7 +248,7 @@ async function loadPokemonLocations(pokemonId) {
     const methods = getUniqueMethods(processedLocations);
 
     // 5. generamos el control de filtrado
-    generateMethodSelect(methods, handleMethodChange);
+    generateMethodSelect(methods, handleMethodChange, currentMethod);
     generateVersionButtons(individualGames, handleVersionChange);
 
     // 6. renderizamos los resultados
