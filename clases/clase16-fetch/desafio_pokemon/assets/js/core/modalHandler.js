@@ -3,6 +3,7 @@ import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, ge
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
 import { games, individualGames } from '../data/generationsData.js';
 import { arraySorter } from '../utilities/formatData.js';
+import { version } from 'react';
 
 let cachedEncounters = [];
 let currentPokemon = null;
@@ -260,13 +261,20 @@ async function loadPokemonLocations(pokemonId) {
 
 // Función que procesa los datos de las ubicaciones
 function processLocationData(data) {
-  return data.map(area => ({ // recorremos cada area de la entrada
-      name: area.location_area.name, // nombre de la area
-      versions: area.version_details.map(version => ({ // recorremos cada version de la area
+    return data.map(area => ({ // recorremos cada area de la entrada
+    name: area.location_area.name, // nombre de la area
+    versions: area.version_details.map(version => { // recorremos cada version de la area
+
+      const uniqueMethods = [ // Usamos un Set para una variable auxiliar de métodos únicos
+        ...new Set(version.encounter_details.map(encounter => encounter.method.name)) 
+      ];
+
+      return { // devolvemos un objeto con la version y los métodos de encuentro únicos
         name: version.version.name, // nombre de la version del juego
-        methods: version.encounter_details.map(encounter => encounter.method.name) // recorremos cada encuentro de la version
-      }))
-    }))
+        methods: uniqueMethods // métodos de encuentro únicos
+      };
+    })
+  }));
 }
 
 // Función que flitra los datos de las ubicaciones, por juego y método
