@@ -362,6 +362,10 @@ article.card {
   right: 1rem;
   content: " ▼ ";
   font-weight: bold;
+
+  @media (max-width: 992px) {
+    display: none;
+  }
 }
 
 #moves-table-header th.active-sort[data-ascending="false"]::after {
@@ -369,4 +373,7 @@ article.card {
   right: 1rem;
   content: " ▲ "; 
   font-weight: bold;
+  @media (max-width: 992px) {
+    display: none;
+  }
 }
