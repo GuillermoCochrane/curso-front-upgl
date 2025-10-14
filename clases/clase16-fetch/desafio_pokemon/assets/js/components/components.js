@@ -214,3 +214,27 @@ export function displayLocations(locations, individualGames) {
         $container.appendChild($details);
     }
 }
+
+// Función que crea las tarjetas de las ubicaciones
+export function createLocationsCards(area, individualGames){
+    const $details = createElement("details", "location-card");
+    $details.setAttribute("name", "location-group"); // agrupamos para que solo se abra uno a la vez
+
+    // Summary (título del área)
+    const $summary = createElement("summary", "location-summary d-flex justify-content-between align-items-center");
+    $summary.textContent = formatText(area.name); // Ej: cerulean-city-area → Cerulean City Area
+
+    const $content = createElement("div", "location-content mt-2");
+
+    // Crear listado de versiones y métodos
+    for (const version of area.versions) {
+        const gameData = individualGames.find(game => game.id === version.name);
+
+        const $versionBlock = createLocationsCardsInfo(version, gameData);
+        $content.appendChild($versionBlock);
+    }
+
+    $details.appendChild($summary);
+    $details.appendChild($content);
+    return $details;
+}
