@@ -3,7 +3,6 @@ import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, ge
 import { dataFetcher, fetchAbilityDetails } from './dataFetcher.js';
 import { games, individualGames } from '../data/generationsData.js';
 import { arraySorter } from '../utilities/formatData.js';
-import { version } from 'react';
 
 let cachedEncounters = [];
 let currentPokemon = null;
