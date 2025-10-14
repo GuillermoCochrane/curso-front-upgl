@@ -238,3 +238,19 @@ export function createLocationsCards(area, individualGames){
     $details.appendChild($content);
     return $details;
 }
+
+// Función que crea la información de las tarjetas de ubicaciones
+export function createLocationsCardsInfo (version, gameData) {
+    const $versionBlock = createElement("div", "d-flex flex-wrap align-items-center gap-2 mb-2");
+
+    const $versionBadge = createBadge(null, version.name);
+    $versionBadge.style.backgroundColor = gameData?.color || "var(--border-color)";
+    $versionBadge.style.color = `var(${gameData?.font || "--light-font"})`;
+    $versionBlock.appendChild($versionBadge);
+    // Badges de métodos
+    for (const method of version.methods) {
+        const $methodBadge = createBadge("bg-info text-dark", formatText(method));
+        $versionBlock.appendChild($methodBadge);
+    }
+    return $versionBlock;
+}
