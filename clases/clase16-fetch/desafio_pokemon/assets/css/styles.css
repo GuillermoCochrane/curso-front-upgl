@@ -195,7 +195,7 @@ article.card {
   }
 }
 
-.games-filter {
+.games-filter, .location-card {
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 12px;
     overflow: hidden;
@@ -276,7 +276,7 @@ article.card {
       }
     }
 
-    & nav#games-buttons {
+    & nav#games-buttons, nav#version-buttons {
       padding: 1rem;
       background: rgba(255,255,255,0.95);
       max-height: 300px;

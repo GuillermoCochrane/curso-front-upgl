@@ -1,4 +1,4 @@
-import { $, createElement, createImage, createButton, createCell, createBadge  } from '../utilities/dom.js';
+import { $, createElement, createImage, createButton, createCell, createBadge, applyBackgroundColor  } from '../utilities/dom.js';
 import { formatText } from '../utilities/formatData.js';
 
 // Crea componente del header de la tarjeta del Pokemon
@@ -198,7 +198,7 @@ export function generateMethodSelect(methods, handleMethodChange, currentMethod)
 }
 
 // Función que renderiza la lista de ubicaciones en el modal
-export function displayLocations(locations, individualGames) {
+export function displayLocations(locations, individualGames, types) {
     const $container = $("#pokemon-locations");
     $container.innerHTML = "";
 
@@ -210,19 +210,20 @@ export function displayLocations(locations, individualGames) {
 
     // Crear cada ubicación
     for (const area of locations) {
-        const $details = createLocationsCards(area, individualGames);
+        const $details = createLocationsCards(area, individualGames, types);
         $container.appendChild($details);
     }
 }
 
 // Función que crea las tarjetas de las ubicaciones
-export function createLocationsCards(area, individualGames){
+export function createLocationsCards(area, individualGames, types){
     const $details = createElement("details", "location-card");
     $details.setAttribute("name", "location-group"); // agrupamos para que solo se abra uno a la vez
 
     // Summary (título del área)
-    const $summary = createElement("summary", "location-summary d-flex justify-content-between align-items-center");
+    const $summary = createElement("summary", "location-summary d-flex justify-content-between align-items-center text-dark");
     $summary.textContent = formatText(area.name); // Ej: cerulean-city-area → Cerulean City Area
+    applyBackgroundColor($summary, types, true, 135);
 
     const $content = createElement("div", "location-content mt-2");
 

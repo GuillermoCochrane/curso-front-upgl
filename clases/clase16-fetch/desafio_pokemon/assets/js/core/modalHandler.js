@@ -38,7 +38,7 @@ export function loadModalData(pokemon) {
   sortingHandler();
 
   generateGameButtons(games, game => loadGameMoves(game, pokemon.moves, pokemon.types));
-  loadPokemonLocations(pokemon.id);
+  loadPokemonLocations(pokemon.id, pokemon.types);
   loadGameMoves(games[0], pokemon.moves, pokemon.types); // Primer juego por defecto
 }
 
@@ -229,7 +229,7 @@ export function updateSortHeaders(activeSort, newAscending) {
 }
 
 // Función que carga las ubicaciones donde se encuentra el Pokemon
-async function loadPokemonLocations(pokemonId) {
+async function loadPokemonLocations(pokemonId, types) {
   // 1. Fetch (solo cuando no hay cache o cambió el Pokémon)
   if (!cachedEncounters.length || currentPokemon.id !== pokemonId) {
     const { pokemons: encounters } = await dataFetcher(
@@ -252,7 +252,7 @@ async function loadPokemonLocations(pokemonId) {
     generateVersionButtons(individualGames, handleVersionChange);
 
     // 6. renderizamos los resultados
-    displayLocations(filteredLocations, individualGames);
+    displayLocations(filteredLocations, individualGames, types);
 
     // 7. actualizamos el botón activo
     updateActiveVersionButton(currentVersion);
@@ -297,13 +297,13 @@ const filterLocationsData = (data, selectedVersion, selectedMethod) => {
 // Función que actualiza el método de encuentro del sistema de filtrado de ubicaciones
 export function handleMethodChange(selectedValue) {
   currentMethod = selectedValue || null;
-  loadPokemonLocations(currentPokemon.id);
+  loadPokemonLocations(currentPokemon.id, currentPokemon.types);
 }
 
 // Función que actualiza versión del juego, del sistema de filtrado de ubicaciones
 export function handleVersionChange(version) {
   currentVersion = version?.id || null;
-    loadPokemonLocations(currentPokemon.id);
+    loadPokemonLocations(currentPokemon.id, currentPokemon.types);
 }
 
 // Función que devuelve un array con los métodos de encuentro únicos (para el <select>)
