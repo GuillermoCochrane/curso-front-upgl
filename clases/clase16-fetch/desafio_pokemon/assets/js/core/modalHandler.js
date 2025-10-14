@@ -305,20 +305,23 @@ export function processLocationData(data) {
 
 // Función que flitra los datos de las ubicaciones, por juego y método
 const filterLocationsData = (data, selectedVersion, selectedMethod) => {
-  return data
-    .map(area => { // recorremos cada area de la entrada
-      const filteredVersions = area.versions.filter(version => //variable auxiliar de versiones filtradas
-        (!selectedVersion || version.name === selectedVersion) && // si no se ha seleccionado una versión, o si la versión seleccionada es la misma que la actual, se incluye
-        (!selectedMethod || version.methods.includes(selectedMethod)) // si no se ha seleccionado un método, o si el método seleccionado es el mismo que el actual, se incluye
-      );
+  const filteredData = data.map(area => {
+  
+    const filterByVersions = area.versions.filter(version => !selectedVersion || version.name === selectedVersion ) //Filtramos la version que coincide con la seleccionada o si no se ha seleccionado nada
+    const fliterByMethod =  filterByVersions.map(version => ({ 
+        ...version,
+        encounters: version.encounters.filter(encounter =>
+          !selectedMethod || encounter.method === selectedMethod // Filtramos los encuentros que coinciden con el método seleccionado o si no se ha seleccionado nada
+        )
+    }))
+    const filteredEncounters = fliterByMethod.filter(version => version.encounters.length > 0); //descartamos los que no tengan encuentros
 
-      // solo incluimos áreas que tengan al menos una versión válida
-      if (filteredVersions.length > 0) {
-        return { ...area, versions: filteredVersions }; // devolvemos el area con las versiones filtradas
-      }
-      return null; // devolvemos null si no se incluye ninguna versión
-    })
-    .filter(Boolean); // excluimos áreas que no tengan ninguna versión válida
+    // devolvemos solo áreas con versiones válidas
+    return filteredEncounters.length
+      ? { ...area, versions: filteredEncounters }
+      : null;
+  })
+  return filteredData.filter(Boolean); // eliminamos nulls
 }
 
 // Función que actualiza el método de encuentro del sistema de filtrado de ubicaciones
