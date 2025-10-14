@@ -13,8 +13,8 @@ let currentMethod = null;
 export function modalHandler() {
   const $container = $('#pokemons');
   // Escuchamos todos los click en el contenedor de tarjetas
-  $container.addEventListener('click', async (e) => {
-    const $clickedElement = e.target.closest('[data-pokemon]'); //capturamos el botón con data-pokemon en el que se hizo click
+  $container.addEventListener('click', async (event) => {
+    const $clickedElement = event.target.closest('[data-pokemon]'); //capturamos el botón con data-pokemon en el que se hizo click
     if (!$clickedElement) return;
 
     // Fetch individual (datos siempre actualizados)
@@ -193,9 +193,9 @@ export function sortingHandler() {
   const $movesHeader = $('#moves-table-header'); // capturamos el header de la tabla de movimientos
   
   // delegamos el evento click al header
-  $movesHeader.addEventListener('click', (e) => {
+  $movesHeader.addEventListener('click', (event) => {
     // capturamos la columna que se ha pulsado
-    const $clickedHeader = e.target.closest('th[data-sort-target]');
+    const $clickedHeader = event.target.closest('th[data-sort-target]');
     // Si no se ha pulsado sobre ninguna columna, no hacemos nada
     if (!$clickedHeader) return;
     
@@ -259,21 +259,48 @@ async function loadPokemonLocations(pokemonId, types) {
 }
 
 // Función que procesa los datos de las ubicaciones
-function processLocationData(data) {
-    return data.map(area => ({ // recorremos cada area de la entrada
-    name: area.location_area.name, // nombre de la area
-    versions: area.version_details.map(version => { // recorremos cada version de la area
+export function processLocationData(data) {
+  const processed = [];
 
-      const uniqueMethods = [ // Usamos un Set para una variable auxiliar de métodos únicos
-        ...new Set(version.encounter_details.map(encounter => encounter.method.name)) 
-      ];
+  for (const area of data) {// recorremos cada area 
+    const areaInfo = {
+      name: area.location_area.name, // nombre de la area
+      versions: []
+    };
 
-      return { // devolvemos un objeto con la version y los métodos de encuentro únicos
+    for (const version of area.version_details) { // recorremos cada version de la area
+      const versionInfo = {
         name: version.version.name, // nombre de la version del juego
-        methods: uniqueMethods // métodos de encuentro únicos
+        encounters: []
       };
-    })
-  }));
+
+      for (const encounter of version.encounter_details) { // recorremos cada encuentro de la version
+        const encounterInfo = {
+          method: encounter.method.name,  // nombre del método de encuentro
+          chance: encounter.chance,       // probabilidad del encuentro
+          min_level: encounter.min_level, // nivel mínimo del encuentro
+          max_level: encounter.max_level, // nivel máximo del encuentro
+          conditions: encounter.condition_values.map(cond => cond.name) // condiciones del encuentro
+        };
+
+        versionInfo.encounters.push(encounterInfo); // agregamos el encuentro al objeto de la version
+      }
+
+      // Eliminamos duplicados de encuentros idénticos (mismo método + condiciones + nivel)
+      const uniqueEncounters = new Map(); // instanciamos un mapa para almacenar los encuentros, ya que no permite duplicados
+      for (const encounter of versionInfo.encounters) { // recorremos cada encuentro
+        const key = `${encounter.method}-${encounter.min_level}-${encounter.max_level}-${encounter.conditions.join(",")}`; //varaible auxiliar para detectar duplicados
+        if (!uniqueEncounters.has(key)) uniqueEncounters.set(key, encounter); // si no existe, lo agregamos
+      }
+      versionInfo.encounters = [...uniqueEncounters.values()]; // actualizamos la lista de encuentros, sin duplicados
+
+      areaInfo.versions.push(versionInfo); // agregamos la version al objeto de la area
+    }
+
+    processed.push(areaInfo); // agregamos la area al objeto procesado
+  }
+
+  return processed;
 }
 
 // Función que flitra los datos de las ubicaciones, por juego y método
