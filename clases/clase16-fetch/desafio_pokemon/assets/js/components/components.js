@@ -241,17 +241,20 @@ export function createLocationsCards(area, individualGames, types){
 }
 
 // Función que crea la información de las tarjetas de ubicaciones
-export function createLocationsCardsInfo (version, gameData) {
-    const $versionBlock = createElement("div", "d-flex flex-wrap align-items-center gap-2 mb-2");
+export function createLocationsCardsInfo(version, gameData) {
+  // Creamos el contenedor principal
+    const $versionTable = createElement("table", "location-table table table-sm mb-3");
 
-    const $versionBadge = createBadge(null, version.name);
-    $versionBadge.style.backgroundColor = gameData?.color || "var(--border-color)";
-    $versionBadge.style.color = `var(${gameData?.font || "--light-font"})`;
-    $versionBlock.appendChild($versionBadge);
-    // Badges de métodos
+    // --- HEADER DOBLE: nombre del juego y nombres de columnas ---
+    const $thead = createLocationsTableHeader(version, gameData);
+
+    // --- BODY: datos de encuentros ---
+    const $tbody = createElement("tbody");
     for (const encounter of version.encounters) {
-        const $methodBadge = createBadge("bg-info text-dark", formatText(encounter.method));
-        $versionBlock.appendChild($methodBadge);
+        const $row = createLocationsTableRows(encounter);
+        $tbody.appendChild($row);
     }
-    return $versionBlock;
+
+    $versionTable.append($thead, $tbody);
+    return $versionTable;
 }
