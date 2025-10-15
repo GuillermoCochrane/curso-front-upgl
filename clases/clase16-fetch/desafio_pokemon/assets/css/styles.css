@@ -2,32 +2,7 @@
 @import url(./pokmon_cards.css);
 @import url(./modal/modal_base.css);
 @import url(./modal/modal_stats.css);
-
-/* Habilidades */
-#habilidades {
-  margin: auto;
-
-  & ul {
-    list-style: none;
-    padding: 0;
-
-    & li {
-        border-left: 4px solid var(--card-color);
-        transition: all 0.2s ease;
-
-        &:hover {
-          transform: translatey(-5px);
-          scale: 1.01;
-          box-shadow: 0 0 10px 5px rgba(155, 155, 155, 0.3);
-        }
-
-        & aside {
-          border-bottom: 1px solid rgba(0,0,0,0.1);
-          padding-bottom: 0.5rem;
-        }
-    }
-  }
-}
+@import url(./modal/modal_abilities.css);
 
 .games-filter, .location-card {
     border: 2px solid rgba(255, 255, 255, 0.3);
