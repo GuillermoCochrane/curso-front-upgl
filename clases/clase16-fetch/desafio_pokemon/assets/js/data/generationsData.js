@@ -199,6 +199,7 @@ export const games = [
 
 //Datos estructurados por juegos individuales
 export const individualGames = [
+  { id: null, name: "Todos", color: null, font: "--light-font", version: "red" },
   { id: "red", name: "Red", color: "#ff0000", font: "--light-font" },
   { id: "blue", name: "Blue", color: "#0000ff", font: "--light-font" },
   { id: "yellow", name: "Yellow", color: "#ffcc00", font: "--dark-font" },
