@@ -282,3 +282,20 @@ export function createLocationsTableHeader(version, gameData) {
     $thead.append($gameHeader,$columnsHeader);
     return $thead;
 }
+
+// Función que crea las filas de las tablas de ubicaciones
+export function createLocationsTableRows(encounter) {
+    const $row = createElement("tr");
+    const conditionsText = encounter.conditions.length 
+        ? encounter.conditions.map(condition => formatText(condition)).join(", ") 
+        : "-";
+
+    const $method = createCell(formatText(encounter.method), "text-capitalize text-center");
+    const $min = createCell(encounter.min_level, "text-center");
+    const $max = createCell(encounter.max_level, "text-center");
+    const $conds = createCell(conditionsText, "text-center");
+    const $chance = createCell(`${encounter.chance}%`, "text-center");
+
+    $row.append($method, $min, $max, $conds, $chance);
+    return $row;
+}
