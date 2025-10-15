@@ -1,13 +1,7 @@
 @import url(./base.css);
 @import url(./pokmon_cards.css);
 @import url(./modal/modal_base.css);
-
-#pokemonCarousel img {
-  width: 220px !important;
-  height: 220px; 
-  object-fit: contain;
-  margin: auto;
-}
+@import url(./modal/modal_stats.css);
 
 /* Habilidades */
 #habilidades {
