@@ -258,3 +258,27 @@ export function createLocationsCardsInfo(version, gameData) {
     $versionTable.append($thead, $tbody);
     return $versionTable;
 }
+
+// Función que crea el encabezado de las tablas de ubicaciones
+export function createLocationsTableHeader(version, gameData) {
+    const $thead = createElement("thead");
+
+    // --- HEADER 1: nombre del juego ---
+    const $gameHeader = createElement("tr", "version-header text-light");
+    const $gameTitle = createElement("th", "text-center", formatText(version.name));
+    $gameTitle.colSpan = 5;
+    $gameTitle.style.backgroundColor = gameData?.color || "var(--border-color)";
+    $gameTitle.style.color = `var(${gameData?.font || "--light-font"})`;
+    $gameHeader.appendChild($gameTitle);
+
+    // --- HEADER 2: nombres de columnas ---
+    const $columnsHeader = createElement("tr", "text-dark bg-light");
+    const columns = ["Método", "Nivel Min", "Nivel Max", "Condiciones", "Chance"];
+    for (const column of columns) {
+        const $th = createElement("th", "text-center small fw-bold", column);
+        $columnsHeader.appendChild($th);
+    };
+
+    $thead.append($gameHeader,$columnsHeader);
+    return $thead;
+}
