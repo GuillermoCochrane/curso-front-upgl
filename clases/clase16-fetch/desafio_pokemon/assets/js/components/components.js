@@ -249,8 +249,8 @@ export function createLocationsCardsInfo (version, gameData) {
     $versionBadge.style.color = `var(${gameData?.font || "--light-font"})`;
     $versionBlock.appendChild($versionBadge);
     // Badges de métodos
-    for (const method of version.methods) {
-        const $methodBadge = createBadge("bg-info text-dark", formatText(method));
+    for (const encounter of version.encounters) {
+        const $methodBadge = createBadge("bg-info text-dark", formatText(encounter.method));
         $versionBlock.appendChild($methodBadge);
     }
     return $versionBlock;

@@ -342,7 +342,7 @@ function getUniqueMethods(data) {
     ...new Set( // usamos un Set porque solo almacena valores únicos, eliminando duplicados automáticamente
       data.flatMap(area => // recorremos cada área; flatMap aplana el resultado, evitando arrays anidados
         area.versions.flatMap(version => // recorremos cada versión dentro de la misma área
-          version.methods.map(encounter => encounter) // extraemos el nombre del método de encuentro
+          version.encounters.map(encounter => encounter.method) // extraemos el nombre del método de encuentro
         )
       )
     )
