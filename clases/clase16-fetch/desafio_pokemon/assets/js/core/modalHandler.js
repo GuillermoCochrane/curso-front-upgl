@@ -249,7 +249,7 @@ async function loadPokemonLocations(pokemonId, types) {
 
     // 5. generamos el control de filtrado
     generateMethodSelect(methods, handleMethodChange, currentMethod);
-    generateVersionButtons(individualGames, handleVersionChange);
+    generateVersionButtons(individualGames, handleVersionChange, `var(--solid_${types[0].type.name})`);
 
     // 6. renderizamos los resultados
     displayLocations(filteredLocations, individualGames, types);

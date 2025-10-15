@@ -165,15 +165,15 @@ export function generateGameButtons(games, loadGameMoves) {
 }
 
 // Crea botones de filtrado por versiones
-export function generateVersionButtons(versions, filterVersions) {
+export function generateVersionButtons(versions, filterVersions, allButtonColor) {
     const $container = $("#version-buttons")
     $container.innerHTML = "";
 
     for (const version of versions) {
         const $button = createElement("button", "btn btn-sm mb-2 text-center", version.name);
         $button.setAttribute("data-game", version.id);
-        $button.style.borderColor = version.color;
-        $button.style.setProperty("--games-button", `${version.color}`);
+        $button.style.borderColor = version.color !== null ? version.color : allButtonColor;
+        $button.style.setProperty("--games-button", `${version.color !== null ? version.color : allButtonColor}`);
         $button.style.setProperty("--font-color", `var(${version.font})`);
 
         // Al hacer clic, aplica el filtro
