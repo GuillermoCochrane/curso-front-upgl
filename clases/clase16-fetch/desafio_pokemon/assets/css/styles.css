@@ -333,6 +333,32 @@ article.card {
     }
 }
 
+.location-card {
+  margin-inline: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  & .location-content {
+    width: 98%;
+    margin-inline: auto;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+
+  &[open] .location-content {
+    max-height: 100%;
+    opacity: 1;
+  }
+
+}
+
 #generation-header{
   color: var(--font-color) !important;
 }
