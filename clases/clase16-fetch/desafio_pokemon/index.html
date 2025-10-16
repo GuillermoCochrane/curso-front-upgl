@@ -13,15 +13,16 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top rounded-3">
       <div class="container">
         <a class="navbar-brand fs-2 fw-bold">🦊 Pokedex</a>
-        <div class="d-flex w-50">
-          <form class="d-flex w-100" role="search">
-            <input class="form-control me-2" type="search" placeholder="Buscar Pokémon..." aria-label="Search">
+        <div class="d-flex w-50 position-relative">
+          <form class="d-flex w-100" role="search" id="search-form">
+            <input class="form-control me-2" id="pokemon-search" type="search" placeholder="Buscar Pokémon..." aria-label="Search">
             <button class="btn btn-outline-light search-btn" type="submit">🔍</button>
           </form>
+          <div id="search-results" class="position-absolute w-100"></div>
         </div>
       </div>
+      </div>
     </nav>
-    
   </header>
   <main>
       <h2 id="results-tilte" class="text-center p-3 text-light">Todos los Pokemones</h2>
