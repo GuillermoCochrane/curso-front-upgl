@@ -51,6 +51,7 @@ export function createBadge(customStyle = null, content = null, background = nul
     return $badge;
 }
 
+// Función para aplicar color a un elemento
 export function applyBackgroundColor(element, background, solid = false, gradientAngle = 145) {
     if (background.length === 1) {
         const color = solid ? `solid_${background[0].type.name}` : `transparent_${background[0].type.name}`;
@@ -62,4 +63,16 @@ export function applyBackgroundColor(element, background, solid = false, gradien
         element.style.background = `linear-gradient(${gradientAngle}deg, ${colores})`;
         element.style.setProperty('--card-color', `var(--solid_${background[0].type.name})`);
     }
+}
+
+// Handler para visualización de elementos
+export function hiddenToggle(id) {
+    const $element = $(`#${id}`);
+    $element.hidden = !$element.hidden;
+    /* 
+        agregar al css la siguiente rergla por prevención:
+        [hidden] {
+            display: none !important;
+        }
+     */
 }
