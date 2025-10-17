@@ -3,7 +3,7 @@ import { modalHandler } from './modalHandler.js';
 import { dataFetcher, searchDataFetcher } from './dataFetcher.js';
 import { infiniteScrollHandler } from './infiniteScrollHandler.js'
 import { initSearch } from './searchHandler.js';
-import { uiReset } from '../utilities/dom.js';
+import { uiReset, hiddenToggle } from '../utilities/dom.js';
 
 let nextUrl = null;
 
@@ -11,7 +11,7 @@ async function createApp() {
     const pokemons = await initialLoad();
     modalHandler(pokemons);
     infiniteScrollHandler(loadMorePokemons);
-    initSearch(handleSearch);
+    initSearch(handleSearch, resetSearch);
 }
 
 // Cargar lista completa para autocomplete
@@ -29,6 +29,7 @@ async function handleSearch(searchedPokemonList) {
         const {pokemons, nextPage} = await searchDataFetcher(searchedPokemonList);
         nextUrl = nextPage;
         uiReset();
+        hiddenToggle('reset-search');
         createCardSection(pokemons);
     } catch (error) {
         console.error('❌ Pokémon no encontrado:', error);
@@ -36,10 +37,17 @@ async function handleSearch(searchedPokemonList) {
     }
 }
 
+function resetSearch() {
+    hiddenToggle('reset-search');
+    initialLoad();
+}
+
+
 // Función que carga los datos iniciales del sistema
 async function initialLoad() {
     const {pokemons, nextPage} = await dataFetcher();
     nextUrl = nextPage;
+    uiReset();
     createCardSection(pokemons);
     return pokemons;
 }

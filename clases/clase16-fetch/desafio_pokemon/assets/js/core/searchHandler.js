@@ -6,10 +6,13 @@ let allPokemonList = [];
 let searchedPokemonList = [];
 
 // Inicializar event listeners de búsqueda
-export function initSearch(handleSearch) {
+export function initSearch(handleSearch, resetSearch) {
     const $seachform = $('#search-form');
     const $searchInput = $('#pokemon-search');
     const $searchResults = $('#search-results');
+    const $resetSearch = $('#reset-search');
+
+    //Carga de cache de búsqueda
     loadAllPokemon();
 
     // Event listeners de búsqueda
@@ -36,6 +39,12 @@ export function initSearch(handleSearch) {
             searchedPokemonList = searchedPokemonList.filter(pokemon => pokemon.name == currentSearch);
             handleSearch(searchedPokemonList);
         }
+    });
+
+    // Event listeners de reset de búsqueda
+    $resetSearch.addEventListener('click', (e) => {
+        searchedPokemonList = [];
+        resetSearch();
     });
 
     // Cerrar resultados al hacer click fuera
