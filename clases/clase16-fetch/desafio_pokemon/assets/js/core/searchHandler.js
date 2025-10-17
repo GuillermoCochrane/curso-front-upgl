@@ -1,7 +1,6 @@
-import { $ } from '../utilities/dom.js';
+import { $, createElement } from '../utilities/dom.js';
 import { dataFetcher, searchDataFetcher } from './dataFetcher.js';
-import { formatText } from '../utilities/formatData.js';
-import { createCardSection } from '../components/components.js';
+import { createCardSection, createListItem } from '../components/components.js';
 
 let allPokemonList = [];
 let searchedPokemonList = [];
@@ -9,11 +8,23 @@ let searchedPokemonList = [];
 // Inicializar event listeners de búsqueda
 export function initSearch() {
     const $seachform = $('#search-form');
+    const $searchInput = $('#pokemon-search');
+    const $searchResults = $('#search-results');
 
     // Event listeners de búsqueda
     $seachform.addEventListener('submit', (e) => {
         e.preventDefault();
         handleSearch();
+    });
+
+    // Event listeners de autocomplete
+    $searchInput.addEventListener('input', (e) => {
+        const term = e.target.value;
+        if (term.length > 1) {
+            showSearchSuggestions(term);
+        } else {
+            $('#search-results').innerHTML = '';
+        }
     });
 }
 
@@ -44,6 +55,33 @@ async function handleSearch() {
         createCardSection(pokemons);
     } catch (error) {
         console.error('❌ Pokémon no encontrado:', error);
-        //showSearchSuggestions(searchTerm);
+        showSearchSuggestions(searchTerm);
     }
+}
+
+// Función que muestra las sugerencias de búsqueda
+function showSearchSuggestions(searchTerm) {
+    searchedPokemonList = allPokemonList.filter(pokemon => 
+        pokemon.name.includes(searchTerm.toLowerCase())
+    );
+
+    const suggestions = searchedPokemonList.slice(0, 7);
+    const $results = $('#search-results');
+    
+    // LIMPIAMOS RESULTADOS PREVIOS
+    $results.innerHTML = '';
+    
+    const $resultsList = createElement('ul', 'list-group');
+
+    if (suggestions.length === 0) {
+        const $noResults = createListItem('No se encontraron Pokémon', 'text-muted');
+        $resultsList.appendChild($noResults);
+    } else {
+        for (const pokemon of suggestions) {
+            const $suggestion = createListItem(null, 'list-group-item-action', pokemon);
+            $resultsList.appendChild($suggestion);
+        }
+    }
+
+    $results.appendChild($resultsList);
 }
