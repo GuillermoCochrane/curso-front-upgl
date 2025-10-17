@@ -17,6 +17,7 @@
           <form class="d-flex w-100" role="search" id="search-form">
             <input class="form-control me-2" id="pokemon-search" type="search" placeholder="Buscar Pokémon..." aria-label="Search">
             <button class="btn btn-outline-light search-btn" type="submit">🔍</button>
+            <button id="reset-search" class="btn btn-outline-danger ms-2" type="button" title="Limpiar búsqueda" hidden> ✖ </button>
           </form>
           <aside id="search-results" class="position-absolute w-100">
             <!-- Se renderizará aquí dinamicamente las sugerencias de búsqueda -->
@@ -26,8 +27,8 @@
       </div>
     </nav>
   </header>
-  <main>
-      <h2 id="results-tilte" class="text-center p-3 text-light">Todos los Pokemones</h2>
+  <main class="pt-5 mt-2">
+      <h2 id="results-title" class="text-center p-3 text-light">Todos los Pokemones</h2> <!-- agregar glassmorph -->
       <section id="pokemons" class="row justify-content-evenly p-4">
         <!-- Acá redenrizamos las tarjetas -->
       </section>
