@@ -36,7 +36,7 @@ export async function fetchAbilityDetails(url) {
 export async function searchDataFetcher(dataToFetch = []) {
   try {
     const allSearchedData = await allDataFetcher(dataToFetch);
-    return {pokemons: allSearchedData};
+    return {pokemons: allSearchedData, nextPage: null};
   } catch (error) {
     console.log(error);
   }
