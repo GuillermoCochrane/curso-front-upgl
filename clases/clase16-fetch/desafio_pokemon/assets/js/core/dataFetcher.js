@@ -31,3 +31,13 @@ export async function fetchAbilityDetails(url) {
     return 'Description not available';
   }
 }
+
+// Helper para datos de la busqueda
+export async function searchDataFetcher(dataToFetch = []) {
+  try {
+    const allSearchedData = await allDataFetcher(dataToFetch);
+    return {pokemons: allSearchedData};
+  } catch (error) {
+    console.log(error);
+  }
+}
