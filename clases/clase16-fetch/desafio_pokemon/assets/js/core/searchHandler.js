@@ -1,20 +1,21 @@
 import { $, createElement } from '../utilities/dom.js';
-import { dataFetcher, searchDataFetcher } from './dataFetcher.js';
-import { createCardSection, createListItem } from '../components/components.js';
+import { dataFetcher} from './dataFetcher.js';
+import { createListItem } from '../components/components.js';
 
 let allPokemonList = [];
 let searchedPokemonList = [];
 
 // Inicializar event listeners de búsqueda
-export function initSearch() {
+export function initSearch(handleSearch) {
     const $seachform = $('#search-form');
     const $searchInput = $('#pokemon-search');
     const $searchResults = $('#search-results');
+    loadAllPokemon();
 
     // Event listeners de búsqueda
     $seachform.addEventListener('submit', (e) => {
         e.preventDefault();
-        handleSearch();
+        handleSearch(searchedPokemonList);
     });
 
     // Event listeners de autocomplete
@@ -33,7 +34,7 @@ export function initSearch() {
         if ($clickedElement) {
             const currentSearch = $clickedElement.dataset.pokemon;
             searchedPokemonList = searchedPokemonList.filter(pokemon => pokemon.name == currentSearch);
-            handleSearch();
+            handleSearch(searchedPokemonList);
         }
     });
 
@@ -58,21 +59,6 @@ export async function loadAllPokemon() {
         
     } catch (error) {
         console.error('Error cargando lista de Pokémon:', error);
-    }
-}
-
-// Función principal de búsqueda
-async function handleSearch() {
-    try {
-        const {pokemons} = await searchDataFetcher(searchedPokemonList);
-        // Ocultar resultados de autocomplete y limpiar input
-        $('#search-results').innerHTML = '';
-        $('#pokemon-search').value = '';
-        $(`#pokemons`).innerHTML = '';
-        createCardSection(pokemons);
-    } catch (error) {
-        console.error('❌ Pokémon no encontrado:', error);
-        showSearchSuggestions(searchTerm);
     }
 }
 
