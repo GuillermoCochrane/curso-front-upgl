@@ -3,14 +3,12 @@ import { modalHandler } from './modalHandler.js';
 import { dataFetcher, searchDataFetcher } from './dataFetcher.js';
 import { infiniteScrollHandler } from './infiniteScrollHandler.js'
 import { initSearch } from './searchHandler.js';
-import {$} from '../utilities/dom.js';
+import { uiReset } from '../utilities/dom.js';
 
 let nextUrl = null;
 
 async function createApp() {
-    const {pokemons, nextPage} = await dataFetcher();
-    nextUrl = nextPage;
-    createCardSection(pokemons);
+    const pokemons = await initialLoad();
     modalHandler(pokemons);
     infiniteScrollHandler(loadMorePokemons);
     initSearch(handleSearch);
@@ -30,16 +28,20 @@ async function handleSearch(searchedPokemonList) {
     try {
         const {pokemons, nextPage} = await searchDataFetcher(searchedPokemonList);
         nextUrl = nextPage;
-
-        // Ocultar resultados de autocomplete, limpiar input y limpiar contenido previo
-        $('#search-results').innerHTML = '';
-        $('#pokemon-search').value = '';
-        $(`#pokemons`).innerHTML = '';
+        uiReset();
         createCardSection(pokemons);
     } catch (error) {
         console.error('❌ Pokémon no encontrado:', error);
         showSearchSuggestions(searchTerm);
     }
+}
+
+// Función que carga los datos iniciales del sistema
+async function initialLoad() {
+    const {pokemons, nextPage} = await dataFetcher();
+    nextUrl = nextPage;
+    createCardSection(pokemons);
+    return pokemons;
 }
 
 document.addEventListener('DOMContentLoaded', createApp);
