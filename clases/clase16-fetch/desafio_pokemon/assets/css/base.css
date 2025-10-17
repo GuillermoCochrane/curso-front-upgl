@@ -56,3 +56,18 @@ body {
 [hidden] {
   display: none !important;
 }
+
+#results-title {
+  border-radius: 12px;
+  margin-top: 10px !important;
+  padding-block: .75rem !important;
+  padding-inline: 1.5rem !important;
+  width: fit-content;
+  background: var(--transparent_steel);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  margin: auto;
+  box-shadow: 0 0 10px 2px var(--transparent_water);
+}
