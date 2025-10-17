@@ -21,3 +21,18 @@ export async function loadAllPokemon() {
         console.error('Error cargando lista de Pokémon:', error);
     }
 }
+
+// Función principal de búsqueda
+async function handleSearch() {
+    try {
+        const {pokemons} = await searchDataFetcher(searchedPokemonList);
+        // Ocultar resultados de autocomplete y limpiar input
+        $('#search-results').innerHTML = '';
+        $('#pokemon-search').value = '';
+        $(`#pokemons`).innerHTML = '';
+        createCardSection(pokemons);
+    } catch (error) {
+        console.error('❌ Pokémon no encontrado:', error);
+        showSearchSuggestions(searchTerm);
+    }
+}
