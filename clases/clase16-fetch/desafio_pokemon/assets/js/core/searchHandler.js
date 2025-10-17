@@ -6,6 +6,17 @@ import { createCardSection } from '../components/components.js';
 let allPokemonList = [];
 let searchedPokemonList = [];
 
+// Inicializar event listeners de búsqueda
+export function initSearch() {
+    const $seachform = $('#search-form');
+
+    // Event listeners de búsqueda
+    $seachform.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleSearch();
+    });
+}
+
 // Cargar lista completa para autocomplete
 export async function loadAllPokemon() {
     try {
@@ -33,6 +44,6 @@ async function handleSearch() {
         createCardSection(pokemons);
     } catch (error) {
         console.error('❌ Pokémon no encontrado:', error);
-        showSearchSuggestions(searchTerm);
+        //showSearchSuggestions(searchTerm);
     }
 }
