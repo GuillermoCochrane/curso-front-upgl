@@ -26,6 +26,19 @@ export function initSearch() {
             $('#search-results').innerHTML = '';
         }
     });
+
+    // Event listeners de click en resultados
+    $searchResults.addEventListener('click', (e) => {
+        const $clickedElement = e.target.closest("[data-pokemon]");
+        console.log($clickedElement);
+        if ($clickedElement) {
+            const currentSearch = $clickedElement.dataset.pokemon;
+            searchedPokemonList = searchedPokemonList.filter(pokemon => pokemon.name == currentSearch);
+            console.log(searchedPokemonList);
+            
+            handleSearch();
+        }
+    });
 }
 
 // Cargar lista completa para autocomplete
