@@ -86,7 +86,7 @@ export function uiReset() {
 }
 
 // Función para modificar el contenido de un elemento
-export function changeText(id, text, isHTML = false) {
+export function changeContent(id, text, isHTML = false) {
     const $element = $(`#${id}`);
     isHTML ? ($element.innerHTML = text) : ($element.textContent = text)
 }

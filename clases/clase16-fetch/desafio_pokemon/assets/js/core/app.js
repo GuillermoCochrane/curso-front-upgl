@@ -3,7 +3,7 @@ import { modalHandler } from './modalHandler.js';
 import { dataFetcher, searchDataFetcher } from './dataFetcher.js';
 import { infiniteScrollHandler } from './infiniteScrollHandler.js'
 import { initSearch } from './searchHandler.js';
-import { uiReset, hiddenToggle } from '../utilities/dom.js';
+import { uiReset, hiddenToggle, changeContent } from '../utilities/dom.js';
 
 let nextUrl = null;
 
@@ -30,6 +30,7 @@ async function handleSearch(searchedPokemonList) {
         nextUrl = nextPage;
         uiReset();
         hiddenToggle('reset-search');
+        changeContent('results-title', `Resultados de la búsqueda: ${searchedPokemonList.length}`);
         createCardSection(pokemons);
     } catch (error) {
         console.error('❌ Pokémon no encontrado:', error);
@@ -39,6 +40,7 @@ async function handleSearch(searchedPokemonList) {
 
 function resetSearch() {
     hiddenToggle('reset-search');
+    changeContent('results-title', 'Todos los Pokemones');
     initialLoad();
 }
 
