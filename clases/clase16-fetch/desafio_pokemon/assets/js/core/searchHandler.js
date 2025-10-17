@@ -18,7 +18,12 @@ export function initSearch(handleSearch, resetSearch) {
     // Event listeners de búsqueda
     $seachform.addEventListener('submit', (e) => {
         e.preventDefault();
-        handleSearch(searchedPokemonList);
+        if (searchedPokemonList.length > 0) {
+            handleSearch(searchedPokemonList);
+            searchedPokemonList = [];
+        } else {
+            resetSearch();
+        }
     });
 
     // Event listeners de autocomplete
