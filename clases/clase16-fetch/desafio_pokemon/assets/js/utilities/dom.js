@@ -76,3 +76,11 @@ export function hiddenToggle(id) {
         }
      */
 }
+
+// Función para resetear la UI durante busquedas o reset de la misma
+export function uiReset() {
+        // Ocultar resultados de autocomplete y limpiar input
+        $('#search-results').innerHTML = '';
+        $('#pokemon-search').value = '';
+        $(`#pokemons`).innerHTML = '';
+}
