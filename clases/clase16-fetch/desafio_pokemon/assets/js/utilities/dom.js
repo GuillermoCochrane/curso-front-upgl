@@ -84,3 +84,9 @@ export function uiReset() {
         $('#pokemon-search').value = '';
         $(`#pokemons`).innerHTML = '';
 }
+
+// Función para modificar el contenido de un elemento
+export function changeText(id, text, isHTML = false) {
+    const $element = $(`#${id}`);
+    isHTML ? ($element.innerHTML = text) : ($element.textContent = text)
+}
