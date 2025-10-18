@@ -29,6 +29,7 @@ async function handleSearch(searchedPokemonList) {
         const {pokemons, nextPage} = await searchDataFetcher(searchedPokemonList);
         nextUrl = nextPage;
         uiReset();
+        hiddenToggle("search-btn");
         hiddenToggle('reset-search');
         changeContent('results-title', `Resultados de la búsqueda: ${searchedPokemonList.length}`);
         createCardSection(pokemons);
@@ -39,6 +40,7 @@ async function handleSearch(searchedPokemonList) {
 }
 
 function resetSearch() {
+    hiddenToggle("search-btn");
     hiddenToggle('reset-search');
     changeContent('results-title', 'Todos los Pokemones');
     initialLoad();
