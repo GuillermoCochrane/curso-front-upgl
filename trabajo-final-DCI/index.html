@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club de futbol</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="icon" href="assets/icono_cae.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <div class="hero-portada">
+      <div class="overlay"></div>
+      <h1 class="titulo-portada"><span class="dci-titulo"> D.C.I. </span></h1>
+      <img src="assets/camiseta.jpg" alt="Camiseta Club" class="camiseta-portada">
+
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top glass-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="assets/escudo.png" alt="Escudo Club" width="47" height="47" class="rounded-circle">
+        <span class="fs-4 fw-bold text-dark">Deportivo Club Independencia</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav text-center gap-2">
+          <li class="nav-item">
+            <a class="nav-link btn btn-light rounded-pill px-4" href="#historia">Historia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-light rounded-pill px-4" href="#jugadores">Jugadores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-light rounded-pill px-4" href="https://www.facebook.com/deportivoc.independencia/photos?locale=es_LA" target="_blank">Galería de Imágenes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-pink rounded-pill px-4 text-white fw-bold" href="#asociate">Asociate</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5">
+    <h2 class="mb-4">Jugadores principales</h2>
+    <div id="jugadores" class="row row-cols-1 row-cols-md-3 g-4">
+    </div>
+
+    <!-- Aca se carga dinamicamente las cards con JavaScript -->
+
+  </main>
+
+  <section id="historia" class="container my-5">
+    <h2 class="text-center mb-4">Historia del Club</h2>
+    <p class="text-justify">El Deportivo Club Independencia fue fundado el 12 de marzo de 1920 por un grupo de entusiastas del fútbol con el objetivo de promover el deporte en la comunidad. A lo largo de los años, el club ha crecido y se ha consolidado como una de las instituciones deportivas más importantes de la región.</p>
+    <p class="text-justify">Desde sus inicios, DCI ha tenido una rica historia en el fútbol local, destacándose por su estilo de juego y su compromiso con la formación de jóvenes talentos. El club ha logrado numerosos títulos a nivel regional, convirtiéndose en un referente del deporte en la zona.</p>
+    <p class="text-justify">Además de su éxito en el campo, el club ha sido un pilar en la comunidad, organizando eventos benéficos y actividades para fomentar la inclusión y el desarrollo social a través del deporte. Hoy en día, DCI continúa su misión de ser un espacio donde el fútbol y los valores deportivos se unen para inspirar a las futuras generaciones.</p>
+
+  </section>
+
+  <footer class="bg-danger text-white p-3 text-center">
+    &copy; 2025 Deportivo Club Independencia. Todos los derechos reservados.
+  </footer>
+
+  <script src="scripts/scrypt.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</body>
+</html>

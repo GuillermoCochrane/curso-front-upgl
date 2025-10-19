@@ -1,0 +1,95 @@
+body {
+    background-color: rgba(255, 0, 0, 0.431);
+}
+
+.dci-titulo {
+    font-size: 4rem;
+    /* Tamaño normal inicial */
+    font-weight: bold;
+    color: #b30019;
+    transition: font-size 1.4s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+    display: inline-block;
+    padding: 2rem 10rem;
+    /* Espaciado alrededor del texto */
+    border: 1px solid #b5616d67;
+    border-radius: 15px;
+    /* Bordes redondeados */
+}
+
+.dci-titulo:hover {
+    font-size: 20rem;
+    /* 10 veces el tamaño inicial */
+    border: none
+}
+
+.hero-portada {
+    margin-top: 70px;
+    /* Ajusta este valor según la altura del navbar */
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    background: url('../assets/canchadci.jpg') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.818);
+    z-index: 1;
+}
+
+.camiseta-portada {
+    margin-top: 400px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 150px;
+    height: auto;
+    border: 2px solid #b30019;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.camiseta-portada:hover {
+    width: 300px;
+    transform: scale(1.1);
+    transition: transform 3.3s ease;
+    rotate: 10deg;
+    filter: drop-shadow(5px 5px 5px #000);
+}
+
+.titulo-portada {
+    position: absolute;
+    z-index: 2;
+    color: #b30019;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+    width: 100%;
+}
+
+.glass-navbar {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 0, 0, 0.7) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.btn-pink {
+    background: #ff009a !important;
+}
+
+.nav-link.btn {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}

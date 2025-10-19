@@ -1,0 +1,25 @@
+Aca vamos a poner la guia de la paguna y los requerimientos
+
+IMAGENES EN WEBP PNG O JPG
+
+
+<!--
+  Estructura obligatoria de la Landing Page
+El sitio deberá incluir, como mínimo, los siguientes apartados:
+  Header
+  Navbar
+  Footer
+  Secciones informativas, que deben contener:
+      Historia del club (una versión breve y una extendida).
+      Camiseta y escudo.
+      Jugadores del plantel de primera división.
+-->
+
+
+desde Styles para ir a la carpeta anterior se usa ../
+
+La portada va a ir con un HERO
+con una foto de fondo de la cancha
+
+usaremos- filter: drop sahdow
+
