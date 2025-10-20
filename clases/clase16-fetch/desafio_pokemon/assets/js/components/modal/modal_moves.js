@@ -1,6 +1,5 @@
-import { $, createElement, createCell, createBadge  } from '../utilities/dom.js';
-import { formatText } from '../utilities/formatData.js';
-
+import { $, createElement, createCell, createBadge  } from "../../utilities/dom.js";
+import { formatText } from "../../utilities/formatData.js"
 // Crea la tabla de movimientos
 export function generateMoveTable(filteredMoves) {
     const $tableBody = $('#moves-table-body');
@@ -25,7 +24,7 @@ export function generateMoveTable(filteredMoves) {
 }
 
 // Crea los elementos de una movimiento de la fila de movimientos
-export function createMoveRow(name, methods) {
+function createMoveRow(name, methods) {
     const $name = createCell(formatText(name), 'text-capitalize');
     const $method = createCell("", 'd-flex flex-wrap justify-content-center');
 

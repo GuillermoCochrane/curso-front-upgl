@@ -1,10 +1,29 @@
 import { $, $$ } from '../utilities/dom.js';
-import { generateMoveTable } from '../components/components.js';
+import { generateMoveTable } from '../components/modal/modal_moves.js';
 import { games } from '../data/generationsData.js';
 import { arraySorter } from '../utilities/formatData.js';
 
+// Función que actualiza los movimientos de un juego
+export function loadGameMoves(game, moves, sortBy='level', ascending=true) {
+  // 1. Filtrar movimientos para el juego específico
+  const filteredMoves = filterMovesByGame(moves, game.id);
+  const orderedMoves = arraySorter(filteredMoves, sortBy, ascending);
+  
+  // 2. Actualizar header
+  const $header = $('#generation-header');
+  $header.textContent = game.name;
+  $header.style.backgroundColor = game.color; // Color del juego
+  $header.style.setProperty('--font-color', `var(${game.font})`);
+  
+  // 3. Generar tabla (SIN agrupación compleja)
+  generateMoveTable(orderedMoves);
+  
+  // 4. Actualizar botón activo
+  updateActiveGameButton(game.id);
+}
+
 // Función que filtra los movimientos por juego
-export function filterMovesByGame(moves, gameId) {
+function filterMovesByGame(moves, gameId) {
   //Instanciamos un Map (objeto literal con métodos especiales como has, set, get) para almacenar los movimientos, ya que no permite duplicados
   const movesMap = new Map();
   
@@ -38,27 +57,8 @@ export function filterMovesByGame(moves, gameId) {
   return Array.from(movesMap.values());
 }
 
-// Función que actualiza los movimientos de un juego
-export function loadGameMoves(game, moves, sortBy='level', ascending=true) {
-  // 1. Filtrar movimientos para el juego específico
-  const filteredMoves = filterMovesByGame(moves, game.id);
-  const orderedMoves = arraySorter(filteredMoves, sortBy, ascending);
-  
-  // 2. Actualizar header
-  const $header = $('#generation-header');
-  $header.textContent = game.name;
-  $header.style.backgroundColor = game.color; // Color del juego
-  $header.style.setProperty('--font-color', `var(${game.font})`);
-  
-  // 3. Generar tabla (SIN agrupación compleja)
-  generateMoveTable(orderedMoves);
-  
-  // 4. Actualizar botón activo
-  updateActiveGameButton(game.id);
-}
-
 // Función que actualiza el botón activo en la tabla de movimientos
-export function updateActiveGameButton(activeId) {
+function updateActiveGameButton(activeId) {
   const $buttons = $$('#games-buttons button');
   for (const $button of $buttons) {
     $button.classList.remove('active');
@@ -94,7 +94,7 @@ export function sortingHandler() {
 }
 
 //Función que actualiza los headers de la tabla de movimientos
-export function updateSortHeaders(activeSort, newAscending) {
+function updateSortHeaders(activeSort, newAscending) {
   const $allHeaders = $$('#moves-table-header th[data-sort-target]');// capturamos todos los headers de  las columnas de la tabla para reccorrrerlos
 
   for (const $header of $allHeaders) {
