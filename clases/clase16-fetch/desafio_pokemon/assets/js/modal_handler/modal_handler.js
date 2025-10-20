@@ -5,7 +5,7 @@ import { dataFetcher } from '../core/dataFetcher.js';
 import { games, individualGames } from '../data/generationsData.js';
 import { modalCarouselData, modalStatsData } from './modal_stats_handler.js';
 import { modalAbilitiesData } from './modal_abilities_handler.js';
-import { loadGameMoves } from './modal_moves_handler.js';
+import { loadGameMoves, sortingHandler } from './modal_moves_handler.js';
 
 let cachedEncounters = [];
 let currentPokemon = null;
@@ -38,7 +38,7 @@ export function loadModalData(pokemon) {
   modalCarouselData(pokemon.sprites, pokemon.name, pokemon.id);
   modalStatsData(pokemon.stats, pokemon.height, pokemon.weight);
   modalAbilitiesData(pokemon.abilities);
-  sortingHandler();
+  sortingHandler(currentPokemon);
 
   generateGameButtons(games, game => loadGameMoves(game, pokemon.moves, pokemon.types));
   loadPokemonLocations(pokemon.id, pokemon.types);
@@ -61,46 +61,6 @@ export function modalHeaderData(id,name, types) {
     $pokemonName.textContent = name;
     
     createModalTypesBadges(types);
-}
-
-// Función que maneja el ordenamiento de las columnas de la tabla de movimientos
-export function sortingHandler() {
-  const $movesHeader = $('#moves-table-header'); // capturamos el header de la tabla de movimientos
-  
-  // delegamos el evento click al header
-  $movesHeader.addEventListener('click', (event) => {
-    // capturamos la columna que se ha pulsado
-    const $clickedHeader = event.target.closest('th[data-sort-target]');
-    // Si no se ha pulsado sobre ninguna columna, no hacemos nada
-    if (!$clickedHeader) return;
-    
-    const sortBy = $clickedHeader.getAttribute('data-sort-target'); // Obtenemos por que columna queremos ordenar
-    const isAscending = $clickedHeader.getAttribute('data-ascending') === 'true'; // Obtenemos si está ordenado ascendente o descendente
-    const newAscending = !isAscending;
-    
-    // Actualizar UI del header
-    updateSortHeaders(sortBy, newAscending);
-    
-    // Re-ordenar y refrescar
-    const $activeGame = $('#games-buttons .active'); // capturamos el botón activo
-    const game = games.find(g => g.id === $activeGame.getAttribute('data-game')); // obtenemos los datos del juego activo
-    loadGameMoves(game, currentPokemon.moves, sortBy, newAscending); // actualizamos la tabla de movimientos
-  });
-}
-
-//Función que actualiza los headers de la tabla de movimientos
-export function updateSortHeaders(activeSort, newAscending) {
-  const $allHeaders = $$('#moves-table-header th[data-sort-target]');// capturamos todos los headers de  las columnas de la tabla para reccorrrerlos
-
-  for (const $header of $allHeaders) {
-    const isActive = $header.getAttribute('data-sort-target') === activeSort; // buscamos el header que coincide
-    $header.classList.remove('active-sort');
-    if (isActive) {
-      // Si es el header activo, actualizamos sus atributos
-      $header.setAttribute('data-ascending', newAscending.toString());
-      $header.classList.add('active-sort');
-    }
-  };
 }
 
 // Función que carga las ubicaciones donde se encuentra el Pokemon
