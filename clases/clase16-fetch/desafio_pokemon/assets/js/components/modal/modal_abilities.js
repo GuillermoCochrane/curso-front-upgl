@@ -1,4 +1,4 @@
-import { $, createElement, createBadge} from '../utilities/dom.js';
+import { $, createElement, createBadge} from '../../utilities/dom.js';
 
 // Crea seccion de badges de tipos en el modal
 export function createModalTypesBadges(types) {
@@ -25,7 +25,7 @@ export async function createModalAbilitiesList(abilities, fetchAbilityDetails) {
 };
 
 // Crea encabezado de habilidades en el modal
-export function createAbiltyHeader(name, is_hidden) {
+function createAbiltyHeader(name, is_hidden) {
     const $abilityHeader = createElement('aside', 'd-flex justify-content-between align-items-center mb-1');
     const $abilityName = createElement('strong', 'text-capitalize', name);
     const badgeStyle = is_hidden ? 'bg-warning text-dark' : 'bg-primary';
