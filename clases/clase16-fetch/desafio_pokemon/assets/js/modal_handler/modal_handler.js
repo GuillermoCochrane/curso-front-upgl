@@ -1,9 +1,10 @@
 import {$, $$, applyBackgroundColor} from '../utilities/dom.js';
-import { createModalTypesBadges, createModalAbilitiesList, generateMoveTable, generateGameButtons, generateVersionButtons, generateMethodSelect, displayLocations } from '../components/components.js';
-import { dataFetcher, fetchAbilityDetails } from '../core/dataFetcher.js';
+import { createModalTypesBadges, generateMoveTable, generateGameButtons, generateVersionButtons, generateMethodSelect, displayLocations } from '../components/components.js';
+import { dataFetcher } from '../core/dataFetcher.js';
 import { games, individualGames } from '../data/generationsData.js';
 import { arraySorter } from '../utilities/formatData.js';
 import { modalCarouselData, modalStatsData } from './modal_stats_handler.js';
+import { modalAbilitiesData } from './modal_abilities_handler.js';
 
 let cachedEncounters = [];
 let currentPokemon = null;
@@ -59,12 +60,6 @@ export function modalHeaderData(id,name, types) {
     $pokemonName.textContent = name;
     
     createModalTypesBadges(types);
-}
-
-
-// Función que carga las habilidades del modal
-export function modalAbilitiesData(abilities) {
-  createModalAbilitiesList(abilities, fetchAbilityDetails);
 }
 
 // Función que filtra los movimientos por juego
