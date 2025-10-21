@@ -11,7 +11,7 @@ export async function dataFetcher(url = "https://pokeapi.co/api/v2/pokemon", mul
   }
 }
 
-export async function allDataFetcher(pokemonList) {
+async function allDataFetcher(pokemonList) {
   const promises = pokemonList.map(pokemon => 
     fetch(pokemon.url).then(res => res.json())
   );
@@ -25,10 +25,10 @@ export async function fetchAbilityDetails(url) {
     const data = response.pokemons
 
     // Buscamos la descripción en inglés
-    const englishEntry = data.effect_entries.find(entry => entry.language.name === 'en');
-    return englishEntry ? englishEntry.short_effect : 'No description available';
+    const englishEntry = data.effect_entries.find(entry => entry.language.name === "en");
+    return englishEntry ? englishEntry.short_effect : "No description available";
   } catch (error) {
-    return 'Description not available';
+    return "Description not available";
   }
 }
 
