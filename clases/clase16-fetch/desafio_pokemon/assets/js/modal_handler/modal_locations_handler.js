@@ -1,10 +1,14 @@
-import {$, $$} from '../utilities/dom.js';
-import { generateVersionButtons, generateMethodSelect, displayLocations } from '../components/components.js';
-import { dataFetcher } from './dataFetcher.js';
-import { individualGames } from '../data/generationsData.js';
+import { $, $$ } from "../utilities/dom.js";
+import { generateMethodSelect, displayLocations } from "../components/modal/modal_locations.js";
+import { generateVersionButtons } from "../components/modal/modal_moves.js";
+import { dataFetcher } from "../core/dataFetcher.js";
+import { individualGames } from "../data/generationsData.js";
+
+let currentVersion = null;
+let currentMethod = null;
 
 // Función que carga las ubicaciones donde se encuentra el Pokemon
-async function loadPokemonLocations(pokemonId, types) {
+export async function loadPokemonLocations(pokemonId, types, cachedEncounters) {
   // 1. Fetch (solo cuando no hay cache o cambió el Pokémon)
   if (!cachedEncounters.length || currentPokemon.id !== pokemonId) {
     const { pokemons: encounters } = await dataFetcher(
@@ -34,7 +38,7 @@ async function loadPokemonLocations(pokemonId, types) {
 }
 
 // Función que procesa los datos de las ubicaciones
-export function processLocationData(data) {
+function processLocationData(data) {
   const processed = [];
 
   for (const area of data) {// recorremos cada area 
@@ -79,7 +83,7 @@ export function processLocationData(data) {
 }
 
 // Función que flitra los datos de las ubicaciones, por juego y método
-const filterLocationsData = (data, selectedVersion, selectedMethod) => {
+function filterLocationsData(data, selectedVersion, selectedMethod){
   const filteredData = data.map(area => {
   
     const filterByVersions = area.versions.filter(version => !selectedVersion || version.name === selectedVersion ) //Filtramos la version que coincide con la seleccionada o si no se ha seleccionado nada
@@ -100,13 +104,13 @@ const filterLocationsData = (data, selectedVersion, selectedMethod) => {
 }
 
 // Función que actualiza el método de encuentro del sistema de filtrado de ubicaciones
-export function handleMethodChange(selectedValue) {
+function handleMethodChange(selectedValue) {
   currentMethod = selectedValue || null;
   loadPokemonLocations(currentPokemon.id, currentPokemon.types);
 }
 
 // Función que actualiza versión del juego, del sistema de filtrado de ubicaciones
-export function handleVersionChange(version) {
+function handleVersionChange(version) {
   currentVersion = version?.id || null;
     loadPokemonLocations(currentPokemon.id, currentPokemon.types);
 }
@@ -125,12 +129,12 @@ function getUniqueMethods(data) {
 }
 
 // Función que actualiza el botón activo en la tabla de ubicaciones (aplicar DRY con la de movimientos)
-export function updateActiveVersionButton(activeId) {
-  const $buttons = $$('#version-buttons button');
+function updateActiveVersionButton(activeId) {
+  const $buttons = $$("#version-buttons button");
   for (const $button of $buttons) {
-    $button.classList.remove('active');
+    $button.classList.remove("active");
   }
   
   const $activeBtn = $(`[data-game="${activeId}"]`);
-  if ($activeBtn) $activeBtn.classList.add('active');
+  if ($activeBtn) $activeBtn.classList.add("active");
 }

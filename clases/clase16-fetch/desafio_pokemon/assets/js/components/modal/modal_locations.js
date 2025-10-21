@@ -1,9 +1,10 @@
-import { $, createElement, createCell, applyBackgroundColor  } from '../utilities/dom.js';
-import { formatText } from '../utilities/formatData.js';
+import { $, createElement, createCell, applyBackgroundColor  } from "../../utilities/dom.js";
+import { formatText } from "../../utilities/formatData.js";
+
 // Crea el selector de métodos de encuentro del sistema de filtrado de ubicaciones
 export function generateMethodSelect(methods, handleMethodChange, currentMethod) {
-    const $select = $('#encounter-method');
-    $select.innerHTML = '<option value="">Todos los métodos</option>';
+    const $select = $("#encounter-method");
+    $select.innerHTML = "<option value=''>Todos los métodos</option>";
 
     for (const method of methods) {
         const $option = createElement("option", null, formatText(method));
@@ -12,7 +13,7 @@ export function generateMethodSelect(methods, handleMethodChange, currentMethod)
     }
     $select.value = currentMethod || '';
 
-    $select.addEventListener('change', e => handleMethodChange(e.target.value));
+    $select.addEventListener("change", event => handleMethodChange(event.target.value));
 }
 
 // Función que renderiza la lista de ubicaciones en el modal
@@ -34,7 +35,7 @@ export function displayLocations(locations, individualGames, types) {
 }
 
 // Función que crea las tarjetas de las ubicaciones
-export function createLocationsCards(area, individualGames, types){
+function createLocationsCards(area, individualGames, types){
     const $details = createElement("details", "location-card");
     $details.setAttribute("name", "location-group"); // agrupamos para que solo se abra uno a la vez
 
@@ -59,7 +60,7 @@ export function createLocationsCards(area, individualGames, types){
 }
 
 // Función que crea la información de las tarjetas de ubicaciones
-export function createLocationsCardsInfo(version, gameData) {
+function createLocationsCardsInfo(version, gameData) {
   // Creamos el contenedor principal
     const $versionTable = createElement("table", "location-table table table-sm mb-3");
 
@@ -78,7 +79,7 @@ export function createLocationsCardsInfo(version, gameData) {
 }
 
 // Función que crea el encabezado de las tablas de ubicaciones
-export function createLocationsTableHeader(version, gameData) {
+function createLocationsTableHeader(version, gameData) {
     const $thead = createElement("thead");
 
     // --- HEADER 1: nombre del juego ---
@@ -102,7 +103,7 @@ export function createLocationsTableHeader(version, gameData) {
 }
 
 // Función que crea las filas de las tablas de ubicaciones
-export function createLocationsTableRows(encounter) {
+function createLocationsTableRows(encounter) {
     const $row = createElement("tr");
     const conditionsText = encounter.conditions.length 
         ? encounter.conditions.map(condition => formatText(condition)).join(", ") 
