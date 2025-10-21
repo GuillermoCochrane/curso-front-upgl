@@ -1,6 +1,6 @@
 import { $, createElement } from '../utilities/dom.js';
 import { dataFetcher} from './dataFetcher.js';
-import { createListItem } from '../components/components.js';
+import { createListItem } from '../components/searchbar.js';
 
 let allPokemonList = [];
 let searchedPokemonList = [];
@@ -61,7 +61,7 @@ export function initSearch(handleSearch, resetSearch) {
 }
 
 // Cargar lista completa para autocomplete
-export async function loadAllPokemon() {
+async function loadAllPokemon() {
     try {
         const data = await dataFetcher('https://pokeapi.co/api/v2/pokemon?limit=1302', false);
         allPokemonList = data.pokemons.results.map(pokemon => ({
