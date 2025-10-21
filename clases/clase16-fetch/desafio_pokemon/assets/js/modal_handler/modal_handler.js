@@ -1,5 +1,5 @@
 import {$, $$, applyBackgroundColor} from "../utilities/dom.js";
-import {  generateGameButtons } from "../components/components.js";
+import {  generateGameButtons } from "../components/modal/modal_moves.js";
 import { createModalTypesBadges } from "../components/modal/modal_abilities.js";
 import { dataFetcher } from "../core/dataFetcher.js";
 import { games } from "../data/generationsData.js";
