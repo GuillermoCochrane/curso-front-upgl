@@ -57,6 +57,26 @@ body {
   display: none !important;
 }
 
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+#spinner {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  &:not([hidden]) {
+    opacity: 1;
+  }
+
+  img {
+    animation: spin 1.2s linear infinite;
+    transform-origin: center;
+  }
+}
+
+#spinner p,
 #results-title {
   border-radius: 12px;
   margin-top: 10px !important;
