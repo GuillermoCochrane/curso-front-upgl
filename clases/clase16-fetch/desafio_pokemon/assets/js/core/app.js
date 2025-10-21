@@ -1,4 +1,4 @@
-import { createCardSection } from '../components/components.js';
+import { createCardSection } from '../components/pokemon_cards.js';
 import { modalHandler } from '../modal_handler/modal_handler.js';
 import { dataFetcher, searchDataFetcher } from './dataFetcher.js';
 import { infiniteScrollHandler } from './infiniteScrollHandler.js'
