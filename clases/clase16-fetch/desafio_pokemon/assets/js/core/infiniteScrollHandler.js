@@ -1,4 +1,6 @@
+import { showNotification } from './notificationHandler.js';
 import { hiddenToggle } from '../utilities/dom.js';
+
 export  function infiniteScrollHandler(loadMorePokemons) {
   let isLoading = false;
 
@@ -13,7 +15,8 @@ export  function infiniteScrollHandler(loadMorePokemons) {
       try {
         await loadMorePokemons()
       } catch(error){
-        console.error('❌ Error al cargar más Pokemon:', error);
+        showNotification('❌ Error cargando más Pokemons', 'danger');
+        console.error('❌ Error al cargar más Pokemons:', error);
       } finally{
           hiddenToggle("spinner")
           isLoading = false;
