@@ -7,6 +7,7 @@ import { modalCarouselData, modalStatsData } from "./modal_stats_handler.js";
 import { modalAbilitiesData } from "./modal_abilities_handler.js";
 import { loadGameMoves, sortingHandler } from "./modal_moves_handler.js";
 import { loadPokemonLocations } from "./modal_locations_handler.js";
+import { showNotification } from "../core/notificationHandler.js";
 
 let currentPokemon = null;
 let cachedEncounters = [];
@@ -14,17 +15,26 @@ let cachedEncounters = [];
 // Función que maneja el modal de Pokemon
 export function modalHandler() {
   const $container = $("#pokemons");
-  // Escuchamos todos los click en el contenedor de tarjetas
+  
   $container.addEventListener("click", async (event) => {
-    const $clickedElement = event.target.closest("[data-pokemon]"); //capturamos el botón con data-pokemon en el que se hizo click
+    const $clickedElement = event.target.closest("[data-pokemon]");
     if (!$clickedElement) return;
 
-    // Fetch individual (datos siempre actualizados)
-    const id = $clickedElement.getAttribute("data-pokemon"); // Obtenemos el id del Pokemon
-    const {pokemons} = await dataFetcher(`https://pokeapi.co/api/v2/pokemon/${id}`, false); // Obtenemos los datos del Pokemon
+    const id = $clickedElement.getAttribute("data-pokemon");
     
-    // Cargamos los datos del modal
-    loadModalData(pokemons);
+    try {
+      showNotification("🔄 Cargando Pokémon...", "info");
+      
+      const {pokemons} = await dataFetcher(`https://pokeapi.co/api/v2/pokemon/${id}`, false);
+      
+      showNotification(`✅ ${pokemons.name} cargado`, "success");
+      
+      loadModalData(pokemons);
+      
+    } catch (error) {
+      showNotification("❌ Error al cargar el Pokémon", "danger");
+      console.error("❌ Error cargando Pokémon:", error);
+    }
   });
 }
 
