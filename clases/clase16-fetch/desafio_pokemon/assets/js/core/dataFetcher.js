@@ -51,13 +51,16 @@ async function allDataFetcher(pokemonList) {
 export async function fetchAbilityDetails(url) {
   try {
     const response = await dataFetcher(url, false);
-    const data = response.pokemons
+    const data = response.pokemons;
 
-    // Buscamos la descripción en inglés
     const englishEntry = data.effect_entries.find(entry => entry.language.name === "en");
     return englishEntry ? englishEntry.short_effect : "No description available";
+    
   } catch (error) {
-    console.error(error);
+    console.warn("⚠️ No se pudo cargar descripción de habilidad:", {
+      url: url,
+      error: error.message
+    });
     return "Description not available";
   }
 }
