@@ -10,6 +10,5 @@ export function showNotification(message, type = 'info') {
   
   setTimeout(() => {
     $notification.classList.remove('show');
-    setTimeout(() => $notification.hidden = true, 300);
   }, 3000);
 }
