@@ -1,5 +1,6 @@
 import { showNotification } from "./notificationHandler.js";
 
+// Función principal para fetch de datos
 export async function dataFetcher(url = "https://pokeapi.co/api/v2/pokemon", multipleData = true) {
   try {
     const response = await fetch(url);
@@ -28,6 +29,7 @@ export async function dataFetcher(url = "https://pokeapi.co/api/v2/pokemon", mul
   }
 }
 
+// Helper para fetch de datos de mútiples Pokemons
 async function allDataFetcher(pokemonList) {
   try {
     const promises = pokemonList.map(pokemon => 
@@ -65,12 +67,17 @@ export async function fetchAbilityDetails(url) {
   }
 }
 
-// Helper para datos de la busqueda
+// Helper para datos de la búsqueda
 export async function searchDataFetcher(dataToFetch = []) {
   try {
     const allSearchedData = await allDataFetcher(dataToFetch);
-    return {pokemons: allSearchedData, nextPage: null};
+    return { pokemons: allSearchedData, nextPage: null };
   } catch (error) {
-    console.error(error);
+    console.error("❌ Error en searchDataFetcher:", {
+      totalSearched: dataToFetch.length,
+      error: error.message,
+      timestamp: new Date().toISOString()
+    });
+    throw error;
   }
 }
