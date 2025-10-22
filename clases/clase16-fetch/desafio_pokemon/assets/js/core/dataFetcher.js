@@ -1,21 +1,42 @@
+import { showNotification } from "./notificationHandler.js";
+
 export async function dataFetcher(url = "https://pokeapi.co/api/v2/pokemon", multipleData = true) {
   try {
-    const response =  await fetch(url)
+    const response = await fetch(url);
+    
+    //VERIFICAR STATUS HTTP
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+    
     const info = await response.json();
     const data = multipleData ? await allDataFetcher(info.results) : info;
     const nextPage = multipleData ? info.next : null;
-    return {pokemons: data, nextPage: nextPage};
+    
+    return { pokemons: data, nextPage: nextPage };
+    
   } catch (error) {
-    console.log(error);
-    throw error;
+    showNotification("❌ Error de conexión con la PokeAPI", "danger");
+    console.error("❌ Error en dataFetcher:", {
+      url: url,
+      error: error.message,
+      timestamp: new Date().toISOString()
+    });
+    
+    //PROPAGAMOS EL ERROR PARA MANEJO EN CALLER
+    throw error; 
   }
 }
 
 async function allDataFetcher(pokemonList) {
-  const promises = pokemonList.map(pokemon => 
-    fetch(pokemon.url).then(res => res.json())
-  );
-  return await Promise.all(promises);
+  try {
+    const promises = pokemonList.map(pokemon => 
+      fetch(pokemon.url).then(res => res.json())
+    );
+    return await Promise.all(promises);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 // Helper para fetch de detalles de habilidad
@@ -28,6 +49,7 @@ export async function fetchAbilityDetails(url) {
     const englishEntry = data.effect_entries.find(entry => entry.language.name === "en");
     return englishEntry ? englishEntry.short_effect : "No description available";
   } catch (error) {
+    console.error(error);
     return "Description not available";
   }
 }
@@ -38,6 +60,6 @@ export async function searchDataFetcher(dataToFetch = []) {
     const allSearchedData = await allDataFetcher(dataToFetch);
     return {pokemons: allSearchedData, nextPage: null};
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
