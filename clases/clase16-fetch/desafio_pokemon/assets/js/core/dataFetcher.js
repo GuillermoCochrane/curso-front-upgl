@@ -31,11 +31,19 @@ export async function dataFetcher(url = "https://pokeapi.co/api/v2/pokemon", mul
 async function allDataFetcher(pokemonList) {
   try {
     const promises = pokemonList.map(pokemon => 
-      fetch(pokemon.url).then(res => res.json())
+      fetch(pokemon.url).then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status} for ${pokemon.url}`);
+        return res.json();
+      })
     );
     return await Promise.all(promises);
   } catch (error) {
-    console.error(error);
+    console.error("❌ Error en allDataFetcher:", {
+      totalPokemon: pokemonList.length,
+      error: error.message,
+      failedUrl: error.message.includes('HTTP') ? 'Varios URLs' : 'URL específico'
+    });
+    throw error; //Propagar para manejo superior
   }
 }
 
