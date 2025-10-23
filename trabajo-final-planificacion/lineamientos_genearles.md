@@ -1,0 +1,55 @@
+Curso 1 Programación Web-Frontend 2025
+Universidad Popular General Levalle
+Trabajo Práctico Grupal – Desarrollo de Landing Page
+Objetivo:
+Desarrollar en grupo una Landing Page para un club de fútbol previamente seleccionado.
+Para su aprobación, el proyecto deberá cumplir con todos los requerimientos detallados a continuación.
+Metodología de trabajo
+Cada grupo podrá elegir libremente la metodología de trabajo que considere más adecuada, con el
+objetivo de cumplir con la fecha de entrega: martes 18 de noviembre de 2025.
+Se recomienda comenzar por la maquetación del sitio, utilizando textos e imágenes de relleno
+(placeholders) para avanzar en la estructura general antes de incorporar el contenido final.
+Tecnologías permitidas
+● HTML
+● CSS
+● JavaScript
+● Bootstrap
+Podrán emplear librerías externas importadas mediante CDN (por ejemplo, Font Awesome).
+No se permitirá el uso de tecnologías de desarrollo web ajenas a las mencionadas.
+El uso de herramientas de Inteligencia Artificial está permitido solo como apoyo complementario, pero
+no se recomienda su uso principal en la codificación del proyecto.
+Forma de entrega
+La entrega se realizará por correo electrónico o whatsapp, enviando un archivo comprimido (.zip) que
+contenga la carpeta completa del proyecto, incluyendo todos los archivos necesarios para el correcto
+funcionamiento de la landing page:
+● Archivos .html, .css, .js
+● Carpeta assets/ (imágenes, íconos, etc.)
+Curso 1 Programación Web-Frontend 2025
+Universidad Popular General Levalle
+Estructura obligatoria de la Landing Page
+El sitio deberá incluir, como mínimo, los siguientes apartados:
+● Header
+● Navbar
+● Footer
+● Secciones informativas, que deben contener:
+○ Historia del club (una versión breve y una extendida).
+○ Camiseta y escudo.
+○ Jugadores del plantel de primera división.
+○ Cancha (imagen, nombre y dirección).
+○ Galería de imágenes.
+Puntos a considerar
+Utilizar principalmente los colores institucionales del club seleccionado.
+Mantener un diseño simple, moderno y coherente, destacando los colores del club sin sobrecargar el sitio.
+Secciones opcionales (según disponibilidad)
+● Jugadores de todas las divisiones.
+● Campeonatos ganados.
+● Campeonato actual (posición y puntos).
+● Sección de patrocinadores.
+● Comisión directiva y área administrativa.
+Aclaraciones finales
+● La nota final del proyecto será complementaria al examen escrito rendido el miércoles 11 de
+noviembre.
+● Además, los grupos que deseen incorporar información o secciones adicionales con el objetivo de
+mejorar la calidad y presentación de la landing page estarán invitados a hacerlo libremente.
+● Toda mejora o contenido extra que aporte valor al proyecto será positivamente considerado en la
+evaluación final
