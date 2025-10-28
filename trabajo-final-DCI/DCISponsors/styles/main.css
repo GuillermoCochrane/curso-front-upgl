@@ -16,7 +16,7 @@ body {
     /* Bordes redondeados */
 }
 
-.dci-titulo:hover {
+.hero-portada:hover .dci-titulo {
     font-size: 20rem;
     /* 10 veces el tamaño inicial */
     border: none;
