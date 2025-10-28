@@ -6,6 +6,7 @@
   <title>Club de futbol</title> <!--Cambiar a Deportivo Club Independencia-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/main.css"> <!--Intercambiar linea 7 y 8, el main.css debe ir al ultimo-->
+  <link rel="stylesheet" href="./styles/sponsors.css">
   <link rel="icon" href="assets/icono_dci.ico" type="image/x-icon"> <!--Falta agregar el icono a la carpeta assets y el icono es del DCI no del CAE-->
 </head>
 
@@ -49,23 +50,27 @@
   <header>
     <div class="hero-portada">
       <div class="overlay"></div>
-     <h1 class="titulo-portada"><span class="dci-titulo"> D.C.I. </span></h1>
-     <img src="assets/renderCamiseta.png" alt="Camiseta Club" class="camiseta-portada">
+      <h1 class="titulo-portada"><span class="dci-titulo"> D.C.I. </span></h1>
+      <img src="assets/renderCamiseta.png" alt="Camiseta Club" class="camiseta-portada">
     </div>
   </header>
   
   <main>
     <!-- SECCION DONDE TRABAJARA CADA UNO-->
-    <section id="historia" class="container my-5">
-      <h2 class="text-center text-light mb-4">Acá iría el contenido de la sección: <span class="text-warning">Borrar el h2</span></h2>
+    <section id="auspiciantes" class="container my-5">
+      <h2 class="text-center mb-5 display-5 fw-bold text-light">Nuestros Auspiciantes</h2>
+      <div class="auspiciantes-container">
+          <div class="auspiciantes-track" id="auspiciantes-track">
+              <!-- Los auspiciantes se duplican para efecto infinito -->
+          </div>
+      </div>
     </section>
-    
-    
   </main>
   <footer class="bg-danger text-white p-3 text-center">
     &copy; 2025 Deportivo Club Independencia. Todos los derechos reservados.
   </footer>
 
   <script src="scripts/scrypt.js"></script>
+  <script src="./scripts/sponsors.js"></script>
 </body>
 </html>
