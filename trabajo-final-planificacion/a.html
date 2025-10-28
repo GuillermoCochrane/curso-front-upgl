@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Infinito - Auspiciantes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .auspiciantes-section {
+            overflow: hidden;
+        }
+        
+        .auspiciantes-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .auspiciantes-track {
+            display: flex;
+            animation: scrollInfinite 60s linear infinite;
+            width: max-content;
+        }
+        
+        .auspiciante-item {
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & span {
+                width: 150px;
+                height: 3em;
+                text-align: center;
+            }
+        }
+        
+        .auspiciante-logo {
+            height: 70px;
+            width: auto;
+            max-width: 150px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+        
+        .auspiciante-logo:hover {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+        
+        @keyframes scrollInfinite {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Efecto de desvanecimiento en los bordes */
+        .auspiciantes-container::before,
+        .auspiciantes-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 2;
+        }
+        
+        .auspiciantes-container::before {
+            left: 0;
+            background: linear-gradient(90deg, #f8f9fa 0%, transparent 100%);
+        }
+        
+        .auspiciantes-container::after {
+            right: 0;
+            background: linear-gradient(270deg, #f8f9fa 0%, transparent 100%);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .auspiciante-logo {
+                height: 50px;
+            }
+            .auspiciante-item {
+                padding: 0 20px;
+            }
+            .auspiciante-item span {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sección Auspiciantes -->
+    <section class="auspiciantes-section">
+        <div class="container">
+            <h2 class="text-center mb-5 display-5 fw-bold text-primary">Nuestros Auspiciantes</h2>
+            
+            <div class="auspiciantes-container">
+                <div class="auspiciantes-track" id="auspiciantes-track">
+                    <!-- Los auspiciantes se duplican para efecto infinito -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Array de auspiciantes
+        const auspiciantes = [
+            { id: 1, auspiciante: "Aceros Levalle", logo: "aceros_levalle.jpg" },
+            { id: 2, auspiciante: "Veterinaria Vasco Viejo", logo: "vet_vasco_viejo.jpg" },
+            { id: 3, auspiciante: "RM Automotores", logo: "rm_automotores.jpg" },
+            { id: 4, auspiciante: "Corralón González", logo: "corralon_gonzalez.jpg" },
+            { id: 5, auspiciante: "Corralón Juan Rosatto", logo: "corralon_rosatto.jpg" },
+            { id: 6, auspiciante: "Estudio Contable Fusta", logo: "estudio_fusta.jpg" },
+            { id: 7, auspiciante: "Garatoni Automotores", logo: "garatoni_automotores.jpg" },
+            { id: 8, auspiciante: "José Androetto Construcciones", logo: "jose_androetto_construcciones.jpg" },
+            { id: 9, auspiciante: "Cruseño Hermanos", logo: "cruseno_hermanos.jpg" },
+            { id: 10, auspiciante: "Agroucacha", logo: "agroucacha.jpg" },
+            { id: 11, auspiciante: "Laura Fenoglio Estudio Contable", logo: "laura_fenoglio_contable.jpg" },
+            { id: 12, auspiciante: "SL Amoblamientos", logo: "sl_amoblamientos.jpg" },
+            { id: 13, auspiciante: "Nutrilev", logo: "nutrilev.jpg" },
+            { id: 14, auspiciante: "Brasería El Luga", logo: "braseria_el_luga.jpg" },
+            { id: 15, auspiciante: "Farmacia Saracco", logo: "farmacia_saracco.jpg" },
+            { id: 16, auspiciante: "El Gauchito", logo: "el_gauchito.jpg" },
+            { id: 17, auspiciante: "Municipalidad de General Levalle", logo: "municipalidad_general_levalle.jpg" },
+            { id: 18, auspiciante: "Maxi Crosio Pulverizaciones Aéreas", logo: "maxi_crosio_pulverizaciones.jpg" },
+            { id: 19, auspiciante: "Taller Electromecánico Bari", logo: "taller_electromecanico_bari.jpg" },
+            { id: 20, auspiciante: "Julián Garais Soluciones Agropecuarias", logo: "julian_garais_agropecuarias.jpg" },
+            { id: 21, auspiciante: "Transporte Tachuela", logo: "transporte_tachuela.jpg" },
+            { id: 22, auspiciante: "Pastel Cake de Laura Giraudo", logo: "pastel_cake_laura_giraudo.jpg" },
+            { id: 23, auspiciante: "By Vicent Deco & Party", logo: "by_vicent_deco_party.jpg" },
+            { id: 24, auspiciante: "Armendariz Diesel", logo: "armendariz_diesel.jpg" },
+            { id: 25, auspiciante: "Autoservicio El Gato", logo: "autoservicio_el_gato.jpg" },
+            { id: 26, auspiciante: "Berra Extintores", logo: "berra_extintores.jpg" },
+            { id: 27, auspiciante: "Carnes Manso", logo: "carnes_manso.jpg" },
+            { id: 28, auspiciante: "Colorshop", logo: "colorshop.jpg" },
+            { id: 29, auspiciante: "Discesapoli Servicios Agropecuarias", logo: "discesapoli_servicios_agropecuarios.jpg" },
+            { id: 30, auspiciante: "Disensa", logo: "disensa.jpg" },
+            { id: 31, auspiciante: "Farmacia Giménez", logo: "farmacia_gimenez.jpg" },
+            { id: 32, auspiciante: "Frigorífico Manzo", logo: "frigorifico_manzo.jpg" },
+            { id: 33, auspiciante: "González Ferretería", logo: "gonzalez_ferreteria.jpg" },
+            { id: 34, auspiciante: "Kevin Frutas y Verduras", logo: "kevin_frutas_y_verduras.jpg" },
+            { id: 35, auspiciante: "Lands Seguridad", logo: "lands_seguridad.jpg" },
+            { id: 36, auspiciante: "Mr. Clean", logo: "mr_clean.jpg" },
+            { id: 37, auspiciante: "Picolo Hermanos", logo: "picolo_hermanos.jpg" },
+            { id: 38, auspiciante: "Pizza Pippo", logo: "pizza_pippo.jpg" },
+            { id: 39, auspiciante: "Quesería La Loma", logo: "queseria_la_loma.jpg" },
+            { id: 40, auspiciante: "Super Nacha", logo: "super_nacha.jpg" },
+            { id: 41, auspiciante: "Super Silvia", logo: "super_silvia.jpg" }
+        ];
+
+        // Función para generar el carousel infinito
+        // Función mejorada con fallback
+        function generarCarouselInfinito() {
+            const track = document.getElementById('auspiciantes-track');
+            const auspiciantesDuplicados = [...auspiciantes, ...auspiciantes];
+            
+            let html = '';
+            
+            auspiciantesDuplicados.forEach((auspiciante) => {
+                html += `
+                    <div class="auspiciante-item">
+                        <img src="./${auspiciante.logo}" 
+                            class="auspiciante-logo" 
+                            alt="${auspiciante.auspiciante}"
+                            title="${auspiciante.auspiciante}"
+                            onerror="this.onerror=null; this.src='./default.png'; this.alt='${auspiciante.auspiciante} - Logo temporal'">
+                        <span class="text-muted">${auspiciante.auspiciante}</span>
+                    </div>
+                `;
+            });
+            
+            track.innerHTML = html;
+        }
+
+        // Generar el carousel cuando la página cargue
+        document.addEventListener('DOMContentLoaded', generarCarouselInfinito);
+    </script>
+</body>
+</html>
