@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Modal - Pyme Familiar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .card-empresa {
+      border-left: 4px solid #0d6efd;
+      transition: all 0.3s ease;
+    }
+    .card-empresa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .modal-empresa .modal-header {
+      background: #f8f9fa;
+      border-bottom: 2px solid #0d6efd;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        
+        <!-- Tarjeta de presentación -->
+        <div class="card card-empresa shadow-sm">
+          <div class="card-body p-4">
+            <div class="text-center mb-3">
+              <h3 class="card-title">Deportes Levalle</h3>
+              <p class="text-muted">Especialistas en equipamiento deportivo desde 2010</p>
+            </div>
+
+            <p class="card-text">
+              Somos una empresa familiar con más de 10 años de experiencia en el rubro deportivo. 
+              Nos dedicamos a proveer equipamiento de calidad para atletas y equipos de la región.
+            </p>
+
+            <div class="text-center mt-4">
+              <button class="btn btn-outline-primary px-4" data-bs-toggle="modal" data-bs-target="#modalEmpresa">
+                Conocer Nuestra Historia
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Mejorado pero Simple -->
+  <div class="modal fade modal-empresa" id="modalEmpresa" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        
+        <!-- Header -->
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title fw-bold">Deportes Levalle</h5>
+            <p class="mb-0 text-muted small">PYME Familiar - Desde 2010</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Body - Contenido mejorado -->
+        <div class="modal-body">
+          
+          <!-- Imagen -->
+          <div class="text-center mb-4">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                 class="img-fluid rounded" 
+                 alt="Nuestro local deportivo"
+                 style="max-height: 200px;">
+          </div>
+
+          <!-- Historia -->
+          <div class="mb-4">
+            <h6 class="text-primary">Nuestra Historia</h6>
+            <p>
+              Fundada en 2010 por la familia González, <strong>Deportes Levalle</strong> nació con el propósito 
+              de proveer equipamiento deportivo de calidad a nuestra comunidad. Comenzamos como un pequeño 
+              emprendimiento familiar y hoy somos referentes en el rubro deportivo local.
+            </p>
+          </div>
+
+          <!-- Especialidades -->
+          <div class="mb-4">
+            <h6 class="text-primary">Qué Ofrecemos</h6>
+            <ul class="list-unstyled">
+              <li>✅ <strong>Indumentaria Deportiva:</strong> Camisetas personalizadas para equipos</li>
+              <li>✅ <strong>Equipamiento:</strong> Pelotas, redes y accesorios de entrenamiento</li>
+              <li>✅ <strong>Calzado Deportivo:</strong> Para fútbol, básquet y running</li>
+              <li>✅ <strong>Trofeos y Medallas:</strong> Para torneos locales</li>
+            </ul>
+          </div>
+
+          <!-- Info de Contacto -->
+          <div class="bg-light p-3 rounded">
+            <h6 class="text-primary mb-3">Dónde Encontrarnos</h6>
+            <div class="row">
+              <div class="col-md-6">
+                <p class="mb-1"><strong>📍 Dirección:</strong></p>
+                <p class="small">Av. San Martín 1234, General Levalle</p>
+              </div>
+              <div class="col-md-6">
+                <p class="mb-1"><strong>📞 Teléfono:</strong></p>
+                <p class="small">(0358) 423-4567</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Contactar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
