@@ -46,3 +46,20 @@ function createImage(url = null , nombre = null, className = null, id = null) {
     
     return image;
 }
+
+// Función para generar el carousel infinito
+function generarCarouselInfinito() {
+    const track = $('#auspiciantes-track');
+    const auspiciantesDuplicados = [...auspiciantes, ...auspiciantes, ...auspiciantes, ...auspiciantes];
+
+    for (const auspiciante of auspiciantesDuplicados) {
+        const $auspiciante = createElement('article', 'auspiciante-item');
+        const $logo = createImage(`./assets/sponsors/${auspiciante.logo}`, auspiciante.auspiciante, 'auspiciante-logo');
+        const $span = createElement('span', 'text-muted', auspiciante.auspiciante);
+        $auspiciante.append($logo, $span);
+        track.append($auspiciante);
+    }
+}
+
+// Generar el carousel cuando la página cargue
+document.addEventListener('DOMContentLoaded', generarCarouselInfinito);
