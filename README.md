@@ -63,10 +63,18 @@ curso-frontend-upgl/
 
 ## 🌐 Recursos CSS y UI
 
-- [Animista](https://animista.net) – Animaciones CSS listas para copiar.
+- [Animate.css](https://animate.style/) – Generador de animaciones con CSS.
+- [Animista](https://animista.net) – Animaciones CSS personabilizables, listas para copiar.
+- [lightGallery](https://www.lightgalleryjs.com/docs/getting-started/) – Generador de galerias de imagenes y videos.
+- [10015.io](https://10015.io/tools/css-background-pattern-generator) – Conjunto de herramientas para desarrollo web. En este caso generador de patrones de fondo.
+- [Web Code Tools](https://webcode.tools/css-generator) – Conjunto de herramientas para desarrollo web. En este caso generador de CSS.
+- [Minimamente](https://www.minimamente.com/project/magic/) – Generador de animaciones con CSS.
+- [Loading.io](https://loading.io/) – Generador de animaciones de carga con CSS.
+- [CSS Animation ](https://animation.kaustubhmenon.com/) – Ejemplos de animaciones para CSS personalizadas.
 - [Hover.css](https://ianlunn.github.io/Hover/) – Efectos hover para botones y elementos.
 - [CodePen](https://codepen.io) – Ver, modificar y experimentar con CSS/JS.
 - [CSS Tricks](https://css-tricks.com) – Explicaciones profundas sobre propiedades CSS.
 - [UIVerse](https://uiverse.io) – Tarjetas, botones y UI moderna lista para copiar.
+- [CSS Gradient](https://cssgradient.io/) – Generador de gradientes para CSS.
 
 ---
