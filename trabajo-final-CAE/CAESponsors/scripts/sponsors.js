@@ -33,17 +33,15 @@ function createElement(tagName, className = null, content = null, isHTML = false
 function createImage(url = null , nombre = null, className = null, id = null) {
     const image = createElement('img', className, null, false, id);
     url && (image.src = url);
-    if (nombre) {
-        image.alt = nombre;
-        image.title = nombre;
-        image.onerror = function() {
-            this.onerror = null;
-            this.src = './assets/sponsors/default.png';
-            this.alt = `${nombre} - Logo temporal`;
-            this.title = `${nombre} - Logo temporal`;
-        }
+    const backdropMsg = "Imagen de respaldo";
+    image.alt = nombre ? nombre : backdropMsg;
+    image.title = nombre ? nombre : backdropMsg;
+    image.onerror = function() {
+        this.onerror = null;
+        this.src = './assets/sponsors/default.png';
+        this.alt = nombre ? `${nombre} - ${backdropMsg}` : backdropMsg;
+        this.title = nombre ? `${nombre} - ${backdropMsg}` : backdropMsg;
     };
-    
     return image;
 }
 
