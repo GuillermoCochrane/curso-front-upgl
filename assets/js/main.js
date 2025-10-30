@@ -102,21 +102,21 @@ function generarTarjetasClases() {
         col.className = 'col-md-6 col-lg-4 mb-4';
         
         col.innerHTML = `
-            <div class="card h-100 shadow">
+            <article class="card h-100 shadow">
                 <div class="card-body">
                     <h5 class="card-title">Clase ${clase.numero}: ${clase.titulo}</h5>
                     <p class="card-text">${clase.descripcion}</p>
-                    <div class="mb-2">
-                        <strong>Ejercicios:</strong>
+                    <details class="mb-2">
+                        <summary><strong>Ejercicios:</strong></summary>
                         <ul class="list-unstyled">
                             ${clase.ejercicios.map(ej => `<li><a href="${clase.enlace}${ej}" target="_blank">${ej}</a></li>`).join('')}
                         </ul>
-                    </div>
+                    </details>
                 </div>
                 <div class="card-footer bg-transparent">
                     <a href="${clase.enlace}" class="btn btn-primary btn-sm">Ver Clase Completa</a>
                 </div>
-            </div>
+            </article>
         `;
         
         container.appendChild(col);
