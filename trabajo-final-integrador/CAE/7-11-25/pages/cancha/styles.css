@@ -1,0 +1,24 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: linear-gradient(90deg, #ff0000, #a50000);
+}
+
+.nav-link:hover {
+    color: #ff0000 !important;
+}
+
+#llegar iframe {
+    border-radius: 12px;
+}
+
+form {
+    background-color: #ffffff;
+}
+
+footer {
+    font-size: 0.9rem;
+}
