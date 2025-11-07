@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Club Atlético Estudiantes</title>
+
+    <!--Icono, aparece en la pestaña del navegador-->
+    <link rel="icon" href="assets/icono_cae.ico" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+    <!--Biblioteca para iconos de redes sociales(en font-awesome)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+
+  </head>
+
+    <body>
+      <!--Hero-->
+      <section class="hero d-flex align-items-center text-center text-white min-vh-100"
+          style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url('assets/hero.jpeg') center/cover no-repeat;">
+            <div class="container">
+            <h1 class="display-3 display-md-1 fw-bold">Club Atlético Estudiantes</h1>
+            <p class="lead mb-4 mb-md-5">Orgullo y Pasión desde 1946</p>
+            <a href="#historia" class="btn btn-danger btn-lg">Conocé nuestra historia</a>
+          </div>
+        </section>
+    </body>
+
+    <!--Menu de navegacion con bootstrap-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container">
+        <!--Logo en la navbar-->
+        <a class="navbar-brand" href="#">Club Atlético Estudiantes</a>
+        <!--Menu desplegable-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--Menu links de navegacion-->
+        <div class="collapse navbar-collapse" id="menuNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
+            <li class="nav-item"><a class="nav-link" href="#camiseta">Camiseta y Escudo</a></li>
+            <li class="nav-item"><a class="nav-link" href="#jugadores">Jugadores</a></li>
+            <li class="nav-item"><a class="nav-link" href="#comision-directiva">Comisión Directiva</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cancha">Cancha</a></li>
+            <li class="nav-item"><a class="nav-link" href="#campeonatos">Campeonatos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+            <li class="nav-item"><a class="nav-link" href="#patrocinadores">Patrocinadores</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="historia" class="container my-5 text-center">
+      <h2>Historia del Club A. Estudiantes</h2>
+      <p id="historia-breve">
+        Así nació el Club Atlético Estudiantes
+Corría el año 1946 y un grupo de muchachos de entre 15 y 25 años con alguna habilidad para jugar al fútbol pasaban largas horas practicando en el "mítico baldío de Zabala" en el Barrio sur entre las calles Dr.Illía, España, Humberto Primo y Carlos Gardel. Un muchacho mecánico, "Chorlito" Cortes se convirtió en el líder porque había conseguido un fútbol y había prometido conseguir las camisetas; por eso pudo integrar un equipo al que su alma idealista llamó "Club El Amor" y se propuso intervenir en un Campeonato Relámpago en La Cautiva. Pero los integrantes muy "machistas" o "materialistas" rechazaron el nombre. Las proposiciones del "Vasquito" Casas de llamarlo San Lorenzo, El Ciclón o Los Santos de Boedo también tuvieron una terminante negativa.El día del campeonato se aproximaba y la imposición del nombre se tornaba un problema obsesivo... 
+      </p>
+
+      <p id="historia-extendida" style="display:none;">
+        Hasta que en una tarde, cuando se realizaba un picado de hacha y tiza, un expeditivo rechazo fue a rozar el rodete de una anciana que pasaba por una vereda del baldío vendiendo tortas. La buena señora empezó a recriminar a los muchachos sugiriéndoles que "fueran a estudiar". Entre los jóvenes hubo cruces de miradas pícaras, hasta que en un momento en que se detuvo el juego alguien pegó el grito irónico: "Somos los estudiantes"!!. Hubo gritos de aprobación y de inmediato le pidieron a "pita" Cane, que era el único que tenía teléfono, para que llamara a La Cautiva, este muchacho que era uno de los pocos que cruzaban la "frontera" del Barrio Norte para venir a jugar, orgulloso telefoneó a la localidad vecina: "Anoten para su Campeonato Relámpago al Club Atlético Estudiantes de General Levalle.Al día siguiente los jóvenes conversaron con gente mayor para que ayudaran a crear una institución formal. Entre ellos estaban Pedro Vignale, Alberto López, que era capataz de la cuadrilla del ferrocarril, Alfredo Aguirre, el "Petizo" Gorgerino. Presidente fue designado López, que cuando se ausentó fue remplazado por Aguirre.El acta de fundación se redactó el 20 de junio de 1946.Por mas de 10 años, tras su fundación, Estudiantes no estuvo afiliado a ninguna Liga de Fútbol. Realizaba partidos amistosos con equipos de localidades vecinas o intervenían en los clásicos "Campeonatos Relámpagos".Esta es una pequeña introducción de como se formó el glorioso "Club Atlético Estudiantes". Como se puede ver, siempre lo que lo caracterizó a nuestro club, fue el esfuerzo, el amor a la camiseta, el poder lograr algo desde la nada y sin duda la garra de todos sus jugadores que supieron llevar el Rojo y Blanco en su corazón.
+      </p>
+
+      <button id="toggleHistoria" class="btn btn-outline-danger btn-sm mt-2">Leer más</button>
+    </section>
+
+    <!--Camiseta y Escudo-->
+    <section id="camiseta" class="container my-5 text-center">
+      <h2>Camiseta y Escudo</h2>
+      <div class="row" id="camiseta-escudo-container"></div>
+    </section>
+
+    <!--Jugadores-->
+    <section id="jugadores" class="container my-5 text-center">
+      <h2>Plantel de Primera División</h2>
+      <div class="row" id="jugadores-container"></div>
+    </section>
+
+    <!--Comision Directiva-->
+    <section id="comision-directiva" class="container my-5 text-center">
+      <h2>Comisión Directiva</h2>
+      <div class="row" id="comision-directiva-container"></div>
+    </section>
+
+    <!--Cancha-->
+    <section id="cancha" class="container my-5 text-center">
+      <h2>Estadio</h2>
+      <div class="row align-items-center" id="cancha-container"></div>
+    </section>
+
+    <!--Campeonatos-->
+    <section id="campeonatos" class="container my-5 text-center">
+      <h2>Campeonatos Obtenidos</h2>
+      <!--Imagen de los titulos de Campeonatos-->
+      <img src="assets/copas_fondo.png" alt="Trofeos y copas ganadas" class="img-fluid rounded mb-3" style="max-height: 300px;">
+      <p>El Club Atlético Estudiantes ha ganado un total de 13 títulos oficiales, destacándose en las ligas regionales con gran orgullo y tradición</p>
+    </section>
+
+    <!--Galeria-->
+    <section id="galeria" class="container my-5 text-center">
+      <h2>Galería de Imágenes</h2>
+      <div class="row" id="galeria-container"></div>
+    </section>
+
+    <!--Patrocinadores-->
+    <section id="patrocinadores" class="container my-5 text-center">
+      <h2>Patrocinadores</h2>
+      <div class="row" id="patrocinadores-container"></div>
+      <p>El club cuenta con el apoyo de los siguientes patrocinadores</p>
+      <p>¡Gracias a todos!</p>
+    </section>
+
+    <!--Pie de pagina-->
+    <footer class="bg-dark text-white text-center py-4">
+      <p>&copy; 2025 Club Atlético Estudiantes. Todos los derechos reservados.</p>
+      <p><!--Iconos de redes sociales con enlaces-->
+        <a href="https://www.facebook.com/EstudiantesLevalle/?locale=es_LA" target="_blank" class="text-white me-3" aria-label="Facebook">
+          <i class="fab fa-facebook fa-lg"></i>
+        </a>
+        <a href="https://www.instagram.com/estudianteslevalle/" target="_blank" class="text-white me-3" aria-label="Instagram">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+      </p>
+    </footer>
+    <script src="scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </body>
+</html>
