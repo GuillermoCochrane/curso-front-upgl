@@ -1,0 +1,123 @@
+body {
+    background-color: rgba(255, 0, 0, 0.804);
+}
+
+.dci-titulo {
+    font-size: 4rem;
+    /* Tamaño normal inicial */
+    font-weight: bold;
+    color: #b30019;
+    cursor: pointer;
+    display: inline-block;
+    padding: 2rem 10rem;
+    /* Espaciado alrededor del texto */
+    border: 1px solid #b5616d67;
+    border-radius: 15px;
+    /* Bordes redondeados */
+}
+
+.dci-titulo:hover {
+    font-size: 20rem;
+    /* 10 veces el tamaño inicial */
+    border: none;
+    text-shadow: #d30d84 0px 5px 15px;
+    transition: cubic-bezier(.45,.86,.9,.08) 4.5s;
+}
+
+
+.hero-portada {
+    /* Ajusta este valor según la altura del navbar */
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 80dvh;
+    background: url('../assets/canchadci.jpg') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.237);
+    z-index: 1;
+}
+
+.camiseta-portada {
+    /*Chequear el posicionamiento porque cambia segun la resolucion, usar % en vez de absoluto como px*/
+    position: absolute;
+    bottom: 50px; 
+    right: 10px;
+    height: auto;
+    border: none;
+    z-index: 2;
+    width: 300px;
+}
+
+@keyframes camisetaBailarina {
+    0% {
+        rotate: 2deg;
+        filter: drop-shadow(5px 5px 5px #000);
+        transform: scale(1.1);
+    }
+    50% {
+        rotate: -2deg;
+        filter: drop-shadow(5px 5px 25px #000);
+        transform: scale(1.5);
+    }
+    100% {
+        rotate: 2deg;
+        filter: drop-shadow(5px 5px 5px #000);
+        transform: scale(1.1);
+    }
+}
+
+.camiseta-portada:hover {
+    transition: transform 3.3s ease, filter 3.3s ease;
+    animation: camisetaBailarina 2s ease-in-out infinite;
+}
+
+.titulo-portada {
+    position: absolute;
+    z-index: 2;
+    color: #b30019;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+    width: 100%;
+}
+
+.glass-navbar {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 0, 0, 0.45) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+    
+.btn-pink {
+    background: #ff009a !important;
+}
+
+.nav-link.btn {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.card-img-top{
+    max-height: 350px;
+}
+
+#form-section {background: #fff4f4; padding: 30px; border-radius: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+    form h3 {margin-bottom: 15px; text-align: center; color: #e60023;}
+    form input, form button {width: 100%; padding: 12px; margin: 10px 0; border: none; border-radius: 8px;}
+    form input {background: #fff;}
+    form button {background-color: #e60023; color: #fff; font-weight: bold; cursor: pointer;}
+    form button:hover {background-color: #c1001b;}

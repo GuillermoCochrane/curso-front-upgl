@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Cambiar de en a es--> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Club de futbol</title> <!--Cambiar a Deportivo Club Independencia-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/main.css"> <!--Intercambiar linea 7 y 8, el main.css debe ir al ultimo-->
+  <link rel="icon" href="assets/icono_dci.ico" type="image/x-icon"> <!--Falta agregar el icono a la carpeta assets y el icono es del DCI no del CAE-->
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top glass-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="assets/escudo.png" alt="Escudo Club" width="47" height="47" class="rounded-circle">
+        <span class="fs-4 fw-bold text-dark">Deportivo Club Independencia</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav text-center gap-2">
+          <li class="nav-item">
+            <a class="nav-link btn btn-light rounded-pill px-4" href="#historia">Historia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-light rounded-pill px-4" href="#camiseta">Camiseta y Escudo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-light rounded-pill px-4" href="#jugadores">Jugadores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-light rounded-pill px-4" href="#cancha">Cancha</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-light rounded-pill px-4" href="#galeria">Galería</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <aside class="position-fixed bottom-0 end-0 m-4" style="z-index: 1030;">
+      <a class="btn btn-outline-dark rounded-pill px-4 py-2 text-light fw-bold" href="#asociate">
+          Asociate
+      </a>
+  </aside>
+  
+  <header>
+    <div class="hero-portada">
+      <div class="overlay"></div>
+     <h1 class="titulo-portada"><span class="dci-titulo"> D.C.I. </span></h1>
+     <img src="assets/renderCamiseta.png" alt="Camiseta Club" class="camiseta-portada">
+    </div>
+  </header>
+  
+  <main>
+    <!-- SECCION DONDE TRABAJARA CADA UNO-->
+    <section id="historia" class="container my-5">
+      <h2 class="text-center text-light mb-4">Acá iría el contenido de la sección: <span class="text-warning">Borrar el h2</span></h2>
+    </section>
+    
+    
+  </main>
+  <footer class="bg-danger text-white p-3 text-center">
+    &copy; 2025 Deportivo Club Independencia. Todos los derechos reservados.
+  </footer>
+
+  <script src="scripts/scrypt.js"></script>
+</body>
+</html>
