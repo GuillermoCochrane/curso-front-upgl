@@ -1,0 +1,424 @@
+body {
+    /*Fondo rayado - AGUADO FRANCO */
+    background-image: linear-gradient(90deg, transparent 50%, #c200004f 50%);
+    background-size: 200px 200px;
+    background-color: #000000 !important;
+}
+
+.pulse {
+    width: 100px;
+    height: 100px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.dci-titulo {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #4a000a;
+    cursor: pointer;
+    display: inline-block;
+    padding: 2rem 10rem;
+    border: 1px solid #b5616d67;
+    border-radius: 15px;
+}
+
+.hero-portada:hover .dci-titulo {
+    font-size: 20rem;
+    border: none;
+    text-shadow: #d30d84 0px 5px 15px;
+    transition: cubic-bezier(.45, .86, .9, .08) 4.5s;
+}
+
+.hero-portada {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 80dvh;
+    background: url('../assets/canchadci.jpg') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.237);
+    z-index: 1;
+}
+
+.camiseta-portada {
+    /*Chequear el posicionamiento porque cambia segun la resolucion, usar % en vez de absoluto como px*/
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    height: auto;
+    border: none;
+    z-index: 2;
+    width: 300px;
+}
+
+@keyframes camisetaBailarina {
+    0% {
+        rotate: 2deg;
+        filter: drop-shadow(5px 5px 5px #000);
+        transform: scale(1.1);
+    }
+
+    50% {
+        rotate: -2deg;
+        filter: drop-shadow(5px 5px 25px #000);
+        transform: scale(1.5);
+    }
+
+    100% {
+        rotate: 2deg;
+        filter: drop-shadow(5px 5px 5px #000);
+        transform: scale(1.1);
+    }
+}
+
+.camiseta-portada:hover {
+    transition: transform 3.3s ease, filter 3.3s ease;
+    animation: camisetaBailarina 2s ease-in-out infinite;
+}
+
+.titulo-portada {
+    position: absolute;
+    z-index: 2;
+    color: #b30019;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+    width: 100%;
+}
+
+.glass-navbar {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 0, 0, 0.45) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.nav-link.btn {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.navBarNav .nav-link {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+}
+
+
+#cancha {
+    background-color: #fffdfd;
+    text-align: justify;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 50px 50px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-color: #c1001b;
+}
+
+#cancha img {
+    width: 100vw;
+    border: 3px solid #c1001b;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/*ESTILOS PARA LAS CARDS DE JUGADORES*/
+.sombreado-badge {
+    font-size: 1rem !important;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(220, 0, 0, 0.6);
+    border: 2px solid #000000;
+    font-family: 'Tourney', 'Oswald', Arial, sans-serif;
+}
+
+.card-jugadores {
+
+    padding-top: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.227);
+
+}
+
+.card-jugadores:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    rotate: 1deg;
+    z-index: 2;
+}
+
+.card-title {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 800;
+}
+
+.card-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}
+
+.texto-titulo {
+
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}
+
+.card-img-top {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+
+}
+
+.card-body {
+    position: relative;
+}
+
+.btn-detalles {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.card-jugadores:hover .btn-detalles {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/*Genaro*/
+.camiseta-escudo {
+    min-width: 100px;
+    max-width: 400px;
+    width: 40%;
+    border-radius: 20px;
+    background: #160206;
+    box-shadow: 0px 10px 12px rgb(5, 5, 5);
+}
+
+.camisa {
+    display: flex;
+    gap: 20%;
+    padding: 50px;
+}
+
+.camisaEscudo {
+    display: flex;
+    margin-inline: 80px;
+    gap: 30%;
+    padding: 30px;
+}
+
+.camiseta-escudo:hover {
+    transform: scale(1.10);
+    box-shadow: 0px 14px 16px rgb(5, 5, 5);
+}
+
+.texto {
+    color: #c22f2f;
+    text-shadow: 0px 8px 8px #181515;
+}
+
+/*Albano*/
+
+.auspiciantes-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.auspiciantes-track {
+    display: flex;
+    animation: scrollInfinite 120s linear infinite;
+    width: max-content;
+}
+
+@keyframes scrollInfinite {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.auspiciante-item {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding-block: 0;
+    padding-inline: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & span {
+        width: 150px;
+        height: 3em;
+        text-align: center;
+    }
+}
+
+.auspiciante-logo {
+    height: 70px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.auspiciante-logo:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .auspiciante-logo {
+        height: 50px;
+    }
+
+    .auspiciante-item {
+        padding: 0 20px;
+    }
+
+    .auspiciante-item span {
+        font-size: 0.7rem;
+    }
+}
+
+.historia-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fondo translúcido */
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(4px);
+    color: black;
+}
+
+.historia-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Sección historia general */
+#historia {
+    padding: 3rem 1rem;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+
+/* Título */
+#historia h2 {
+    font-family: 'Segoe UI', sans-serif;
+    color: #222;
+    margin-bottom: 2rem;
+}
+
+/* Contenedor principal */
+.historia-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Pista o carril para contenido adicional */
+.historia-track {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .historia-container {
+        padding: 1rem;
+    }
+
+    .historia-track {
+        font-size: 1rem;
+    }
+}
+
+/*GALERIA DE IMAGENES*/
+.contenedor-galeria {
+    display: grid;
+    place-items: center;
+    /* width: 150px; */
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    /* max-width: 400px; */
+}
+
+.contenedor-imagen {
+    position: relative;
+    left: 0;
+    /* width: 80px; */
+    border-radius: 5px;
+    /* height: 150px; */
+    overflow: hidden;
+    background-color: #efefef;
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 5px 12px rgb(0, 0, 0, 0.5);
+    flex: 0.25;
+}
+
+.contenedor-imagen img {
+    /* height: 150px; */
+    /* width: 100px; */
+    object-fit: cover;
+}
+
+.contenedor-imagen:hover {
+    flex: 2;
+    cursor: pointer;
+    border-radius: 8px;
+}
