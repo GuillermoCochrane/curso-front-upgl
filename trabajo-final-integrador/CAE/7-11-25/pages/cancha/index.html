@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Club Atlético Estudiantes</title>
+
+    <!--Icono, aparece en la pestaña del navegador-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+    <!--Biblioteca para iconos de redes sociales(en font-awesome)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="icon" href="assets/escudo_transparente.png" type="image/png" />
+
+  </head>
+
+    <body>
+      <!--Hero-->
+      <section class="hero d-flex align-items-center text-center text-white">
+          <div class="container">
+          <h1 class="display-3 display-md-1 fw-bold">Club Atlético Estudiantes</h1>
+          <p class="lead mb-4 mb-md-5">Orgullo y Pasión desde 1946</p>
+          <a href="#historia" class="btn btn-danger btn-lg">Conocé nuestra historia</a>
+        </div>
+      </section>
+
+      <!--Menu de navegacion con bootstrap-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+          <!--Logo en la navbar-->
+          <a class="navbar-brand" href="#">Club Atlético Estudiantes</a>
+          <!--Menu desplegable-->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!--Menu links de navegacion-->
+          <div class="collapse navbar-collapse" id="menuNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
+              <li class="nav-item"><a class="nav-link" href="#camiseta">Camiseta y Escudo</a></li>
+              <li class="nav-item"><a class="nav-link" href="#jugadores">Jugadores</a></li>
+              <li class="nav-item"><a class="nav-link" href="#cancha">Cancha</a></li>
+              <li class="nav-item"><a class="nav-link" href="#campeonatos">Campeonatos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sección historia -->
+    <section id="historia" class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="./GralLevalle_Estudiantes1.jpg"
+                    class="img-fluid rounded shadow" alt="Cancha Estudiantes">
+            </div>
+            <div class="col-md-6">
+                <h2 class="text-danger fw-bold">Nuestra Historia</h2>
+                <p>El Club Atlético Estudiantes de General Levalle es una institución deportiva con una rica historia en
+                    el fútbol regional. Con sus tradicionales colores rojo y blanco, el club representa la pasión, el
+                    esfuerzo y la identidad del pueblo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección estadio -->
+    <section id="estadio" class="bg-light py-5 text-center">
+        <div class="container">
+            <h2 class="text-danger fw-bold mb-4">Estadio Coco Bonazza "La Trampera"</h2>
+            <p>Dirección: Carlos Pellegrini y Martin Miguel Güemes, localidad de General Levalle, departamento Presidente Roque Sáenz Peña.</p>
+            <p>Capacidad: 700 espectadores sentados (1400 de pies)</p>
+            <p>Dimenciones del campo: 98 x 75 metros</p>
+            <img src="./GralLevalle_Estudiantes1.jpg" alt="Estadio Coco Bonanza - La Trampera" class="img-fluid rounded shadow">
+        </div>
+    </section>
+
+    <!-- Sección cómo llegar -->
+    <section id="llegar" class="py-5 text-center">
+        <div class="container">
+            <h2 class="text-danger fw-bold mb-4">Cómo Llegar</h2>
+            <p>Encontranos en General Levalle, Córdoba, Argentina.</p>
+            <div class="ratio ratio-16x9 shadow">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.942482484823!2d-64.584722!3d-34.013056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c63cfb5a5c2d73%3A0x8d9a4e7c95b2d5b9!2sGeneral%20Levalle%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1698350000000!5m2!1ses-419!2sar"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección contacto -->
+    <section id="contacto" class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold text-danger">Contacto</h2>
+                <p>Dejanos tu mensaje y te responderemos a la brevedad.</p>
+            </div>
+
+            <form id="contactForm" class="col-md-8 mx-auto bg-light text-dark p-4 rounded shadow">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" id="nombre" class="form-control" placeholder="Tu nombre completo" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo electrónico</label>
+                    <input type="email" id="email" class="form-control" placeholder="tuemail@ejemplo.com" required>
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea id="mensaje" class="form-control" rows="4" placeholder="Escribí tu mensaje aquí..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-danger w-100 fw-bold">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+      <!--Pie de pagina-->
+      <footer class="bg-dark text-white text-center py-4 d-flex justify-content-around">
+          <p class="mx-auto my-auto">&copy; 2025 Club Atlético Estudiantes. Todos los derechos reservados.</p>
+          <!--Iconos de redes sociales con enlaces-->
+          <p class="mx-auto my-auto">
+            <a href="https://www.facebook.com/EstudiantesLevalle/?locale=es_LA" target="_blank" class="text-white me-3" aria-label="Facebook">
+              <i class="fab fa-facebook fa-lg"></i>
+            </a>
+            <a href="https://www.instagram.com/estudianteslevalle/" target="_blank" class="text-white me-3" aria-label="Instagram">
+              <i class="fab fa-instagram fa-lg"></i>
+            </a>
+          </p>
+          <!-- navbar auxiliar para la integrción de las secciones -->
+          <nav>
+            <ul class="nav justify-content-center">
+              <li class="nav-item">
+                <a class="nav-link text-light" href="./pages/historia/historia.html">Historia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="./pages/escudo/index.html">Camiseta y Escudo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="./pages/jugadores/index.html">Jugadores</a> 
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="./pages/cancha/cancha.html">Cancha</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="./pages/galeria/index.html">Galería</a>
+              </li>
+            </ul>
+          </nav>
+      </footer>
+      <script src="./script/jugadores.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </body>
+</html>
