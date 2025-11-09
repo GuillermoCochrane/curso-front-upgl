@@ -1,0 +1,16 @@
+.titulo-posicion {
+    color: var(--color-rojo);
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-rojo);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.jugador-img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
