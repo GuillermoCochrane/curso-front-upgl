@@ -3,7 +3,7 @@ section#galeria {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-rojo);
+    background: var(--color-rojo);
     border-radius: 10px;
     padding: 20px;
 }
@@ -12,7 +12,8 @@ section#galeria {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    background-color: rgb(236, 236, 230);
+    background-color: rgba(236, 236, 230, 0.1);
+    backdrop-filter: blur(20px);
     padding: 20px;
     max-width: 1200px;
     width: 100%;
@@ -22,28 +23,33 @@ section#galeria {
     }
 }
 
+/* Estilos para la galería principal */
 .galeria_cardPrincipal .card{
     position: relative;
     width: 100%;
     height: 75vh;
     max-height: 500px;
     max-width: 600px;
+    background-color: rgba(236, 236, 230, 0.1);
 }
 
+/* Estilos para la galería secundaria */
 .galeria_cardSecundarias {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
     align-items: center;
-        @media (min-width: 768px) {
+    @media (min-width: 768px) {
         grid-template-columns: 1fr 1fr;
     }
 }
 
+/* Estilos para las tarjetas de las galerías  */
 .galeria_cardSecundarias .card {
     position: relative;
     width: 100%;
     height: 250px;
+    background-color: rgba(236, 236, 230, 0.1);
 }
 
 .card .face {
@@ -82,7 +88,6 @@ section#galeria {
 .card .back {
     transform: perspective(600px) rotateY(180deg);
     background: rgb(54, 3, 3);
-    padding: 20px;
     padding: 15px;
     color: #f3f3f3;
     display: flex;
@@ -90,18 +95,6 @@ section#galeria {
     justify-content: space-between;
     text-align: center;
     box-shadow: 0 5px 10px rgb(0, 0, 0);
-}
-
-.card .back .link {
-    border-top: solid 1px #f3f3f3;
-    height: 40px;
-    line-height: 50px;
-
-}
-
-.card .back .link a {
-    color : #f3f3f3;
-
 }
 
 .card .back h3 {
@@ -112,7 +105,16 @@ section#galeria {
 
 .card .back p {
     letter-spacing: 1px;
+}
 
+.card .back .link {
+    border-top: solid 1px #f3f3f3;
+    height: 40px;
+    line-height: 50px;
+}
+
+.card .back .link a {
+    color : #f3f3f3;
 }
 
 .card:hover .front {
@@ -150,17 +152,6 @@ section#galeria {
     background: linear-gradient(45deg, #ffffff, #df1b1b );
 }
 
-/* Estilos para la galería infinita en el modal */
-.galeriaInfinita {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-height: 80vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding: 15px;
-}
-
 /* Estilo para el modal */
 .modal-xl {
     max-width: 90%;
@@ -180,8 +171,15 @@ section#galeria {
     font-size: 1.5rem;
 }
 
-.btn-close {
-    filter: invert(1);
+/* Estilos para la galería infinita en el modal */
+.galeriaInfinita {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-height: 80vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 15px;
 }
 
 /* Tarjeta del modal */
@@ -217,7 +215,7 @@ section#galeria {
     }
 }
 
-.galeriaInfinita img:hover {
+.galeriaInfinita .card-img-top:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
