@@ -156,10 +156,6 @@ section#galeria {
 }
 
 /* Estilo para el modal */
-.modal-xl {
-    max-width: 90%;
-}
-
 .modal-content {
     background: linear-gradient(135deg, #cf1919 0%, #fefdff 100%);
     color: white;
@@ -188,7 +184,7 @@ section#galeria {
     @media (min-width: 658px) {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     @media (min-width: 1200px) {
         grid-template-columns: repeat(4, 1fr);
     }
