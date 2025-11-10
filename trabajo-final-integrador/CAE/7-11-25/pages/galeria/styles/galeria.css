@@ -222,7 +222,7 @@ section#galeria {
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    object-position: top;
+    object-position: center;
     border-radius: 8px 8px 0 0;
     cursor: pointer;
     
