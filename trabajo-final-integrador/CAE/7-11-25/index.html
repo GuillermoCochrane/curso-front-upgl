@@ -68,11 +68,11 @@
         <div class="row" id="camiseta-escudo-container">
           <div class="col-md-6 card p-3 mb-3">
             <h5>Camiseta Oficial</h5>
-            <img src="assets/camiseta.png" alt="Camiseta del Club" class="img-fluid rounded  camiseta-gira">
+            <img src="assets/camiseta.webp" alt="Camiseta del Club" class="img-fluid rounded  camiseta-gira">
           </div>
           <div class="col-md-6 card p-3 mb-3">
             <h5>Escudo del Club</h5>
-            <img src="assets/escudo-S.ico" alt="Escudo del Club" class="img-fluid rounded escudo-gira" style="max-height: 200px;">
+            <img src="assets/escudo.webp" alt="Escudo del Club" class="img-fluid rounded escudo-gira" style="max-height: 200px;">
           </div>
         </div>
       </section>
@@ -217,6 +217,111 @@
           </article>
         </section>
 
+        <!-- Sección de galeria (Fermin) -->
+        <section id="galeria" class="container my-5">
+          <div class="galeriaContainer">
+            <div class="galeria_cardPrincipal">
+              <div class="card">
+                <div class="face">
+                  <img src="./assets/escudo.webp" alt="Logo CAE">
+                  <h3>Club Atletico Estudiante</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="galeria_cardSecundarias">
+              <div class="card">
+                <div class="face front">
+                  <img src="./assets/escudo.webp" alt="Logo CAE">
+                  <h3>Escudo</h3>
+                </div>
+                <div class="face back">
+                  <h3>Escudo</h3>
+                  <p>Descripción del Escudo</p>
+                  <div class="link">
+                    <a href="#" class="btn btn-sm btn-danger verMasCard" data-bs-toggle="modal" data-bs-target="#galeriaModal">
+                      Ver más
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="face front">
+                  <img src="./assets/escudo.webp" alt="Logo CAE">
+                  <h3>Escudo</h3>
+                </div>
+                <div class="face back">
+                  <h3>Escudo</h3>
+                  <p>Descripción del Escudo</p>
+                  <div class="link">
+                    <a href="#" class="btn btn-sm btn-danger verMasCard" data-bs-toggle="modal"
+                      data-bs-target="#galeriaModal">
+                      Ver más
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="face front">
+                  <img src="./assets/escudo.webp" alt="Logo CAE">
+                  <h3>Escudo</h3>
+                </div>
+                <div class="face back">
+                  <h3>Escudo</h3>
+                  <p>Descripción del Escudo</p>
+                  <div class="link">
+                    <a href="#" class="btn btn-sm btn-danger verMasCard" data-bs-toggle="modal" data-bs-target="#galeriaModal">
+                        Ver más
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="face front">
+                  <img src="./assets/escudo.webp" alt="Logo CAE">
+                  <h3>Escudo</h3>
+                </div>
+                <div class="face back">
+                  <h3>Escudo</h3>
+                  <p>Descripción del Escudo</p>
+                  <div class="link">
+                    <a href="#" class="btn btn-sm btn-danger verMasCard" data-bs-toggle="modal" data-bs-target="#galeriaModal">
+                      Ver más
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="verMasButton">
+                <button type="button" class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#galeriaModal">
+                    Ver Más
+                </button>
+            </div>
+          </div>
+
+          <div class="modal fade" id="galeriaModal" tabindex="-1" aria-labelledby="galeriaModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="galeriaModalLabel">Galería Completa</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="galeriaInfinita" id="galeriaInfinita">
+                    <!-- Aquí se cargan las imágenes -->
+                  </div>
+                  <div class="loadingSpinner text-center mt-3" id="loadingSpinner" style="display: none;">
+                    <div class="spinner-border" role="status">
+                      <span class="visually-hidden">Cargando...</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
       <!--Pie de pagina-->
       <footer class="bg-dark text-white text-center py-4 d-flex justify-content-around">
           <p class="mx-auto my-auto">&copy; 2025 Club Atlético Estudiantes. Todos los derechos reservados.</p>
@@ -253,6 +358,7 @@
       <script src="scripts/script.js"></script>
       <script src="scripts/scriptHistoria.js"></script>
       <script src="scripts/scriptJugadores.js"></script>
+      <script src="scripts/scriptGaleria.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   </body>
 </html>
