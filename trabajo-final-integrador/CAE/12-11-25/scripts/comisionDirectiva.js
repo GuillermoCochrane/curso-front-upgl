@@ -77,7 +77,7 @@ function cargarComisionDirectiva() {
 
   integrantesComision.forEach(integrante => {
     const div = document.createElement("div");
-    div.className = "col-md-3 mb-4";
+    div.className = "col-sm-6 col-lg-3 mb-4";
 
     div.innerHTML = `
       <div class="card h-100">
