@@ -73,6 +73,51 @@
       </div>
     </section>
 
+    <!-- Modal de Historia Completa -->
+    <div class="modal fade" id="modalHistoriaCompleta" tabindex="-1" aria-labelledby="modalHistoriaCompletaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          
+          <!-- Header -->
+          <div class="modal-header bg-danger text-white fw-bold">
+            <h5 class="modal-title" id="modalHistoriaCompletaLabel">Historia Completa</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <!-- Body con Tabs -->
+          <div class="modal-body">
+            <!-- Nav Tabs -->
+            <ul class="nav nav-tabs" id="historiaTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link text-danger fw-bold active" data-bs-toggle="tab" data-bs-target="#fundacion" type="button">Fundación</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link text-danger fw-bold" data-bs-toggle="tab" data-bs-target="#logros" type="button">Logros</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link text-danger fw-bold" data-bs-toggle="tab" data-bs-target="#instalaciones" type="button">Instalaciones</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link text-danger fw-bold" data-bs-toggle="tab" data-bs-target="#objetivos" type="button">Objetivos</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link text-danger fw-bold" data-bs-toggle="tab" data-bs-target="#identidad" type="button">Identidad</button>
+              </li>
+            </ul>
+
+            <!-- Contenido de los Tabs -->
+            <div class="tab-content p-3" id="historiaTabContent">
+
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Genaro-->
     <section id="camiseta">
