@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     /*Fondo rayado - AGUADO FRANCO */
     background-image: linear-gradient(90deg, transparent 50%, #c200004f 50%);
