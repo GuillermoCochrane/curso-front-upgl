@@ -82,7 +82,7 @@ body {
     width: 100vw;
     max-width: 100%;
     height: 80dvh;
-    background: url('../assets/canchadci.jpg') center center/cover no-repeat;
+    background: url('../assets/canchadci.webp') center center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
