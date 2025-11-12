@@ -1,17 +1,17 @@
 console.log("Bienvenidos a la pagina DCI")
 
 const jugadores = [
-    { nombre: "Matías Sosa", posicion: "Arquero", numero: 1, imagen: "assets/jugador1.png", edad: 25, nacionalidad: "Argentina", tecnicas: ["Atajadas", "Reflejos", "Juego Aéreo"], detalles: "Portero ágil con gran dominio del área chica y reflejos excepcionales. Líder en la defensa." },
-    { nombre: "Gabriel López", posicion: "Defensor", numero: 2, imagen: "assets/jugador2.png", edad: 26, nacionalidad: "Argentina", tecnicas: ["Marcaje", "Despejes", "Anticipación"], detalles: "Defensor sólido y experimentado, clave en la línea defensiva." },
-    { nombre: "Diego Fernández", posicion: "Defensor", numero: 3, imagen: "assets/jugador3.png", edad: 27, nacionalidad: "Argentina", tecnicas: ["Marcaje", "Despejes", "Anticipación"], detalles: "Defensor ágil con gran capacidad de anticipación y recuperación." },
-    { nombre: "Santiago Ruiz", posicion: "Defensor", numero: 4, imagen: "assets/jugador4.png", edad: 28, nacionalidad: "Argentina", tecnicas: ["Marcaje", "Despejes", "Anticipación"], detalles: "Defensor fuerte en el juego aéreo y en el marcaje." },
-    { nombre: "Javier Gómez", posicion: "Defensor", numero: 5, imagen: "assets/jugador5.png", edad: 29, nacionalidad: "Argentina", tecnicas: ["Marcaje", "Despejes", "Anticipación"], detalles: "Defensor experimentado, líder en la defensa." },
-    { nombre: "Lucas Martínez", posicion: "Volante", numero: 6, imagen: "assets/jugador6.png", edad: 30, nacionalidad: "Argentina", tecnicas: ["Pase", "Control", "Desborde"], detalles: "Volante creativo con gran visión de juego y capacidad de desborde." },
-    { nombre: "Andrés Pérez", posicion: "Volante", numero: 7, imagen: "assets/jugador7.png", edad: 31, nacionalidad: "Argentina", tecnicas: ["Pase", "Control", "Desborde"], detalles: "Volante con gran capacidad de recuperación y pase." },
-    { nombre: "Mario Torres", posicion: "Volante", numero: 8, imagen: "assets/jugador8.png", edad: 32, nacionalidad: "Argentina", tecnicas: ["Pase", "Control", "Desborde"], detalles: "Volante con gran capacidad de desborde y llegada al área." },
-    { nombre: "Tomás Castro", posicion: "Delantero", numero: 9, imagen: "assets/jugador9.png", edad: 33, nacionalidad: "Argentina", tecnicas: ["Definición", "Desmarque", "Juego Aéreo"], detalles: "Delantero con gran capacidad de definición y juego aéreo." },
-    { nombre: "Facundo Díaz", posicion: "Delantero", numero: 10, imagen: "assets/jugador10.png", edad: 34, nacionalidad: "Argentina", tecnicas: ["Definición", "Desmarque", "Juego Aéreo"], detalles: "Delantero con gran capacidad de desmarque y definición." },
-    { nombre: "Fernando Vázquez", posicion: "Delantero", numero: 11, imagen: "assets/jugador11.png", edad: 35, nacionalidad: "Argentina", tecnicas: ["Definición", "Desmarque", "Juego Aéreo"], detalles: "Delantero con gran capacidad de definición y juego aéreo." }
+    { nombre: "Matías Sosa", posicion: "Arquero", numero: 1, imagen: "assets/jugadores/jugador1.webp", edad: 25, nacionalidad: "Argentina", tecnicas: ["Atajadas", "Reflejos", "Juego Aéreo"], detalles: "Portero ágil con gran dominio del área chica y reflejos excepcionales. Líder en la defensa." },
+    { nombre: "Gabriel López", posicion: "Defensor", numero: 2, imagen: "assets/jugadores/jugador2.webp", edad: 26, nacionalidad: "Argentina", tecnicas: ["Marcaje", "Despejes", "Anticipación"], detalles: "Defensor sólido y experimentado, clave en la línea defensiva." },
+    { nombre: "Diego Fernández", posicion: "Defensor", numero: 3, imagen: "assets/jugadores/jugador3.webp", edad: 27, nacionalidad: "Argentina", tecnicas: ["Marcaje", "Despejes", "Anticipación"], detalles: "Defensor ágil con gran capacidad de anticipación y recuperación." },
+    { nombre: "Santiago Ruiz", posicion: "Defensor", numero: 4, imagen: "assets/jugadores/jugador4.webp", edad: 28, nacionalidad: "Argentina", tecnicas: ["Marcaje", "Despejes", "Anticipación"], detalles: "Defensor fuerte en el juego aéreo y en el marcaje." },
+    { nombre: "Javier Gómez", posicion: "Defensor", numero: 5, imagen: "assets/jugadores/jugador5.webp", edad: 29, nacionalidad: "Argentina", tecnicas: ["Marcaje", "Despejes", "Anticipación"], detalles: "Defensor experimentado, líder en la defensa." },
+    { nombre: "Lucas Martínez", posicion: "Volante", numero: 6, imagen: "assets/jugadores/jugador6.webp", edad: 30, nacionalidad: "Argentina", tecnicas: ["Pase", "Control", "Desborde"], detalles: "Volante creativo con gran visión de juego y capacidad de desborde." },
+    { nombre: "Andrés Pérez", posicion: "Volante", numero: 7, imagen: "assets/jugadores/jugador7.webp", edad: 31, nacionalidad: "Argentina", tecnicas: ["Pase", "Control", "Desborde"], detalles: "Volante con gran capacidad de recuperación y pase." },
+    { nombre: "Mario Torres", posicion: "Volante", numero: 8, imagen: "assets/jugadores/jugador8.webp", edad: 32, nacionalidad: "Argentina", tecnicas: ["Pase", "Control", "Desborde"], detalles: "Volante con gran capacidad de desborde y llegada al área." },
+    { nombre: "Tomás Castro", posicion: "Delantero", numero: 9, imagen: "assets/jugadores/jugador9.webp", edad: 33, nacionalidad: "Argentina", tecnicas: ["Definición", "Desmarque", "Juego Aéreo"], detalles: "Delantero con gran capacidad de definición y juego aéreo." },
+    { nombre: "Facundo Díaz", posicion: "Delantero", numero: 10, imagen: "assets/jugadores/jugador10.webp", edad: 34, nacionalidad: "Argentina", tecnicas: ["Definición", "Desmarque", "Juego Aéreo"], detalles: "Delantero con gran capacidad de desmarque y definición." },
+    { nombre: "Fernando Vázquez", posicion: "Delantero", numero: 11, imagen: "assets/jugadores/jugador11.webp", edad: 35, nacionalidad: "Argentina", tecnicas: ["Definición", "Desmarque", "Juego Aéreo"], detalles: "Delantero con gran capacidad de definición y juego aéreo." }
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="card shadow card-jugadores" >
                     <div class="position-relative">
                         <span class="sombreado-badge badge bg-danger text-dark position-absolute top-5 m-2">#${jugador.numero}</span>
-                        <img src="${jugador.imagen}" class="card-img-top" alt="Jugador ${jugador.numero}">
+                        <img src="${jugador.imagen}" class="card-img-top" alt="Jugador ${jugador.numero} loading="lazy">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">${jugador.nombre}</h5>
