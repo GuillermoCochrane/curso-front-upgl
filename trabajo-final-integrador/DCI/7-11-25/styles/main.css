@@ -51,17 +51,26 @@ body {
     font-weight: bold;
     color: #4a000a;
     cursor: pointer;
-    display: inline-block;
-    padding: 2rem 10rem;
+    /* display: inline-block; */
+    padding-block: 2rem;
     border: 1px solid #b5616d67;
     border-radius: 15px;
+    margin: auto;
 }
 
 .hero-portada:hover .dci-titulo {
-    font-size: 20rem;
+    font-size: 8rem;
     border: none;
     text-shadow: #d30d84 0px 5px 15px;
     transition: cubic-bezier(.45, .86, .9, .08) 4.5s;
+
+    @media (min-width: 768px) {
+        font-size: 12.5rem;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 20rem;
+    }
 }
 
 .hero-portada {
@@ -88,6 +97,7 @@ body {
 
 .camiseta-portada {
     /*Chequear el posicionamiento porque cambia segun la resolucion, usar % en vez de absoluto como px*/
+    display: none;
     position: absolute;
     bottom: 50px;
     right: 10px;
@@ -95,6 +105,10 @@ body {
     border: none;
     z-index: 2;
     width: 300px;
+
+    @media (min-width:1200px) {
+        display: block;
+    }
 }
 
 @keyframes camisetaBailarina {
