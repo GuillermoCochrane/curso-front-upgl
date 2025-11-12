@@ -5,6 +5,24 @@ body {
     background-color: #000000 !important;
 }
 
+.navbar-brand {
+    max-width: 260px;
+
+    @media (min-width: 768px) {
+        max-width: none;
+    }
+}
+
+.navbar-brand span {
+    white-space: normal; 
+    overflow-wrap: anywhere;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        font-size: 1.5rem;
+    }
+}
+
 .pulse {
     width: 100px;
     height: 100px;
@@ -122,6 +140,9 @@ body {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+    & .container-fluid {
+        max-width: 1400px;
+    }
 }
 
 .nav-link.btn {
