@@ -4,8 +4,10 @@
   cursor: pointer;
   border-radius: 12px;
   box-shadow: 0 2px 8px var(--color-gris-sombra);
-  max-width: 100%;
+  width: 70%;
+  max-width: 1000px;
   height: auto;
+  transition: all 0.3s ease;
 }
 
 /*Hover sobre imagen de campeonatos*/
