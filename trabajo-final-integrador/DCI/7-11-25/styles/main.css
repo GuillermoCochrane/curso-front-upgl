@@ -134,8 +134,14 @@ body {
     font-weight: 400;
 }
 
+section {
+    background-color: rgba(244, 244, 244, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px !important;
+    padding: 1em;
+}
+
 #cancha {
-    background-color: #fffdfd;
     text-align: justify;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 50px 50px;
