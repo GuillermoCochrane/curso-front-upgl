@@ -231,50 +231,51 @@
           <button id="verMasBtn" class="btn btn-danger px-4">Ver más</button>
         </div>
       </div>
-      <div class="modal fade" id="jugadorModal" tabindex="-1" aria-labelledby="jugadorModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
-          <div class="modal-content">
+    </section>
 
-            <div class="modal-header bg-danger text-white">
-              <h5 class="modal-title" id="jugadorModalLabel"></h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+    <div class="modal fade" id="jugadorModal" tabindex="-1" aria-labelledby="jugadorModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
 
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-5 text-center mb-3 mb-md-0">
-                  <img id="modal-jugador-imagen" src="" alt="Foto del Jugador" class="img-fluid rounded shadow-lg border border-3 border-danger" loading="lazy">
-                  <h4 class="mt-3 text-danger">#<span id="modal-jugador-numero"></span></h4>
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title" id="jugadorModalLabel"></h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-5 text-center mb-3 mb-md-0">
+                <img id="modal-jugador-imagen" src="" alt="Foto del Jugador" class="img-fluid rounded shadow-lg border border-3 border-danger" loading="lazy">
+                <h4 class="mt-3 text-danger">#<span id="modal-jugador-numero"></span></h4>
+              </div>
+
+              <div class="col-md-7">
+
+                <h6 class="text-uppercase text-muted">Información General</h6>
+                <div id="modal-jugador-general">
                 </div>
 
-                <div class="col-md-7">
+                <hr>
 
-                  <h6 class="text-uppercase text-muted">Información General</h6>
-                  <div id="modal-jugador-general">
-                  </div>
-
-                  <hr>
-
-                  <h6 class="text-uppercase text-muted">Habilidades Clave</h6>
-                  <div id="modal-jugador-tecnicas" class="mb-4">
-                  </div>
-
-                  <hr>
-
-                  <h6 class="text-uppercase text-muted">Detalle del Jugador</h6>
-                  <p id="modal-jugador-detalles"></p>
-
+                <h6 class="text-uppercase text-muted">Habilidades Clave</h6>
+                <div id="modal-jugador-tecnicas" class="mb-4">
                 </div>
+
+                <hr>
+
+                <h6 class="text-uppercase text-muted">Detalle del Jugador</h6>
+                <p id="modal-jugador-detalles"></p>
+
               </div>
             </div>
+          </div>
 
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar Ficha</button>
-            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar Ficha</button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- Pamela -->
     <section id="cancha" class="container my-5">
