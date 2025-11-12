@@ -51,10 +51,13 @@ header {
 
 .navbar .nav-link {
   color: var(--color-blanco) !important; /*Links en blanco*/
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
 }
 
 .navbar .nav-link:hover {
   color: #ffdede !important; /*Color mas claro al pasar el mouse*/
+  border-bottom: 1px solid #ffdede;
 }
 
 /*Estilo para pie de pagina*/
