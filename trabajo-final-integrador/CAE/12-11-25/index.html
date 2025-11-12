@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Landing Page oficial del Club Atlético Estudiantes. Historia, jugadores, estadio y más." />
+    <title>Club Atlético Estudiantes</title>
+
+    <!--Icono, aparece en la pestaña del navegador-->
+    <link rel="icon" href="./assets/escudo_transparente.png" type="image/png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+    <!--Biblioteca para iconos de redes sociales(en font-awesome)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+
+  </head>
+
+    <body>
+      <!--Hero-->
+      <section class="hero d-flex align-items-center text-center text-white">
+          <div class="container">
+          <h1 class="display-3 display-md-1 fw-bold">Club Atlético Estudiantes</h1>
+          <p class="lead mb-4 mb-md-5">Orgullo y Pasión desde 1946</p>
+          <a href="#historia" class="btn btn-danger btn-lg">Conocé nuestra historia</a>
+        </div>
+      </section>
+
+      <!--Menu de navegacion con bootstrap-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+          <!--Logo en la navbar-->
+          <a class="navbar-brand" href="#">Club Atlético Estudiantes</a>
+          <!--Menu desplegable-->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!--Menu links de navegacion-->
+          <div class="collapse navbar-collapse" id="menuNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#historia">Historia</a></li>
+              <li class="nav-item"><a class="nav-link" href="#camiseta">Camiseta y Escudo</a></li>
+              <li class="nav-item"><a class="nav-link" href="#jugadores">Jugadores</a></li>
+              <li class="nav-item"><a class="nav-link" href="#cancha">Cancha</a></li>
+              <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+              <li class="nav-item"><a class="nav-link" href="#comision-directiva">Comisión Directiva</a></li>
+              <li class="nav-item"><a class="nav-link" href="#campeonatos">Campeonatos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#patrocinadores">Patrocinadores</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sección de historia (Leticia) -->
+      <section id="historia" class="container my-5">
+        <h2 class="text-center">Así nació el Club Atlético Estudiantes</h2>
+        <p id="historia-breve">
+          Corría el año 1946 y un grupo de muchachos de entre 15 y 25 años con alguna habilidad para jugar al fútbol pasaban largas horas practicando en el mítico <strong>"baldío de Zabala"</strong>  en el Barrio sur entre las calles Dr.Illía, España, Humberto Primo y Carlos Gardel. Un muchacho mecánico, <em>"Chorlito" Cortes</em> se convirtió en el líder porque había conseguido un fútbol y había prometido conseguir las camisetas; por eso pudo integrar un equipo al que su alma idealista llamó <strong>"Club El Amor"</strong> y se propuso intervenir en un Campeonato Relámpago en La Cautiva. Pero los integrantes muy <em>"machistas"</em> o <em>"materialistas"</em> rechazaron el nombre. Las proposiciones del <em>"Vasquito" Casas</em> de llamarlo San Lorenzo, El Ciclón o Los Santos de Boedo también tuvieron una terminante negativa. El día del campeonato se aproximaba y la imposición del nombre se tornaba un problema obsesivo... 
+        </p>
+
+        <p id="historia-extendida" style="display:none;">
+          Hasta que en una tarde, cuando se realizaba un picado de hacha y tiza, un expeditivo rechazo fue a rozar el rodete de una anciana que pasaba por una vereda del baldío vendiendo tortas. La buena señora empezó a recriminar a los muchachos sugiriéndoles que <em>"fueran a estudiar"</em> . Entre los jóvenes hubo cruces de miradas pícaras, hasta que en un momento en que se detuvo el juego alguien pegó el grito irónico: <strong>"¡¡Somos los estudiantes!!"</strong>. Hubo gritos de aprobación y de inmediato le pidieron a <em>"Pita" Cane</em>, que era el único que tenía teléfono, para que llamara a La Cautiva. Este muchacho que era uno de los pocos que cruzaban la <em>"frontera"</em> del Barrio Norte para venir a jugar, orgulloso telefoneó a la localidad vecina: <em>"Anoten para su Campeonato Relámpago al Club Atlético Estudiantes de General Levalle"</em>. Al día siguiente los jóvenes conversaron con gente mayor para que ayudaran a crear una institución formal. Entre ellos estaban <em>Pedro Vignale</em>, <em>Alberto López</em>, que era capataz de la cuadrilla del ferrocarril, <em>Alfredo Aguirre</em> y el <em>"Petizo" Gorgerino</em> . López fue designado presidente, que cuando se ausentó fue remplazado por Aguirre. El acta de fundación se redactó el <strong>20 de junio de 1946</strong>. Por mas de 10 años, tras su fundación, Estudiantes no estuvo afiliado a ninguna Liga de Fútbol. Realizaba partidos amistosos con equipos de localidades vecinas o intervenían en los clásicos <em>"Campeonatos Relámpagos"</em>. Esta es una pequeña introducción de como se formó el glorioso <strong>"Club Atlético Estudiantes"</strong>. Como se puede ver, siempre lo que lo caracterizó a nuestro club, fue el esfuerzo, el amor a la camiseta, el poder lograr algo desde la nada y sin duda la garra de todos sus jugadores que supieron llevar el Rojo y Blanco en su corazón.
+        </p>
+
+        <button id="toggleHistoria" class="btn btn-outline-danger btn-sm mt-2 mx-auto d-block">Leer más</button>
+      </section>
+
+      <!-- Sección de camiseta y escudo (Facundo) -->
+      <section id="camiseta" class="container my-5 text-center">
+        <h2>Camiseta y Escudo</h2>
+        <div class="row" id="camiseta-escudo-container">
+          <div class="col-md-6 card p-3 mb-3">
+            <h5>Camiseta Oficial</h5>
+            <img src="assets/camiseta.webp" alt="Camiseta del Club" class="img-fluid rounded  camiseta-gira">
+          </div>
+          <div class="col-md-6 card p-3 mb-3">
+            <h5>Escudo del Club</h5>
+            <img src="assets/escudo.webp" alt="Escudo del Club" class="img-fluid rounded escudo-gira" style="max-height: 200px;">
+          </div>
+        </div>
+      </section>
+
+        <!-- Sección de jugadores (Emanuel) -->
+        <section id="jugadores" class="container my-5 text-center">
+          <h2>Plantel de Primera División</h2>
+          <div id="secciones-container" class="row justify-content-center"></div>
+          <div id="detalle-container" class="mt-5"></div>
+        </section>
+
+        <!-- Sección de Cancha (Mónica) -->
+        <section id="cancha" class="container py-5">
+          <article class="row align-items-center">
+              <h2 class="text-danger fw-bold border-bottom-0 mb-0 text-center ">Estadio Coco Bonazza</h2>
+              <h3 class="text-danger fw-bold border-bottom border-danger pb-3 text-center">"La Trampera"</h3>
+              <div class="col-md-6">
+                <div id="carruselBasico" class="carousel slide shadow-lg" data-bs-ride="carousel">
+                    <div class="carousel-inner rounded-4">
+                        <!-- Imagen 1 -->
+                        <div class="carousel-item active">
+                          <img 
+                              src="./assets/carrusel/cancha1.webp" 
+                              class="d-block mx-auto w-100 img-fluid rounded-4"
+                              alt="Cancha del Club Atlético Estudiantes"
+                              loading="eager"
+                            >
+                        </div>
+                        
+                        <!-- Imagen 2 -->
+                        <div class="carousel-item">
+                          <img 
+                              src="./assets/carrusel/cancha2.webp" 
+                              class="d-block mx-auto w-100 img-fluid rounded-4"
+                              alt="Entrada a la Cancha del Club Atlético Estudiantes"
+                              loading="lazy"
+                            >
+                        </div>
+
+                        <!-- Imagen 3 -->
+                        <div class="carousel-item">
+                          <img 
+                              src="./assets/carrusel/cancha3.webp" 
+                              class="d-block mx-auto w-100 img-fluid rounded-4"
+                              alt="Vestuarios de la Cancha del Club Atlético Estudiantes"
+                              loading="lazy"
+                            >
+                        </div>
+                        
+                        <!-- Imagen 4 -->
+                        <div class="carousel-item">
+                          <img 
+                              src="./assets/carrusel/cancha4.webp" 
+                              class="d-block mx-auto w-100 img-fluid rounded-4"
+                              alt="Hinchada de la Cancha del Club Atlético Estudiantes"
+                              loading="lazy"
+                            >
+                        </div>
+
+                        <!-- Imagen 5 --> 
+                        <div class="carousel-item">
+                          <img 
+                              src="./assets/carrusel/cancha5.webp" 
+                              class="d-block mx-auto w-100 img-fluid rounded-4"
+                              alt="Cancha del Club Atlético Estudiantes"
+                              loading="lazy"
+                            >
+                        </div>
+
+                        <!-- Imagen 6 --> 
+                        <div class="carousel-item">
+                          <img 
+                              src="./assets/carrusel/cancha6.webp" 
+                              class="d-block mx-auto w-100 img-fluid rounded-4"
+                              alt="Exterior de la Cancha del Club Atlético Estudiantes"   
+                              loading="lazy"
+                            > 
+                        </div>
+
+                        <!-- Imagen 7 --> 
+                        <div class="carousel-item">
+                          <img 
+                              src="./assets/carrusel/cancha7.webp" 
+                              class="d-block mx-auto w-100 img-fluid rounded-4"
+                              alt="Interior de la Cancha del Club Atlético Estudiantes"
+                              loading="lazy"
+                            >   
+                        </div>
+
+                          <!-- Imagen 8 --> 
+                          <div class="carousel-item">
+                            <img 
+                                src="./assets/carrusel/cancha8.webp" 
+                                class="d-block mx-auto w-100 img-fluid rounded-4"
+                                alt="Hinchada del Club Atlético Estudiantes en la cancha"
+                                loading="lazy"
+                              >   
+                          </div>
+
+                            <!-- Imagen 9 --> 
+                            <div class="carousel-item">
+                              <img 
+                                  src="./assets/carrusel/cancha9.webp" 
+                                  class="d-block mx-auto w-100 img-fluid rounded-4"
+                                  alt="Vestuarios de la Cancha del Club Atlético Estudiantes"
+                                  loading="lazy"
+                                >   
+                            </div>
+                    </div>
+                    
+                    <!-- Botones Anterior/Siguiente -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carruselBasico" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark bg-opacity-50 rounded-circle p-2" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carruselBasico" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-dark bg-opacity-50 rounded-circle p-2" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+              </div>
+              <div class="col-md-6 mt-3">
+                  <p><strong>Dirección:</strong> Carlos Pellegrini y Martin Miguel Güemes, General Levalle, Córdoba, Argentina.</p>
+                  <p><strong>Capacidad:</strong> 700 espectadores sentados (1400 de pies)</p>
+                  <p><strong>Dimenciones del campo:</strong> 98 x 75 metros</p>
+              </div>
+          </article>
+          <article class="col py-5 text-center">
+            <div class="container">
+              <h2 class="text-danger fw-bold mb-4">Cómo Llegar</h2>
+              <div class="ratio ratio-16x9 shadow">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d826.7569915636565!2d-63.92679863036864!3d-34.01749308672579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cfbfbb2c7c92b7%3A0x172d4367d746aabe!2sCarlos%20Pellegrini%20750%2C%20X6132AJN%20Gral.%20Levalle%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1762738199469!5m2!1ses-419!2sar"
+                  style="border:0; width:100%; height:100%;"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Ubicación del Estadio Coco Bonazza en General Levalle, Córdoba"
+                ></iframe>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- Sección de galeria (Fermin) -->
+        <section id="galeria" class="container my-5">
+          <div class="galeriaContainer">
+            <div class="galeria_cardPrincipal">
+              <div class="card">
+                <div class="face">
+                  <img src="./assets/escudo.webp" alt="Logo CAE">
+                  <h3>Club Atletico Estudiante</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="galeria_cardSecundarias">
+              <div class="card">
+                <div class="face front">
+                  <img src="./assets/escudo.webp" alt="Logo CAE">
+                  <h3>Escudo</h3>
+                </div>
+                <div class="face back">
+                  <h3>Escudo</h3>
+                  <p>Descripción del Escudo</p>
+                  <div class="link">
+                    <a href="#" class="btn btn-sm btn-danger verMasCard" data-bs-toggle="modal" data-bs-target="#galeriaModal">
+                      Ver más
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="face front">
+                  <img src="./assets/escudo.webp" alt="Logo CAE">
+                  <h3>Escudo</h3>
+                </div>
+                <div class="face back">
+                  <h3>Escudo</h3>
+                  <p>Descripción del Escudo</p>
+                  <div class="link">
+                    <a href="#" class="btn btn-sm btn-danger verMasCard" data-bs-toggle="modal"
+                      data-bs-target="#galeriaModal">
+                      Ver más
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="face front">
+                  <img src="./assets/escudo.webp" alt="Logo CAE">
+                  <h3>Escudo</h3>
+                </div>
+                <div class="face back">
+                  <h3>Escudo</h3>
+                  <p>Descripción del Escudo</p>
+                  <div class="link">
+                    <a href="#" class="btn btn-sm btn-danger verMasCard" data-bs-toggle="modal" data-bs-target="#galeriaModal">
+                        Ver más
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="face front">
+                  <img src="./assets/escudo.webp" alt="Logo CAE">
+                  <h3>Escudo</h3>
+                </div>
+                <div class="face back">
+                  <h3>Escudo</h3>
+                  <p>Descripción del Escudo</p>
+                  <div class="link">
+                    <a href="#" class="btn btn-sm btn-danger verMasCard" data-bs-toggle="modal" data-bs-target="#galeriaModal">
+                      Ver más
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="verMasButton">
+                <button type="button" class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#galeriaModal">
+                    Ver Más
+                </button>
+            </div>
+          </div>
+
+          <div class="modal fade" id="galeriaModal" tabindex="-1" aria-labelledby="galeriaModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="galeriaModalLabel">Galería Completa</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="galeriaInfinita" id="galeriaInfinita">
+                    <!-- Aquí se cargan las imágenes -->
+                  </div>
+                  <div class="loadingSpinner text-center mt-3" id="loadingSpinner" style="display: none;">
+                    <div class="spinner-border" role="status">
+                      <span class="visually-hidden">Cargando...</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+    <!--Comision Directiva-->
+    <section id="comision-directiva" class="container my-5 text-center">
+      <h2>Comisión Directiva</h2>
+      <div class="row" id="comision-directiva-container"></div>
+    </section>
+
+    <!--Campeonatos-->
+    <section id="campeonatos" class="container my-5 text-center">
+      <h2>Campeonatos Obtenidos</h2>
+      <!--Imagen de los titulos de Campeonatos-->
+      <img src="assets/copas_fondo.png" alt="Trofeos y copas ganadas" class="img-fluid rounded mb-3" style="max-height: 300px;">
+      <p>El Club Atlético Estudiantes ha ganado un total de 13 títulos oficiales, destacándose en las ligas regionales con gran orgullo y tradición</p>
+    </section>
+
+    <!--Patrocinadores-->
+    <section id="patrocinadores" class="container my-5 text-center">
+      <h2>Patrocinadores</h2>
+      <div class="row" id="patrocinadores-container">
+        <div class="col-md-3 card p-3">
+          <img src="assets/patrocinador1.jpeg" alt="Patrocinador 1" class="img-fluid rounded">
+        </div>
+        <div class="col-md-3 card p-3">
+          <img src="assets/patrocinador2.jpeg" alt="Patrocinador 2" class="img-fluid rounded">
+        </div>
+        <div class="col-md-3 card p-3">
+          <img src="assets/patrocinador3.jpeg" alt="Patrocinador 3" class="img-fluid rounded">
+        </div>
+        <div class="col-md-3 card p-3">
+          <img src="assets/patrocinador4.jpeg" alt="Patrocinador 4" class="img-fluid rounded">
+        </div>
+        <div class="col-md-3 card p-3">
+          <img src="assets/patrocinador5.jpeg" alt="Patrocinador 5" class="img-fluid rounded">
+        </div>
+      </div>
+      <p>El club cuenta con el apoyo de los siguientes patrocinadores</p>
+      <p>¡Gracias a todos!</p>
+    </section>
+    
+      <!--Pie de pagina-->
+    <footer class="bg-dark text-white text-center py-4">
+      <p>&copy; 2025 Club Atlético Estudiantes. Todos los derechos reservados.</p>
+      <p><!--Iconos de redes sociales con enlaces-->
+        <a href="https://www.facebook.com/EstudiantesLevalle/?locale=es_LA" target="_blank" class="text-white me-3" aria-label="Facebook">
+          <i class="fab fa-facebook fa-lg"></i>
+        </a>
+        <a href="https://www.instagram.com/estudianteslevalle/" target="_blank" class="text-white me-3" aria-label="Instagram">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+      </p>
+      <p class="text.muted">Proyecto realizado en el marco del curso de desarrollo Front End de la UPGL</p>
+    </footer>
+      <script src="scripts/script.js"></script>
+      <script src="scripts/scriptHistoria.js"></script>
+      <script src="scripts/scriptJugadores.js"></script>
+      <script src="scripts/scriptGaleria.js"></script>
+      <script src="scripts/comisionDirectiva.js"></script>
+      <script src="scripts/campeonatos.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </body>
+</html>

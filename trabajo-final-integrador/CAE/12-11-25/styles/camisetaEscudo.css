@@ -1,0 +1,82 @@
+/*Tarjetas de Camiseta y Escudo*/
+#camiseta {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-blanco);
+  border-radius: 10px;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+#camiseta-escudo-container > div {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--color-gris-sombra);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: #f8f8f8;
+  margin: auto;
+}
+
+/*Efecto hover para dar sensacion de "levantar"*/
+#camiseta-escudo-container > div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px var(--color-gris-sombra-hover);
+  z-index: 10;
+}
+#camiseta-escudo-container img {
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 12px;
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+}
+
+/*Imagen de camiseta o escudo*/
+#camiseta-escudo-container img :hover{
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 12px;
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+}
+
+.camiseta-gira:hover{
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 12px;
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+  filter: drop-shadow(0px 7px 23px #ff0000);
+  animation: rotar 5s linear infinite;
+}
+.escudo-gira:hover{
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 12px;
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+  filter: drop-shadow(0px 7px 23px #ff0000);
+  animation: rotar 5s linear infinite;
+}
+
+@keyframes rotar {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@media (min-width: 768px) {
+    #camiseta-escudo-container > div {
+        width: 48%;
+    }
+}

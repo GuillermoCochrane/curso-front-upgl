@@ -1,0 +1,16 @@
+/*Estilo de imagen de copas*/
+#campeonatos img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--color-gris-sombra);
+  max-width: 100%;
+  height: auto;
+}
+
+/*Hover sobre imagen de campeonatos*/
+#campeonatos img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px var(--color-gris-sombra-hover);
+  z-index: 10;
+}
