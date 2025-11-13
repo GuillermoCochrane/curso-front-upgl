@@ -1,0 +1,462 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    /*Fondo rayado - AGUADO FRANCO */
+    background-image: linear-gradient(90deg, transparent 50%, #c200004f 50%);
+    background-size: 200px 200px;
+    background-color: #000000 !important;
+}
+
+.navbar-brand {
+    max-width: 260px;
+
+    @media (min-width: 768px) {
+        max-width: none;
+    }
+}
+
+.navbar-brand span {
+    white-space: normal; 
+    overflow-wrap: anywhere;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        font-size: 1.5rem;
+    }
+}
+
+.pulse {
+    width: 100px;
+    height: 100px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.dci-titulo {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #4a000a;
+    cursor: pointer;
+    /* display: inline-block; */
+    padding-block: 2rem;
+    border: 1px solid #b5616d67;
+    border-radius: 15px;
+    margin: auto;
+}
+
+.hero-portada:hover .dci-titulo {
+    font-size: 8rem;
+    border: none;
+    text-shadow: #d30d84 0px 5px 15px;
+    transition: cubic-bezier(.45, .86, .9, .08) 4.5s;
+
+    @media (min-width: 768px) {
+        font-size: 12.5rem;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 20rem;
+    }
+}
+
+.hero-portada {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 80dvh;
+    background: url('../assets/canchadci.webp') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.237);
+    z-index: 1;
+}
+
+.camiseta-portada {
+    /*Chequear el posicionamiento porque cambia segun la resolucion, usar % en vez de absoluto como px*/
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    height: auto;
+    border: none;
+    z-index: 2;
+    width: 300px;
+
+    @media (min-width:1200px) {
+        display: block;
+    }
+}
+
+@keyframes camisetaBailarina {
+    0% {
+        rotate: 2deg;
+        filter: drop-shadow(5px 5px 5px #000);
+        transform: scale(1.1);
+    }
+
+    50% {
+        rotate: -2deg;
+        filter: drop-shadow(5px 5px 25px #000);
+        transform: scale(1.5);
+    }
+
+    100% {
+        rotate: 2deg;
+        filter: drop-shadow(5px 5px 5px #000);
+        transform: scale(1.1);
+    }
+}
+
+.camiseta-portada:hover {
+    transition: transform 3.3s ease, filter 3.3s ease;
+    animation: camisetaBailarina 2s ease-in-out infinite;
+}
+
+.titulo-portada {
+    position: absolute;
+    z-index: 2;
+    color: #b30019;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+    width: 100%;
+}
+
+.glass-navbar {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 0, 0, 0.45) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    & .container-fluid {
+        max-width: 1400px;
+    }
+}
+
+.nav-link.btn {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.nav-item .nav-link {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+    transition: all 0.3s ease !important;
+}
+
+.nav-item .nav-link:hover {
+    color: #000 !important;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+section {
+    background-color: rgba(244, 244, 244, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px !important;
+    padding: 1em;
+}
+
+#cancha {
+    text-align: justify;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 30px 50px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-color: #c1001b;
+}
+
+#cancha img {
+    width: 100vw;
+    border: 3px solid #c1001b;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/*ESTILOS PARA LAS CARDS DE JUGADORES*/
+.sombreado-badge {
+    font-size: 1rem !important;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(220, 0, 0, 0.6);
+    border: 2px solid #000000;
+    font-family: 'Tourney', 'Oswald', Arial, sans-serif;
+}
+
+.card-jugadores {
+    padding-top: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.227);
+
+}
+
+.card-jugadores:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    rotate: 1deg;
+    z-index: 2;
+}
+
+.card-title {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 800;
+    min-height: 2.5em;
+    @media (min-width: 992px) {
+        min-height: auto;
+    }
+}
+
+.card-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}
+
+.texto-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}
+
+.card-img-top {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.card-body {
+    position: relative;
+}
+
+.btn-detalles {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.card-jugadores:hover .btn-detalles {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/*Genaro*/
+
+.camisaEscudo {
+    display: flex;
+    margin-inline: 80px;
+    gap: 30%;
+    padding: 30px;
+}
+
+.camiseta-escudo {
+    width: 200px;
+    border-radius: 20px;
+    background: rgba(22, 2, 6, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 10px 12px rgb(5, 5, 5);
+    transition: all 0.3s ease-in;
+}
+
+.camiseta-escudo:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 14px 16px rgb(5, 5, 5);
+}
+
+.texto {
+    color: #f22f2f;
+    text-shadow: 0px 3px 3px #aaa;
+}
+
+/*Albano*/
+/* Sección historia general */
+#historia {
+    padding: 2rem 1rem;
+    background-color: rgba(244, 244, 244, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Título */
+#historia h2 {
+    font-family: 'Segoe UI', sans-serif;
+    color: #000000;
+    margin-bottom: 2rem;
+}
+
+.historia-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 12px;
+    transition: all 0.3s ease-in;
+}
+
+.historia-track {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.historia-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fondo translúcido */
+    border-radius: 10px;
+    padding: 10px;
+
+    backdrop-filter: blur(4px);
+    color: black;
+}
+
+.historia-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+}
+
+.historia-card p {
+    margin-bottom: 0 !important;
+}
+
+.tab-content {
+    font-size: 1.1rem;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .historia-container {
+        padding: 1rem;
+    }
+
+    .historia-track {
+        font-size: 1rem;
+    }
+}
+
+/*GALERIA DE IMAGENES*/
+
+.contenedor-imagen {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #efefef;
+    box-shadow: 0 5px 12px rgb(0, 0, 0, 0.5);
+    transform: scale(0.95);
+    transition: 0.4s ease-in-out;
+}
+
+.contenedor-imagen img {
+    transition: 0.4s ease-in-out;
+    width: 100%;
+    aspect-ratio: 338 / 223;
+}
+
+.contenedor-imagen:hover {
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.auspiciantes-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.auspiciantes-track {
+    display: flex;
+    animation: scrollInfinite 120s linear infinite;
+    width: max-content;
+}
+
+@keyframes scrollInfinite {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.auspiciante-item {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding-block: 0;
+    padding-inline: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & span {
+        width: 150px;
+        height: 3em;
+        text-align: center;
+    }
+}
+
+.auspiciante-logo {
+    height: 100px;
+    width: auto;
+    transform: scale(0.9);
+    max-width: 150px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.auspiciante-logo:hover {
+    filter: grayscale(0%);
+    transform: scale(1);
+}
+
+@media (max-width: 768px) {
+    .auspiciante-logo {
+        height: 50px;
+    }
+
+    .auspiciante-item {
+        padding: 0 20px;
+    }
+
+    .auspiciante-item span {
+        font-size: 0.7rem;
+    }
+}
