@@ -19,27 +19,6 @@
     }
 }
 
-/* Efecto de desvanecimiento en los bordes */
-.auspiciantes-container::before,
-.auspiciantes-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 150px;
-    height: 100%;
-    z-index: 2;
-}
-
-.auspiciantes-container::before {
-    left: 0;
-    background: linear-gradient(90deg, #f8f9fa 0%, transparent 100%);
-}
-
-.auspiciantes-container::after {
-    right: 0;
-    background: linear-gradient(270deg, #f8f9fa 0%, transparent 100%);
-}
-
 .auspiciante-item {
     display: flex;
     flex-direction: column;
