@@ -89,3 +89,8 @@ footer a:hover {
     font-size: 0.9rem;
   }
 }
+
+section {
+  max-width: 95% !important;
+  margin: auto;
+}
