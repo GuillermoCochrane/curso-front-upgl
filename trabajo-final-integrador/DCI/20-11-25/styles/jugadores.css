@@ -1,0 +1,67 @@
+/*ESTILOS PARA LAS CARDS DE JUGADORES*/
+.sombreado-badge {
+    font-size: 1rem !important;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(220, 0, 0, 0.6);
+    border: 2px solid #000000;
+    font-family: 'Tourney', 'Oswald', Arial, sans-serif;
+}
+
+.card-jugadores {
+    padding-top: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.227);
+
+}
+
+.card-jugadores:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    rotate: 1deg;
+    z-index: 2;
+}
+
+.card-title {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 800;
+    min-height: 2.5em;
+    @media (min-width: 992px) {
+        min-height: auto;
+    }
+}
+
+.card-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}
+
+.texto-titulo {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}
+
+.card-img-top {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.card-body {
+    position: relative;
+}
+
+.btn-detalles {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.card-jugadores:hover .btn-detalles {
+    opacity: 1;
+    pointer-events: auto;
+}

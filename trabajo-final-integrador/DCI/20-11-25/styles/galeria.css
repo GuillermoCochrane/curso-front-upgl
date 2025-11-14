@@ -1,0 +1,19 @@
+.contenedor-imagen {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #efefef;
+    box-shadow: 0 5px 12px rgb(0, 0, 0, 0.5);
+    transform: scale(0.95);
+    transition: 0.4s ease-in-out;
+}
+
+.contenedor-imagen img {
+    transition: 0.4s ease-in-out;
+    width: 100%;
+    aspect-ratio: 338 / 223;
+}
+
+.contenedor-imagen:hover {
+    cursor: pointer;
+    transform: scale(1);
+}
