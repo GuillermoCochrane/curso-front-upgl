@@ -1,0 +1,187 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    /*Fondo rayado - AGUADO FRANCO */
+    background-image: linear-gradient(90deg, transparent 50%, #c200004f 50%);
+    background-size: 200px 200px;
+    background-color: #000000 !important;
+}
+
+.navbar-brand {
+    max-width: 260px;
+
+    @media (min-width: 768px) {
+        max-width: none;
+    }
+}
+
+.navbar-brand span {
+    white-space: normal; 
+    overflow-wrap: anywhere;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        font-size: 1.5rem;
+    }
+}
+
+.pulse {
+    width: 100px;
+    height: 100px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.dci-titulo {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #4a000a;
+    cursor: pointer;
+    /* display: inline-block; */
+    padding-block: 2rem;
+    border: 1px solid #b5616d67;
+    border-radius: 15px;
+    margin: auto;
+}
+
+.hero-portada:hover .dci-titulo {
+    font-size: 8rem;
+    border: none;
+    text-shadow: #d30d84 0px 5px 15px;
+    transition: cubic-bezier(.45, .86, .9, .08) 4.5s;
+
+    @media (min-width: 768px) {
+        font-size: 12.5rem;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 20rem;
+    }
+}
+
+.hero-portada {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 80dvh;
+    background: url('../assets/canchadci.webp') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.237);
+    z-index: 1;
+}
+
+.camiseta-portada {
+    /*Chequear el posicionamiento porque cambia segun la resolucion, usar % en vez de absoluto como px*/
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+    height: auto;
+    border: none;
+    z-index: 2;
+    width: 300px;
+
+    @media (min-width:1200px) {
+        display: block;
+    }
+}
+
+@keyframes camisetaBailarina {
+    0% {
+        rotate: 2deg;
+        filter: drop-shadow(5px 5px 5px #000);
+        transform: scale(1.1);
+    }
+
+    50% {
+        rotate: -2deg;
+        filter: drop-shadow(5px 5px 25px #000);
+        transform: scale(1.5);
+    }
+
+    100% {
+        rotate: 2deg;
+        filter: drop-shadow(5px 5px 5px #000);
+        transform: scale(1.1);
+    }
+}
+
+.camiseta-portada:hover {
+    transition: transform 3.3s ease, filter 3.3s ease;
+    animation: camisetaBailarina 2s ease-in-out infinite;
+}
+
+.titulo-portada {
+    position: absolute;
+    z-index: 2;
+    color: #b30019;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 3px;
+    width: 100%;
+}
+
+.glass-navbar {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 0, 0, 0.45) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    & .container-fluid {
+        max-width: 1400px;
+    }
+}
+
+.nav-link.btn {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.nav-item .nav-link {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+    transition: all 0.3s ease !important;
+}
+
+.nav-item .nav-link:hover {
+    color: #000 !important;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+section {
+    background-color: rgba(244, 244, 244, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 15px !important;
+    padding: 1em;
+}
