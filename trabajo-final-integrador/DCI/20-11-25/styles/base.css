@@ -183,5 +183,6 @@ section {
     background-color: rgba(244, 244, 244, 0.3);
     backdrop-filter: blur(10px);
     border-radius: 15px !important;
-    padding: 1em;
+    padding: 0.5em;
+    max-width: 90% !important;
 }
