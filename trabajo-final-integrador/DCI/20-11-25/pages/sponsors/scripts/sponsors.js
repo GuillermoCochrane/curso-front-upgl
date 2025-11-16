@@ -74,21 +74,35 @@ function createImage(url = null , nombre = null, className = null, id = null) {
     image.loading = "lazy";
     image.onerror = function() {
         this.onerror = null;
-        this.src = './assets/sponsors/default.webp';
+        this.src = './assets/sponsors/default.png';
         this.alt = nombre ? `${nombre} - ${backdropMsg}` : backdropMsg;
         this.title = nombre ? `${nombre} - ${backdropMsg}` : backdropMsg;
     };
     return image;
 }
 
+// Función auxiliar para verificar existencia de archivos
+async function verifyFileExists(url) {
+    try {
+        const response = await fetch(url, { method: 'HEAD' });
+        return response.ok;
+    } catch {
+        return false;
+    }
+}
+
 // Función para generar el carousel infinito
-function generarCarouselInfinito() {
+async function generarCarouselInfinito() {
     const track = $('#auspiciantes-track');
     const auspiciantesDuplicados = [...auspiciantes, ...auspiciantes];
+    const path = './assets/sponsors/';
+    const image = `${path}default.webp`;
 
     for (const auspiciante of auspiciantesDuplicados) {
         const $auspiciante = createElement('article', 'auspiciante-item');
-        const $logo = createImage(`./assets/sponsors/${auspiciante.logo}`, auspiciante.auspiciante, 'auspiciante-logo');
+        const logo = `${path}${auspiciante.logo}`;
+        if (await verifyFileExists(logo))  image = logo;
+        const $logo = createImage(image, auspiciante.auspiciante, 'auspiciante-logo');
         const $span = createElement('span', 'text-muted', auspiciante.auspiciante);
         $auspiciante.append($logo, $span);
         track.append($auspiciante);
@@ -96,4 +110,4 @@ function generarCarouselInfinito() {
 }
 
 // Generar el carousel cuando la página cargue
-document.addEventListener('DOMContentLoaded', generarCarouselInfinito);
+document.addEventListener('DOMContentLoaded', async() => await generarCarouselInfinito());
