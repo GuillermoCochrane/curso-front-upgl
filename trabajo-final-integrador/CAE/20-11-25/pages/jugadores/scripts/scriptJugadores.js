@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-      mostrarSecciones(); // Carga la lista de jugadores
+  inicializarTabs();
+  mostrarDetalle(0); // Mostrar la primera pestaña (Arqueros) por defecto
 });
 
-    
-// Imágenes de cada jugador
 const imagenesJugadores = {
   "Airasca Santiago": "assets/jugadores/Airasca-Santiago.webp",
   "Gil Gabriel": "assets/jugadores/Gil-Gabriel.webp",
@@ -37,7 +36,6 @@ const imagenesJugadores = {
   "Zabaleta Matias": "assets/jugadores/Zabaleta-Matias.webp",
 };
 
-//Jugadores
 const jugadoresPorPosicion = [
   {
     posicion: "Arqueros",
@@ -46,70 +44,73 @@ const jugadoresPorPosicion = [
   {
     posicion: "Defensores",
     nombres: [
-    "Andino Manuel", "Ferrando Marcos", "Fontana Santiago", 
-    "Monzon Maximiliano", "Velázquez Gaspar", "Zabaleta Javier",
-    "Rios Juan", "Rodriguez Joaquín", "Montiel Gonzalo",
-    "Galetto Máximo", "Guzmán Laureano"
+      "Andino Manuel", "Ferrando Marcos", "Fontana Santiago",
+      "Monzon Maximiliano", "Velázquez Gaspar", "Zabaleta Javier",
+      "Rios Juan", "Rodriguez Joaquín", "Montiel Gonzalo",
+      "Galetto Máximo", "Guzmán Laureano"
     ]
   },
   {
     posicion: "Mediocampistas",
     nombres: [
-    "Arce Timoteo", "Bocco Martin", "Cortez Fermin",
-    "Ferrando Joaquín", "Granero Juan Pablo", "Reguero Franco",
-    "Rodriguez Bernabe", "Moyano Francisco", "Victorio Juan Ignacio",
-    "Zarate Ezequiel"
+      "Arce Timoteo", "Bocco Martin", "Cortez Fermin",
+      "Ferrando Joaquín", "Granero Juan Pablo", "Reguero Franco",
+      "Rodriguez Bernabe", "Moyano Francisco", "Victorio Juan Ignacio",
+      "Zarate Ezequiel"
     ]
   },
   {
     posicion: "Delanteros",
     nombres: [
-    "Dopazo Martin", "Sanchez Bruno", "Cataldo Ramiro",
-    "Bruera Maximiliano", "Alarcon Francisco", "Zabaleta Matias"
+      "Dopazo Martin", "Sanchez Bruno", "Cataldo Ramiro",
+      "Bruera Maximiliano", "Alarcon Francisco", "Zabaleta Matias"
     ]
   }
 ];
 
-function mostrarSecciones() {
+function inicializarTabs() {
   const seccionesContainer = document.getElementById('secciones-container');
-  const detalleContainer = document.getElementById('detalle-container');
   seccionesContainer.innerHTML = '';
-  detalleContainer.innerHTML = '';
+
+  const tabs = document.createElement('ul');
+  tabs.className = 'nav nav-tabs mb-4 justify-content-center';
 
   jugadoresPorPosicion.forEach((grupo, index) => {
-    const card = document.createElement('div');
-    card.className = 'col-md-3 mb-4';
-    card.innerHTML = `
-      <div class="card seccion-card h-100" onclick="mostrarDetalle(${index})">
-        <div class="card-body d-flex align-items-center justify-content-center">
-          <h4 class="card-title">${grupo.posicion}</h4>
-        </div>
-      </div>
-    `;
-    seccionesContainer.appendChild(card);
+    const tab = document.createElement('li');
+    tab.className = 'nav-item';
+    tab.innerHTML = `
+      <button class="nav-link ${index === 0 ? 'active' : ''}" 
+        id="tab-${index}" 
+        onclick="mostrarDetalle(${index})">
+        ${grupo.posicion}
+      </button>`;
+    tabs.appendChild(tab);
   });
+
+  seccionesContainer.appendChild(tabs);
 }
 
 function mostrarDetalle(index) {
   const grupo = jugadoresPorPosicion[index];
   const detalleContainer = document.getElementById('detalle-container');
-  const seccionesContainer = document.getElementById('secciones-container');
-  seccionesContainer.innerHTML = '';
 
+  // Actualiza la pestaña activa
+  document.querySelectorAll('.nav-link').forEach(tab => tab.classList.remove('active'));
+  document.getElementById(`tab-${index}`).classList.add('active');
+
+  // Muestra solo la grilla de jugadores
   detalleContainer.innerHTML = `
-    <h3 class="titulo-posicion">${grupo.posicion}</h3>
     <div class="row">
       ${grupo.nombres.map(nombre => `
-        <div class="col-md-4 mb-4">
+        <div class="col-sm-6 col-lg-4 col-xxl-3 mb-4">
           <div class="card jugador-card">
-            <div class="card-body">
-            <img src="${imagenesJugadores[nombre]}" alt="${nombre}" class="jugador-img mb-2" loading="lazy">
+            <div class="card-body text-center">
+              <img src="${imagenesJugadores[nombre]}" alt="${nombre}" class="jugador-img mb-2" loading="lazy">
               <h5 class="card-title">${nombre}</h5>
             </div>
           </div>
         </div>
       `).join('')}
     </div>
-    <button class="btn btn-outline-danger mt-3" onclick="mostrarSecciones()">Volver</button>
   `;
 }
