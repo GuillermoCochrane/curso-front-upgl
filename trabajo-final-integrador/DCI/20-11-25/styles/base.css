@@ -56,7 +56,6 @@ body {
     color: #4a000a;
     display: block;
     padding-block: 2rem;
-    border: 1px solid #b5616d67;
     border-radius: 15px;
     margin: auto;
     text-align: center;
@@ -168,6 +167,19 @@ body {
     font-weight: bold;
     letter-spacing: 3px;
     width: 100%;
+}
+
+.hero-portada h4 {
+    position: absolute;
+    bottom: 2em;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+
+    @media (min-width: 1200px) {
+        bottom: 1em;
+        font-size: 1.7rem;
+    }
 }
 
 .glass-navbar {
