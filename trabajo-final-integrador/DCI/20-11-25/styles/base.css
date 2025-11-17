@@ -190,6 +190,7 @@ body {
     border-bottom-right-radius: 25px;
     & .container-fluid {
         max-width: 1400px;
+        --bs-gutter-x: 0.25rem !important;
     }
 }
 
