@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="card shadow card-jugadores" >
                     <div class="position-relative">
                         <span class="sombreado-badge badge bg-danger text-dark position-absolute top-5 m-2">#${jugador.numero}</span>
-                        <img src="./assets/renderCamiseta.webp" class="card-img-top" alt="Jugador ${jugador.numero} loading="lazy">
+                        <img src="./assets/renderCamiseta.webp" class="card-img-top" alt="Jugador ${jugador.numero}" loading="lazy">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">${jugador.nombre}</h5>
