@@ -19,14 +19,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const filas = document.getElementById("jugadores");
     const verMasBtn = document.getElementById("verMasBtn");
     let mostrados = 0;
-    const porPagina = 3;
+    const porPagina = 4;
 
     function mostrarJugadores() {
         const hasta = Math.min(mostrados + porPagina, jugadores.length);
         for (let i = mostrados; i < hasta; i++) {
             const jugador = jugadores[i];
             const card = document.createElement('div');
-            card.className = "col-md-4 mb-4";
+            card.className = "col-md-6 col-xl-3 mb-4";
             card.innerHTML = `
                 <div class="card shadow card-jugadores" >
                     <div class="position-relative">
