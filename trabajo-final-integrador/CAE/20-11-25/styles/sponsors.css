@@ -37,31 +37,22 @@
 }
 
 .auspiciante-logo {
-    height: 100px;
+    height: 200px;
     width: auto;
-    transform: scale(0.9);
-    max-width: 150px;
     object-fit: contain;
-    filter: grayscale(100%);
     transition: all 0.3s ease;
     margin-bottom: 10px;
     border-radius: 10px;
+
+    @media (min-width: 1200px) {
+        transform: scale(0.9);
+        filter: grayscale(100%);
+    }
 }
 
 .auspiciante-logo:hover {
-    filter: grayscale(0%);
-    transform: scale(1);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .auspiciante-logo {
-        height: 50px;
-    }
-    .auspiciante-item {
-        padding: 0 20px;
-    }
-    .auspiciante-item span {
-        font-size: 0.7rem;
+    @media (min-width: 1200px) {
+        filter: grayscale(0%);
+        transform: scale(1);
     }
 }
