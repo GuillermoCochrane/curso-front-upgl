@@ -100,7 +100,7 @@ function mostrarDetalle(index) {
 
   // Muestra solo la grilla de jugadores
   detalleContainer.innerHTML = `
-    <div class="row">
+    <div class="row justify-content-evenly">
       ${grupo.nombres.map(nombre => `
         <div class="col-sm-6 col-lg-4 col-xxl-3 mb-4">
           <div class="card jugador-card">
