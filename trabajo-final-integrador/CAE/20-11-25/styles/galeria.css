@@ -1,4 +1,4 @@
-section#galeria {
+.galeria-container {
     font-family: sans-serif;
     display: flex;
     align-items: center;
@@ -27,15 +27,17 @@ section#galeria {
 .galeria_cardPrincipal .card{
     position: relative;
     width: 100%;
-    height: 75vh;
+    aspect-ratio: 5 / 6;
     max-height: 500px;
     max-width: 600px;
     background-color: rgba(236, 236, 230, 0.1);
 }
+
 .galeria_cardPrincipal .card img {
     object-fit: contain;
     background-color: var(--color-blanco);
 }
+
 /* Estilos para la galería secundaria */
 .galeria_cardSecundarias {
     display: grid;
@@ -51,8 +53,11 @@ section#galeria {
 .galeria_cardSecundarias .card {
     position: relative;
     width: 100%;
-    height: 250px;
+    aspect-ratio: 4 / 3;
     background-color: rgba(236, 236, 230, 0.1);
+    @media (min-width: 1200px) {
+        aspect-ratio: 1 / 1;
+    }
 }
 
 .card .face {
