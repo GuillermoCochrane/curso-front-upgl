@@ -1,0 +1,31 @@
+/*Comision directiva e integrantes*/
+#comision-directiva-container .card {
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--color-gris-sombra);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  padding: 1rem;
+  height: 100%;
+}
+
+/*Hover tarjeta*/
+#comision-directiva-container .card:hover {
+  transform: translateY(-8px);;
+  box-shadow: 0 8px 20px var(--color-gris-sombra-hover);
+}
+
+/*Nombre integrante*/
+#comision-directiva-container .card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--color-negro);
+  margin-bottom: 0.5rem;
+}
+
+/*Cargo integrante*/
+#comision-directiva-container .card-text {
+  font-size: 0.95rem;
+  color: var(--color-negro);
+  margin-bottom: 0;
+}
