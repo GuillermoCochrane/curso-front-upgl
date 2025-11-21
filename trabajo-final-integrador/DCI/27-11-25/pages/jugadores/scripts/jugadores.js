@@ -1,5 +1,3 @@
-console.log("Bienvenidos a la pagina DCI")
-
 const jugadores = [
     { nombre: "Matías Sosa", posicion: "Arquero", numero: 1, imagen: "assets/jugadores/jugador1.webp", edad: 25, nacionalidad: "Argentina", tecnicas: ["Atajadas", "Reflejos", "Juego Aéreo"], detalles: "Portero ágil con gran dominio del área chica y reflejos excepcionales. Líder en la defensa." },
     { nombre: "Gabriel López", posicion: "Defensor", numero: 2, imagen: "assets/jugadores/jugador2.webp", edad: 26, nacionalidad: "Argentina", tecnicas: ["Marcaje", "Despejes", "Anticipación"], detalles: "Defensor sólido y experimentado, clave en la línea defensiva." },
@@ -58,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
         modalElement.addEventListener('show.bs.modal', function (event) {
             const button = event.relatedTarget;
             const index = button.getAttribute('data-jugador-index');
-            console.log("numero de jugador: ",index);
             
             const jugador = jugadores[index];
 
