@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 data-bs-toggle="modal"
                                 data-bs-target="#jugadorModal"
                                 data-jugador-index="${i}">
-                            Más detalles...
+                            Ver Más
                         </button>
                     </div>
                 </div >
