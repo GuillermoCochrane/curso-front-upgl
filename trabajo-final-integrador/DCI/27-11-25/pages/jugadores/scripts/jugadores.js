@@ -11,3 +11,25 @@ const jugadores = [
     { nombre: "Facundo Díaz", posicion: "Delantero", numero: 10, imagen: "assets/jugadores/jugador10.webp", edad: 34, nacionalidad: "Argentina", tecnicas: ["Definición", "Desmarque", "Juego Aéreo"], detalles: "Delantero con gran capacidad de desmarque y definición." },
     { nombre: "Fernando Vázquez", posicion: "Delantero", numero: 11, imagen: "assets/jugadores/jugador11.webp", edad: 35, nacionalidad: "Argentina", tecnicas: ["Definición", "Desmarque", "Juego Aéreo"], detalles: "Delantero con gran capacidad de definición y juego aéreo." }
 ];
+
+let mostrados = 0;
+
+function $(selector) {
+    return document.querySelector(selector);
+}
+
+// Obtener todos los elementos DOM
+function $$(selector) {
+    return document.querySelectorAll(selector);
+}
+
+// Crea elementos del DOM
+function createElement(tagName, className = null, content = null, isHTML = false, id = null) {
+    const element = document.createElement(tagName);
+    className && (element.className = className);
+    id && (element.id = id);
+    if (content !== null) {
+        isHTML ? (element.innerHTML = content) : (element.textContent = content);
+    }
+    return element;
+}
