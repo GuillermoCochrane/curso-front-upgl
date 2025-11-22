@@ -101,4 +101,12 @@ function iniciarJugadores() {
     $verMasBtn.addEventListener("click", crearJugadores);
 };
 
+function crearNacionalidadJugador(nacionalidad){
+    const $nacionalidadTag = createElement("strong", null, "Nacionalidad: ");
+    const $nacionalidadText = createElement("span", null, nacionalidad);
+    const $info = createElement("p", null);
+    $info.append($nacionalidadTag, $nacionalidadText);
+    return $info;
+}
+
 document.addEventListener("DOMContentLoaded", iniciarJugadores);
