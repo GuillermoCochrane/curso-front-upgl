@@ -112,3 +112,13 @@ function crearJugadorImagen(numero){
     $imgContainer.append($text, $img);
     return $imgContainer;
 }
+
+function crearCardJugador(jugador , index){
+    const $card = createElement('div', 'col-md-6 col-xl-3 mb-4');
+    const $container = createElement('div', 'card shadow card-jugadores');
+    const $img = crearJugadorImagen(jugador.numero);
+    const $body = crearJugadorBody(jugador, index);
+    $container.append($img, $body);
+    $card.append($container);
+    return $card;
+}
