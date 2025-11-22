@@ -109,4 +109,8 @@ function crearNacionalidadJugador(nacionalidad){
     return $info;
 }
 
+function crearHabilidadesJugador(tecnica){
+    return createElement("span", "badge bg-primary me-2", tecnica);
+}
+
 document.addEventListener("DOMContentLoaded", iniciarJugadores);
