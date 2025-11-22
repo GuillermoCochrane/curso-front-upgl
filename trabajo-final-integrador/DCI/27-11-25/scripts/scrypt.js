@@ -140,3 +140,11 @@ function crearJugadores(){
         $verMasBtn.disabled = true;
     }
 };
+
+function crearEdadJugador(edad){
+    const $edadTag = createElement("strong", null, "Edad: ");
+    const $edadText = createElement("span", null, `${edad} años`);
+    const $info = createElement("p", null);
+    $info.append($edadTag, $edadText);
+    return $info;
+}
