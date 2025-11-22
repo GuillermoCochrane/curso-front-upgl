@@ -45,3 +45,16 @@ function crearJugadorBody(jugador, index){
     $body.append($title, $text, $button);
     return $body;
 }
+
+function crearJugadorImagen(numero){
+    const $imgContainer = createElement('div', 'position-relative');
+    const $text = createElement('span', 'sombreado-badge badge bg-danger text-dark position-absolute top-5 m-2', `#${numero}`);
+    const $img = createElement('img', 'card-img-top');
+    $img.src = `./assets/renderCamiseta.webp`;
+    $img.alt = `Foto de Jugador ${numero}`;
+    $img.title = `Foto de Jugador ${numero}`;
+    $img.loading = "lazy";
+    $imgContainer.append($text, $img);
+    return $imgContainer;
+}
+
