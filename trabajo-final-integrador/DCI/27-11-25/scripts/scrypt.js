@@ -88,3 +88,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     verMasBtn.addEventListener("click", mostrarJugadores);
 });
+
+function crearJugadorBody(jugador, index){
+    const $body = createElement('div', 'card-body');
+    const $title = createElement('h5', 'card-title', `${jugador.nombre}`);
+    const $text = createElement('p', 'card-text', `${jugador.posicion} | #${jugador.numero}`);
+    const $button = createElement('button', 'btn btn-outline-danger btn-detalles', `Ver Más`, false);
+    $button.setAttribute('data-bs-toggle', 'modal');
+    $button.setAttribute('data-bs-target', `#jugadorModal`);
+    $button.setAttribute('data-jugador-index', index);
+    $body.append($title, $text, $button);
+    return $body;
+}
