@@ -94,13 +94,6 @@ function crearEdadJugador(edad){
     return $info;
 }
 
-function iniciarJugadores() {
-    const $verMasBtn = $('#verMasBtn');
-    crearJugadores();
-    // modalJugadorManager();
-    $verMasBtn.addEventListener("click", crearJugadores);
-};
-
 function crearNacionalidadJugador(nacionalidad){
     const $nacionalidadTag = createElement("strong", null, "Nacionalidad: ");
     const $nacionalidadText = createElement("span", null, nacionalidad);
@@ -112,5 +105,48 @@ function crearNacionalidadJugador(nacionalidad){
 function crearHabilidadesJugador(tecnica){
     return createElement("span", "badge bg-primary me-2", tecnica);
 }
+
+function modalJugadorManager(){
+    const $modal = $('#jugadorModal');
+    if ($modal) {
+        $modal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const index = button.getAttribute('data-jugador-index');
+            const jugador = jugadores[index];
+
+            const $modalTitulo = $modal.querySelector('.modal-title');
+            const $modalNumero = $('#modal-jugador-numero');
+            const $modalImage = $('#modal-jugador-imagen');
+            const $modalInfo = $('#modal-jugador-general');
+            const $modalHabilidades = $('#modal-jugador-tecnicas');
+            const $modalDetails = $('#modal-jugador-detalles');
+
+            $modalTitulo.textContent = `${jugador.nombre} | #${jugador.numero} (${jugador.posicion})`;
+            $modalImage.src = `./assets/renderCamiseta.webp`;
+            $modalImage.alt = `Foto de ${jugador.nombre}`;
+            $modalNumero.textContent = jugador.numero;
+            $modalDetails.textContent = jugador.detalles;
+
+            const $edad = crearEdadJugador(jugador.edad);
+            const $nacionalidad = crearNacionalidadJugador(jugador.nacionalidad);
+
+            $modalInfo.innerHTML = "";
+            $modalInfo.append($edad, $nacionalidad);
+            
+            $modalHabilidades.innerHTML = "";
+            for (const tecnica of jugador.tecnicas) {
+                const $habilidad = crearHabilidadesJugador(tecnica);
+                $modalHabilidades.append($habilidad);
+            }
+        });
+    }
+}
+
+function iniciarJugadores() {
+    const $verMasBtn = $('#verMasBtn');
+    crearJugadores();
+    modalJugadorManager();
+    $verMasBtn.addEventListener("click", crearJugadores);
+};
 
 document.addEventListener("DOMContentLoaded", iniciarJugadores);
