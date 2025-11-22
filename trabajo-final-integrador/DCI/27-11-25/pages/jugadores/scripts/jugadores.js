@@ -67,3 +67,21 @@ function crearCardJugador(jugador , index){
     $card.append($container);
     return $card;
 }
+
+function crearJugadores(){
+    const $filas = $('#jugadores');
+    const $verMasBtn = $('#verMasBtn');
+    const porPagina = 4;
+    const hasta = Math.min(mostrados + porPagina, jugadores.length);
+    for (let i = mostrados; i < hasta; i++) {
+        const $card = crearCardJugador(jugadores[i], i);
+        $filas.appendChild($card);
+    }
+
+    mostrados = hasta;
+
+    if (mostrados >= jugadores.length) {
+        $verMasBtn.style.display = "none";
+        $verMasBtn.disabled = true;
+    }
+};
