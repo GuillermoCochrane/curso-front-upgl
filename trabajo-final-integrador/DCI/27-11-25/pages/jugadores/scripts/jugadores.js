@@ -85,3 +85,12 @@ function crearJugadores(){
         $verMasBtn.disabled = true;
     }
 };
+
+function iniciarJugadores() {
+    const $verMasBtn = $('#verMasBtn');
+    crearJugadores();
+    // modalJugadorManager();
+    $verMasBtn.addEventListener("click", crearJugadores);
+};
+
+document.addEventListener("DOMContentLoaded", iniciarJugadores);
