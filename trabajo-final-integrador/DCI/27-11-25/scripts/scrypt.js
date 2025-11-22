@@ -148,3 +148,11 @@ function crearEdadJugador(edad){
     $info.append($edadTag, $edadText);
     return $info;
 }
+
+function crearNacionalidadJugador(nacionalidad){
+    const $nacionalidadTag = createElement("strong", null, "Nacionalidad: ");
+    const $nacionalidadText = createElement("span", null, nacionalidad);
+    const $info = createElement("p", null);
+    $info.append($nacionalidadTag, $nacionalidadText);
+    return $info;
+}
