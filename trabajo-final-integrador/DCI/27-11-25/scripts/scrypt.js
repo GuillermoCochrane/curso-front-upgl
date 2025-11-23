@@ -16,81 +16,6 @@ const jugadores = [
 
 let mostrados = 0;
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    const filas = document.getElementById("jugadores");
-    const verMasBtn = document.getElementById("verMasBtn");
-    let mostrados = 0;
-    const porPagina = 4;
-
-    function mostrarJugadores() {
-        const hasta = Math.min(mostrados + porPagina, jugadores.length);
-        for (let i = mostrados; i < hasta; i++) {
-            const jugador = jugadores[i];
-            const card = document.createElement('div');
-            card.className = "col-md-6 col-xl-3 mb-4";
-            card.innerHTML = `
-                <div class="card shadow card-jugadores" >
-                    <div class="position-relative">
-                        <span class="sombreado-badge badge bg-danger text-dark position-absolute top-5 m-2">#${jugador.numero}</span>
-                        <img src="./assets/renderCamiseta.webp" class="card-img-top" alt="Jugador ${jugador.numero}" loading="lazy">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">${jugador.nombre}</h5>
-                        <p class="card-text">${jugador.posicion} | #${jugador.numero}</p>
-                        <button type="button" class="btn btn-outline-danger btn-detalles"
-                                data-bs-toggle="modal"
-                                data-bs-target="#jugadorModal"
-                                data-jugador-index="${i}">
-                            Ver Más
-                        </button>
-                    </div>
-                </div >
-            `;
-            filas.appendChild(card);
-        }
-        mostrados = hasta;
-        if (mostrados >= jugadores.length) {
-            verMasBtn.style.display = "none";
-        }
-    }
-
-    const modalElement = document.getElementById('jugadorModal');
-    if (modalElement) {
-        modalElement.addEventListener('show.bs.modal', function (event) {
-            const button = event.relatedTarget;
-            const index = button.getAttribute('data-jugador-index');
-            const jugador = jugadores[index];
-
-            const modalTitulo = this.querySelector('.modal-title');
-            const modalNumero = this.querySelector('#modal-jugador-numero');
-            const modalImage = this.querySelector('#modal-jugador-imagen');
-            const modalInfo = this.querySelector('#modal-jugador-general');
-            const modalHabilidades = this.querySelector('#modal-jugador-tecnicas');
-            const modalDetails = this.querySelector('#modal-jugador-detalles');
-
-            modalTitulo.textContent = `${jugador.nombre} | #${jugador.numero} (${jugador.posicion})`;
-            modalImage.src = "./assets/renderCamiseta.webp";
-            modalImage.alt = `Foto de ${jugador.nombre}`;
-            modalNumero.textContent = jugador.numero;
-
-            modalInfo.innerHTML = `
-                <p><strong>Edad:</strong> ${jugador.edad} años</p>
-                <p><strong>Nacionalidad:</strong> ${jugador.nacionalidad}</p>
-            `;
-
-            modalHabilidades.innerHTML = jugador.tecnicas.map(tecnica =>
-                `<span class="badge bg-primary me-2">${tecnica}</span>`
-            ).join('');
-
-            modalDetails.textContent = jugador.detalles;
-        });
-    }
-    mostrarJugadores();
-
-    verMasBtn.addEventListener("click", mostrarJugadores);
-});
-
 function crearJugadorBody(jugador, index){
     const $body = createElement('div', 'card-body');
     const $title = createElement('h5', 'card-title', `${jugador.nombre}`);
@@ -205,3 +130,5 @@ function iniciarJugadores() {
     modalJugadorManager();
     $verMasBtn.addEventListener("click", crearJugadores);
 };
+
+document.addEventListener("DOMContentLoaded", iniciarJugadores);
