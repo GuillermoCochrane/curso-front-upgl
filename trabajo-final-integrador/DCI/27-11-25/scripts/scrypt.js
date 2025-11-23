@@ -14,6 +14,8 @@ const jugadores = [
     { nombre: "Fernando Vázquez", posicion: "Delantero", numero: 11, imagen: "assets/jugadores/jugador11.webp", edad: 35, nacionalidad: "Argentina", tecnicas: ["Definición", "Desmarque", "Juego Aéreo"], detalles: "Delantero con gran capacidad de definición y juego aéreo." }
 ];
 
+let mostrados = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const filas = document.getElementById("jugadores");
@@ -196,3 +198,10 @@ function modalJugadorManager(){
         });
     }
 }
+
+function iniciarJugadores() {
+    const $verMasBtn = $('#verMasBtn');
+    crearJugadores();
+    modalJugadorManager();
+    $verMasBtn.addEventListener("click", crearJugadores);
+};
