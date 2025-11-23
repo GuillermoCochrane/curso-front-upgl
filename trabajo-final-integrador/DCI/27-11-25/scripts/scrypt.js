@@ -156,3 +156,7 @@ function crearNacionalidadJugador(nacionalidad){
     $info.append($nacionalidadTag, $nacionalidadText);
     return $info;
 }
+
+function crearHabilidadesJugador(tecnica){
+    return createElement("span", "badge bg-primary me-2", tecnica);
+}
