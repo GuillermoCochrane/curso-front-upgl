@@ -11,10 +11,6 @@ body {
 
 .navbar-brand {
     max-width: 260px;
-
-    @media (min-width: 768px) {
-        max-width: none;
-    }
 }
 
 .navbar-brand span {
@@ -23,7 +19,7 @@ body {
     text-align: center;
 
     @media (min-width: 768px) {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }
 
