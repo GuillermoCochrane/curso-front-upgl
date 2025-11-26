@@ -66,8 +66,8 @@ const integrantesComision = [
     cargo: "Revisadores de Cuentas",
   },
   {
-    nombre: "Actual Período",
-    cargo: "Gestion (2024 - 2026)",
+    imagen: "assets/escudo.webp",
+    alt: "Escudo del Club",
   },
 ];
 
@@ -82,8 +82,9 @@ function cargarComisionDirectiva() {
     div.innerHTML = `
       <div class="card h-100">
         <div class="card-body">
-          <h5 class="card-title">${integrante.nombre}</h5>
-          <p class="card-text">${integrante.cargo}</p>
+          ${integrante.nombre ? `<h5 class="card-title">${integrante.nombre}</h5>` : ""}
+          ${integrante.cargo ? `<p class="card-text">${integrante.cargo}</p>` : ""}
+          ${integrante.imagen ? `<img src="${integrante.imagen}" alt="${integrante.alt}" class="img-fluid rounded">` : ""}
         </div>
       </div>
     `;
