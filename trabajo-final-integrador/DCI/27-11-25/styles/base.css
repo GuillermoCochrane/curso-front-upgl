@@ -84,7 +84,7 @@ body {
 
 @keyframes agrandarDCIDesktop {
     to {
-        font-size: 20rem;
+        font-size: 18rem;
         border: none;
         text-shadow: #d30d84 0 5px 15px;
     }
