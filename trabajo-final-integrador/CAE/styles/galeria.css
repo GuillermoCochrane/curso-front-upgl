@@ -1,0 +1,274 @@
+.galeria-container {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-rojo);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.galeriaContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    background-color: rgba(236, 236, 230, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+    border-radius: 10px;
+    @media (min-width: 1200px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Estilos para la galería principal */
+.galeria_cardPrincipal .card{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 5 / 6;
+    max-height: 500px;
+    max-width: 600px;
+    background-color: rgba(236, 236, 230, 0.1);
+}
+
+.galeria_cardPrincipal .card img {
+    object-fit: contain;
+    background-color: var(--color-blanco);
+}
+
+/* Estilos para la galería secundaria */
+.galeria_cardSecundarias {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: center;
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Estilos para las tarjetas de las galerías  */
+.galeria_cardSecundarias .card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: rgba(236, 236, 230, 0.1);
+    @media (min-width: 1200px) {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+
+}
+
+.galeria_cardPrincipal .card .face, 
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px rgb(0, 0, 0);
+}
+
+.galeria_cardPrincipal .card .face img,
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.galeria_cardPrincipal .card .face h3,
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: rgb(54, 3, 3);
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px rgb(0, 0, 0);
+}
+
+.card .back h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card .back p {
+    letter-spacing: 1px;
+}
+
+.card .back .link {
+    border-top: solid 1px #f3f3f3;
+    height: 40px;
+    line-height: 50px;
+}
+
+.card .back .link a {
+    color : #f3f3f3;
+}
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+/* Estilos para el botón Ver Más */
+.verMasButton {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.verMasButton .btn {
+    color: var(--color-negro);
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #df1b1b, #ffffff);
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.verMasButton .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #ffffff, #df1b1b );
+}
+
+/* Estilo para el modal */
+.modal-content {
+    background: linear-gradient(135deg, #cf1919 0%, #fefdff 100%);
+    color: white;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-header .modal-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+/* Estilos para la galería infinita en el modal */
+.galeriaInfinita {
+    display: grid;
+    gap: 20px;
+    padding: 15px;
+    max-height: 77vh;
+    overflow-y: auto;
+    grid-template-columns: 1fr;
+    max-width: 1200px;
+    margin-inline: auto !important;
+
+    @media (min-width: 658px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/* Tarjeta del modal */
+.galeriaInfinita .card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--color-negro);
+    width: 100%;
+    min-width: 0;
+    max-width: 300px;
+    margin-inline: auto !important;
+}
+
+.galeriaInfinita .card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.galeriaInfinita .card-img-top {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    
+    @media (min-width: 768px) {
+        aspect-ratio: 3 / 2;
+    }
+}
+
+.galeriaInfinita .card-img-top:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Cuerpo de la tarjeta */
+.galeriaInfinita .card-body {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.galeriaInfinita .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.galeriaInfinita .card-text {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Scroll bonito y funcional */
+.galeriaInfinita::-webkit-scrollbar {
+    width: 8px;
+}
+
+.galeriaInfinita::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.galeriaInfinita::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
