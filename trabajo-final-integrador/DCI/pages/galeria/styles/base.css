@@ -11,10 +11,6 @@ body {
 
 .navbar-brand {
     max-width: 260px;
-
-    @media (min-width: 768px) {
-        max-width: none;
-    }
 }
 
 .navbar-brand span {
@@ -23,7 +19,7 @@ body {
     text-align: center;
 
     @media (min-width: 768px) {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -54,26 +50,43 @@ body {
     font-size: 4rem;
     font-weight: bold;
     color: #4a000a;
-    cursor: pointer;
-    /* display: inline-block; */
+    display: block;
     padding-block: 2rem;
-    border: 1px solid #b5616d67;
     border-radius: 15px;
     margin: auto;
-}
-
-.hero-portada:hover .dci-titulo {
-    font-size: 8rem;
-    border: none;
-    text-shadow: #d30d84 0px 5px 15px;
-    transition: cubic-bezier(.45, .86, .9, .08) 4.5s;
+    text-align: center;
+    animation: agrandarDCI 4.5s cubic-bezier(.45, .86, .9, .08) forwards;
 
     @media (min-width: 768px) {
-        font-size: 12.5rem;
+        animation: agrandarDCITablet 4.5s cubic-bezier(.45, .86, .9, .08) forwards;
     }
 
     @media (min-width: 1200px) {
-        font-size: 20rem;
+        animation: agrandarDCIDesktop 4.5s cubic-bezier(.45, .86, .9, .08) forwards;
+    }
+}
+
+@keyframes agrandarDCI {
+    to {
+        font-size: 8rem;
+        border: none;
+        text-shadow: #d30d84 0 5px 15px;
+    }
+}
+
+@keyframes agrandarDCITablet {
+    to {
+        font-size: 12.5rem;
+        border: none;
+        text-shadow: #d30d84 0 5px 15px;
+    }
+}
+
+@keyframes agrandarDCIDesktop {
+    to {
+        font-size: 18rem;
+        border: none;
+        text-shadow: #d30d84 0 5px 15px;
     }
 }
 
@@ -152,6 +165,19 @@ body {
     width: 100%;
 }
 
+.hero-portada h4 {
+    position: absolute;
+    bottom: 2em;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+
+    @media (min-width: 1200px) {
+        bottom: 1em;
+        font-size: 1.7rem;
+    }
+}
+
 .glass-navbar {
     backdrop-filter: blur(10px);
     background: rgba(255, 0, 0, 0.45) !important;
@@ -160,6 +186,7 @@ body {
     border-bottom-right-radius: 25px;
     & .container-fluid {
         max-width: 1400px;
+        --bs-gutter-x: 0.25rem !important;
     }
 }
 
@@ -183,5 +210,7 @@ section {
     background-color: rgba(244, 244, 244, 0.3);
     backdrop-filter: blur(10px);
     border-radius: 15px !important;
-    padding: 1em;
+    padding: 0.5em;
+    max-width: 90% !important;
+    scroll-margin-top: 140px;
 }
