@@ -113,7 +113,6 @@ body {
 }
 
 .camiseta-portada {
-    /*Chequear el posicionamiento porque cambia segun la resolucion, usar % en vez de absoluto como px*/
     display: none;
     position: absolute;
     bottom: 50px;
