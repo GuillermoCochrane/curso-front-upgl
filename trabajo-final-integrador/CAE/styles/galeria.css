@@ -259,7 +259,6 @@
     opacity: 0.9;
 }
 
-/* Scroll bonito y funcional */
 .galeriaInfinita::-webkit-scrollbar {
     width: 8px;
 }
