@@ -1,0 +1,92 @@
+.titulo-posicion {
+    color: var(--color-rojo);
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-rojo);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.jugador-img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+.seccion-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#detalle-container {
+  max-width: 1405px;
+  margin: auto;
+}
+
+.jugador-card {
+    border-radius: 12px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    max-width: 330px;
+    margin: auto;
+}
+
+.jugador-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+h2 {
+    color: var(--color-rojo);                        
+    border-bottom: 2px solid var(--color-rojo);      
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-tabs {
+  justify-content: center;
+  width: fit-content;
+  border-radius: 7px;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link {
+  color: var(--color-negro);
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-link.active {
+  color: var(--color-rojo) !important;
+  border-bottom: 3px solid var(--color-rojo);
+  background-color: transparent;
+}
+
+.nav-link:hover {
+  color: var(--color-rojo);
+}
+
+/* Efecto permanente en pantallas táctiles */
+@media (hover: none) and (pointer: coarse) {
+  .seccion-card,
+  .jugador-card {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+}

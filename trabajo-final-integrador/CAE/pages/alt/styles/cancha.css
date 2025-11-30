@@ -1,0 +1,16 @@
+.map-container {
+    height: 70vh;
+    border-radius: 12px;
+}
+
+.map-container iframe {
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+}
+
+#cancha .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: all 0.4s ease;
+}
