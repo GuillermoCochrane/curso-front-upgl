@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
   inicializarTabs();
-  mostrarDetalle(0); // Mostrar la primera pestaña (Arqueros) por defecto
+  mostrarDetalle(0);
 });
 
+// Base de datos auxiliar de las imagenes de los jugadores
 const imagenesJugadores = {
   "Airasca Santiago": "assets/jugadores/Airasca-Santiago.webp",
   "Gil Gabriel": "assets/jugadores/Gil-Gabriel.webp",
@@ -36,6 +37,7 @@ const imagenesJugadores = {
   "Zabaleta Matias": "assets/jugadores/Zabaleta-Matias.webp",
 };
 
+// Base de datos auxiliar de los jugadores agrupados por posición
 const jugadoresPorPosicion = [
   {
     posicion: "Arqueros",
@@ -68,6 +70,7 @@ const jugadoresPorPosicion = [
   }
 ];
 
+// Función para inicializar los tabs de la sección de jugadores
 function inicializarTabs() {
   const seccionesContainer = document.getElementById('secciones-container');
   seccionesContainer.innerHTML = '';
@@ -90,6 +93,7 @@ function inicializarTabs() {
   seccionesContainer.appendChild(tabs);
 }
 
+// Función para mostrar los detalles de un grupo de jugadores
 function mostrarDetalle(index) {
   const grupo = jugadoresPorPosicion[index];
   const detalleContainer = document.getElementById('detalle-container');
