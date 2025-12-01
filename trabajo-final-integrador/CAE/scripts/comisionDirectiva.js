@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-      cargarComisionDirectiva();   // Muestra comision directiva
+      cargarComisionDirectiva();
 });
 
-
-//Función para mostrar comision directiva
+// Base de datos de integrantes de la comisión directiva
 const integrantesComision = [
   {
     nombre: "Cheetham Maximiliano",
