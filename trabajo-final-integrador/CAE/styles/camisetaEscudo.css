@@ -20,7 +20,6 @@
   margin: auto;
 }
 
-/*Efecto hover para dar sensacion de "levantar"*/
 #camiseta-escudo-container > div:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px var(--color-gris-sombra-hover);
@@ -35,7 +34,6 @@
   margin-top: 10px;
 }
 
-/*Imagen de camiseta o escudo*/
 #camiseta-escudo-container img :hover{
   max-height: 250px;
   object-fit: contain;
