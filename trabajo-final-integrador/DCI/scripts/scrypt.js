@@ -1,5 +1,4 @@
-console.log("Bienvenidos a la pagina DCI")
-
+// Base de datos auxiliar con los datos de los jugadores
 const jugadores = [
     { nombre: "Matías Sosa", posicion: "Arquero", numero: 1, imagen: "assets/jugadores/jugador1.webp", edad: 25, nacionalidad: "Argentina", tecnicas: ["Atajadas", "Reflejos", "Juego Aéreo"], detalles: "Portero ágil con gran dominio del área chica y reflejos excepcionales. Líder en la defensa." },
     { nombre: "Gabriel López", posicion: "Defensor", numero: 2, imagen: "assets/jugadores/jugador2.webp", edad: 26, nacionalidad: "Argentina", tecnicas: ["Marcaje", "Despejes", "Anticipación"], detalles: "Defensor sólido y experimentado, clave en la línea defensiva." },
@@ -16,6 +15,7 @@ const jugadores = [
 
 let mostrados = 0;
 
+// Función para crear el cuerpo de la tarjeta de un jugador
 function crearJugadorBody(jugador, index){
     const $body = createElement('div', 'card-body');
     const $title = createElement('h5', 'card-title', `${jugador.nombre}`);
@@ -28,6 +28,7 @@ function crearJugadorBody(jugador, index){
     return $body;
 }
 
+// Función para crear la imagen de un jugador
 function crearJugadorImagen(numero){
     const $imgContainer = createElement('div', 'position-relative');
     const $text = createElement('span', 'sombreado-badge badge bg-danger text-dark position-absolute top-5 m-2', `#${numero}`);
@@ -40,6 +41,7 @@ function crearJugadorImagen(numero){
     return $imgContainer;
 }
 
+// Función para crear la tarjeta de un jugador
 function crearCardJugador(jugador , index){
     const $card = createElement('div', 'col-md-6 col-xl-3 mb-4');
     const $container = createElement('div', 'card shadow card-jugadores');
@@ -50,6 +52,7 @@ function crearCardJugador(jugador , index){
     return $card;
 }
 
+// Función que maneja la creación de las tarjetas de los jugadores
 function crearJugadores(){
     const $filas = $('#jugadores');
     const $verMasBtn = $('#verMasBtn');
@@ -68,6 +71,7 @@ function crearJugadores(){
     }
 };
 
+// Función para cargar la edad del jugador seleccionado en el modal
 function crearEdadJugador(edad){
     const $edadTag = createElement("strong", null, "Edad: ");
     const $edadText = createElement("span", null, `${edad} años`);
@@ -76,6 +80,7 @@ function crearEdadJugador(edad){
     return $info;
 }
 
+// Función para cargar la nacionalidad del jugador seleccionado en el modal
 function crearNacionalidadJugador(nacionalidad){
     const $nacionalidadTag = createElement("strong", null, "Nacionalidad: ");
     const $nacionalidadText = createElement("span", null, nacionalidad);
@@ -84,10 +89,12 @@ function crearNacionalidadJugador(nacionalidad){
     return $info;
 }
 
+// Función para cargar las habilidades del jugador seleccionado en el modal
 function crearHabilidadesJugador(tecnica){
     return createElement("span", "badge bg-primary me-2", tecnica);
 }
 
+// Función para cargar el resto de la información del jugador seleccionado en el modal
 function modalJugadorManager(){
     const $modal = $('#jugadorModal');
     if ($modal) {
@@ -124,6 +131,7 @@ function modalJugadorManager(){
     }
 }
 
+// Función que inicia la creación de las tarjetas de los jugadores y el manejo del modal
 function iniciarJugadores() {
     const $verMasBtn = $('#verMasBtn');
     crearJugadores();
