@@ -1,3 +1,4 @@
+// Base de datos auxiliar con los datos de los auspiciantes
 const auspiciantes = [
     { id: 1, auspiciante: "Aceros Levalle", logo: "aceros_levalle.jpg" },
     { id: 2, auspiciante: "Agroucacha", logo: "agroucacha.jpg" },
