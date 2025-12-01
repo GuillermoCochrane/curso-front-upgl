@@ -213,3 +213,21 @@ section {
     max-width: 90% !important;
     scroll-margin-top: 140px;
 }
+
+.footer-upgl {
+    @media (min-width: 992px) {
+        order: 1;
+    }   
+}
+
+.footer-redes {
+    @media (min-width: 992px) {
+        order: 2;
+    }
+}
+
+.footer-contacto {
+    @media (min-width: 992px) {
+        order: 3;
+    }   
+}
