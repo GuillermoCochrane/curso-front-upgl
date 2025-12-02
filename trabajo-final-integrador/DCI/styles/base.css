@@ -227,7 +227,32 @@ section {
 }
 
 .footer-contacto {
+    a {
+        font-size: 1.2em;
+        font-weight: 500;
+        animation: icon 4s ease-in-out infinite;
+    }
+
     @media (min-width: 992px) {
         order: 3;
     }   
+}
+
+
+@keyframes icon {
+    0% {
+        text-shadow: none;
+    }
+    25% {
+        text-shadow: 0 0 4px rgba(175, 175, 175, 0.7);
+    }
+    50% {
+        text-shadow: 0 0 3px rgba(175, 175, 175, 0.3);
+    }
+    75% {
+        text-shadow: 0 0 4px rgba(175, 175, 175, 0.7);
+    }
+    100% {
+        text-shadow: none;
+    }
 }
