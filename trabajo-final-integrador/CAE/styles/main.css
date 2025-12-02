@@ -95,6 +95,12 @@ section {
 }
 
 .footer-upgl {
+  p {
+    @media (min-width: 360px) {
+        width: 240px;
+    }
+  }
+
   @media (min-width: 992px) {
       order: 1;
   }   
